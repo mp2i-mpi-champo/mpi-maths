@@ -51,6 +51,9 @@ def SetVStyle():
     
         #Fixing the chapter/section colors
     data = data.replace(r"\color{sectionblue}", r"\color{sectionorange}")
+    data = data.replace("=sectionblue", "=sectionorange")
+    data = data.replace(r"\textcolor{sectionblue}", r"\textcolor{sectionorange}")
+    data = data.replace(r"\definecolor{bluebox}{RGB}{36,113,200}%Actual bluebox", r"\definecolor{bluebox}{RGB}{255, 145, 10}%Fake bluebox, actually orange :D")
 
         #Writing
     with open("commun/prepacours.cls","w") as file:
@@ -77,7 +80,9 @@ def SetDefault():
  
         #Fixing the chapter/section colors
     data = data.replace(r"\color{sectionorange}", r"\color{sectionblue}")
-
+    data = data.replace("=sectionorange", "=sectionblue")
+    data = data.replace(r"\textcolor{sectionorange}", r"\textcolor{sectionblue}")
+    data = data.replace(r"\definecolor{bluebox}{RGB}{255, 145, 10}%Fake bluebox, actually orange :D", r"\definecolor{bluebox}{RGB}{36,113,200}%Actual bluebox")
         #Writing
     with open("commun/prepacours.cls","w") as file:
         file.write(data)

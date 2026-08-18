@@ -47,6 +47,9 @@
   marginparsep=0.5cm,
   headheight=30pt
 }
+%\makeatletter
+%\edef\marginnotetextwidth{\the\textwidth}
+%\makeatother
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.3em}
 
@@ -63,7 +66,7 @@
 % =============================================================================
 % COULEURS
 % =============================================================================
-\definecolor{bluebox}{RGB}{36,113,200}
+\definecolor{bluebox}{RGB}{36,113,200}%Actual bluebox
 \definecolor{redbox}{RGB}{231,35,35}
 \definecolor{greenbox}{RGB}{60,150,200}
 \definecolor{sectionblue}{RGB}{13, 114, 202}
@@ -233,63 +236,114 @@
   #1
 }
 
-\newcommand{\ampoule}{\includegraphics[height=1.2em]{ampoule.png}} 
 
+\newcommand{\ampoule}{\includegraphics[height=1.2em]{ampoule.png}} 
 \newcommand{\idee}[1]{%
   \needspace{4\baselineskip}%
   \vspace{-1.6em}%
-  \marginnote{%
-    \begin{tcolorbox}[
-      enhanced, colback=yellow!5, colframe=ideabar,
-      boxrule=0.8pt, arc=2pt,
-      left=4pt, right=4pt, top=4pt, bottom=4pt,
-      width=\marginparwidth, fonttitle=\scriptsize\bfseries,
-      title={\ampoule~Idée de la preuve},
-      coltitle=white, colbacktitle=ideabar, breakable=false
-    ]
-    \scriptsize\raggedright #1
-    \end{tcolorbox}%
-  }%
+  \marginnote{\strut}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[
+      anchor=north west,
+      inner sep=0pt
+    ] at
+      ([xshift=16.5cm]current page.west |- 0,0)
+    {%
+      \begin{tcolorbox}[
+        enhanced, colback=yellow!5, colframe=ideabar,
+        boxrule=0.8pt, arc=2pt, left=4pt, right=4pt, top=4pt, bottom=4pt,
+        width=3.5cm, fonttitle=\scriptsize\bfseries, title={\ampoule~Idée de la preuve},
+        coltitle=white, colbacktitle=ideabar, breakable=false
+      ]
+        \scriptsize\raggedright #1
+      \end{tcolorbox}%
+    };
+  \end{tikzpicture}%
 }
 
 \newcommand{\danger}[1]{%
   \needspace{4\baselineskip}%
   \vspace{-1.6em}%
-  \marginnote{%
-    \begin{tcolorbox}[
-      enhanced, colback=white, colframe=redbox,
-      boxrule=0.8pt, arc=2pt,
-      left=4pt, right=4pt, top=4pt, bottom=4pt,
-      attach boxed title to top center= {yshift=-\tcboxedtitleheight/2},
-      boxed title style={size=normal,colframe=white,boxrule=0pt,left=3pt,right=3pt},
-      width=\marginparwidth, fonttitle=\scriptsize\bfseries,
-      title={\skull~ Attention !},
-      coltitle=red, colbacktitle=white, breakable=false
-    ]
-    \scriptsize\raggedright #1
-    \end{tcolorbox}%
-  }%
+  \marginnote{\strut}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[
+      anchor=north west,
+      inner sep=0pt
+    ] at
+      ([xshift=16.5cm]current page.west |- 0,0)
+    {%
+      \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=redbox,
+        boxrule=0.8pt,
+        arc=2pt,
+        left=4pt,
+        right=4pt,
+        top=4pt,
+        bottom=4pt,
+        width=3.5cm,
+        fonttitle=\scriptsize\bfseries,
+        attach boxed title to top center={yshift=-\tcboxedtitleheight/2},
+        boxed title style={
+          size=normal,
+          colframe=white,
+          boxrule=0pt,
+          left=3pt,
+          right=3pt
+        },
+        title={\skull~ Attention !},
+        coltitle=red,
+        colbacktitle=white,
+        breakable=false
+      ]
+        \scriptsize\raggedright #1
+      \end{tcolorbox}%
+    };
+  \end{tikzpicture}%
 }
 
 \newcommand{\marginenote}[2]{%
   \needspace{4\baselineskip}%
   \vspace{-1.6em}%
-  \marginnote{%
-    \begin{tcolorbox}[
-      enhanced, colback=white, colframe=bluebox,
-      boxrule=0.8pt, arc=2pt,
-      left=4pt, right=4pt, top=4pt, bottom=4pt,
-      attach boxed title to top center= {yshift=-\tcboxedtitleheight/2},
-      boxed title style={size=normal,colframe=white,boxrule=0pt,left=2pt,right=2pt},
-      width=\marginparwidth, fonttitle=\scriptsize\bfseries,
-      title={#1},
-      coltitle=sectionblue, colbacktitle=white, breakable=false
-    ]
-    \scriptsize\raggedright #2
-    \end{tcolorbox}%
-  }%
+  \marginnote{\strut}%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[
+      anchor=north west,
+      inner sep=0pt
+    ] at
+      ([xshift=16.5cm]current page.west |- 0,0)
+    {%
+      \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=bluebox,
+        boxrule=0.8pt,
+        arc=2pt,
+        left=4pt,
+        right=4pt,
+        top=4pt,
+        bottom=4pt,
+        width=3.5cm,
+        fonttitle=\scriptsize\bfseries,
+        attach boxed title to top center={yshift=-\tcboxedtitleheight/2},
+        boxed title style={
+          size=normal,
+          colframe=white,
+          boxrule=0pt,
+          left=2pt,
+          right=2pt
+        },
+        title={#1},
+        coltitle=sectionblue,
+        colbacktitle=white,
+        breakable=false
+      ]
+        \scriptsize\raggedright #2
+      \end{tcolorbox}%
+    };
+  \end{tikzpicture}%
 }
-
 
 % =============================================================================
 % ENVIRONNEMENTS EXERCICES & CORRECTIONS (CORRIGÉS)

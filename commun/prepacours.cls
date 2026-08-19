@@ -31,6 +31,7 @@
 \RequirePackage{etoolbox}
 \RequirePackage{pgfplots}
 \RequirePackage{titletoc}
+\RequirePackage{ifthen}
 
 
 \setcounter{tocdepth}{2} % Profondeur de la table des matières
@@ -118,6 +119,10 @@
 % =============================================================================
 % STYLES TCOLORBOX
 % =============================================================================
+
+\newboolean{vstyle}
+\setboolean{vstyle}{false}
+
 \tcbset{
   thmbase/.style={
     enhanced, boxrule=0.8pt, arc=2pt,
@@ -129,112 +134,140 @@
   theoremstyle/.style={thmbase, colback=greenbox!5, colframe=greenbox},
   defstyle/.style={thmbase, colback=redbox!5, colframe=redbox}
 }
+\ifthenelse{\NOT \boolean{vstyle}}{%
+	\newtcbtheorem[use counter=coursenv, number within=chapitre]{theoreme}{Théorème}{theoremstyle}{thm}
+	\newtcbtheorem[use counter=coursenv, number within=chapitre]{proposition}{Proposition}{propstyle}{prop}
+	\newtcbtheorem[use counter=coursenv, number within=chapitre]{corollaire}{Corollaire}{propstyle}{cor}
+	\newtcbtheorem[use counter=coursenv, number within=chapitre]{definition}{Définition}{defstyle}{def}
+	\newtcbtheorem[use counter=coursenv, number within=chapitre]{propriete}{Propriété}{propstyle}{propiete}
 
-\newtcbtheorem[use counter=coursenv, number within=chapitre]{theoreme}{Théorème}{theoremstyle}{thm}
-\newtcbtheorem[use counter=coursenv, number within=chapitre]{proposition}{Proposition}{propstyle}{prop}
-\newtcbtheorem[use counter=coursenv, number within=chapitre]{corollaire}{Corollaire}{propstyle}{cor}
-\newtcbtheorem[use counter=coursenv, number within=chapitre]{definition}{Définition}{defstyle}{def}
-\newtcbtheorem[use counter=coursenv, number within=chapitre]{propriete}{Propriété}{propstyle}{propiete}
+	\newtcolorbox{exemple}[1][]{
+		enhanced, breakable, enhanced jigsaw, pad at break=2mm,
+	  colback=white, colframe=white, boxrule=0pt,
+	  left=8pt, right=0pt, top=6pt, bottom=6pt,
+	  borderline west={2pt}{0pt}{examplebar},
+	  title={},
+	  before upper={\textbf{\color{examplebar}Exemple} \par\vspace{0.2em}},
+	  #1
+	}
+}{%
 
-%[V Style
+	%[V Style
 
-\newtcbtheorem[use counter = coursenv, number within = chapitre]
-					{Vproposition}{Proposition}%Don't delete this, don't ask why
-					{colframe = black,
-					theorem style = plain,
-					fonttitle = \bfseries,
-					sharp corners,
-					boxrule=.2mm,
-					breakable,
-					coltitle = orange!110,
-					drop shadow = orange!48,
-					smart shadow arc = false,
-					colback = white}{}
+	\newtcbtheorem[use counter = coursenv, number within = chapitre]
+						{proposition}{Proposition}
+						{colframe = black,
+						theorem style = plain,
+						fonttitle = \bfseries,
+						sharp corners,
+						boxrule=.2mm,
+						breakable,
+						coltitle = orange!110,
+						drop shadow = orange!48,
+						smart shadow arc = false,
+						colback = white}{}
 
-\newtcbtheorem[use counter = coursenv, number within = chapitre]
-					{Vcorollaire}{Corollaire}%Don't delete this, don't ask why
-					{colframe = black,
-					theorem style = plain,
-					fonttitle = \bfseries,
-					sharp corners,
-					boxrule=.2mm,
-					breakable,
-					coltitle = orange!110,
-					drop shadow = orange!48,
-					smart shadow arc = false,
-					colback = white}{}
+	\newtcbtheorem[use counter = coursenv, number within = chapitre]
+						{corollaire}{Corollaire}
+						{colframe = black,
+						theorem style = plain,
+						fonttitle = \bfseries,
+						sharp corners,
+						boxrule=.2mm,
+						breakable,
+						coltitle = orange!110,
+						drop shadow = orange!48,
+						smart shadow arc = false,
+						colback = white}{}
 
 
 
-\newtcbtheorem[use counter = coursenv, number within = chapitre]
-					{Vtheoreme}{Théorème}%Don't delete this, don't ask why
-					{colframe = black,
-					sharp corners,
-					breakable,
-					theorem style = plain,
-					fonttitle = \bfseries,
-					coltitle = orange!90!black,
-					boxrule = .2mm,
-					drop shadow = orange!48,
-					smart shadow arc = false,
-					colback = orange_des_theoremes}{}
+	\newtcbtheorem[use counter = coursenv, number within = chapitre]
+						{theoreme}{Théorème}
+						{colframe = black,
+						sharp corners,
+						breakable,
+						theorem style = plain,
+						fonttitle = \bfseries,
+						coltitle = orange!90!black,
+						boxrule = .2mm,
+						drop shadow = orange!48,
+						smart shadow arc = false,
+						colback = orange_des_theoremes}{}
 
-\newtcbtheorem[use counter = coursenv, number within = chapitre]
-					{Vdefinition}{Définition}%Don't delete this, don't ask why
-					{interior style = {left color = orange_des_definitions, right color = white},
-					sharp corners,
-					colback = white,
-					breakable,
-					coltitle = orange!90!black,
-					boxrule = .2mm,
-					fonttitle = \bfseries,
-					theorem style = plain,
-					colframe = orange_des_definitions
-				}{}
+	\newtcbtheorem[use counter = coursenv, number within = chapitre]
+						{definition}{Définition}
+						{interior style = {left color = orange_des_definitions, right color = white},
+						sharp corners,
+						colback = white,
+						breakable,
+						coltitle = orange!90!black,
+						boxrule = .2mm,
+						fonttitle = \bfseries,
+						theorem style = plain,
+						colframe = orange_des_definitions
+					}{}
 
-\newtcolorbox{Vexemple}[1][]{%Don't delete this, don't ask why
-  enhanced,
-  breakable,
-  enhanced jigsaw,
-  pad at break=2mm,
-  colback=white,
-  coltitle = orange_des_exemples,
-  colbacktitle = white,
-  colframe=orange_des_exemples,
-  attach boxed title to top left = {yshift = 0mm, xshift = 0mm},
-  boxed title style = {sharp corners, boxrule = 0.1pt, borderline west={1pt}{0pt}{orange_des_exemples}},
-  boxrule=0.1pt,
-  left=8pt,
-  right=0pt,
-  top=6pt,
-  bottom=6pt,
-  borderline west={2pt}{0pt}{orange_des_exemples},
-  title={},
-  before upper={
-    \textbf{\color{orange_des_exemples}Exemple}
-    \par\vspace{0.2em}
-  },
-  #1
+	\newtcolorbox{exemple}[1][]{
+	  enhanced,
+	  breakable,
+	  enhanced jigsaw,
+	  pad at break=2mm,
+	  colback=white,
+	  coltitle = orange_des_exemples,
+	  colbacktitle = white,
+	  colframe=orange_des_exemples,
+	  attach boxed title to top left = {yshift = 0mm, xshift = 0mm},
+	  boxed title style = {sharp corners, boxrule = 0.1pt, borderline west={1pt}{0pt}{orange_des_exemples}},
+	  boxrule=0.1pt,
+	  left=8pt,
+	  right=0pt,
+	  top=6pt,
+	  bottom=6pt,
+	  borderline west={2pt}{0pt}{orange_des_exemples},
+	  title={},
+	  before upper={
+		\textbf{\color{orange_des_exemples}Exemple}
+		\par\vspace{0.2em}
+	  },
+	  #1
+   }
+	%V Style]
 }
-%V Style]
 
-\newtcolorbox{theorement}[2][]{theoremstyle, fonttitle=\bfseries, title={Théorème~\refstepcounter{coursenv}\thecoursenv}, #1}
-\newtcolorbox{propositionnt}[2][]{propstyle, fonttitle=\bfseries, title={Proposition~\refstepcounter{coursenv}\thecoursenv}, #1}
-\newtcolorbox{corollairent}[2][]{propstyle, fonttitle=\bfseries, title={Corollaire~\refstepcounter{coursenv}\thecoursenv}, #1}
-\newtcolorbox{definitionnt}[2][]{defstyle, fonttitle=\bfseries, title={Définition~\refstepcounter{coursenv}\thecoursenv}, #1}
+\ifthenelse{\boolean{vstyle}}{
+	\newenvironment{theorement}[2]{%
+		\begin{theoreme}{#1}{#2}%
+	}{%
+		\end{theoreme}%
+	}
+	\newenvironment{propositionnt}[2]{
+		\begin{proposition}{#1}{#2}%
+	}{%
+		\end{proposition}%
+	}
+
+	\newenvironment{corollairent}[2]{
+		\begin{corollaire}{#1}{#2}%
+	}{%
+		\end{corollaire}%
+	}
+
+\newenvironment{definitionnt}[2]{
+		\begin{definition}{#1}{#2}%
+	}{%
+		\end{definition}%
+	}
+
+}{
+	\newtcolorbox{theorement}[2][]{theoremstyle, fonttitle=\bfseries, title={Théorème~\refstepcounter{coursenv}\thecoursenv}, #1}
+	\newtcolorbox{propositionnt}[2][]{propstyle, fonttitle=\bfseries, title={Proposition~\refstepcounter{coursenv}\thecoursenv}, #1}
+	\newtcolorbox{corollairent}[2][]{propstyle, fonttitle=\bfseries, title={Corollaire~\refstepcounter{coursenv}\thecoursenv}, #1}
+	\newtcolorbox{definitionnt}[2][]{defstyle, fonttitle=\bfseries, title={Définition~\refstepcounter{coursenv}\thecoursenv}, #1}
+}
 
 \theoremstyle{remark}
 \newtheorem*{remarque}{Remarque}
-
-\newtcolorbox{exemple}[1][]{%Added by style.py
-	enhanced, breakable, enhanced jigsaw, pad at break=2mm,
-  colback=white, colframe=white, boxrule=0pt,
-  left=8pt, right=0pt, top=6pt, bottom=6pt,
-  borderline west={2pt}{0pt}{examplebar},
-  title={},
-  before upper={\textbf{\color{examplebar}Exemple} \par\vspace{0.2em}},
-  #1
-}
 
 
 \newcommand{\ampoule}{\includegraphics[height=1.2em]{ampoule.png}} 

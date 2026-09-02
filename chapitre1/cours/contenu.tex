@@ -9,10 +9,10 @@
     $\forall x, y \in \mathbb R$, on a : 
 
     \begin{itemize}
-        \item $\mid x \mid = 0$ ssi $x = 0$
-        \item $ \mid xy \mid = \mid x \mid \mid y \mid$
-        \item $\mid x + y \mid \leqslant \mid x \mid + \mid y \mid$
-        \item $ \mid \mid x \mid - \mid y \mid \mid \leqslant \mid x + y \mid$
+        \item $|x| = 0$ ssi $x = 0$
+        \item $|xy| = |x| \times |y|$
+        \item $|x + y| \leqslant |x| + |y|$
+        \item $ \mid |x| - |y| \mid \leqslant |x + y|$
     \end{itemize}
 \end{proposition}
 
@@ -20,7 +20,7 @@
 \begin{exemple}
     Soient $a, b \in \R$ et $\varepsilon > 0$ alors 
 
-    $\mid a - b \mid \leqslant \varepsilon$ ssi $b - \varepsilon \leqslant a \leqslant b + \varepsilon$
+    $|a - b| \leqslant \varepsilon$ ssi $b - \varepsilon \leqslant a \leqslant b + \varepsilon$
     ssi $a - \varepsilon \leqslant b \leqslant a + \varepsilon$
 \end{exemple}
 
@@ -42,7 +42,7 @@
 \begin{theoreme}{Caractérisation séquentielle de la borne sup}{}
     Soit $A \subset \R$ non vide majorée et soit $\alpha \in \R$ un majorant de $A$. 
 
-    Alors $\alpha = \sup A$ ssi il existe $(u_n)_{n \in \N}$ suite de $A$
+    Alors $\alpha = \sup A$ ssi il existe $(u_n)_{n \in \N}$ suite d'éléments de $A$
     telle que $\lim_{n \to + \infty} u_n = \alpha$
 \end{theoreme}
 
@@ -52,7 +52,7 @@
 
     Alors $A + B = \{x + y, x \in A, y \in B\} = \{z \in \R \mid \exists (x, y) \in (A \times B), z = x + y\}$
 
-    est non vide et majorée, et $\sup( A + B) = \sup A + \sup B$
+    est non vide et majorée, et $\sup( A + B) = \sup A + \sup B$ \\
 
     Preuve : 
 
@@ -68,7 +68,7 @@
 
     Donc $\sup( A+ B)$ existe et $\sup (A + B) \leqslant \sup A + \sup B$
 
-    \uindent{Solution 1 }
+    \uindent{Solution 1}
 
     \svspace Soient $x \in A$ et $y \in B$ 
 
@@ -88,7 +88,7 @@
 
     Donc $\sup A + \sup B \leqslant \sup(A + B)$
 
-    \uindent{Solution 2 }
+    \uindent{Solution 2}
 
     \svspace Soit $(u_n)_{n \in N}$ suite de $A$ telle que $u_n \longrightarrow \sup A$
     et $(v_n)_{n \in N}$ suite de $B$ telle que $ v_n \longrightarrow \sup B$
@@ -100,10 +100,10 @@
 
 \end{exemple}
 
-\subsection{Distance }
+\subsection{Distance}
 
 \begin{definition}{Distance dans $\R$}{}
-    Soient $x, y \in \R$. On définit leur distance par $\text d (x, y) = \mid y - x \mid$
+    Soient $x, y \in \R$. On définit leur distance par $\text d (x, y) = |y - x|$
 \end{definition}
 
 \section{Espace vectoriel normé}
@@ -135,20 +135,20 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 \end{exemple}
 
 
-\subsection{Seconde inégalité triangulaire }
+\subsection{Seconde inégalité triangulaire}
 
 \begin{proposition}{Seconde inégalité triangulaire}{}
     Soit $(E, N)$ un espace vectoriel normé. 
 
     $\forall u, v \in E, $
 
-    $$\mid N(u) - N(v) \mid \leqslant N(u + v)$$
-    $$\mid N(u) - N(v) \mid \leqslant N(u - v)$$
+    $$|N(u) - N(v)| \leqslant N(u + v)$$
+    $$|N(u) - N(v)| \leqslant N(u - v)$$
 \end{proposition}
 
 \idee{
-    Utiliser l'astuce $x - x$ pour faire apparaitre les bons termes, 
-    puis inégalité triangulaire.
+    Utiliser l'astuce $x = x + y - y$ pour faire apparaitre les bons termes, 
+    puis inégalité triangulaire. (astuce dite du taupin).
 }
 
 \begin{proof}
@@ -161,15 +161,15 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
          &\leqslant N(u + v) + N(v)
     \end{align*}
 
-    Donc $N(u) - N(v) \leqslant N(u + v)$
+    Donc $N(u) - N(v) \leqslant N(u + v)$. \\
 
     En faisant jouer à $(u, v)$ le rôle de $(v, u)$, 
     $$ N(v) - N(u) \leqslant N(v + u) = N(u + v)$$
 
-    Donc $\mid N(u) - N(v) \mid \leqslant N(u + v)$
+    Donc $|N(u) - N(v)| \leqslant N(u + v)$. \\
 
     En faisant jouer à $(u, -v)$ le rôle de $(u, v)$, on en déduit : 
-    $$\mid N(u) - N(v) \mid \leqslant N(u - v)$$
+    $$|N(u) - N(v)| \leqslant N(u - v)$$
 \end{proof}
 
 
@@ -178,16 +178,16 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 \begin{definition}{}{}
     Soit $(E, N)$ un espace vectoriel normé. 
 
-    On définit $d_N$ la distance associée par 
+    On définit $d_N$ la distance associée par :
     $$\forall (u, v) \in E^2, d_N(u, v) = N(v - u) = N(u - v)$$
 \end{definition}
 
 \begin{proposition}{Propriétés distance}{}
-    Avec ces hypothèses, on a pour $u, v, w \in E$ et $\lambda \in \K$
+    Avec ces hypothèses, on a pour $u, v, w \in E$ et $\lambda \in \K$ :
 
     \begin{enumerate}
         \item $d_N(u, v) = 0$ ssi $u = v$
-        \item $d_N(\lambda u, \lambda v) = \mid \lambda \mid d_N(u, v)$
+        \item $d_N(\lambda u, \lambda v) = |\lambda| d_N(u, v)$
         \item $d_N(u, w) \leqslant d(u, v) + d(v, w)$
         \item $d_N (u, v) = d_N (v, u)$
         \item $d_N (u + w, v + w) = d_N (u, v)$
@@ -195,41 +195,36 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 \end{proposition}
 
 \idee{
-    Astuce du topin pour le 3.
+    Astuce du taupin pour le 3.
 }
 
 \begin{proof}
 
     Pour le 3 : 
 
-    $d_N(u, w) = N(u - w) = N( u - v + v - w) \leqslant N(u - v) + N(v - w)$
+    $d_N(u, w) = N(u - w) = N( u - v + v - w) \leqslant N(u - v) + N(v - w)$ \\
 
-    Evident pour le reste.
+    Évident pour le reste.
 \end{proof}
 
-
-
-\subsubsection{Distance à une partie non vide}
-
-\begin{definition}{Définition distance à une partie}{}
+\begin{definition}{Distance à une partie}{}
     Soit $(E, N)$ un espace vectoriel normé, avec $A \subset E$ non vide. 
-    Soit $x \in E$. 
 
-    On appelle distance de $x$ à $A$ et on note $d(x, A) = d_A(x)$ le réel positif
+    Soit $x \in E$, on appelle distance de $x$ à $A$ et on note $d(x, A) = d_A(x)$ le réel positif
     $$d_A(x) = \inf \space \{d(x, a), a \in A\}$$
 \end{definition}
 
 \begin{proposition}{Inégalité distance à une partie / entre deux points}{}
     Pour $x, y \in E$ et $A \subset E$ non vide, 
-    $$\mid d_A(x) - d_A(y)\mid \leqslant d(x, y)$$
+    $$|d_A(x) - d_A(y)| \leqslant d(x, y)$$
 \end{proposition}
 
 \idee{
-    Astuce du topin, on fait apparaitre $y$ dans la distance entre $x$ et $a$.
+    Astuce du taupin, on fait apparaitre $y$ dans la distance entre $x$ et $a$.
 }
 
 \begin{proof}
-    Soit $a \in A$ $d(x, a) \leqslant d(x, y) + d(y, a)$
+    Soit $a \in A$, $d(x, a) \leqslant d(x, y) + d(y, a)$
 
     Or $d(x, a) \geqslant d_A(x)$
 
@@ -248,7 +243,7 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$. 
 
 
-\begin{definition}{Definition vecteur unitaire}{}
+\begin{definition}{Définition vecteur unitaire}{}
     Soit $u \in E$. On dit que $u$ est unitaire ssi $N(u) = 1$
 \end{definition}
 
@@ -259,7 +254,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 
     Si $\K = \R$, $-u$ en est un autre. 
 
-    Si $\K = \C$, tous les $e^{i \theta u}$, où $\theta \in \R$, conviennent. 
+    Si $\K = \C$, tous les $e^{i \theta}u$, où $\theta \in \R$, conviennent. 
 \end{exemple}
 
 \begin{definition}{Boules ouvertes, fermées et sphère}{}
@@ -292,7 +287,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     $$\inter{a}{b} = \{\lambda a + (1 - \lambda)b, \lambda \in [0, 1]\}$$
 \end{definition}
 
-\begin{definition}{Barycentre (hors programme)}{}
+\begin{definition}{Barycentre - HP}{}
     Soient $a_1, \dots, a_n \in E$ et $\lambda_1, \dots, \lambda_n \in \inter{0}{1}$
     tels que $\sum_{i = 1}^n \lambda_i = 1$
 
@@ -304,7 +299,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     Ainsi $\inter{a}{b}$ est l'ensemble des barycentres de $a$ et $b$ à coefs positifs. 
 \end{definition}
 
-\begin{proposition}{Nature d'une intersection de convexes - légèrement hp}{}
+\begin{proposition}{Nature d'une intersection de convexes - légèrement HP}{}
     Soit $I$ un ensemble non vide et $(A_i)_{i \in I}$ des parties convexes de $E$. 
 
     Alors $\displaystyle B = \bigcap_{i \in I} A_i$ est convexe.

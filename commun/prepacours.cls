@@ -487,9 +487,13 @@
 
 \@addtoreset{section}{chapitre}
 \@addtoreset{subsection}{section} 
+\@addtoreset{subsubsection}{subsection}
 
 \renewcommand{\thesection}{\thechapitre.\arabic{section}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+\setcounter{secnumdepth}{3}
 
 \renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.5em}}
 \renewcommand*\l@subsection{\@dottedtocline{2}{4.5em}{3em}}
@@ -536,10 +540,10 @@
 
 \titleformat{\subsubsection}
   {\normalfont\large\bfseries}
-  {\color{sectionblue}}{1em}{\uline}
+  {\color{sectionblue}\thesubsubsection}{1em}{}
   [\vspace{0.3em}]
 
-\titlespacing*{\subsubsection}{2em}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
+\titlespacing*{\subsubsection}{-2em}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
 
 \titlespacing*{\paragraph}{1.5em}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
 

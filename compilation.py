@@ -32,24 +32,18 @@ args = parser.parse_args()
 
 
 def SetVStyle():
+        #Fixing the colors on TDs
+
+    with open("commun/prepacours_TD.cls","r") as TD:
+        data = TD.read()
+        data = data.replace(r"\definecolor{sectionblue}{RGB}{13,114,202}", r"\definecolor{sectionblue}{RGB}{255,145,10}")
+    
+    with open("commun/prepacours_TD.cls","w") as TD:
+        TD.write(data)
+
     with open("commun/prepacours.cls","r") as file:
         data = file.read()
-
-        #Making the default style obsolete
-    #data = data.replace(r"\newtcbtheorem[use counter=coursenv, number within=chapitre]{theoreme}{Théorème}{theoremstyle}{thm}", "%I used to be thm DO NOT DELETE (from style.py)")
-    #data = data.replace(r"\newtcbtheorem[use counter=coursenv, number within=chapitre]{proposition}{Proposition}{propstyle}{prop}", "%I used to be prop DO NOT DELETE (from style.py)")
-    #data = data.replace(r"\newtcbtheorem[use counter=coursenv, number within=chapitre]{corollaire}{Corollaire}{propstyle}{cor}", "%I used to be cor DO NOT DELETE (from style.py)")
-    #data = data.replace(r"\newtcbtheorem[use counter=coursenv, number within=chapitre]{definition}{Définition}{defstyle}{def}", "%I used to be def DO NOT DELETE (from style.py)")
-    #data = data.replace("{exemple}[1][]{%Added by style.py", "{I_used_to_be_exemple_DO_NOT_DELETE_from_style_py}[1][]{%Added by style.py")
-
     data = data.replace(r"\setboolean{vstyle}{false}", r"\setboolean{vstyle}{true}")
-    
-        #Adding the new style
-    #data = data.replace("{Vproposition}{Proposition}%Don't delete this, don't ask why", "{proposition}{Proposition}%Don't delete this, don't ask why")
-    #data = data.replace("{Vdefinition}{Définition}%Don't delete this, don't ask why", "{definition}{Définition}%Don't delete this, don't ask why")
-    #data = data.replace("{Vtheoreme}{Théorème}%Don't delete this, don't ask why", "{theoreme}{Théorème}%Don't delete this, don't ask why")
-    #data = data.replace("{Vcorollaire}{Corollaire}%Don't delete this, don't ask why", "{corollaire}{Corollaire}%Don't delete this, don't ask why")
-    #data = data.replace("{Vexemple}[1][]{%Don't delete this, don't ask why", "{exemple}[1][]{%Don't delete this, don't ask why")
     
         #Fixing the chapter/section colors
     data = data.replace(r"\color{sectionblue}", r"\color{sectionorange}")
@@ -62,6 +56,17 @@ def SetVStyle():
         file.write(data)
 
 def SetDefault():
+        #Fixing the colors on TDs
+
+    with open("commun/prepacours_TD.cls","r") as TD:
+        data = TD.read()
+        data = data.replace(r"\definecolor{sectionblue}{RGB}{255,145,10}", r"\definecolor{sectionblue}{RGB}{13,114,202}")
+    
+    with open("commun/prepacours_TD.cls","w") as TD:
+        TD.write(data)
+
+
+        #Fixing the main file
     with open("commun/prepacours.cls","r") as file:
         data = file.read()
 

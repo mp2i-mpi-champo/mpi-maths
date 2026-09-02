@@ -32,13 +32,20 @@ args = parser.parse_args()
 
 
 def SetVStyle():
+        #Fixing the colors on TDs
+
+    with open("commun/prepacours_TD.cls","r") as TD:
+        data = TD.read()
+        data = data.replace(r"\definecolor{sectionblue}{RGB}{13,114,202}", r"\definecolor{sectionblue}{RGB}{255,145,10}")
+    
+    with open("commun/prepacours_TD.cls","w") as TD:
+        TD.write(data)
+
     with open("commun/prepacours.cls","r") as file:
         data = file.read()
-
-    # Make the default style obsolete
     data = data.replace(r"\setboolean{vstyle}{false}", r"\setboolean{vstyle}{true}")
     
-    # Fix the chapter/section colors
+        #Fixing the chapter/section colors
     data = data.replace(r"\color{sectionblue}", r"\color{sectionorange}")
     data = data.replace("=sectionblue", "=sectionorange")
     data = data.replace(r"\textcolor{sectionblue}", r"\textcolor{sectionorange}")
@@ -49,6 +56,17 @@ def SetVStyle():
         file.write(data)
 
 def SetDefault():
+        #Fixing the colors on TDs
+
+    with open("commun/prepacours_TD.cls","r") as TD:
+        data = TD.read()
+        data = data.replace(r"\definecolor{sectionblue}{RGB}{255,145,10}", r"\definecolor{sectionblue}{RGB}{13,114,202}")
+    
+    with open("commun/prepacours_TD.cls","w") as TD:
+        TD.write(data)
+
+
+        #Fixing the main file
     with open("commun/prepacours.cls","r") as file:
         data = file.read()
 

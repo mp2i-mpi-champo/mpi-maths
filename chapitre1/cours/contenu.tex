@@ -40,10 +40,10 @@
 \end{theoreme}
 
 \begin{theoreme}{Caractérisation séquentielle de la borne sup}{}
-    Soit $A \subset \R$ non vide majorée et soit $\alpha \in \R$ un majorant de $A$. 
+    Soit $A \subset \R$ non vide majorée et soit $\alpha \in \R$ un majorant de $A$. \\
 
     Alors $\alpha = \sup A$ ssi il existe $(u_n)_{n \in \N}$ suite d'éléments de $A$
-    telle que $\lim_{n \to + \infty} u_n = \alpha$
+    telle que $\lim_{n \to + \infty} u_n = \alpha$.
 \end{theoreme}
 
 
@@ -54,7 +54,7 @@
 
     est non vide et majorée, et $\sup( A + B) = \sup A + \sup B$ \\
 
-    Preuve : 
+    \uline{Preuve :}
 
     $A \neq \emptyset$ et $B \neq \emptyset$ donc $A + B \neq \emptyset$ 
 
@@ -112,7 +112,7 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 
 \subsection{Définition}
 
-\begin{definition}{Définition d'une norme}{}
+\begin{definition}{Norme}{}
     On appelle norme sur $E$ toute application 
     \danger{Bien penser à vérifier que c'est une application à valeurs dans $\R^+$ pour montrer qu'on a une norme !}
 
@@ -129,9 +129,9 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 \end{definition}
 
 \begin{exemple}
-    $(\R, \mid \cdot \mid)$
+    $(\R, |\cdot|)$
 
-    $(\C, \mid \cdot \mid)$
+    $(\C, |\cdot|)$
 \end{exemple}
 
 
@@ -152,8 +152,7 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 }
 
 \begin{proof}
-
-    Soient $u, v \in E$
+    Soient $u, v \in E$,
 
     \begin{align*}
     N(u) &= N(u + v - v) \\
@@ -208,7 +207,7 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 \end{proof}
 
 \begin{definition}{Distance à une partie}{}
-    Soit $(E, N)$ un espace vectoriel normé, avec $A \subset E$ non vide. 
+    Soit $(E, N)$ un espace vectoriel normé, avec $A \subset E$ non vide. \\
 
     Soit $x \in E$, on appelle distance de $x$ à $A$ et on note $d(x, A) = d_A(x)$ le réel positif
     $$d_A(x) = \inf \space \{d(x, a), a \in A\}$$
@@ -243,8 +242,8 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$. 
 
 
-\begin{definition}{Définition vecteur unitaire}{}
-    Soit $u \in E$. On dit que $u$ est unitaire ssi $N(u) = 1$
+\begin{definition}{Vecteur unitaire}{}
+    Soit $u \in E$. On dit que $u$ est unitaire ssi $N(u) = 1$.
 \end{definition}
 
 \begin{exemple}
@@ -254,7 +253,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 
     Si $\K = \R$, $-u$ en est un autre. 
 
-    Si $\K = \C$, tous les $e^{i \theta}u$, où $\theta \in \R$, conviennent. 
+    Si $\K = \C$, tous les $u \times e^{i \theta}$, où $\theta \in \R$, conviennent. 
 \end{exemple}
 
 \begin{definition}{Boules ouvertes, fermées et sphère}{}
@@ -267,10 +266,10 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 \end{definition}
 
 \begin{exemple}
-    Dans $(\C, \mid \cdot \mid)$ les boules fermées sont les disques, et les sphères sont les cercles. 
+    Dans $(\C, |\cdot|)$ les boules fermées sont les disques, et les sphères sont les cercles. 
 
-    Dans $(\R, \mid \cdot \mid)$, les boules fermées sont les segments non 
-    réduits à un singleton.
+    Dans $(\R, |\cdot|)$, les boules fermées sont les segments non 
+    réduits à un singleton. \\
     
     $\forall a \in \R, \forall R > 0$, $B'(w, R) = \left[w - R, w + R\right]$
 
@@ -283,23 +282,23 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 
 \begin{definition}{Partie convexe}{}
     Soit $A \subset E$. 
-    On dit que $A$ est convexe ssi $\forall a, b \in A, \inter{a}{b} \subset A$ où 
+    On dit que $A$ est convexe ssi $\forall a, b \in A, \inter{a}{b} \subset A$ où :
     $$\inter{a}{b} = \{\lambda a + (1 - \lambda)b, \lambda \in [0, 1]\}$$
 \end{definition}
 
 \begin{definition}{Barycentre - HP}{}
     Soient $a_1, \dots, a_n \in E$ et $\lambda_1, \dots, \lambda_n \in \inter{0}{1}$
-    tels que $\sum_{i = 1}^n \lambda_i = 1$
+    tels que $\sum_{i = 1}^n \lambda_i = 1$.
 
     On appelle barycentre du système $\{(a_1, \lambda_1), \dots, (a_n, \lambda_n)\}$
     ou barycentre des points $(a_1, \dots, a_n)$ munis des coefficients $(\lambda_1, \dots, \lambda_n)$
 
     $$\operatorname{Bar}(\left\{(a_1, \lambda_1), \dots, (a_n, \lambda_n)\right\}) = \sum_{i = 1}^n \lambda_i a_i$$
 
-    Ainsi $\inter{a}{b}$ est l'ensemble des barycentres de $a$ et $b$ à coefs positifs. 
+    Ainsi $\inter{a}{b}$ est l'ensemble des barycentres de $a$ et $b$ à coefficients positifs. 
 \end{definition}
 
-\begin{proposition}{Nature d'une intersection de convexes - légèrement HP}{}
+\begin{proposition}{Nature d'une intersection de convexes - LHP}{}
     Soit $I$ un ensemble non vide et $(A_i)_{i \in I}$ des parties convexes de $E$. 
 
     Alors $\displaystyle B = \bigcap_{i \in I} A_i$ est convexe.
@@ -326,16 +325,16 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     Donc $c \in A_i$ donc $c \in B$ donc $B$ convexe. 
 \end{proof}
 
-\begin{definition}{Enveloppe convexe - hors programme}{}
+\begin{definition}{Enveloppe convexe - HP}{}
     Soit $A \subset E$ non vide. 
 
     L'intersection $B$ de tous les convexes de $E$ contenant $A$ est donc un convexe
     de $E$ contenant $A$ appelée enveloppe convexe de $A$.
 \end{definition}
 
-\begin{theoreme}{Enveloppe convexe avec les barycentres - hors programme}{}
+\begin{theoreme}{Enveloppe convexe avec les barycentres - HP}{}
     Avec ces notations, l'enveloppe convexe de $A$ est l'ensemble des barycentres à
-    coefs positifs de points de $A$. 
+    coefficients positifs de points de $A$. 
 \end{theoreme}
 
 \begin{proof}
@@ -385,7 +384,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 
     Or $a_1, a_2 \in B$ et $B$ convexe donc $x \in B$. 
 
-    \uindent{Preuve par récurrence : }
+    \uindent{Preuve par récurrence}
 
     Supposons que l'on a le résultat pour tout $x \in C$ correspondant à une combinaison
     linéaire de $(n - 1)$ éléments de $B$. 
@@ -441,7 +440,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 
 
 \idee{
-    Astuce du topin, utiliser la distance au centre
+    Astuce du taupin, utiliser la distance au centre
     en faisant apparaitre le rayon.
 }
 
@@ -459,7 +458,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
         & \leqslant \lambda R + (1 - \lambda)R = R \\
     \end{align*}
 
-    \quad \underline{boules ouvertes : }
+    \quad \underline{Boule ouverte :}
 
     Soit $\omega  \in E, R > 0, A = B(\omega, R)$. 
 
@@ -487,7 +486,7 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 
 \begin{definition}{Partie bornée}{}
     Soit $A \subset E$. On dit que $A$ est bornée ssi $\exists M > 0, \forall x \in A, N(x) \leqslant M$, 
-    c'est à dire ssi $\exists M > 0, A \subset B'(0, M)$
+    c'est à dire ssi $\exists M > 0, A \subset B'(0, M)$.
 \end{definition}
 
 \begin{theoreme}{Diamètre}{}
@@ -514,9 +513,9 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 \end{proposition}
 
 \idee{
-    Astuce du topin, on passe par $\omega$ et inégalité triangulaire pour majorer. 
+    Astuce du taupin, on passe par $\omega$ et inégalité triangulaire pour majorer. 
     
-    Pour minorer, carac séquentielle, distance entre éléments de deux suites.
+    Pour minorer, caractérisation séquentielle, distance entre éléments de deux suites.
 }
 
 \begin{proof}

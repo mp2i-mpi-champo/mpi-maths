@@ -31,6 +31,7 @@
 \RequirePackage{etoolbox}
 \RequirePackage{pgfplots}
 \RequirePackage{titletoc}
+\RequirePackage{enumitem}
 \RequirePackage{ifthen}
 
 
@@ -115,6 +116,11 @@
   \gdef\@titrechapitre{#2}%
   \markboth{Chapitre #1 -- #2}{}%
 }
+
+\setlist[itemize,1]{label=\footnotesize$\triangleright$}
+\setlist[itemize,2]{label=\footnotesize$\lozenge$}
+\setlist[itemize,3]{label=\footnotesize$\square$}
+\setlist[itemize,4]{label=\textbullet}
 
 % =============================================================================
 % STYLES TCOLORBOX

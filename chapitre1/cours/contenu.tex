@@ -2,11 +2,11 @@
 \subsection{Valeur absolue}
 
 \begin{definition}{Valeur absolue}{}
-    $\forall x \in \R, \mid x \mid = \max\{x, -x\}$
+    $\forall x \in \R, |x| = \max\{x, -x\}$.
 \end{definition}
 
 \begin{proposition}{Propriétés valeur absolue}{}
-    $\forall x, y \in \mathbb R$, on a : 
+    \\$\forall x, y \in \mathbb R$, on a : 
 
     \begin{itemize}
         \item $|x| = 0$ ssi $x = 0$
@@ -27,7 +27,7 @@
 \subsection{Bornes supérieures et inférieures}
 
 \begin{theoreme}{Def borne supérieure}{}
-    Soit $A \subset \R$ non vide et majorée. 
+    \\Soit $A \subset \R$ non vide et majorée.\\
 
     Il existe un unique réel $\alpha$ appelé borne supérieure de $A$ et noté 
     $\alpha = \sup A$ tel que : 
@@ -40,7 +40,7 @@
 \end{theoreme}
 
 \begin{theoreme}{Caractérisation séquentielle de la borne sup}{}
-    Soit $A \subset \R$ non vide majorée et soit $\alpha \in \R$ un majorant de $A$. \\
+    \\Soit $A \subset \R$ non vide majorée et soit $\alpha \in \R$ un majorant de $A$. \\
 
     Alors $\alpha = \sup A$ ssi il existe $(u_n)_{n \in \N}$ suite d'éléments de $A$
     telle que $\lim_{n \to + \infty} u_n = \alpha$.
@@ -103,7 +103,7 @@
 \subsection{Distance}
 
 \begin{definition}{Distance dans $\R$}{}
-    Soient $x, y \in \R$. On définit leur distance par $\text d (x, y) = |y - x|$
+    Soient $x, y \in \R$. On définit leur distance par $\text d (x, y) = |y - x|$.
 \end{definition}
 
 \section{Espace vectoriel normé}
@@ -113,7 +113,7 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 \subsection{Définition}
 
 \begin{definition}{Norme}{}
-    On appelle norme sur $E$ toute application 
+    \\On appelle norme sur $E$ toute application 
     \danger{Bien penser à vérifier que c'est une application à valeurs dans $\R^+$ pour montrer qu'on a une norme !}
 
     \lvspace \avspace $$\fonction{N}{E}{\R^+}{u}{N(u)}$$
@@ -121,7 +121,7 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
     vérifiant : 
     \begin{itemize}
         \item Séparation : $\forall u \in E, N(u) = 0 \Rightarrow u = 0$
-        \item Homogénéité : $\forall u \in E, \forall \lambda \in \K, N(\lambda u) = \mid \lambda \mid N(u)$
+        \item Homogénéité : $\forall u \in E, \forall \lambda \in \K, N(\lambda u) = |\lambda| N(u)$
         \item Inégalité triangulaire : $\forall u, v \in E, N(u + v) \leqslant N(u) + N(v)$
     \end{itemize}
 
@@ -138,9 +138,7 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 \subsection{Seconde inégalité triangulaire}
 
 \begin{proposition}{Seconde inégalité triangulaire}{}
-    Soit $(E, N)$ un espace vectoriel normé. 
-
-    $\forall u, v \in E, $
+    \\Soit $(E, N)$ un espace vectoriel normé. $\forall u, v \in E$,
 
     $$|N(u) - N(v)| \leqslant N(u + v)$$
     $$|N(u) - N(v)| \leqslant N(u - v)$$
@@ -175,14 +173,13 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 \subsection{Distance associée}
 
 \begin{definition}{}{}
-    Soit $(E, N)$ un espace vectoriel normé. 
-
+    \\Soit $(E, N)$ un espace vectoriel normé.
     On définit $d_N$ la distance associée par :
     $$\forall (u, v) \in E^2, d_N(u, v) = N(v - u) = N(u - v)$$
 \end{definition}
 
 \begin{proposition}{Propriétés distance}{}
-    Avec ces hypothèses, on a pour $u, v, w \in E$ et $\lambda \in \K$ :
+    \\Avec ces hypothèses, on a pour $u, v, w \in E$ et $\lambda \in \K$ :
 
     \begin{enumerate}
         \item $d_N(u, v) = 0$ ssi $u = v$
@@ -207,7 +204,7 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 \end{proof}
 
 \begin{definition}{Distance à une partie}{}
-    Soit $(E, N)$ un espace vectoriel normé, avec $A \subset E$ non vide. \\
+    \\Soit $(E, N)$ un espace vectoriel normé, avec $A \subset E$ non vide. \\
 
     Soit $x \in E$, on appelle distance de $x$ à $A$ et on note $d(x, A) = d_A(x)$ le réel positif
     $$d_A(x) = \inf \space \{d(x, a), a \in A\}$$
@@ -257,7 +254,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 \end{exemple}
 
 \begin{definition}{Boules ouvertes, fermées et sphère}{}
-    Soit $\omega \in E$ et $R > 0$. On définit : 
+    \\Soit $\omega \in E$ et $R > 0$. On définit : 
     \begin{itemize}
         \item La boule fermée de centre $\omega$ et de rayon $R$, $B' = \{u \in E, d(\omega, u) \leqslant R\}$
         \item La boule ouverte de centre $\omega$ et de rayon $R$, $B = \{u \in E, d(\omega, u) < R\}$
@@ -281,13 +278,13 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 \subsubsection{Convexité}
 
 \begin{definition}{Partie convexe}{}
-    Soit $A \subset E$. 
+    \\Soit $A \subset E$. 
     On dit que $A$ est convexe ssi $\forall a, b \in A, \inter{a}{b} \subset A$ où :
     $$\inter{a}{b} = \{\lambda a + (1 - \lambda)b, \lambda \in [0, 1]\}$$
 \end{definition}
 
 \begin{definition}{Barycentre - HP}{}
-    Soient $a_1, \dots, a_n \in E$ et $\lambda_1, \dots, \lambda_n \in \inter{0}{1}$
+    \\Soient $a_1, \dots, a_n \in E$ et $\lambda_1, \dots, \lambda_n \in \inter{0}{1}$
     tels que $\sum_{i = 1}^n \lambda_i = 1$.
 
     On appelle barycentre du système $\{(a_1, \lambda_1), \dots, (a_n, \lambda_n)\}$
@@ -326,7 +323,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 \end{proof}
 
 \begin{definition}{Enveloppe convexe - HP}{}
-    Soit $A \subset E$ non vide. 
+    \\Soit $A \subset E$ non vide. 
 
     L'intersection $B$ de tous les convexes de $E$ contenant $A$ est donc un convexe
     de $E$ contenant $A$ appelée enveloppe convexe de $A$.
@@ -423,9 +420,9 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     $$ \sum_{i = 1}^{k } \frac{m_i}{\alpha - z_i} = 0$$
     donc $\displaystyle \sum_{i = 1}^{k } \frac{m_i}{\bar \alpha - \bar z_i} = 0$
     
-    Donc $\displaystyle \sum_{i = 1}^{k }\frac{m_i }{\mid \alpha - z_i \mid ^2} (\alpha - z_i) = 0$
+    Donc $\displaystyle \sum_{i = 1}^{k }\frac{m_i }{|\alpha - z_i|^2} (\alpha - z_i) = 0$
     
-    En posant $\beta = \frac{m_i}{\mid \alpha - z_i \mid ^2}$
+    En posant $\beta = \frac{m_i}{|\alpha - z_i|^2}$
     
     Donc $\displaystyle \sum_{i = 1}^{n }\beta_i \alpha = \sum_{i = 1}^{n } \beta_i z_i$
 
@@ -454,7 +451,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     \begin{align*}
         N(c - \omega) & = N(\lambda a + (1 - \lambda)b - \lambda \omega - (1 - \lambda) \omega) \\
         & = N(\lambda(a - \omega) + (1 - \lambda)(b - \omega)) \\
-        & \leqslant \, \mid \lambda \mid N(a - \omega) + \mid 1 - \lambda \mid N(b - \omega) \\
+        & \leqslant \, |\lambda| N(a - \omega) + |1 - \lambda| N(b - \omega) \\
         & \leqslant \lambda R + (1 - \lambda)R = R \\
     \end{align*}
 
@@ -474,9 +471,9 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     \begin{align*}
         d(\omega, c) & = N(\lambda a + (1 - \lambda) b - \omega) \\
         & = N(\lambda a + (1 - \lambda) b - (\lambda + 1- \lambda) \omega) \\
-        & = N(\lambda(a - \omega) + (1 - \lambda) (b - \omega) \\
-        & \leqslant \, \mid \lambda \mid N(a - \omega) + (1 - \lambda)N(b - \omega)) \\
-        & < (\mid \lambda \mid + \mid 1 - \lambda \mid) R = R
+        & = N(\lambda(a - \omega) + (1 - \lambda) (b - \omega)) \\
+        & \leqslant \, |\lambda| N(a - \omega) + (1 - \lambda)N(b - \omega) \\
+        & < (\lambda + 1 - \lambda) R = R
     \end{align*}
 \end{proof}
 
@@ -490,9 +487,8 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 \end{definition}
 
 \begin{theoreme}{Diamètre}{}
-    Soit $A \subset E$ non vide et bornée. 
-
-    Alors $B = \{d(x, y), (x, y) \in A^2\}$ est une partie de $\R$ non vide et majorée.
+    \\Soit $A \subset E$ non vide et bornée. 
+    Alors $B = \{d(x, y), (x, y) \in A^2\}$ est une partie de $\R$ non vide et majorée.\\
 
     En effet, si $(x, y) \in A^2$, 
 
@@ -515,7 +511,7 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 \idee{
     Astuce du taupin, on passe par $\omega$ et inégalité triangulaire pour majorer. 
     
-    Pour minorer, caractérisation séquentielle, distance entre éléments de deux suites.
+    Pour minorer, caractérisation séquentielle et distance entre éléments de deux suites.
 }
 
 \begin{proof}
@@ -572,10 +568,10 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 \subsubsection{Application bornées}
 
 \begin{definition}{Application bornée}{}
-    Soit $X$ un espace vectoriel normé non vide et $f \in \mathscr F(X, E)$. 
+    \\Soit $X$ un espace vectoriel normé non vide et $f \in \mathscr F(X, E)$. 
     On dit que $f$ est bornée ssi
      $$\exists M > 0, \forall x \in X, N(f(x)) \leqslant M$$
-    c'est à dire l'image directe $f(X)$ est bornée dans $E$. 
+    c'est à dire si l'image directe $f(X)$ est bornée dans $E$. 
 \end{definition}
 
 \begin{exemple}
@@ -584,23 +580,22 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 \end{exemple}
 
 \begin{proposition}{Nature ensemble des fonctions bornées}{}
-    Soit $X \neq \emptyset, (E, N)$ un espace vectoriel normé. 
-
+    \\Soit $X \neq \emptyset, (E, N)$ un espace vectoriel normé. 
     L'ensemble des fonctions bornées de $X$ dans $E$ est un $\K$-espace vectoriel noté
-    $\mathscr B(X, E)$.
+    $\mathscr B(X, E)$. \\
 
     Si $X = \N$, l'ensemble des suites bornées sur $E$ est noté $\mathscr B(\N, E) = \ell^\infty (E)$
 \end{proposition}
 
 \idee{
-    Montrer que c'est un sous espace vectoriel. 
+    Montrer que c'est un sous-espace vectoriel. 
 }
 
 \begin{proof}
     $E$ étant un $\K$-espace vectoriel, on sait que $\mathscr F(X, E)$ est un 
     $\K$-espace vectoriel. 
 
-    Montrons que $\mathscr B(X, E)$ en est un sous-espace vectoriel. 
+    Montrons que $\mathscr B(X, E)$ en est un sous-espace vectoriel :
     \begin{itemize}
         \item $\mathscr B(X, E) \subset \mathscr F(X, E)$
         \item La fonction constante nulle de $X$ dans $E$ est bornée donc $\mathscr B(X, E) \neq \emptyset$
@@ -612,13 +607,13 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
             \begin{array}{rclr}
                 N(\alpha f + \beta g ) & = & N(\alpha f(x) + \beta g(x)) & \text{ par def} \\
                 \space & \leqslant & N(\alpha f(x)) + N(\beta g(x)) & \text{inégalité triangulaire} \\
-                \space & \leqslant & \mid \alpha \mid N(f(x)) + \mid \beta \mid N(g(x)) \\
-                \space & \leqslant & \mid \alpha \mid M_1 + \mid \beta \mid M_2\\
+                \space & \leqslant & |\alpha| N(f(x)) + |\beta| N(g(x)) \\
+                \space & \leqslant & |\alpha| M_1 + |\beta| M_2\\
             \end{array}
             \]
     \end{itemize}
 
-    Donc $\alpha f + \beta g$ bornée. 
+    Donc $\alpha f + \beta g$ est bornée. 
 \end{proof}
 
 \section{Equivalence des normes}

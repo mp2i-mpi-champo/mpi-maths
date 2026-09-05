@@ -1,11 +1,13 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{../commun/prepacours}[2025/06/15 Classe LaTeX unifiée Cours/Exos Prépa]
+\ProvidesClass{../commun/prepacours}[2025/06/15 Classe LaTeX unifiée Cours/Exos Prépa - Liens Corrigés]
 
 \LoadClass[a4paper,11pt]{article}
 
 % =============================================================================
 % PACKAGES
 % =============================================================================
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
 \RequirePackage[french]{babel}
 \RequirePackage{amsmath,amsthm,amssymb}
 \RequirePackage{mathrsfs}
@@ -17,6 +19,7 @@
 \RequirePackage{mathpazo}
 \RequirePackage{hyperref}
 \RequirePackage{tikz}
+\RequirePackage{lmodern}
 \RequirePackage{fontspec}
 \RequirePackage{stmaryrd}
 \RequirePackage{fontawesome5}

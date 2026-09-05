@@ -170,6 +170,8 @@ if args.chapitres == "integrale" :
         case "chapitre" :
             compile_file(str(chapters_path) + "/integrale/integrale_mpi.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
             compile_file(str(chapters_path) + "/integrale/integrale_mpi.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
+            compile_file(str(chapters_path) + "/integrale/integrale_mpi.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
+            compile_file(str(chapters_path) + "/integrale/integrale_mpi.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
         case "cours" :
             compile_file(str(chapters_path) + "/integrale/integrale_cours.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
             compile_file(str(chapters_path) + "/integrale/integrale_cours.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
@@ -190,7 +192,7 @@ else :
             compile_chapters(target_dirs, c_chapters_dir)
             compile_chapters(target_dirs, c_chapters_dir)
         
-            clean_dir(c_chapters_dir)
+           # clean_dir(c_chapters_dir)
         case "cours" :
             c_cours_dir = Path(C_COURS_DIR).resolve()
             c_cours_dir.mkdir(exist_ok=True)

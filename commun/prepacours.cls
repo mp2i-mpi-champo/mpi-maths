@@ -65,6 +65,7 @@
 \setlength{\parskip}{0.3em}
 
 \newcommand{\passerenmodecours}{%
+  \clearpage
   \newgeometry{
     top=3cm,
     bottom=2cm,
@@ -74,10 +75,11 @@
     marginparsep=0.5cm,
     headheight=30pt
   }%
-  \fancyhfoffset[R]{3cm}%
+  \fancyhfoffset[R]{\dimexpr\marginparsep+\marginparwidth\relax}%
 }
 
 \newcommand{\passerenmodeexos}{%
+  \clearpage
   \newgeometry{
     top=3cm,
     bottom=2.5cm,
@@ -85,7 +87,7 @@
     right=2cm,
     headheight=30pt
   }%
-  \fancyhfoffset[R]{0cm}%
+  \fancyhfoffset[R]{0pt}%
 }
 
 \ifprepa@td
@@ -156,6 +158,7 @@
       sharp corners,
       boxrule=0.4pt,
       colframe=black!85,
+      width=\dimexpr\linewidth-1.8pt\relax,
       drop shadow={vorange!40, xshift=1.8pt, yshift=-1.8pt},
       left=8pt,
       right=8pt,
@@ -173,6 +176,7 @@
       enhanced,
       breakable,
       sharp corners,
+      width=\dimexpr\linewidth-1.8pt\relax,
       boxrule=0.4pt,
       colframe=black!18,
       colback=white,
@@ -254,11 +258,11 @@
   colback=white,
   colframe=#2,
   boxrule=0.6pt,
-  width=\marginparwidth,
-  left=5pt,
-  right=5pt,
-  top=6pt,
-  bottom=6pt,
+  width=\dimexpr\marginparwidth-1.8pt\relax,
+  left=4pt,
+  right=4pt,
+  top=5pt,
+  bottom=5pt,
   drop shadow={#2!40, xshift=1.8pt, yshift=-1.8pt},
   title={#3},
   fonttitle=\small\bfseries\color{#2},
@@ -422,11 +426,13 @@
   \fancyhf{}
   \setlength{\headheight}{70pt}
   \ifprepa@td%
-  \fancyhead[L]{\parbox[c][70pt][c]{12cm}{\fontsize{24}{28}\selectfont\bfseries\raggedright TD~:~\@titrechapitre}}
+    \fancyhfoffset[R]{0pt}
+    \fancyhead[L]{\parbox[b]{\dimexpr\textwidth-3.5cm\relax}{\raggedright\fontsize{24}{28}\selectfont\bfseries\color{vorange!90!black}TD~:~\@titrechapitre}}
   \else%
-  \fancyhead[L]{\parbox[c][70pt][c]{12cm}{\fontsize{24}{28}\selectfont\bfseries\raggedright\@titrechapitre}}
+    \fancyhfoffset[R]{\dimexpr\marginparsep+\marginparwidth\relax}
+    \fancyhead[L]{\parbox[b]{\dimexpr\textwidth+\marginparsep+\marginparwidth-3.5cm\relax}{\raggedright\fontsize{24}{28}\selectfont\bfseries\color{vorange!90!black}\@titrechapitre}}
   \fi%
-    \fancyhead[R]{\parbox[c][70pt][c]{3cm}{\raggedleft\fontsize{50}{40}\selectfont\bfseries\color{vorange}\@numchapitre}}
+  \fancyhead[R]{\parbox[b]{3cm}{\raggedleft\fontsize{50}{40}\selectfont\bfseries\color{vorange}\@numchapitre}}
   \renewcommand{\headrulewidth}{0.8pt}
   \renewcommand{\footrulewidth}{0pt}
 }
@@ -448,7 +454,6 @@
   \passerenmodecours
   \thispagestyle{premierepagechapitre}
 }
-
 
 \newcommand{\restaurergeometrie}{%
   \clearpage
@@ -533,37 +538,29 @@
 % (sans page de garde ni table des matières propre au chapitre)
 \newcommand{\chapitreintegral}[2]{%
   \clearpage
-  \passerenmodecours % S'assure d'être en géométrie "Cours" (avec marge)
   \setchapitre{#1}%
   \gdef\@numchapitre{#1}%
   \gdef\@titrechapitre{#2}%
   \markboth{Chapitre #1 -- #2}{}%
-  % Marquer le début du contenu pour titletoc
-  \startcontents[chapters]%
-  % Page de table des matières sans en-tête ni pied de page
-  \newgeometry{
-    top=2cm,
-    bottom=3cm,
-    left=3cm,
-    right=3cm
-  }
+  \addcontentsline{toc}{chapitre}{\protect\numberline{Chapitre #1}#2}%
+  % Page de sommaire local en pleine largeur
+  \newgeometry{top=3cm, bottom=3cm, left=3cm, right=3cm}%
   \thispagestyle{empty}%
-  \vfill
-  \begin{center}
-    {\Huge\bfseries Chapitre {#1} : #2\par}
-    \vspace{0.5cm}
-    {\Large\bfseries Table des matières\par}
-    \vspace{0.5cm}
-    \begin{minipage}{0.8\textwidth}
-      \printcontents[chapters]{}{1}{\setcounter{tocdepth}{2}}
-    \end{minipage}
-  \end{center}
-  \vfill
-  \restaurergeometrie
+  \startcontents[chapters]%
+  \vspace*{1.5cm}%
+  \begin{center}%
+    {\Huge\bfseries\color{vorange!90!black} Chapitre {#1} : #2\par}%
+    \vspace{1cm}%
+    {\Large\bfseries\color{black!80} Table des matières\par}%
+    \vspace{0.8cm}%
+    \begin{minipage}{0.85\textwidth}%
+      \printcontents[chapters]{}{1}{\setcounter{tocdepth}{2}}%
+    \end{minipage}%
+  \end{center}%
+  \vfill%
   \clearpage
-  \addcontentsline{toc}{chapitre}{\protect\numberline{Chapitre #1} #2}%
+  \passerenmodecours
   \thispagestyle{premierepagechapitre}%
-  
 }
 
 \endinput

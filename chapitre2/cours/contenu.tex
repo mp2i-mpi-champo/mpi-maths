@@ -63,7 +63,7 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 \subsubsection{Caractérisation dans \texorpdfstring{$\C$}{C}}
 
 \begin{proposition}{}{}
-    Soit $(u_n)_{n \in \N} \in \C^\N$ et $\ell \in \C$. Alors : 
+    Soit $(u_n)_{n \in \N} \in \C^{\N}$ et $\ell \in \C$. Alors : 
 
     $$u_n \limit{n}{+\infty} \ell \iff \re(u_n) \limit{n}{+\infty} \re(\ell) \text{ et } \im(u_n) \limit{n}{+\infty} \im(\ell)$$
 \end{proposition}
@@ -86,7 +86,7 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 \subsubsection{Théorème de Cesaro}
 
 \begin{theoreme}{}{}
-    Soit $(u_n)_{n \in \N} \in \K^\N$ et $\ell \in \K$, tel que $u_n \limit{n}{+\infty} \ell$.
+    Soit $(u_n)_{n \in \N} \in \K^{\N}$ et $\ell \in \K$, tel que $u_n \limit{n}{+\infty} \ell$.
     
     Si on pose $\displaystyle v_n = \frac 1 n \sum_{k=1}^n u_k$\,, alors :
     $$v_n \limit{n}{+\infty} \ell$$
@@ -129,7 +129,7 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 \subsection{Théorèmes liés à l'ordre dans \texorpdfstring{$\R$}{R} }
 
 \begin{theoreme}{}{}
-    Soit $(u_n)_{n \in \N} \in \K^\N$, $\ell \in \K$, et $(\alpha_n)_{n \in \N} \in \R^\N$ 
+    Soit $(u_n)_{n \in \N} \in \K^{\N}$, $\ell \in \K$, et $(\alpha_n)_{n \in \N} \in \R^{\N}$ 
     
     Si $\left\{ \begin{array}{lcl}
         \exists n_0 \in \N, & \forall n \geqslant n_0, & \mid u_n - \ell \mid \leqslant \alpha_n \\
@@ -153,7 +153,7 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 \subsubsection{Théorème des gendarmes (des suites encadrées)}
 
 \begin{theoreme}{Théorème des gendarmes}{}
-    Soient $(u_n)$, $(v_n)$ et $(w_n) \in \R^\N$ et $\ell \in \R$. 
+    Soient $(u_n)$, $(v_n)$ et $(w_n) \in \R^{\N}$ et $\ell \in \R$. 
     
     On suppose que : 
     $$u_n \limit{n}{+\infty} \ell$$
@@ -168,7 +168,7 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 \subsubsection{Théorème }
 
 \begin{theorement}{Signe suite à partir d'un rang avec la limite}{}
-    Soit $(u_n)_{n \in \N}, \, (v_n)_{n \in \N} \in \R^\N$ convergentes de limites 
+    Soit $(u_n)_{n \in \N}, \, (v_n)_{n \in \N} \in \R^{\N}$ convergentes de limites 
     respectives $\ell_1$ et $\ell_2$.
 
     Si $\ell_1 < \ell_2$, alors $\exists n_0 \in \N, \forall n \geqslant n_0, u_n < v_n$
@@ -252,7 +252,7 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 \begin{propositionnt}{Nature ensemble des suites récurrentes linéaires d'ordre 2}{}
     Soient $a, b \in \C$.  
 
-    $E = \{(u_n)_{n \in \N} \in \C^\N, \forall n \in \N, \, u_{n + 2} = a u_{n + 1} + bu_n\}$ est 
+    $E = \{(u_n)_{n \in \N} \in \C^{\N}, \forall n \in \N, \, u_{n + 2} = a u_{n + 1} + bu_n\}$ est 
     un $\C$-espace vectoriel de dimension 2. 
 \end{propositionnt}
 
@@ -430,7 +430,7 @@ Si $(u_n)$ converge vers $\ell$ et si $f$ continue alors $f(\ell) = \ell$. $\ell
 \subsubsection{Suites qui divergent vers $+\infty$}
 
 \begin{definitionnt}{Suite divergente vers $+\infty$}{}
-    Soit $(u_n)_{n \in \N} \in \R^\N$. On dit que $(u_n)$ diverge vers $+\infty$ ssi : 
+    Soit $(u_n)_{n \in \N} \in \R^{\N}$. On dit que $(u_n)$ diverge vers $+\infty$ ssi : 
 
     $$\forall A \in \R, \exists n_0 \in \N, \forall n \geqslant n_0, \, u_n \geqslant A$$
     
@@ -440,14 +440,14 @@ Si $(u_n)$ converge vers $\ell$ et si $f$ continue alors $f(\ell) = \ell$. $\ell
 \subsubsection{Théorèmes d'opérations}
 
 \begin{theorement}{somme limites }{}
-    Soient $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N} \in \R^\N$ telles que 
+    Soient $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N} \in \R^{\N}$ telles que 
     $u_n \limit{n}{+\infty} +\infty$ et $v_n$ minorée. Alors 
 
     $$ (u_n + v_n) \limit{n}{+\infty} +\infty $$
 \end{theorement}
 
 \begin{theorement}{produit limites}{}
-    Soient $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N} \in \R^\N$ telles que 
+    Soient $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N} \in \R^{\N}$ telles que
     $u_n \limit{n}{+\infty} +\infty$ et $\exists m > 0, \forall n \in \N, \, v_n \geqslant m$. Alors 
 
     $$ (u_n v_n) \limit{n}{+\infty} +\infty $$
@@ -477,7 +477,7 @@ $(E, N)$ est un espace vectoriel normé sur $\K$.
 \subsubsection{Définitions}
 
 \begin{definition}{}{}
-    Soit $(u_n)_{n \in \N} \in E^\N$ et $\ell \in E$. 
+    Soit $(u_n)_{n \in \N} \in E^{\N}$ et $\ell \in E$. 
 
     Alors les assertions suivantes sont équivalentes (LASSE) : 
 
@@ -527,7 +527,7 @@ $(E, N)$ est un espace vectoriel normé sur $\K$.
 \end{proof}
 
 \begin{definitionnt}{def convergence}{}
-    Soit $(u_n)_{n \in \N} \in E^\N$. On dit que $(u_n)$ est convergente ssi 
+    Soit $(u_n)_{n \in \N} \in E^{\N}$. On dit que $(u_n)$ est convergente ssi 
     $\exists \ell \in E, \, u_n \limit{n}{+\infty} \ell$.
 
     Dans le cas contraire, on dit que $(u_n)$ diverge.
@@ -560,7 +560,7 @@ $(E, N)$ est un espace vectoriel normé sur $\K$.
 \begin{theorement}{}{}
     Soient $N_1$ et $N_2$ deux normes sur $E$. 
 
-    Si $N_1$ et $N_2$ sont équivalentes, alors pour toute suite $(u_n)_{n \in \N} \in E^\N$ 
+    Si $N_1$ et $N_2$ sont équivalentes, alors pour toute suite $(u_n)_{n \in \N} \in E^{\N}$ 
     et tout $\ell \in E$, on a :
 
     $$ u_n \limit{n}{+\infty} \ell \text{ pour } N_1 \iff u_n \limit{n}{+\infty} \ell \text{ pour } N_2 $$
@@ -573,7 +573,7 @@ $(E, N)$ est un espace vectoriel normé sur $\K$.
 \begin{proof}
     Supposons $N_1$ et $N_2$ équivalentes.
 
-    Soit $(u_n)_{n \in \N} \in E^\N$ et $\ell \in E$.
+    Soit $(u_n)_{n \in \N} \in E^{\N}$ et $\ell \in E$.
 
     Supposons $u_n \limit{n}{+\infty} \ell$ pour $N_1$. 
 
@@ -690,7 +690,7 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtien coordon
 \subsection{Opérations algébriques}
 
 \begin{proposition}{Somme et produit par un scalaire}{}
-    Soient $(u_n)_{n \in \N}$, $(v_n)_{n \in \N}, (\lambda_n) _{n \in \N} \in E^\N$ 
+    Soient $(u_n)_{n \in \N}$, $(v_n)_{n \in \N}, (\lambda_n) _{n \in \N} \in E^{\N}$ 
     et $\alpha, \beta \in \K$ avec $\ell_1, \ell_2 \in E$. 
 
     \begin{enumerate}
@@ -780,7 +780,7 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtien coordon
 
 
 \begin{definition}{Suite extraite}{}
-    Soit $(u_n)_{n \in \N} \in E^\N$. On appelle suite extraite de $(u_n)$ toute suite 
+    Soit $(u_n)_{n \in \N} \in E^{\N}$. On appelle suite extraite de $(u_n)$ toute suite 
     $(v_n)_{n \in \N}$ telle qu'il existe un extracteur $\varphi$ vérifiant 
     $\forall n \in \N, \, v_n = u_{\varphi(n)}$.
 \end{definition}
@@ -789,7 +789,7 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtien coordon
 \subsubsection{Valeur d'adhérence}
 
 \begin{theorement}{}{}
-    Soit $(u_n)_{n \in \N} \in E^\N$ et $a \in E$.
+    Soit $(u_n)_{n \in \N} \in E^{\N}$ et $a \in E$.
 
     Alors les assertions suivantes sont équivalentes :
 
@@ -856,7 +856,7 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtien coordon
 \end{proof}
 
 \begin{proposition}{}{}
-    Soit $(u_n)_{n \in \N} \in E^\N$. 
+    Soit $(u_n)_{n \in \N} \in E^{\N}$. 
 
     \begin{enumerate}
         \item Si $(u_n)$ converge vers $\ell$, alors $\ell$ est son unique valeur d'adhérence. 
@@ -897,7 +897,7 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtien coordon
 \subsubsection{Cas particuliers}
 
 \begin{proposition}{}{}
-    Soit $(u_n)_{n \in \N} \in E^\N$ et $\ell \in E$.
+    Soit $(u_n)_{n \in \N} \in E^{\N}$ et $\ell \in E$.
 
     Si $u_{2n} \limit{n}{+\infty} \ell$ et $u_{2n + 1} \limit{n}{+\infty} \ell$, alors
     $u_n \limit{n}{+\infty} \ell$.
@@ -927,7 +927,7 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtien coordon
 \begin{proof}
     \uline{Dans $E = \R$ :}
 
-    Soit $(u_n)_{n \N} \in \R^\N$ bornée, donc $\forall n \in \N, \, a \leqslant u_n \leqslant b$. 
+    Soit $(u_n)_{n \N} \in \R^{\N}$ bornée, donc $\forall n \in \N, \, a \leqslant u_n \leqslant b$. 
 
     Posons pour $n \in \N, \, x_n = \sup \underbrace{\{u_k, \, k \geqslant n\}}_{E_n}$.
 
@@ -962,7 +962,7 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtien coordon
 
     \qquad \svspace \uline{Dans $E = \C$ :}
 
-    Soit $(z_n)_{n \in \N} \in \C^\N$ bornée. 
+    Soit $(z_n)_{n \in \N} \in \C^{\N}$ bornée. 
 
     Posons $\forall n \in \N$ $z_n = x_n + i y_n$ avec $x_n, y_n \in \R$.
 
@@ -1057,7 +1057,7 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtien coordon
 \subsection{Complément hors programme }
 
 \begin{definition}{Suite de Cauchy}{}
-    Soit $(u_n)_{n \in \N} \in E^\N$. On dit que cette suite est de Cauchy ssi 
+    Soit $(u_n)_{n \in \N} \in E^{\N}$. On dit que cette suite est de Cauchy ssi 
     $\forall \varepsilon > 0, \, \exists n_0 \in \N, \, \forall n, p \in \N, \, n, p \geqslant n_0 \Rightarrow N(u_n - u_p) \leqslant \varepsilon$.
 \end{definition}
 

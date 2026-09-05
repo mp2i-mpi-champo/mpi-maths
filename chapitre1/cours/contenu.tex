@@ -1,4 +1,4 @@
-\section{Cas de \texorpdfstring{$\R$}{R}}
+\section{Cas de $\R$}
 \subsection{Valeur absolue}
 
 \begin{definition}{Valeur absolue}{}
@@ -12,7 +12,7 @@
         \item $|x| = 0$ ssi $x = 0$
         \item $|xy| = |x| \times |y|$
         \item $|x + y| \leqslant |x| + |y|$
-        \item $ \mid |x| - |y| \mid \leqslant |x + y|$
+        \item $ | |x| - |y| | \leqslant |x + y|$
     \end{itemize}
 \end{proposition}
 
@@ -114,7 +114,7 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 
 \begin{definition}{Norme}{}
     \\On appelle norme sur $E$ toute application :
-    \danger{Bien penser à vérifier que c'est une application à valeurs dans $\R^+$ pour montrer qu'on a une norme !}
+    \notedanger{Bien penser à vérifier que c'est une application à valeurs dans $\R^+$ pour montrer qu'on a une norme !}
 
     \lvspace \avspace $$\fonction{N}{E}{\R^+}{u}{N(u)}$$
 
@@ -503,13 +503,14 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
     Toute boule est bornée de diamètre égal au double de son rayon.
 \end{proposition}
 
-\idee{
-    Astuce du taupin, on passe par $\omega$ et inégalité triangulaire pour majorer. 
-    
-    Pour minorer, caractérisation séquentielle et distance entre éléments de deux suites.
-}
 
 \begin{proof}
+    \idee{
+        Astuce du taupin, on passe par $\omega$ et inégalité triangulaire pour majorer. 
+    
+        Pour minorer, caractérisation séquentielle de la borne sup et distance entre éléments de deux suites.
+    }
+    
     Soit $\omega \in E, R>0$ et $A = B(\omega, R)$ ou $A = B'(\omega, R)$. 
 
     Soit $x, y \in A$. 
@@ -582,14 +583,12 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
     Si $X = \N$, l'ensemble des suites bornées sur $E$ est noté $\mathscr B(\N, E) = \ell^\infty (E)$
 \end{proposition}
 
-\idee{
-    Montrer que c'est un sous-espace vectoriel. 
-}
 
 \begin{proof}
     $E$ étant un $\K$-espace vectoriel, on sait que $\mathscr F(X, E)$ est un 
     $\K$-espace vectoriel. 
 
+    
     Montrons que $\mathscr B(X, E)$ en est un sous-espace vectoriel :
     \begin{itemize}
         \item $\mathscr B(X, E) \subset \mathscr F(X, E)$
@@ -600,8 +599,8 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 
             \[
             \begin{array}{rclr}
-                N(\alpha f + \beta g ) & = & N(\alpha f(x) + \beta g(x)) & \text{ par def} \\
-                \space & \leqslant & N(\alpha f(x)) + N(\beta g(x)) & \text{inégalité triangulaire} \\
+                N(\alpha f + \beta g ) & = & N(\alpha f(x) + \beta g(x)) & \text{(par def)} \\
+                \space & \leqslant & N(\alpha f(x)) + N(\beta g(x)) & \text{(inégalité triangulaire)} \\
                 \space & \leqslant & |\alpha| N(f(x)) + |\beta| N(g(x)) \\
                 \space & \leqslant & |\alpha| M_1 + |\beta| M_2\\
             \end{array}
@@ -678,8 +677,9 @@ Soit $E$ un $\K$-espace vectoriel.
 \begin{proposition}{Montrer que deux normes ne sont pas équivalentes}{}
     Soient $N_1, N_2$ deux normes sur $E$ telles qu'il existe $(u_n)_{n \in \N}$ suite
     de vecteurs non nuls de $E$ vérifiant 
-    $$ \frac{N_1(u_n )}{N_2(u_n )} \limit{n}{+ \infty} 0$$ 
-    ou $$\frac{N_2(u_n )}{N_1(u_n )} \limit{n}{+ \infty} 0$$
+    $$ \frac{N_1(u_n )}{N_2(u_n )} \limit{n}{+ \infty} 0 \quad ou \quad \frac{N_1(u_n )}{N_2(u_n )} \limit{n}{+ \infty} + \infty$$ 
+    ou
+    $$ \frac{N_2(u_n )}{N_1(u_n )} \limit{n}{+ \infty} 0 \quad ou \quad \frac{N_2(u_n )}{N_1(u_n )} \limit{n}{+ \infty} + \infty$$ 
 
     Alors $N_1$ et $N_2$ ne sont pas équivalentes.
 \end{proposition}
@@ -1105,7 +1105,7 @@ Soit $E$ un $\R$-espace vectoriel muni d'un produit scalaire $< \cdot , \cdot >$
 }
 
 \begin{proof}
-    $E \subset \R^\N$
+    $E \subset \R^{\N}$
 
     $0 \in E$
 
@@ -1274,7 +1274,7 @@ Soit $E = \mathscr C(\inter{a}{b}, \R)$
     \svspace $\ds \forall n \in \N, \mid u_n v_n \mid \leqslant \frac 1 2 (\mid u_n \mid^2 + \mid v_n \mid^2)$ est le terme
     général d'une série convergente. 
 
-    Et donc $\ell^2(\K)$ sev de $\K^\N$ car $\mid u_n + v_n \mid^2 \leqslant |\mid u_n \mid + 2 \mid u_n v_n \mid + \mid u_n \mid^2$
+    Et donc $\ell^2(\K)$ sev de $\K^{\N}$ car $\mid u_n + v_n \mid^2 \leqslant |\mid u_n \mid + 2 \mid u_n v_n \mid + \mid u_n \mid^2$
 
     \uindent{Sur $\mathscr C(\inter{a}{b}, \K)$}
 

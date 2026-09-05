@@ -25,65 +25,8 @@ parser.add_argument("-ch", "--chapitres", default="all", help="Chapters to compi
 parser.add_argument("-m", "--mode", default="chapitre", help="What to compile, default : chapitre, options : chapitre, cours, TD." )
 parser.add_argument("-he", "--halt_on_error", action='store_true', help="Wether the compilation stops or not when a file gets an error while compiling.")
 parser.add_argument("-a", "--all", action='store_true', help='Whether to compile all files or not.')
-parser.add_argument("-v", "--vstyle", action='store_true', help='Compiles with V Style then restores the default style.')
 
 args = parser.parse_args()
-
-
-
-def SetVStyle():
-        #Fixing the colors on TDs
-
-    with open("commun/prepacours_TD.cls","r") as TD:
-        data = TD.read()
-        data = data.replace(r"\definecolor{sectionblue}{RGB}{13,114,202}", r"\definecolor{sectionblue}{RGB}{255,145,10}")
-    
-    with open("commun/prepacours_TD.cls","w") as TD:
-        TD.write(data)
-
-    with open("commun/prepacours.cls","r") as file:
-        data = file.read()
-    data = data.replace(r"\setboolean{vstyle}{false}", r"\setboolean{vstyle}{true}")
-    
-        #Fixing the chapter/section colors
-    data = data.replace(r"\color{sectionblue}", r"\color{sectionorange}")
-    data = data.replace("=sectionblue", "=sectionorange")
-    data = data.replace(r"\textcolor{sectionblue}", r"\textcolor{sectionorange}")
-    data = data.replace(r"\definecolor{bluebox}{RGB}{36,113,200}%Actual bluebox", r"\definecolor{bluebox}{RGB}{255, 145, 10}%Fake bluebox, actually orange :D")
-
-    # Write changes
-    with open("commun/prepacours.cls","w") as file:
-        file.write(data)
-
-def SetDefault():
-        #Fixing the colors on TDs
-
-    with open("commun/prepacours_TD.cls","r") as TD:
-        data = TD.read()
-        data = data.replace(r"\definecolor{sectionblue}{RGB}{255,145,10}", r"\definecolor{sectionblue}{RGB}{13,114,202}")
-    
-    with open("commun/prepacours_TD.cls","w") as TD:
-        TD.write(data)
-
-
-        #Fixing the main file
-    with open("commun/prepacours.cls","r") as file:
-        data = file.read()
-
-
-    # (Re)Add the Default style
-    data = data.replace(r"\setboolean{vstyle}{true}", r"\setboolean{vstyle}{false}")
-
-    # Fix the chapter/section colors
-    data = data.replace(r"\color{sectionorange}", r"\color{sectionblue}")
-    data = data.replace("=sectionorange", "=sectionblue")
-    data = data.replace(r"\textcolor{sectionorange}", r"\textcolor{sectionblue}")
-    data = data.replace(r"\definecolor{bluebox}{RGB}{255, 145, 10}%Fake bluebox, actually orange :D", r"\definecolor{bluebox}{RGB}{36,113,200}%Actual bluebox")
-
-    #Write
-    with open("commun/prepacours.cls","w") as file:
-        file.write(data)
-
 
 def clean_dir (dir) :
     for file in dir.iterdir():
@@ -111,11 +54,6 @@ def compile_file (file, output_dir, cwd_path) :
         if args.halt_on_error:
             exit(1)
     return
-
-if args.vstyle:
-    SetVStyle()
-
-print("vstyle =", args.vstyle)
 
 chapters_path = Path(CHAPTERS_LOCATION).resolve()
 
@@ -186,10 +124,7 @@ if args.all :
     clean_dir(c_chapters_dir)
     clean_dir(c_cours_dir)
     clean_dir(c_TDs_dir)
-    if args.vstyle:
-        SetDefault()
-        print("V Style used for compilation. It will not work for chapter 0 because it uses its own prepacours.cls\n Some rare boxes may also have the default style because of how they were written, and I don't want to spend time fixing them when I could be playing MORROWIND instead\n")
-
+    
     print("Compilation finished, pdf are in the build subdir.")
     exit(0)
 
@@ -245,7 +180,7 @@ if args.chapitres == "integrale" :
             print("ERROR: invalid input for mode field.")
             exit(1)
 
-    clean_dir(c_integrale_dir)
+    #clean_dir(c_integrale_dir)
 else :
     match args.mode :
         case "chapitre" :
@@ -275,11 +210,5 @@ else :
         case _ :
             print("ERROR: invalid input for mode field.")
             exit(1)
-        
-if args.vstyle:
-    SetDefault()
-    print("V Style used for compilation. It will not work for chapter 0 because it uses its own prepacours.cls\n")
-
-
 
 print("Compilation finished, pdf are in the build subdir.")

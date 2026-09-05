@@ -1,24 +1,31 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{../commun/prepacours}[2025/06/15 Classe LaTeX unifiée Cours/Exos Prépa]
+\ProvidesClass{../commun/prepacours}[2026/09/05 Classe LaTeX unifiée Cours/Exos Prépa]
 
 \LoadClass[a4paper,11pt]{article}
+
+% =============================================================================
+% MODE
+% =============================================================================
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{family=prepa, prefix=prepa@}
+\DeclareBoolOption[false]{td}
+\ProcessKeyvalOptions*
 
 % =============================================================================
 % PACKAGES
 % =============================================================================
 \RequirePackage[french]{babel}
-\RequirePackage{amsmath,amsthm,amssymb}
+\RequirePackage{amsmath,amsthm}
 \RequirePackage{mathrsfs}
 \RequirePackage{xcolor}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{geometry}
 \RequirePackage{fancyhdr}
 \RequirePackage{titlesec}
-\RequirePackage{mathpazo}
-\RequirePackage{hyperref}
+\RequirePackage[hidelinks]{hyperref}
 \RequirePackage{tikz}
 \RequirePackage{fontspec}
-\RequirePackage{stmaryrd}
+\RequirePackage{unicode-math}
 \RequirePackage{fontawesome5}
 \RequirePackage{graphicx}
 \RequirePackage{marginnote}
@@ -32,7 +39,10 @@
 \RequirePackage{ifthen}
 
 
-\setcounter{tocdepth}{2} % Profondeur de la table des matières
+\setmainfont{KpRoman}
+\setmathfont{KpMath-Regular}
+
+\setcounter{tocdepth}{2} 
 
 % =============================================================================
 % CONFIGURATION GÉOMÉTRIE
@@ -46,38 +56,52 @@
   marginparsep=0.5cm,
   headheight=30pt
 }
-%\makeatletter
-%\edef\marginnotetextwidth{\the\textwidth}
-%\makeatother
+
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.3em}
 
-\newcommand{\passerenmodeexos}{%
-  \newgeometry{top=3cm, bottom=2.5cm, left=2cm, right=2cm}%
-  \fancyhfoffset[R]{0cm}%
-}
-
 \newcommand{\passerenmodecours}{%
-  \restoregeometry%
+  \newgeometry{
+    top=3cm,
+    bottom=2cm,
+    left=2cm,
+    right=5cm,
+    marginparwidth=3.5cm,
+    marginparsep=0.5cm,
+    headheight=30pt
+  }%
   \fancyhfoffset[R]{3cm}%
 }
 
+\newcommand{\passerenmodeexos}{%
+  \newgeometry{
+    top=3cm,
+    bottom=2.5cm,
+    left=2cm,
+    right=2cm,
+    headheight=30pt
+  }%
+  \fancyhfoffset[R]{0cm}%
+}
+
+\ifprepa@td
+  \passerenmodeexos
+\else
+  \passerenmodecours
+\fi
 % =============================================================================
 % COULEURS
 % =============================================================================
-\definecolor{bluebox}{RGB}{36,113,200}%Actual bluebox
-\definecolor{redbox}{RGB}{231,35,35}
-\definecolor{greenbox}{RGB}{60,150,200}
-\definecolor{sectionblue}{RGB}{13, 114, 202}
-\definecolor{examplebar}{RGB}{0,0,0}
-\definecolor{ideabar}{RGB}{255,165,0}
+\definecolor{vorange}{RGB}{245, 130, 32}
+\definecolor{bg_theoreme}{RGB}{255, 237, 222}
+\definecolor{bg_def_start}{RGB}{255, 237, 222}
+
+\definecolor{ideayellow}{RGB}{230, 160, 0}
+\definecolor{dangerred}{RGB}{220, 40, 40}
+
+
 \definecolor{exobg}{RGB}{245,247,250}
 \definecolor{exoframe}{RGB}{100,110,120}
-\definecolor{orange_des_definitions}{RGB}{255, 236, 218}
-\definecolor{orange_des_exemples}{RGB}{255, 145, 10}
-\definecolor{sectionorange}{RGB}{255, 145, 10}
-\definecolor{orange_des_theoremes}{RGB}{255, 229, 204}
-
 
 % =============================================================================
 % COMPTEURS ET CHAPITRES
@@ -115,323 +139,255 @@
 }
 
 \setlist[itemize,1]{label=\footnotesize$\triangleright$}
-\setlist[itemize,2]{label=\footnotesize$\lozenge$}
+\setlist[itemize,2]{label=\footnotesize$\char"25CA\relax$}
 \setlist[itemize,3]{label=\footnotesize$\square$}
 \setlist[itemize,4]{label=\textbullet}
 
 % =============================================================================
-% STYLES TCOLORBOX
+% THÉORÈMES / PROPS / DEFS / EXEMPLES
 % =============================================================================
-
-\newboolean{vstyle}
-\setboolean{vstyle}{false}
-
 \tcbset{
-  thmbase/.style={
-    enhanced, boxrule=0.8pt, arc=2pt,
-    left=6pt, right=6pt, top=6pt, bottom=6pt,
-    fonttitle=\bfseries
-  },
-  enhanced,
-  propstyle/.style={thmbase, colback=bluebox!5, colframe=bluebox},
-  theoremstyle/.style={thmbase, colback=greenbox!5, colframe=greenbox},
-  defstyle/.style={thmbase, colback=redbox!5, colframe=redbox}
+	vbase/.style={
+      enhanced,
+      sharp corners,
+      boxrule=0.4pt,
+      colframe=black!85,
+      drop shadow={vorange!40, xshift=1.8pt, yshift=-1.8pt},
+      left=8pt,
+      right=8pt,
+      top=6pt,
+      bottom=6pt,
+      breakable,
+      fonttitle=\bfseries\upshape\color{vorange},
+      theorem style=plain,
+      separator sign={\textnormal{\upshape~:~}},
+      terminator sign={},
+      description font=\normalfont\upshape,
+      description color=black,
+    },
+    vexstyle/.style={
+      enhanced,
+      breakable,
+      sharp corners,
+      boxrule=0.4pt,
+      colframe=black!18,
+      colback=white,
+      borderline west={1.8pt}{0pt}{vorange},
+      left=8pt,
+      right=8pt,
+      top=8pt,
+      bottom=7pt,
+      fonttitle=\bfseries\color{vorange},
+      attach boxed title to top left={yshift=0pt, xshift=0pt},
+      boxed title style={
+        sharp corners,
+        boxrule=0.4pt,
+        colframe=black!18,
+        colback=white,
+        borderline west={1.8pt}{0pt}{vorange},
+        left=6pt,
+        right=6pt,
+        top=3pt,
+        bottom=3pt,
+      }
+    }
 }
-\ifthenelse{\NOT \boolean{vstyle}}{%
-	\newtcbtheorem[use counter=coursenv, number within=chapitre]{theoreme}{Théorème}{theoremstyle}{thm}
-	\newtcbtheorem[use counter=coursenv, number within=chapitre]{proposition}{Proposition}{propstyle}{prop}
-	\newtcbtheorem[use counter=coursenv, number within=chapitre]{corollaire}{Corollaire}{propstyle}{cor}
-	\newtcbtheorem[use counter=coursenv, number within=chapitre]{definition}{Définition}{defstyle}{def}
-	\newtcbtheorem[use counter=coursenv, number within=chapitre]{propriete}{Propriété}{propstyle}{propiete}
 
-	\newtcolorbox{exemple}[1][]{
-		enhanced, breakable, enhanced jigsaw, pad at break=2mm,
-	  colback=white, colframe=white, boxrule=0pt,
-	  left=8pt, right=0pt, top=6pt, bottom=6pt,
-	  borderline west={2pt}{0pt}{examplebar},
-	  title={},
-	  before upper={\textbf{\color{examplebar}Exemple} \par\vspace{0.2em}},
-	  #1
-	}
+\newtcbtheorem[use counter=coursenv, number within=chapitre]{definition}{Définition}{
+  vbase,
+  frame empty,
+  colback=white,
+  no shadow,
+  interior style={left color=bg_def_start, right color=white},
+  separator sign={ -- },
+  fontupper=\normalfont\upshape
+}{definition}
+
+\newtcbtheorem[use counter=coursenv, number within=chapitre]{theoreme}{Théorème}{
+  vbase,
+  colback=bg_theoreme,
+  fontupper=\itshape
+}{theoreme}
+
+\newtcbtheorem[use counter=coursenv, number within=chapitre]{proposition}{Proposition}{
+  vbase,
+  colback=white,
+  fontupper=\itshape
+}{proposition}
+
+\newtcbtheorem[use counter=coursenv, number within=chapitre]{corollaire}{Corollaire}{
+  vbase,
+  colback=white,
+  fontupper=\itshape
+}{corrolllaire}
+
+\newenvironment{exemple}[1][]{%
+  \refstepcounter{coursenv}%
+  \begin{tcolorbox}[
+    vexstyle,
+    title={Exemple \thecoursenv\ifstrempty{#1}{}{ (#1)}}
+  ]%
 }{%
-
-	%[V Style
-
-	\newtcbtheorem[use counter = coursenv, number within = chapitre]
-						{proposition}{Proposition}
-						{colframe = black,
-						theorem style = plain,
-						fonttitle = \bfseries,
-						sharp corners,
-						boxrule=.2mm,
-						breakable,
-						coltitle = orange!110,
-						drop shadow = orange!48,
-						smart shadow arc = false,
-						colback = white}{}
-
-	\newtcbtheorem[use counter = coursenv, number within = chapitre]
-						{corollaire}{Corollaire}
-						{colframe = black,
-						theorem style = plain,
-						fonttitle = \bfseries,
-						sharp corners,
-						boxrule=.2mm,
-						breakable,
-						coltitle = orange!110,
-						drop shadow = orange!48,
-						smart shadow arc = false,
-						colback = white}{}
-
-
-
-	\newtcbtheorem[use counter = coursenv, number within = chapitre]
-						{theoreme}{Théorème}
-						{colframe = black,
-						sharp corners,
-						breakable,
-						theorem style = plain,
-						fonttitle = \bfseries,
-						coltitle = orange!90!black,
-						boxrule = .2mm,
-						drop shadow = orange!48,
-						smart shadow arc = false,
-						colback = orange_des_theoremes}{}
-
-	\newtcbtheorem[use counter = coursenv, number within = chapitre]
-						{definition}{Définition}
-						{interior style = {left color = orange_des_definitions, right color = white},
-						sharp corners,
-						colback = white,
-						breakable,
-						coltitle = orange!90!black,
-						boxrule = .2mm,
-						fonttitle = \bfseries,
-						theorem style = plain,
-						colframe = orange_des_definitions
-					}{}
-
-	\newtcolorbox{exemple}[1][]{
-	  enhanced,
-	  breakable,
-	  enhanced jigsaw,
-	  pad at break=2mm,
-	  colback=white,
-	  coltitle = orange_des_exemples,
-	  colbacktitle = white,
-	  colframe=orange_des_exemples,
-	  attach boxed title to top left = {yshift = 0mm, xshift = 0mm},
-	  boxed title style = {sharp corners, boxrule = 0.1pt, borderline west={1pt}{0pt}{orange_des_exemples}},
-	  boxrule=0.1pt,
-	  left=8pt,
-	  right=0pt,
-	  top=6pt,
-	  bottom=6pt,
-	  borderline west={2pt}{0pt}{orange_des_exemples},
-	  title={},
-	  before upper={
-		\textbf{\color{orange_des_exemples}Exemple}
-		\par\vspace{0.2em}
-	  },
-	  #1
-   }
-	%V Style]
+  \end{tcolorbox}%
 }
 
-\ifthenelse{\boolean{vstyle}}{
-	\newenvironment{theorement}[2]{%
-		\begin{theoreme}{#1}{#2}%
-	}{%
-		\end{theoreme}%
-	}
-	\newenvironment{propositionnt}[2]{
-		\begin{proposition}{#1}{#2}%
-	}{%
-		\end{proposition}%
-	}
-
-	\newenvironment{corollairent}[2]{
-		\begin{corollaire}{#1}{#2}%
-	}{%
-		\end{corollaire}%
-	}
-
-\newenvironment{definitionnt}[2]{
-		\begin{definition}{#1}{#2}%
-	}{%
-		\end{definition}%
-	}
-
-}{
-	\newtcolorbox{theorement}[2][]{theoremstyle, fonttitle=\bfseries, title={Théorème~\refstepcounter{coursenv}\thecoursenv}, #1}
-	\newtcolorbox{propositionnt}[2][]{propstyle, fonttitle=\bfseries, title={Proposition~\refstepcounter{coursenv}\thecoursenv}, #1}
-	\newtcolorbox{corollairent}[2][]{propstyle, fonttitle=\bfseries, title={Corollaire~\refstepcounter{coursenv}\thecoursenv}, #1}
-	\newtcolorbox{definitionnt}[2][]{defstyle, fonttitle=\bfseries, title={Définition~\refstepcounter{coursenv}\thecoursenv}, #1}
-}
+\newenvironment{theorement}[2]{\begin{theoreme}{#1}{#2}}{\end{theoreme}}
+\newenvironment{propositionnt}[2]{\begin{proposition}{#1}{#2}}{\end{proposition}}
+\newenvironment{corollairent}[2]{\begin{corollaire}{#1}{#2}}{\end{corollaire}}
+\newenvironment{proprietent}[2]{\begin{propriete}{#1}{#2}}{\end{propriete}}
+\newenvironment{definitionnt}[2]{\begin{definition}{#1}{#2}}{\end{definition}}
 
 \theoremstyle{remark}
 \newtheorem*{remarque}{Remarque}
 
-
-\newcommand{\ampoule}{\includegraphics[height=1.2em]{ampoule.png}} 
-\newcommand{\idee}[1]{%
-  \needspace{4\baselineskip}%
-  \vspace{-1.6em}%
-  \marginnote{\strut}%
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[
-      anchor=north west,
-      inner sep=0pt
-    ] at
-      ([xshift=16.5cm]current page.west |- 0,0)
-    {%
-      \begin{tcolorbox}[
-        enhanced, colback=yellow!5, colframe=ideabar,
-        boxrule=0.8pt, arc=2pt, left=4pt, right=4pt, top=4pt, bottom=4pt,
-        width=3.5cm, fonttitle=\scriptsize\bfseries, title={\ampoule~Idée de la preuve},
-        coltitle=white, colbacktitle=ideabar, breakable=false
-      ]
-        \scriptsize\raggedright #1
-      \end{tcolorbox}%
-    };
-  \end{tikzpicture}%
-}
-
-\newcommand{\danger}[1]{%
-  \needspace{4\baselineskip}%
-  \vspace{-1.6em}%
-  \marginnote{\strut}%
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[
-      anchor=north west,
-      inner sep=0pt
-    ] at
-      ([xshift=16.5cm]current page.west |- 0,0)
-    {%
-      \begin{tcolorbox}[
-        enhanced,
-        colback=white,
-        colframe=redbox,
-        boxrule=0.8pt,
-        arc=2pt,
-        left=4pt,
-        right=4pt,
-        top=4pt,
-        bottom=4pt,
-        width=3.5cm,
-        fonttitle=\scriptsize\bfseries,
-        attach boxed title to top center={yshift=-\tcboxedtitleheight/2},
-        boxed title style={
-          size=normal,
-          colframe=white,
-          boxrule=0pt,
-          left=3pt,
-          right=3pt
-        },
-        title={\skull~ Attention !},
-        coltitle=red,
-        colbacktitle=white,
-        breakable=false
-      ]
-        \scriptsize\raggedright #1
-      \end{tcolorbox}%
-    };
-  \end{tikzpicture}%
-}
-
-\newcommand{\marginenote}[2]{%
-  \needspace{4\baselineskip}%
-  \vspace{-1.6em}%
-  \marginnote{\strut}%
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[
-      anchor=north west,
-      inner sep=0pt
-    ] at
-      ([xshift=16.5cm]current page.west |- 0,0)
-    {%
-      \begin{tcolorbox}[
-        enhanced,
-        colback=white,
-        colframe=bluebox,
-        boxrule=0.8pt,
-        arc=2pt,
-        left=4pt,
-        right=4pt,
-        top=4pt,
-        bottom=4pt,
-        width=3.5cm,
-        fonttitle=\scriptsize\bfseries,
-        attach boxed title to top center={yshift=-\tcboxedtitleheight/2},
-        boxed title style={
-          size=normal,
-          colframe=white,
-          boxrule=0pt,
-          left=2pt,
-          right=2pt
-        },
-        title={#1},
-        coltitle=sectionblue,
-        colbacktitle=white,
-        breakable=false
-      ]
-        \scriptsize\raggedright #2
-      \end{tcolorbox}%
-    };
-  \end{tikzpicture}%
-}
-
 % =============================================================================
-% ENVIRONNEMENTS EXERCICES & CORRECTIONS (CORRIGÉS)
+% NOTES DANS LA MARGE
 % =============================================================================
-\newcounter{numexo}[chapitre]
-\renewcommand{\thenumexo}{\arabic{numexo}}
-
-% Boîte Exercice interne
-\newtcolorbox{exercicebox}[1][]{
+\newtcolorbox{marginbox}[3][]{%
   enhanced,
-  colback=exobg, colframe=exoframe,
-  coltitle=white, fonttitle=\bfseries\large,
-  title={Exercice \thenumexo},
-  attach boxed title to top left={xshift=5mm, yshift=-3mm},
-  boxed title style={colback=exoframe, sharp corners},
-  boxrule=0.5pt, top=10pt, breakable,
+  nobeforeafter,
+  sharp corners,
+  colback=white,
+  colframe=#2,
+  boxrule=0.6pt,
+  width=\marginparwidth,
+  left=5pt,
+  right=5pt,
+  top=6pt,
+  bottom=6pt,
+  drop shadow={#2!40, xshift=1.8pt, yshift=-1.8pt},
+  title={#3},
+  fonttitle=\small\bfseries\color{#2},
+  attach boxed title to top center={yshift=-\tcboxedtitleheight/2},
+  boxed title style={
+    colback=white,
+    colframe=white,
+    boxrule=0pt,
+    left=3pt,
+    right=3pt,
+    top=0pt,
+    bottom=0pt,
+    sharp corners
+  },
+  overlay={%
+    \fill[#2] 
+      ([yshift=-15pt]frame.north west) -- 
+      ([xshift=-4pt, yshift=-18.5pt]frame.north west) -- 
+      ([yshift=-22pt]frame.north west) -- cycle;
+  },
   #1
 }
 
-% Environnement Exercice
-\newenvironment{exercice}{
-  \refstepcounter{numexo}
-  \phantomsection % Assure une ancre correcte
-  % Cible unique : exo.CHAPITRE.NUMERO (ex: exo.9.1)
-  \hypertarget{exo.\arabic{chapitre}.\arabic{numexo}}{} 
-  \begin{exercicebox}[title={Exercice \thenumexo \hfill \hyperlink{sol.\arabic{chapitre}.\arabic{numexo}}{\small \faArrowRight~Voir correction}}]
-}{
-  \end{exercicebox}
+\newcommand{\idee}[2][0pt]{%
+  \marginnote{%
+    \vspace{#1}%
+    \begin{marginbox}{ideayellow}{\faLightbulb~ Idée}
+      \footnotesize\raggedright #2
+    \end{marginbox}%
+  }%
 }
 
-% Boîte Correction interne (Argument MANDATOIRE cette fois pour éviter les erreurs)
-\newtcolorbox{correctionbox}[1]{
-  enhanced,
-  colback=white, colframe=sectionblue,
-  coltitle=sectionblue, fonttitle=\bfseries\large,
-  title={Correction Exercice #1},
-  detach title,
-  before upper={%
-    \phantomsection % Assure une ancre correcte
-    % Cible unique : sol.CHAPITRE.NUMERO (utilise l'argument #1 donné par l'utilisateur)
-    \hypertarget{sol.\arabic{chapitre}.#1}{}%
-    \textbf{\textcolor{sectionblue}{\faPen~Correction Exercice #1}}%
-    \hfill \hyperlink{exo.\arabic{chapitre}.#1}{\small \faArrowUp~Retour énoncé}\par\vspace{0.5em}\hrule\vspace{0.5em}%
+\newcommand{\notedanger}[2][0pt]{%
+  \marginnote{%
+    \vspace{#1}%
+    \begin{marginbox}{dangerred}{\faSkullCrossbones~ Danger !}
+      \footnotesize\raggedright #2
+    \end{marginbox}%
+  }%
+}
+
+\newcommand{\marginenote}[3][0pt]{%
+  \marginnote{%
+    \vspace{#1}%
+    \begin{marginbox}{vorange}{#2}
+      \footnotesize\raggedright #3
+    \end{marginbox}%
+  }%
+}
+
+% =============================================================================
+% ENVIRONNEMENTS EXERCICES & CORRIGÉS
+% =============================================================================
+\newcounter{numexo}[chapitre]
+\renewcommand{\thenumexo}{\thechapitre.\arabic{numexo}}
+
+\tcbset{
+  vexobase/.style={
+    enhanced,
+    sharp corners,
+    boxrule=0.4pt,
+    colframe=black!85,
+    breakable,
+    left=9pt,
+    right=9pt,
+    top=8pt,
+    bottom=7pt,
+  }
+}
+
+% Énoncé
+\newtcolorbox{exercicebox}[2][]{%
+  vexobase,
+  colback=white,
+  drop shadow={vorange!40, xshift=1.8pt, yshift=-1.8pt},
+  fonttitle=\bfseries\upshape\color{vorange},
+  title={Exercice #2\ifstrempty{#1}{}{ \textnormal{(#1)}}%
+    \hfill~%
+    \hyperlink{sol.#2}{\small\color{vorange!85!black}\faArrowRight~Voir corrigé}%
   },
-  boxrule=0pt, leftrule=3pt, sharp corners, breakable,
+  attach boxed title to top left={yshift=0pt, xshift=0pt},
+  boxed title style={
+    sharp corners,
+    boxrule=0.4pt,
+    colframe=black!85,
+    colback=white,
+    left=6pt,
+    right=6pt,
+    top=3pt,
+    bottom=3pt,
+  }
 }
 
-% Wrapper pour Correction
-\newenvironment{correction}[1]{
-  \begin{correctionbox}{#1}
-}{
-  \end{correctionbox}
+\newenvironment{exercice}[1][]{%
+  \refstepcounter{numexo}%
+  \phantomsection%
+  \hypertarget{exo.\thenumexo}{}%
+  \begin{exercicebox}[#1]{\thenumexo}%
+}{%
+  \end{exercicebox}%
+}
+
+
+% Corrigé
+\newtcolorbox{correctionbox}[1]{%
+  vexobase,
+  colframe=vorange!85!black,
+  colback=white,
+  drop shadow={vorange!25, xshift=1.8pt, yshift=-1.8pt},
+  fonttitle=\bfseries\upshape\color{vorange},
+  title={Corrigé de l'exercice \thechapitre.#1~%
+    \hfill%
+    \hyperlink{exo.\thechapitre.#1}{\small\color{vorange}\faArrowUp~Retour à l'énoncé}%
+  },
+  attach boxed title to top left={yshift=0pt, xshift=0pt},
+  boxed title style={
+    sharp corners,
+    boxrule=0.4pt,
+    colframe=vorange!85!black,
+    colback=white,
+    left=6pt,
+    right=6pt,
+    top=3pt,
+    bottom=3pt,
+  }
+}
+
+\newenvironment{correction}[1]{%
+  \phantomsection%
+  \hypertarget{sol.\thechapitre.#1}{}%
+  \begin{correctionbox}{#1}%
+}{%
+  \end{correctionbox}%
 }
 
 % =============================================================================
@@ -440,21 +396,35 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\thepage}
-\fancyhead[R]{Chapitre~\@numchapitre{} -- \@titrechapitre}
-\fancyhfoffset[R]{3cm} 
+\fancyhead[R]{%
+  \ifprepa@td%
+    TD~\@numchapitre -- \@titrechapitre%
+  \else%
+    Chapitre~\@numchapitre -- \@titrechapitre%
+  \fi%
+}
+
+\ifprepa@td
+  \fancyhfoffset[R]{0pt}
+\else
+  \fancyhfoffset[R]{3cm}
+\fi
 
 \fancyfoot[L]{\@filiere}
-\fancyfoot[C]{\@etablissement}
+\fancyfoot[C]{\@etablissement~\@annee}
 \fancyfoot[R]{\@auteur}
 
-\fancypagestyle{premierepageschapitre}{%
+\fancypagestyle{premierepagechapitre}{%
   \fancyhf{}
   \setlength{\headheight}{70pt}
+  \ifprepa@td%
+  \fancyhead[L]{\parbox[c][70pt][c]{12cm}{\fontsize{24}{28}\selectfont\bfseries\raggedright TD~:~\@titrechapitre}}
+  \else%
   \fancyhead[L]{\parbox[c][70pt][c]{12cm}{\fontsize{24}{28}\selectfont\bfseries\raggedright\@titrechapitre}}
-  \fancyhead[R]{\parbox[c][70pt][c]{3cm}{\raggedleft\fontsize{50}{40}\selectfont\bfseries\color{sectionblue}\@numchapitre}}
+  \fi%
+    \fancyhead[R]{\parbox[c][70pt][c]{3cm}{\raggedleft\fontsize{50}{40}\selectfont\bfseries\color{vorange}\@numchapitre}}
   \renewcommand{\headrulewidth}{0.8pt}
   \renewcommand{\footrulewidth}{0pt}
-  \fancyhfoffset[R]{3cm}
 }
 
 \newcommand{\pagedegarde}{
@@ -472,13 +442,18 @@
   \end{center}
   \newpage
   \passerenmodecours
-  \thispagestyle{premierepageschapitre}
+  \thispagestyle{premierepagechapitre}
 }
+
 
 \newcommand{\restaurergeometrie}{%
   \clearpage
-  \passerenmodecours
-  \pagestyle{fancy}
+  \ifprepa@td
+    \passerenmodeexos
+  \else
+    \passerenmodecours
+  \fi
+  \pagestyle{fancy}%
 }
 
 % =============================================================================
@@ -513,7 +488,7 @@
       \leavevmode \bfseries\large
       \advance\leftskip\@tempdima
       \hskip -\leftskip
-      {\textcolor{sectionblue}{#1}}\nobreak\
+      {\textcolor{vorange}{#1}}\nobreak\
       \leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
       \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
       \penalty\@highpenalty
@@ -528,7 +503,7 @@
 \providecommand{\toclevel@subsection}{2}
 
 \titleformat{\section}
-  {\normalfont\LARGE\bfseries\color{sectionblue}}
+  {\normalfont\LARGE\bfseries\color{vorange}}
   {\thesection}{1em}{}
   [\vspace{0.5em}]
 
@@ -536,14 +511,14 @@
 
 \titleformat{\subsection}
   {\normalfont\Large\bfseries}
-  {\color{sectionblue}\thesubsection}{1em}{}
+  {\color{vorange}\thesubsection}{1em}{}
   [\vspace{0.3em}]
 
 \titlespacing*{\subsection}{-3em}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
 
 \titleformat{\subsubsection}
   {\normalfont\large\bfseries}
-  {\color{sectionblue}\thesubsubsection}{1em}{}
+  {\color{vorange}\thesubsubsection}{1em}{}
   [\vspace{0.3em}]
 
 \titlespacing*{\subsubsection}{-2em}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
@@ -576,17 +551,14 @@
     {\Large\bfseries Table des matières\par}
     \vspace{0.5cm}
     \begin{minipage}{0.8\textwidth}
-      % Affiche uniquement sections (niveau 1) et subsections (niveau 2)
       \printcontents[chapters]{}{1}{\setcounter{tocdepth}{2}}
     \end{minipage}
   \end{center}
   \vfill
-  \restaurergeometrie % Restaure la géométrie "Cours" pour le contenu
+  \restaurergeometrie
   \clearpage
-  % Ajouter une entrée dans la table des matières globale
-  \addcontentsline{toc}{chapitre}{\protect\numberline{Chapitre #1}#2}%
-  % Appliquer le style d'en-tête spécial pour la première page
-  \thispagestyle{premierepageschapitre}%
+  \addcontentsline{toc}{chapitre}{\protect\numberline{Chapitre #1} #2}%
+  \thispagestyle{premierepagechapitre}%
   
 }
 

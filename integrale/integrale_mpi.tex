@@ -3,18 +3,14 @@
 
 \input{../commun/config.tex}
 
-\usepackage{amsmath, amssymb}
-\usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning}
 \usepackage{pdflscape}
 
 \graphicspath{{./images/}}
-% pour l'index en fin de document
 \usepackage{makeidx}
 \makeindex 
 
 
-% Initialiser les variables de chapitre pour éviter les erreurs
 \makeatletter
 \gdef\@numchapitre{}
 \gdef\@titrechapitre{Cours de Mathématiques}
@@ -22,7 +18,6 @@
 
 \begin{document}
 
-% Page de garde
 \newgeometry{
   top=3cm,
   bottom=3cm,
@@ -31,64 +26,60 @@
 }
 \pagestyle{empty}
 
-% Décorations en arrière-plan
 \begin{tikzpicture}[remember picture,overlay]
-  % Coins supérieurs
-  \draw[bluebox, line width=2pt] (current page.north west) ++(0.5,-0.5) -- ++(3,0);
-  \draw[bluebox, line width=2pt] (current page.north west) ++(0.5,-0.5) -- ++(0,-3);
-  \draw[bluebox, line width=2pt] (current page.north east) ++(-0.5,-0.5) -- ++(-3,0);
-  \draw[bluebox, line width=2pt] (current page.north east) ++(-0.5,-0.5) -- ++(0,-3);
+  \draw[vorange, line width=2pt] (current page.north west) ++(0.5,-0.5) -- ++(3,0);
+  \draw[vorange, line width=2pt] (current page.north west) ++(0.5,-0.5) -- ++(0,-3);
+  \draw[vorange, line width=2pt] (current page.north east) ++(-0.5,-0.5) -- ++(-3,0);
+  \draw[vorange, line width=2pt] (current page.north east) ++(-0.5,-0.5) -- ++(0,-3);
   
-  % Coins inférieurs
-  \draw[bluebox, line width=2pt] (current page.south west) ++(0.5,0.5) -- ++(3,0);
-  \draw[bluebox, line width=2pt] (current page.south west) ++(0.5,0.5) -- ++(0,3);
-  \draw[bluebox, line width=2pt] (current page.south east) ++(-0.5,0.5) -- ++(-3,0);
-  \draw[bluebox, line width=2pt] (current page.south east) ++(-0.5,0.5) -- ++(0,3);
+  \draw[vorange, line width=2pt] (current page.south west) ++(0.5,0.5) -- ++(3,0);
+  \draw[vorange, line width=2pt] (current page.south west) ++(0.5,0.5) -- ++(0,3);
+  \draw[vorange, line width=2pt] (current page.south east) ++(-0.5,0.5) -- ++(-3,0);
+  \draw[vorange, line width=2pt] (current page.south east) ++(-0.5,0.5) -- ++(0,3);
   
-  % Motifs décoratifs subtils (cercles)
   \foreach \i in {1,...,5} {
-    \draw[greenbox!30, line width=0.5pt] (current page.north west) ++(2+\i*0.3, -1.5) circle (0.15);
+    \draw[vorange!30, line width=0.5pt] (current page.north west) ++(2+\i*0.3, -1.5) circle (0.15);
   }
   \foreach \i in {1,...,5} {
-    \draw[redbox!30, line width=0.5pt] (current page.south east) ++(-2-\i*0.3, 1.5) circle (0.15);
+    \draw[vorange!30, line width=0.5pt] (current page.south east) ++(-2-\i*0.3, 1.5) circle (0.15);
   }
 \end{tikzpicture}
 
 \begin{center}
   \vspace*{2cm}
   
-  % Titre principal avec fioritures
   \begin{tikzpicture}
     \node[text width=12cm, align=center, , execute at begin node=\setlength{\baselineskip}{2.5em} ] {
       {\Huge \bfseries Cours et TD en}
 
       {\Huge \bfseries Maths spé}
     };
-    \draw[bluebox, line width=1.5pt] (-5,-1.4) -- (-2,-1.4);
-    \draw[bluebox, line width=1.5pt] (2,-1.4) -- (5,-1.4);
+    \draw[vorange, line width=1.5pt] (-5,-1.4) -- (-2,-1.4);
+    \draw[vorange, line width=1.5pt] (2,-1.4) -- (5,-1.4);
   \end{tikzpicture}
-  
+
+  \makeatletter
   \vspace{1.5cm}
-  {\Large MPI / MPI* \par}
+  {\Large \@filiere \par}
   \vspace{0.5cm}
-  {\large Lycée Champollion \par}
+  {\large \@etablissement \par}
   \vspace{2cm}
   
   \begin{minipage}{0.8\textwidth}
     \begin{tikzpicture}
-      \draw[bluebox, line width=1pt] (0,0) -- (\textwidth,0);
+      \draw[vorange, line width=1pt] (0,0) -- (\textwidth,0);
     \end{tikzpicture}
     \vspace{0.5cm}
     
     Salut à toi qui passe par là ! Vous trouvez là l'ensemble du cours de notre grand Quibel, ainsi que les 
     TD et parfois des corrections. Si certains veulent se porter volontaire pour écrire des corrections, faites 
-    vous plaisir, je les intégrerai. 
+    vous plaisir, on les intégrera. 
 
     \avspace Si jamais vous avez des suggestions d'amélioration pour le style, 
     des formats que vous aimeriez bien avoir (une version plus compacte pour 
-    imprimer, format tablette, ...), n'hésitez pas à me demander !
+    imprimer, format tablette, ...), n'hésitez pas à nous demander !
 
-    \avspace Bien entendu si vous voyez une erreur, merci de me le signaler !
+    \avspace Bien entendu si vous voyez une erreur, merci de nous le signaler !
 
     \begin{center}
       Et sinon : enjoy !
@@ -96,26 +87,26 @@
     
     \vspace{0.5cm}
     \begin{tikzpicture}
-      \draw[bluebox, line width=1pt] (0,0) -- (\textwidth,0);
+      \draw[vorange, line width=1pt] (0,0) -- (\textwidth,0);
     \end{tikzpicture}
   \end{minipage}
   
   \vfill
-  {\Large Année 2025-2026 \par}
+  {\Large \@annee \par}
   \vspace{0.5cm}
   {\normalsize Version du \today \par}
   \vspace{1cm}
 \end{center}
+\makeatother
 \clearpage
 
-% Table des matières
 \begin{center}
   {\Huge \bfseries Table des matières \par}
   \vspace{1cm}
 \end{center}
 \tableofcontents
 \clearpage
-\pagestyle{fancy} % Réactiver le style fancy pour la suite du document
+\pagestyle{fancy} 
 
 \restaurergeometrie
 

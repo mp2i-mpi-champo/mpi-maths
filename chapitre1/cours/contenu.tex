@@ -68,36 +68,36 @@
 
     Donc $\sup( A+ B)$ existe et $\sup (A + B) \leqslant \sup A + \sup B$
 
-    \uindent{Solution 1}
+    \begin{itemize}
+        \item \uline{Solution 1 :}
+        Soient $x \in A$ et $y \in B$ 
 
-    \svspace Soient $x \in A$ et $y \in B$ 
+        Alors $x + y \leqslant \sup(A + B)$
 
-    Alors $x + y \leqslant \sup(A + B)$
+        Donc $x \leqslant \sup(A + B) - y$
 
-    Donc $x \leqslant \sup(A + B) - y$
+        Fixons $y \in B$. C'est vrai pour tout $x \in A$
 
-    Fixons $y \in B$. C'est vrai pour tout $x \in A$
+        Donc $\sup(A + B) - y$ est un majorant de $A$. 
 
-    Donc $\sup(A + B) - y$ est un majorant de $A$. 
+        Donc $\sup A \leqslant \sup(A + B) - y$
 
-    Donc $\sup A \leqslant \sup(A + B) - y$
+        Donc $y \leqslant \sup(A + b) - \sup(A)$ (Le therme de droite est un majorant de $B$)
 
-    Donc $y \leqslant \sup(A + b) - \sup(A)$ (Le therme de droite est un majorant de $B$)
+        Or cela est vrai pour tout $y$, donc $\sup B \leqslant \sup(A + B) - \sup A$
 
-    Or cela est vrai pour tout $y$, donc $\sup B \leqslant \sup(A + B) - \sup A$
+        Donc $\sup A + \sup B \leqslant \sup(A + B)$
 
-    Donc $\sup A + \sup B \leqslant \sup(A + B)$
+        \item \uline{Solution 2 :}
 
-    \uindent{Solution 2}
+        Soit $(u_n)_{n \in N}$ suite de $A$ telle que $u_n \longrightarrow \sup A$
+        et $(v_n)_{n \in N}$ suite de $B$ telle que $ v_n \longrightarrow \sup B$
+        alors $u_n + v_n \in A + B$. 
 
-    \svspace Soit $(u_n)_{n \in N}$ suite de $A$ telle que $u_n \longrightarrow \sup A$
-    et $(v_n)_{n \in N}$ suite de $B$ telle que $ v_n \longrightarrow \sup B$
-    alors $u_n + v_n \in A + B$. 
-
-    Donc $\forall n \in N, u_n + v_n \leqslant \sup(A + B)$
+        Donc $\forall n \in N, u_n + v_n \leqslant \sup(A + B)$
     
-    donc à la limite $\sup A + \sup B \leqslant \sup(A + B)$
-
+        donc à la limite $\sup A + \sup B \leqslant \sup(A + B)$
+    \end{itemize}
 \end{exemple}
 
 \subsection{Distance}
@@ -113,7 +113,7 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 \subsection{Définition}
 
 \begin{definition}{Norme}{}
-    \\On appelle norme sur $E$ toute application 
+    \\On appelle norme sur $E$ toute application :
     \danger{Bien penser à vérifier que c'est une application à valeurs dans $\R^+$ pour montrer qu'on a une norme !}
 
     \lvspace \avspace $$\fonction{N}{E}{\R^+}{u}{N(u)}$$
@@ -194,11 +194,9 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
     Astuce du taupin pour le 3.
 }
 
-\begin{proof}
+\begin{proof}~\\
 
-    Pour le 3 : 
-
-    $d_N(u, w) = N(u - w) = N( u - v + v - w) \leqslant N(u - v) + N(v - w)$ \\
+    Pour le 3 : $d_N(u, w) = N(u - w) = N( u - v + v - w) \leqslant N(u - v) + N(v - w)$ \\
 
     Évident pour le reste.
 \end{proof}
@@ -262,7 +260,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     \end{itemize}  
 \end{definition}
 
-\begin{exemple}
+\begin{exemple}{Dans $\R^2$}
     Dans $(\C, |\cdot|)$ les boules fermées sont les disques, et les sphères sont les cercles. 
 
     Dans $(\R, |\cdot|)$, les boules fermées sont les segments non 
@@ -286,9 +284,8 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 \begin{definition}{Barycentre - HP}{}
     \\Soient $a_1, \dots, a_n \in E$ et $\lambda_1, \dots, \lambda_n \in \inter{0}{1}$
     tels que $\sum_{i = 1}^n \lambda_i = 1$.
-
     On appelle barycentre du système $\{(a_1, \lambda_1), \dots, (a_n, \lambda_n)\}$
-    ou barycentre des points $(a_1, \dots, a_n)$ munis des coefficients $(\lambda_1, \dots, \lambda_n)$
+    ou barycentre des points $(a_1, \dots, a_n)$ munis des coefficients $(\lambda_1, \dots, \lambda_n)$ :
 
     $$\operatorname{Bar}(\left\{(a_1, \lambda_1), \dots, (a_n, \lambda_n)\right\}) = \sum_{i = 1}^n \lambda_i a_i$$
 
@@ -297,7 +294,6 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 
 \begin{proposition}{Nature d'une intersection de convexes - LHP}{}
     Soit $I$ un ensemble non vide et $(A_i)_{i \in I}$ des parties convexes de $E$. 
-
     Alors $\displaystyle B = \bigcap_{i \in I} A_i$ est convexe.
 \end{proposition}
 
@@ -323,9 +319,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 \end{proof}
 
 \begin{definition}{Enveloppe convexe - HP}{}
-    \\Soit $A \subset E$ non vide. 
-
-    L'intersection $B$ de tous les convexes de $E$ contenant $A$ est donc un convexe
+    Soit $A \subset E$ non vide. L'intersection $B$ de tous les convexes de $E$ contenant $A$ est le plus petit convexe
     de $E$ contenant $A$ appelée enveloppe convexe de $A$.
 \end{definition}
 
@@ -381,7 +375,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 
     Or $a_1, a_2 \in B$ et $B$ convexe donc $x \in B$. 
 
-    \uindent{Preuve par récurrence}
+    \uline{Preuve par récurrence :}
 
     Supposons que l'on a le résultat pour tout $x \in C$ correspondant à une combinaison
     linéaire de $(n - 1)$ éléments de $B$. 
@@ -441,40 +435,41 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     en faisant apparaitre le rayon.
 }
 
-\begin{proof}
-    \quad \underline{Boule fermée :}
-
-    Soit $\omega \in E$, $R > 0$ et $A = B'( \omega, R)$
-    
-    Soient $a, b \in A, \lambda \in \inter{0}{1}$ et $c = \lambda a + (1 - \lambda)b$
-
-    \begin{align*}
-        N(c - \omega) & = N(\lambda a + (1 - \lambda)b - \lambda \omega - (1 - \lambda) \omega) \\
-        & = N(\lambda(a - \omega) + (1 - \lambda)(b - \omega)) \\
-        & \leqslant \, |\lambda| N(a - \omega) + |1 - \lambda| N(b - \omega) \\
-        & \leqslant \lambda R + (1 - \lambda)R = R \\
-    \end{align*}
-
-    \quad \underline{Boule ouverte :}
-
-    Soit $\omega  \in E, R > 0, A = B(\omega, R)$. 
-
-    Soient $a, b \in A, \lambda \in \inter{0}{1}$ et $c = \lambda a + (1 - \lambda)b$.
-
-    Montrons que $c \in A$. 
+\begin{proof}~\\
     \begin{itemize}
-        \item si $\lambda = 0, c = b$ donc $c \in A$
-        \item si $\lambda = 1, c = a$ donc $c \in A$
-    \end{itemize}
+        \item \uline{Boule fermée :}
 
-    Sinon, 
-    \begin{align*}
-        d(\omega, c) & = N(\lambda a + (1 - \lambda) b - \omega) \\
-        & = N(\lambda a + (1 - \lambda) b - (\lambda + 1- \lambda) \omega) \\
-        & = N(\lambda(a - \omega) + (1 - \lambda) (b - \omega)) \\
-        & \leqslant \, |\lambda| N(a - \omega) + (1 - \lambda)N(b - \omega) \\
-        & < (\lambda + 1 - \lambda) R = R
-    \end{align*}
+        Soit $\omega \in E$, $R > 0$ et $A = B'( \omega, R)$
+    
+        Soient $a, b \in A, \lambda \in \inter{0}{1}$ et $c = \lambda a + (1 - \lambda)b$
+
+        \begin{align*}
+            N(c - \omega) & = N(\lambda a + (1 - \lambda)b - \lambda \omega - (1 - \lambda) \omega) \\
+            & = N(\lambda(a - \omega) + (1 - \lambda)(b - \omega)) \\
+            & \leqslant \, |\lambda| N(a - \omega) + |1 - \lambda| N(b - \omega) \\
+            & \leqslant \lambda R + (1 - \lambda)R = R \\
+        \end{align*}
+
+        \item \underline{Boule ouverte :}
+
+        Soit $\omega  \in E, R > 0, A = B(\omega, R)$. 
+
+        Soient $a, b \in A, \lambda \in \inter{0}{1}$ et $c = \lambda a + (1 - \lambda)b$.
+
+        Montrons que $c \in A$. 
+        \begin{itemize}
+            \item si $\lambda = 0, c = b$ donc $c \in A$
+            \item si $\lambda = 1, c = a$ donc $c \in A$
+            \item sinon, 
+                \begin{align*}
+                    d(\omega, c) & = N(\lambda a + (1 - \lambda) b - \omega) \\
+                    & = N(\lambda a + (1 - \lambda) b - (\lambda + 1- \lambda) \omega) \\
+                    & = N(\lambda(a - \omega) + (1 - \lambda) (b - \omega)) \\
+                    & \leqslant \, |\lambda| N(a - \omega) + (1 - \lambda)N(b - \omega) \\
+                    & < (\lambda + 1 - \lambda) R = R
+                \end{align*}
+        \end{itemize}
+    \end{itemize}
 \end{proof}
 
 \subsection{Parties et applications bornées}
@@ -616,65 +611,51 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
     Donc $\alpha f + \beta g$ est bornée. 
 \end{proof}
 
-\section{Equivalence des normes}
-
-\subsection{Définitions}
+\section{Équivalence des normes}
 
 Soit $E$ un $\K$-espace vectoriel. 
 
 \begin{definition}{Normes équivalentes}{}
-    Soient $N_1$ et $N_2$ deux normes sur $E$. 
-
-    On dit que $N_1$ et $N_2$ sont équivalentes ssi $ \exists \alpha > 0, \exists \beta > 0, $
+    Soient $N_1$ et $N_2$ deux normes sur $E$. On dit que $N_1$ et $N_2$ sont équivalentes ssi $ \exists \alpha > 0, \exists \beta > 0, $
     $$\forall x \in E, \, \beta N_2(x) \leqslant N_1(x) \leqslant \alpha N_2(x)$$
 \end{definition}
 
 \begin{remarque}
-    (légèrement hors programme)
-
-    Si on a seulement $\exists \alpha > 0, \forall x \in E, N_1(x) \leqslant \alpha N_2(x)$
+    (LHP) Si on a seulement $\exists \alpha > 0, \forall x \in E, N_1(x) \leqslant \alpha N_2(x)$
     on dit que $N_2$ est plus fine que $N_1$. 
 \end{remarque}
 
 \begin{proposition}{Nature relation de l'équivalence des normes}{}
-    L'équivalence entre normes est une relation d'équivalence dans l'ensemble des normes 
+    L'équivalence entre normes est une relation d'équivalence dans l'ensemble des normes
     sur $E$. 
 \end{proposition}
 
-\idee{
-    Montrer les 3 propriétés d'une relation d'équivalence
-}
+\begin{proof}~\\
+    \begin{itemize}
+        \item \uline{Réflexivité :}
+        Soit $N $ norme sur $E$. 
 
-\begin{proof}
-    \quad \underline{Réflexivité :}
+        On a $\forall x \in E, \; 1 N(x) \leqslant N(x) \leqslant 1N(x)$
 
-    Soit $N $ norme sur $E$. 
+        \item \uline{Symétrie :}
+        Soient $N_1$ et $N_2$ deux normes sur $E$ telles que : 
 
-    On a $\forall x \in E, \; 1 N(x) \leqslant N(x) \leqslant 1N(x)$
+        $$ \exists \alpha > 0, \exists \beta > 0, \forall x \in E, \beta N_2(x) \leqslant N_1(x) \leqslant \alpha N_2(x)$$
+        Donc $\frac 1 \alpha N_1(x) \leqslant N_2(x) \leqslant \frac 1 \beta N_1(x)$
 
-    \quad \underline{Symétrie :}
+        \item \uline{Transitivité :}
+        Soient $N_1, N_2, N_3$ trois normes telles que 
 
-    Soient $N_1$ et $N_2$ deux normes sur $E$ telles que : 
+        $\exists \alpha > 0, \exists \beta >0 , \beta N_2(x) \leqslant N_1(x) \leqslant \alpha N_2(x)$
 
-    $$ \exists \alpha > 0, \exists \beta > 0, \forall x \in E, \beta N_2(x) \leqslant N_1(x) \leqslant \alpha N_2(x)$$
-    Donc $\frac 1 \alpha N_1(x) \leqslant N_2(x) \leqslant \frac 1 \beta N_1(x)$
+        $\exists \gamma > 0, \exists \tau > 0, \gamma N_3(x) \leqslant N_2(x) \leqslant \tau N_3(x)$
 
-    \quad \underline{Transitivité : }
-
-    Soient $N_1, N_2, N_3$ trois normes telles que 
-
-    $\exists \alpha > 0, \exists \beta >0 , \beta N_2(x) \leqslant N_1(x) \leqslant \alpha N_2(x)$
-
-    $\exists \gamma > 0, \exists \tau > 0, \gamma N_3(x) \leqslant N_2(x) \leqslant \tau N_3(x)$
-
-    Donc $\beta \gamma N_3(x) \leqslant N_1(x) \leqslant \alpha \tau N_3(x)$
+        Donc $\beta \gamma N_3(x) \leqslant N_1(x) \leqslant \alpha \tau N_3(x)$
+    \end{itemize}
 \end{proof}
 
-\subsection{Proposition}
-
-\begin{proposition}{Equivalence bornage norme}{}
+\begin{proposition}{Équivalence bornage norme}{}
     Soient $N_1$ et $N_2$ deux normes équivalentes de $E$ et soit $A \subset E$. 
-
     Alors $A$ est bornée pour $N_1$ ssi $A$ est bornée pour $N_2$
 \end{proposition}
 
@@ -693,8 +674,6 @@ Soit $E$ un $\K$-espace vectoriel.
 
     Réciproque identique.
 \end{proof}
-
-\subsection{Proposition}
 
 \begin{proposition}{Montrer que deux normes ne sont pas équivalentes}{}
     Soient $N_1, N_2$ deux normes sur $E$ telles qu'il existe $(u_n)_{n \in \N}$ suite
@@ -722,11 +701,9 @@ Soit $E$ un $\K$-espace vectoriel.
 \end{proof}
 
 
-\subsection{Exemples}
-
-\subsubsection{Dans R²}
-
 \begin{exemple}
+    Dans $\R^2$.
+    
     On montre (cf IV) que 
 
     $\fonction{|| \cdot ||_1}{\R^2}{\R}{(x, y)}{\mid x \mid + \mid y \mid}$
@@ -746,9 +723,9 @@ Soit $E$ un $\K$-espace vectoriel.
     On peut montrer de même les autres équivalences.
 \end{exemple}
 
-\subsubsection{Dans \texorpdfstring{$\mathscr C([0, 1], \R)$}{C([0, 1], R)}}
-
 \begin{exemple}
+    Dans $\mathscr C ([0, 1], \R)$.
+    
     On a les mêmes genre de normes sur les fonctions avec les intégrales ou le sup. 
 
     $|| f ||_1 = \int_{0}^{1} \mid f(t) \mid \text d t \leqslant \int_{0}^{1} ||f||_\infty \leqslant ||f ||_\infty$
@@ -797,22 +774,21 @@ Soit $E$ un $\K$-espace vectoriel.
 \begin{proof}
     $A$ est majorée donc $kA$ l'est aussi. 
 
-    \quad \underline{Si $k = 0$ :}
+    \begin{itemize}
+        \item \uline{Si $k = 0$ :} c'est évident, $kA = \{0\}$
+        \item \uline{Sinon :}
 
-    C'est évident, $kA = \{0\}$
+        Soit $b \in A$ il vient $b = ka$ où $a \in A$, or $a \leqslant \sup A$ donc 
+        $b \leqslant k \sup A$. 
 
-    \quad \underline{Sinon : }
+        $k \sup A$ est donc un majorant de $k A$ donc $\sup k A \leqslant k \sup A$. 
 
-    Soit $b \in A$ il vient $b = ka$ où $a \in A$, or $a \leqslant \sup A$ donc 
-    $b \leqslant k \sup A$. 
+        Appliquons ce résultat à $A' = kA$ et $k' = \frac 1 k$. 
 
-    $k \sup A$ est donc un majorant de $k A$ donc $\sup k A \leqslant k \sup A$. 
+        Ainsi, $\sup k' A' \leqslant k' \sup A'$ donc $\sup A \leqslant \frac 1 k \sup k A$
 
-    Appliquons ce résultat à $A' = kA$ et $k' = \frac 1 k$. 
-
-    Ainsi, $\sup k' A' \leqslant k' \sup A'$ donc $\sup A \leqslant \frac 1 k \sup k A$
-
-    Donc $k \sup A \leqslant \sup k A$. 
+        Donc $k \sup A \leqslant \sup k A$. 
+    \end{itemize}
 \end{proof}
 
 \begin{proposition}{Norme infinie}{}
@@ -830,50 +806,52 @@ Soit $E$ un $\K$-espace vectoriel.
 
     Montrons que la norme infnie est une norme sur $\mathscr B (X, \K)$. 
 
-    \quad \underline{Séparation : }
+    \begin{itemize}
+        \item \uline{Séparation :}
 
-    Soit $f \in \mathscr B(X, \K)$, tel que $||f ||_\infty = 0$. 
+        Soit $f \in \mathscr B(X, \K)$, tel que $||f ||_\infty = 0$. 
 
-    Alors $\forall x \in X, \mid f(x) \mid \leqslant 0 = 0$
+        Alors $\forall x \in X, \mid f(x) \mid \leqslant 0 = 0$
 
-    Donc $f = 0$. 
+        Donc $f = 0$.
 
-    \quad \underline{Homogénéité : }
+        \item \uline{Homogénéité :}
+        
+        Soit $f \in \mathscr B(X, \K), \lambda \in \K$. 
 
-    Soit $f \in \mathscr B(X, \K), \lambda \in \K$. 
+        \[
+        \begin{array}{rcl}
+            || \lambda f ||_\infty & = & \sup\{\mid \lambda \mid \mid f(x) \mid, x \in X\} \\
+            \space & = & \mid \lambda \mid \sup \{ \mid f(x) \mid , x \in X\} \\
+            \space & = & \mid \lambda \mid ||f ||_\infty \\
+        \end{array}
+        \]
 
-    \[
-    \begin{array}{rcl}
-        || \lambda f ||_\infty & = & \sup\{\mid \lambda \mid \mid f(x) \mid, x \in X\} \\
-        \space & = & \mid \lambda \mid \sup \{ \mid f(x) \mid , x \in X\} \\
-        \space & = & \mid \lambda \mid ||f ||_\infty \\
-    \end{array}
-    \]
+        \item \uline{Inégalité triangulaire :}
 
-    \quad \underline{Inégalité triangulaire : }
+        Soient $f, g \in \mathscr B(X, \K)$. 
 
-    Soient $f, g \in \mathscr B(X, \K)$. 
+        Soit $x \in X$. 
 
-    Soit $x \in X$. 
+        \[
+        \begin{array}{rcl}
+            \mid (f + g)(x) \mid & = & \mid f(x) + g(x) \mid \\
+            \space & \leqslant & \mid f(x) \mid + \mid g(x) \mid \\
+            \space & \leqslant & ||f||_\infty + ||g ||_\infty \\
+        \end{array}
+        \]
 
-    \[
-    \begin{array}{rcl}
-        \mid (f + g)(x) \mid & = & \mid f(x) + g(x) \mid \\
-        \space & \leqslant & \mid f(x) \mid + \mid g(x) \mid \\
-        \space & \leqslant & ||f||_\infty + ||g ||_\infty \\
-    \end{array}
-    \]
-
-    vrai pour tout $x$ donc $|| f + g||_\infty \leqslant ||f||_\infty + ||g||_\infty$
+        vrai pour tout $x$ donc $|| f + g||_\infty \leqslant ||f||_\infty + ||g||_\infty$
+    \end{itemize}
 \end{proof}
 
 \subsubsection{Norme infinie sur \texorpdfstring{$\K^n$}{kn}}
 
-\begin{definition}{Norme infinie sur Kn}{}
-    Pour $X = \{1, \dots, n\}$ et en utilisant via la bijection $\mathscr B(X, \K)$
+\begin{definition}{Norme infinie sur $\K^n$}{}
+    Pour $X = \{1, \dots, n\}$ et en utilisant la bijection $\mathscr B(X, \K)$
     à $\K^n$ 
 
-    $$\fonction{}{\mathscr B(X, \K)}{\K^n}{f}{(f(1), \dots, f(n))}$$
+    $$\fonction{}{\mathscr B(X, \K)}{\K^n}{f}{(f(1), \dots, f(n))}$$\\
 
     On a ainsi construit $|| \cdot ||_\infty$ sur $\K^n$ qui est donc une norme définie
     par $||(x_1, \dots, x_n)||_\infty = \sup\{\mid x_1\mid \dots \mid x_n \mid \} = \max (\mid x_1\mid \dots \mid x_n \mid)$
@@ -884,7 +862,7 @@ Soit $E$ un $\K$-espace vectoriel.
 
 \begin{definition}{Espace vectoriel des suites bornées}{}
     On note $\ell^\infty(K) = \mathscr B(\N, \K)$ l'espace vectoriel des suites bornées
-    à valeurs dans $\K$. On y a ainsi défini la norme $|| \cdot ||_\infty$ par 
+    à valeurs dans $\K$. On y a ainsi défini la norme $|| \cdot ||_\infty$ par :
 
     $$||(u_n)_{n \in \N} ||_\infty = \sup\{\mid u_n \mid, n \in \N\}$$
 \end{definition}
@@ -915,7 +893,7 @@ Soit $E$ un $\K$-espace vectoriel.
     Soient $(E_1, N_1), \dots, (E_p, N_p)$ des espaces vectoriels normés
     et $E$ l'espace vectoriel $E = E1 \times E_2 \dots \times E_p$
 
-    Alors pour $u = (u_1, \dots, u_p) \in E$ on pose 
+    Alors pour $u = (u_1, \dots, u_p) \in E$ on pose :
 
     $$N_\infty(u) = \max(N_1(u_1), \dots, N_p(u_p))$$
 
@@ -961,7 +939,7 @@ Soit $E$ un $\K$-espace vectoriel.
     Vrai pour tout $j$ donc $N_\infty(u + v) \leqslant N_\infty(u) + N_\infty(v)$
 \end{proof}
 
-\subsection{Norme 1}
+\subsection{Normes 1}
 
 \subsubsection{Sur \texorpdfstring{$\K^n$}{kn}}
 

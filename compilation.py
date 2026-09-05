@@ -185,7 +185,7 @@ if args.all :
     clean_dir(c_integrale_dir)
     clean_dir(c_chapters_dir)
     clean_dir(c_cours_dir)
-    #clean_dir(c_TDs_dir)
+    clean_dir(c_TDs_dir)
     if args.vstyle:
         SetDefault()
         print("V Style used for compilation. It will not work for chapter 0 because it uses its own prepacours.cls\n Some rare boxes may also have the default style because of how they were written, and I don't want to spend time fixing them when I could be playing MORROWIND instead\n")

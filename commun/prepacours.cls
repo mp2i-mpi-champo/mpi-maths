@@ -427,10 +427,10 @@
   \setlength{\headheight}{70pt}
   \ifprepa@td%
     \fancyhfoffset[R]{0pt}
-    \fancyhead[L]{\parbox[b]{\dimexpr\textwidth-3.5cm\relax}{\raggedright\fontsize{24}{28}\selectfont\bfseries\color{vorange!90!black}TD~:~\@titrechapitre}}
+    \fancyhead[L]{\parbox[b]{\dimexpr\textwidth-3.5cm\relax}{\raggedright\fontsize{24}{28}\selectfont\bfseries TD~:~\@titrechapitre}}
   \else%
     \fancyhfoffset[R]{\dimexpr\marginparsep+\marginparwidth\relax}
-    \fancyhead[L]{\parbox[b]{\dimexpr\textwidth+\marginparsep+\marginparwidth-3.5cm\relax}{\raggedright\fontsize{24}{28}\selectfont\bfseries\color{vorange!90!black}\@titrechapitre}}
+    \fancyhead[L]{\parbox[b]{\dimexpr\textwidth+\marginparsep+\marginparwidth-3.5cm\relax}{\raggedright\fontsize{24}{28}\selectfont\bfseries\@titrechapitre}}
   \fi%
   \fancyhead[R]{\parbox[b]{3cm}{\raggedleft\fontsize{50}{40}\selectfont\bfseries\color{vorange}\@numchapitre}}
   \renewcommand{\headrulewidth}{0.8pt}

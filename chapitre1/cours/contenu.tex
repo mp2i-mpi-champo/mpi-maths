@@ -129,9 +129,7 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 \end{definition}
 
 \begin{exemple}
-    $(\R, |\cdot|)$
-
-    $(\C, |\cdot|)$
+    $(\R, |\cdot|)$ et $(\C, |\cdot|)$ sont des espaces vectoriels normés.
 \end{exemple}
 
 
@@ -173,9 +171,9 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 \subsection{Distance associée}
 
 \begin{definition}{}{}
-    \\Soit $(E, N)$ un espace vectoriel normé.
+    Soit $(E, N)$ un espace vectoriel normé.
     On définit $d_N$ la distance associée par :
-    $$\forall (u, v) \in E^2, d_N(u, v) = N(v - u) = N(u - v)$$
+    $$\forall (u, v) \in E^2,~ d_N(u, v) = N(v - u) = N(u - v)$$
 \end{definition}
 
 \begin{proposition}{Propriétés distance}{}
@@ -205,11 +203,11 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
     \\Soit $(E, N)$ un espace vectoriel normé, avec $A \subset E$ non vide. \\
 
     Soit $x \in E$, on appelle distance de $x$ à $A$ et on note $d(x, A) = d_A(x)$ le réel positif
-    $$d_A(x) = \inf \space \{d(x, a), a \in A\}$$
+    $$d_A(x) = \inf \{~ d(x, a) ~,~ a \in A\}$$
 \end{definition}
 
 \begin{proposition}{Inégalité distance à une partie / entre deux points}{}
-    Pour $x, y \in E$ et $A \subset E$ non vide, 
+    \\Pour $x, y \in E$ et $A \subset E$ non vide, 
     $$|d_A(x) - d_A(y)| \leqslant d(x, y)$$
 \end{proposition}
 
@@ -218,18 +216,17 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 }
 
 \begin{proof}
-    Soit $a \in A$, $d(x, a) \leqslant d(x, y) + d(y, a)$
+    Soit $a \in A$.
 
-    Or $d(x, a) \geqslant d_A(x)$
+    $d(x, a) \leqslant d(x, y) + d(y, a)$, or $d(x, a) \geqslant d_A(x)$
 
     Donc $d_A(x) - d(x, y) \leqslant d(y, a)$ avec le terme de gauche le minorant de
     $\{d(y, a), a \in A\}$
 
-    Donc $d_A(x) - d(x, y) \leqslant d_A(y)$
+    Donc $d_A(x) - d(x, y) \leqslant d_A(y)$.
+    Ce qui donne : $d_A(x) - d_A(y) \leqslant d(x, y)$
 
-    Donc $d_A(x) - d_A(y) \leqslant d(x, y)$
-
-    De même $d_A(y) - d_A(x) \leqslant d(y, x) \leqslant d(x, y)$
+    De même en échangeant $x$ et $y$ : $d_A(y) - d_A(x) \leqslant d(y, x) \leqslant d(x, y)$
 \end{proof}
 
 \subsection{Boules et sphères}
@@ -332,7 +329,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     Notons:
     
     $\displaystyle C = \left\{\sum_{i = 1}^n \lambda_i a_i, (a_1, \dots, a_n) \in A, (\lambda_1, \dots, \lambda_n) \in \R^+ \text{ tq } \sum_{i = 1}^n \lambda_i = 1, n \in \N^*\right\}$
-    et $B$ l'enveloppe convexe de $A$. 
+    et $B$ l'enveloppe convexe de $A$. \\
 
     Soit $a \in A$. 
 
@@ -575,8 +572,8 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
     $u = (u_n)_{n \in \N}$.  Cette suite est bornée ssi $\exists M > 0, \forall n \in \N, N(u_n) \leqslant M$
 \end{exemple}
 
-\begin{proposition}{Nature ensemble des fonctions bornées}{}
-    \\Soit $X \neq \emptyset, (E, N)$ un espace vectoriel normé. 
+\begin{proposition}{Nature de l'ensemble des fonctions bornées}{}
+    \\Soit $X \neq \emptyset$ et $(E, N)$ un espace vectoriel normé. 
     L'ensemble des fonctions bornées de $X$ dans $E$ est un $\K$-espace vectoriel noté
     $\mathscr B(X, E)$. \\
 
@@ -605,9 +602,9 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
                 \space & \leqslant & |\alpha| M_1 + |\beta| M_2\\
             \end{array}
             \]
+            
+            Donc $\alpha f + \beta g$ est bornée. 
     \end{itemize}
-
-    Donc $\alpha f + \beta g$ est bornée. 
 \end{proof}
 
 \section{Équivalence des normes}
@@ -667,7 +664,7 @@ Soit $E$ un $\K$-espace vectoriel.
 
     Par équivalence, $\exists \alpha > 0, \forall y \in E, N_2(y) \leqslant \alpha N_1(y)$
 
-    Donc $\forall x \in A, N_2(x) \leqslant \alpha M$
+    Donc $\forall x \in A$, $N_2(x) \leqslant \alpha M$
 
     Donc $A$ est bornée pour $N_2$.
 
@@ -685,7 +682,7 @@ Soit $E$ un $\K$-espace vectoriel.
 \end{proposition}
 
 \begin{remarque}
-    Une suite qui marche souvent est $x^n$.
+    Une suite qui marche souvent est $(x^n)_{n \in \N}$.
 \end{remarque}
 
 \idee{
@@ -704,19 +701,19 @@ Soit $E$ un $\K$-espace vectoriel.
 \begin{exemple}[Normes dans $\R^2$]
     On montre (cf IV) que 
 
-    $\fonction{|| \cdot ||_1}{\R^2}{\R}{(x, y)}{\mid x \mid + \mid y \mid}$
+    $\fonction{|| \cdot ||_1}{\R^2}{\R}{(x, y)}{|x| + |y|}$
 
     $\fonction{|| \cdot ||_2}{\R^2}{\R}{(x, y)}{\sqrt{x^2 + y^2} = ||(x, y)||_2}$
 
-    $\fonction{|| \cdot ||_3}{\R^2}{\R}{(x, y)}{\max (\mid x \mid, \mid y \mid)}$
-    sont des normes.
+    $\fonction{|| \cdot ||_\infty}{\R^2}{\R}{(x, y)}{\max (|x|, |y|)}$
+    sont des normes. \\
 
     Soit $u = (x, y) \in \R^2$. 
 
-    $|| u ||_\infty \leqslant \mid x \mid + \mid y \mid \leqslant 2 ||u||_\infty$
-    donc $|| u ||_\infty \leqslant ||u_1|| \leqslant 2 ||u||_\infty$
+    $|| u ||_\infty \leqslant |x| + |y| \leqslant 2 ||u||_\infty$
+    donc $|| u ||_\infty \leqslant ||u||_1 \leqslant 2 ||u||_\infty$
 
-    Donc $|| \cdot ||$ et $|| \cdot ||_1$ équivalentes. 
+    Donc $|| \cdot ||_\infty$ et $|| \cdot ||_1$ équivalentes. \\
 
     On peut montrer de même les autres équivalences.
 \end{exemple}
@@ -750,10 +747,10 @@ Soit $E$ un $\K$-espace vectoriel.
     Donc norme 2 plus fine que norme 1. 
 \end{exemple}
 
-\begin{theoreme}{Equivalence des normes dans un ev de dim finie}{}
+\begin{theorement}{}{}
     Si $E$ est un $\K$-espace vectoriel de dimension finie, toutes les normes 
     sur $E$ sont équivalentes entre elles.
-\end{theoreme}
+\end{theorement}
 
 \section{Normes classiques}
 
@@ -763,7 +760,6 @@ Soit $E$ un $\K$-espace vectoriel.
 
 \begin{theoreme}{Lemme de la borne sup}{}
     Soit $A$ une partie non vide et majorée de $\R$ et $k \geqslant 0$. 
-    
     En notant $kA = \{ka, a \in A \}$, on a $\sup kA = k \sup A$.
 \end{theoreme}
 
@@ -790,9 +786,8 @@ Soit $E$ un $\K$-espace vectoriel.
 \begin{proposition}{Norme infinie}{}
     Soit $X$ un ensemble non vide et $E = \mathscr B(X, \K)$ l'espace vectoriel  des 
     fonctions bornées à valeur dans $\K$. 
-
     Pour $f \in E$ on note : 
-    $$||f||_\infty = \sup \{\mid f(x) \mid, x \in X\}$$
+    $$||f||_\infty = \sup \{|f(x)|, x \in X\}$$
 
     Alors $|| \cdot ||_\infty$ est une norme appelée norme de la convergence uniforme. 
 \end{proposition}
@@ -804,35 +799,26 @@ Soit $E$ un $\K$-espace vectoriel.
 
     \begin{itemize}
         \item \uline{Séparation :}
-
-        Soit $f \in \mathscr B(X, \K)$, tel que $||f ||_\infty = 0$. 
-
-        Alors $\forall x \in X, \mid f(x) \mid \leqslant 0 = 0$
-
+        Soit $f \in \mathscr B(X, \K)$, telle que $||f ||_\infty = 0$. 
+        Alors $\forall x \in X, |f(x)| \leqslant 0 = 0$
         Donc $f = 0$.
 
-        \item \uline{Homogénéité :}
-        
-        Soit $f \in \mathscr B(X, \K), \lambda \in \K$. 
+        \item \uline{Homogénéité :} Soit $f \in \mathscr B(X, \K), \lambda \in \K$,
 
         \[
         \begin{array}{rcl}
-            || \lambda f ||_\infty & = & \sup\{\mid \lambda \mid \mid f(x) \mid, x \in X\} \\
-            \space & = & \mid \lambda \mid \sup \{ \mid f(x) \mid , x \in X\} \\
-            \space & = & \mid \lambda \mid ||f ||_\infty \\
+            || \lambda f ||_\infty & = & \sup\{|\lambda|~|f(x)|, x \in X\} \\
+            \space & = & |\lambda| \sup \{ |f(x)| , x \in X\} \quad \text{(lemme de la borne sup)}\\
+            \space & = & |\lambda| ~ ||f ||_\infty \\
         \end{array}
         \]
 
-        \item \uline{Inégalité triangulaire :}
-
-        Soient $f, g \in \mathscr B(X, \K)$. 
-
-        Soit $x \in X$. 
+        \item \uline{Inégalité triangulaire :} Soient $f, g \in \mathscr B(X, \K)$, $x \in X$, 
 
         \[
         \begin{array}{rcl}
-            \mid (f + g)(x) \mid & = & \mid f(x) + g(x) \mid \\
-            \space & \leqslant & \mid f(x) \mid + \mid g(x) \mid \\
+            |(f + g)(x)| & = & |f(x) + g(x)| \\
+            \space & \leqslant & |f(x)| + |g(x)| \\
             \space & \leqslant & ||f||_\infty + ||g ||_\infty \\
         \end{array}
         \]
@@ -841,7 +827,7 @@ Soit $E$ un $\K$-espace vectoriel.
     \end{itemize}
 \end{proof}
 
-\subsubsection{Norme infinie sur \texorpdfstring{$\K^n$}{kn}}
+\subsubsection{Norme infinie sur $\K^n$}
 
 \begin{definition}{Norme infinie sur $\K^n$}{}
     Pour $X = \{1, \dots, n\}$ et en utilisant la bijection $\mathscr B(X, \K)$
@@ -850,7 +836,7 @@ Soit $E$ un $\K$-espace vectoriel.
     $$\fonction{}{\mathscr B(X, \K)}{\K^n}{f}{(f(1), \dots, f(n))}$$\\
 
     On a ainsi construit $|| \cdot ||_\infty$ sur $\K^n$ qui est donc une norme définie
-    par $||(x_1, \dots, x_n)||_\infty = \sup\{\mid x_1\mid \dots \mid x_n \mid \} = \max (\mid x_1\mid \dots \mid x_n \mid)$
+    par $||(x_1, \dots, x_n)||_\infty = \sup\{|x_1|, \dots, |x_n| \} = \max (|x_1|, \dots, |x_n|)$
 \end{definition}
 
 
@@ -860,7 +846,7 @@ Soit $E$ un $\K$-espace vectoriel.
     On note $\ell^\infty(K) = \mathscr B(\N, \K)$ l'espace vectoriel des suites bornées
     à valeurs dans $\K$. On y a ainsi défini la norme $|| \cdot ||_\infty$ par :
 
-    $$||(u_n)_{n \in \N} ||_\infty = \sup\{\mid u_n \mid, n \in \N\}$$
+    $$||(u_n)_{n \in \N} ||_\infty = \sup\{|u_n|, n \in \N\}$$
 \end{definition}
 
 \subsubsection{Norme infinie sur \texorpdfstring{$\mathscr C([a, b], \K)$}{C([a, b], K)}}
@@ -874,8 +860,8 @@ Soit $E$ un $\K$-espace vectoriel.
 
     \[
     \begin{array}{rcl}
-        ||f ||_\infty & =& \sup\{\mid f(x) \mid, x \in \inter{a}{b}\} \\
-        \space & = & \max\{\mid f(x) \mid, x \in \inter{a}{b}\} \\
+        ||f ||_\infty & =& \sup\{|f(x)|, x \in \inter{a}{b}\} \\
+        \space & = & \max\{|f(x)|, x \in \inter{a}{b}\} \\
     \end{array}
     \]
 
@@ -883,12 +869,11 @@ Soit $E$ un $\K$-espace vectoriel.
 \end{definition}
 
 
-\subsection{Applications, produit cartésien d'evns}
+\subsection{Applications, produit cartésien d'espaces vectoriels normalisés}
 
 \begin{theoreme}{Norme produit}{}
     Soient $(E_1, N_1), \dots, (E_p, N_p)$ des espaces vectoriels normés
-    et $E$ l'espace vectoriel $E = E1 \times E_2 \dots \times E_p$
-
+    et $E$ l'espace vectoriel $E = E1 \times E_2 \dots \times E_p$.
     Alors pour $u = (u_1, \dots, u_p) \in E$ on pose :
 
     $$N_\infty(u) = \max(N_1(u_1), \dots, N_p(u_p))$$
@@ -899,114 +884,107 @@ Soit $E$ un $\K$-espace vectoriel.
 \begin{proof}
     $N_\infty$ est bien définie et à valeurs dans $\R^+$
 
-    \quad \underline{Séparation : }
+    \begin{itemize}
+        \item \uline{Séparation :}
+        Supposons que $N_\infty(u) = 0$. 
+        Alors $\forall j \in \{1, \dots, p\}$, $N_j(u_j) = 0$. 
+        Or $N_j$ est une norme donc $u_j = 0$.
 
-    Supposons que $N_\infty(u) = 0$. 
+        \item \uline{Homogénéité :}
+        Soit $\lambda \in K, u = (u_1, \dots, u_p)$,
 
-    Alors $\forall j \in \{1, \dots, p\}$ $N_j(u_j) = 0$
+        \[
+            \begin{array}{rcl}
+                N_\infty(\lambda u) & = & \max{N_j(\lambda u_j), j \in \{1, ..., p\}} \\
+                \space & = & |\lambda| ~ \max\{N_j(u_j), j \in \{1, ..., p\}\} \\
+                \space & = & |\lambda| ~ N_\infty(u) \\
+            \end{array}
+        \]
 
-    Or $N_j$ est une norme donc $u_j = 0$. 
+        \item \uline{Inégalité triangulaire :}
+        Soient $u = (u_1, \dots, u_p)$, $v = (v_1, \dots, v_p) \in E$,
 
-    \quad \underline{Homogénéité : }
+        $\forall j \in \{1, \dots, p\}$,
+        \[
+            \begin{array}{rcl}
+                N_j(u_j + v_j) & \leqslant & N_j(u_j) + N_j(v_j) \\
+                \space & \leqslant & N_\infty(u) + N_\infty(v) \\
+            \end{array}
+        \]
 
-    Soit $\lambda \in K, u = (u_1, \dots, u_p)$. 
-
-    \[
-    \begin{array}{rcl}
-        N_\infty(\lambda u) & = & \max{N_j(\lambda u_j), j \in \{1, ..., p\}} \\
-        \space & = & \mid \lambda \mid \max\{N_j(u_j), j \in \{1, ..., p\}\} \\
-        \space & = & \mid \lambda \mid N_\infty(u) \\
-    \end{array}
-    \]
-
-    \quad \underline{Inégalité triangulaire : }
-
-    Soient $u = (u_1, \dots, u_p), v = (v_1, \dots, v_p) \in E$. 
-
-
-    $\forall j \in \{1, \dots, p\}$
-    \[
-        \begin{array}{rcl}
-            N_j(u_j + v_j) & \leqslant & N_j(u_j) + N_j(v_j) \\
-            \space & \leqslant & N_\infty(u) + N_\infty(v) \\
-        \end{array}
-    \]
-
-    Vrai pour tout $j$ donc $N_\infty(u + v) \leqslant N_\infty(u) + N_\infty(v)$
+            Vrai pour tout $j$ donc $N_\infty(u + v) \leqslant N_\infty(u) + N_\infty(v)$.
+    \end{itemize}
 \end{proof}
 
 \subsection{Normes 1}
 
-\subsubsection{Sur \texorpdfstring{$\K^n$}{kn}}
+\subsubsection{Sur $\K^n$}
 
-\begin{definition}{Norme 1 sur Kn}{}
+\begin{definition}{Norme 1 sur $\K^n$}{}
     Pour $x = (x_1, \dots, x_n) \in \K^n$ on pose 
 
-    $$||x||_1 = \sum_{i = 1 }^{n } \mid x_i\mid$$
+    $$||x||_1 = \sum_{i = 1 }^{n } |x_i|$$
 \end{definition}
 
 \begin{theoreme}{Norme 1 sur $\K^n$}{}
-    La norme 1 est une norme 
+    La norme 1 est une norme.
 \end{theoreme}
 
 \begin{proof}
-    La norme 1 est à valeurs dans $\R^+$. 
+    La norme 1 est définie et à valeurs dans $\R^+$. 
 
-    Si la norme est nulle, alors somme de nb positifs nuls. 
-
-    Si $\displaystyle \lambda \in \K$, $||\lambda x || = \sum_{i = 1 }^{n }\mid \lambda x_i \mid = \mid \lambda \mid ||x_i||_1$
-
-    Inégalité trinagulaire classique à utiliser pour la prouver 
+    \begin{itemize}
+        \item Si la norme est nulle, alors on a une somme de nombres positifs nuls, qui sont donc tous nuls. 
+        \item Si $\displaystyle \lambda \in \K$, $||\lambda x ||_1 = \sum_{i = 1 }^{n }|\lambda x_i | = |\lambda| ~ ||x_i||_1$.
+        \item  Inégalité triangulaire classique à utiliser pour la prouver. 
+    \end{itemize}
 \end{proof}
 
-\subsubsection{Sur \texorpdfstring{$\ell^1$}{l1} K ev des suites sommables sur K}
+\subsubsection{Sur $\ell^1$ $\K$-ev des suites sommables sur $\K$}
 
-\begin{definition}{Notation $\ell^1$}{}
-    On note $\ell^1(\K) = \{(u_n)_{n \in \N} \in \K^n \mid \sum_{n \leqslant 0} \mid u_n \mid \text{est une suite convergente}\}$
-\end{definition}
+\begin{definitionnt}{}{}
+    \\On note $\ell^1(\K) = \{(u_n)_{n \in \N} \in \K^n \mid \sum_{n \leqslant 0} |u_n| ~ \text{est une suite convergente} ~ \}$
+\end{definitionnt}
 
 \begin{theoreme}{Norme 1 suites}{}
-    En posant pour $u \in \ell^1(\K)$ 
-    $$||u||_1 = \sum_{i = 0}^{+ \infty }\mid u_i \mid$$ 
+    En posant pour $u \in \ell^1(\K)$,
+    $$||u||_1 = \sum_{i = 0}^{+ \infty }|u_i|$$ 
     on définit une norme. 
 \end{theoreme}
 
 \begin{proof}
-    $|| u ||_1$ est bien def car la série converge absolument, et est à valeurs $\geqslant 0$
+    $|| u ||_1$ est bien définie car la série converge absolument, et est à valeurs positives.
 
-    \quad \uline{Séparation : }
+    \begin{itemize}
+        \item \uline{Séparation :}
+        Si $||u ||_1 = 0$, alors $\displaystyle \sum_{i = 0}^{+ \infty}  |u_i| = 0 $.
+        Donc $\forall i$, $|u_i| = 0 $ et $u = 0$. 
 
-    Si $||u ||_1 = 0$, alors $\displaystyle \sum_{i = 0}^{+ \infty}  \mid u_i \mid = 0 $
-
-    Donc $\forall i, \mid u_i\mid = 0 $ et $u = 0$. 
-
-    \quad \uline{Homogénéité : }
-
-    $\displaystyle \sum_{ i = 0 }^{+ \infty }\mid \lambda u_i \mid = \mid \lambda \mid \sum_{i = 0 }^{+ \infty }\mid u_i \mid$
-
-    \quad \uline{Inégalité triangulaire : }
-
-    Soient $u, v \in \ell^1(\K)$ 
-
-    \[ \displaystyle
-    \begin{aligned}
-        ||u + v ||_1 & =  \sum_{i = 0 }^{+ \infty }\mid u_i + v_i \mid \\
-        \space & \leqslant  \sum_{i = 0}^{+ \infty} \mid u_i \mid + \mid v_i \mid \\
-        \space & \leqslant  ||u||_1 + ||v||_1 \\
-    \end{aligned}
-    \]
+        \item \uline{Homogénéité :}
+        $\displaystyle \sum_{ i = 0 }^{+ \infty } |\lambda u_i| = |\lambda| ~ \sum_{i = 0 }^{+ \infty } |u_i|$
+        
+        \item \uline{Inégalité triangulaire :} Soient $u, v \in \ell^1(\K)$,
+        \[ \displaystyle
+            \begin{aligned}
+                ||u + v ||_1 & =  \sum_{i = 0 }^{+ \infty } |u_i + v_i| \\
+                \space & \leqslant  \sum_{i = 0}^{+ \infty} |u_i| + |v_i| \\
+                \space & \leqslant  ||u||_1 + ||v||_1 \\
+            \end{aligned}
+        \]
+    \end{itemize}
 \end{proof}
 
-\subsubsection{Sur \texorpdfstring{$\mathscr C([a, b], \K)$}{C([a, b], K)}}
+\subsubsection{Sur $\mathscr C([a, b], \K)$}
 
-\begin{definition}{Norme 1 sur C([a, b], K)}{}
-    On définit pour $f \in \mathscr C(\inter{a}{b}, \K)$, 
+\begin{definition}{Norme 1 sur $\mathscr C([a, b], \K)$}{}
+    Pour $f \in \mathscr C(\inter{a}{b}, \K)$, on pose :
     $$||f||_1 = \int_{a }^{b } \mid f(t) \mid \text d t$$
+
 \end{definition}
 
 \begin{remarque}
-    Si on prend le produit scalaire $<f, g> = \int_{a}^{b} fg$, on a 
-    $f(x) = <f', 1>$ (peut servir en exos). 
+    Si on prend le produit scalaire $\langle f, g \rangle = \int_{a}^{b} fg$, on a 
+    $f(x) =  \langle f', 1 \rangle $ (peut servir en exercice). 
 \end{remarque}
 
 \begin{theoreme}{Norme de la convergence moyenne}{}
@@ -1014,44 +992,40 @@ Soit $E$ un $\K$-espace vectoriel.
 \end{theoreme}
 
 \begin{proof}
-    $||\cdot ||_1$ est bien définie et à valeurs dans $\R^+$
+    $||\cdot ||_1$ est bien définie et à valeurs dans $\R^+$.
+    
+    \begin{itemize}
+        \item Si $||f||_1 = 0$ alors $\int_{a }^{b } |f(t)| \text d t = 0$
 
-    Si $||f||_1 = 0$ alors $\int_{a }^{b } \mid f(t) \mid \text d t = 0$
+        Or $\mid f \mid $ est continue positive donc $\forall t \in \inter{a}{b}, f(t) = 0$
 
-    Or $\mid f \mid $ est continue positive donc $\forall t \in \inter{a}{b}, f(t) = 0$
+        \item \uline{Homogénéité :} ~ $|| \lambda f || = |\lambda| ~ ||f||_1$ 
 
-    \uindent{Homogénéité }
-
-    $|| \lambda f || = \mid \lambda \mid ||f||_1$ 
-
-    \uindent{Inégalité triangulaire }
-
-    Utiliser inégalité triangulaire classique et croissance de l'intégrale. 
+        \item \uline{Inégalité triangulaire :} Utiliser inégalité triangulaire classique et croissance de l'intégrale.     
+    \end{itemize}
 \end{proof}
 
 \begin{exemple}
     Si $E = \K(X)$
     
-    On peut poser pour $P \in E$ $||P|| = \int_{-1}^{2} \mid P(t) \mid \text d t$
+    On peut poser pour $P \in E$ $||P|| = \int_{-1}^{2} |P(t)| \text d t$ \\
 
-    La preuve est identique à celle d'avant sauf la fin de la verif de l'axiome de séparation 
+    La preuve est identique à celle d'avant sauf la fin de la vérification de l'axiome de séparation 
     où il faut ajouter que P(t) est nul sur le segment, donc a une infinité de racines donc
     est nul. 
 \end{exemple}
 
 \subsection{Normes 2}
 
-\subsubsection{Cas \texorpdfstring{$\K = \R$}{K = R}}
+\subsubsection{Cas $\K = \R$}
 
+Soit $E$ un $\R$-espace vectoriel muni d'un produit scalaire $\langle \cdot , \cdot \rangle$.
 
-Soit $E$ un $\R$-espace vectoriel muni d'un produit scalaire $< \cdot , \cdot >$.
-
-
-\begin{theoreme}{Norme euclidienne}{}
+\begin{theorement}{}{}
     L'application $|| \cdot ||_2$ définie par : 
-    $$ \forall u \in E, ||u||_2 = \sqrt{<u, u>}$$
+    $$ \forall u \in E, ||u||_2 = \sqrt{\langle u, u \rangle}$$
     est une norme appelée norme euclidienne associée au produit scalaire. 
-\end{theoreme}
+\end{theorement}
 
 \idee{
     Pour l'inégalité triangulaire, utiliser Cauchy Schwarz. 
@@ -1060,33 +1034,28 @@ Soit $E$ un $\R$-espace vectoriel muni d'un produit scalaire $< \cdot , \cdot >$
 \begin{proof}
     $|| \cdot ||_2$ est bien définie et à valeurs dans $\R^+$ car le produit scalaire est positif. 
 
-    \uindent{Séparation }
+    \begin{itemize}
+        \item \uline{Séparation :} Si $||u||_2 = 0 $ alors $<u, u> = 0$ donc $u = 0$ car le produit scalaire est défini. 
 
-    \svspace Si $||u||_2 = 0 $ alors $<u, u> = 0$ donc $u = 0$ car le produit scalaire est 
-    défini. 
+        \item \uline{Homogénéité :} $||\lambda u|| = \sqrt{\langle \lambda u, \lambda u\rangle} = |\lambda| ~ ||u||_2$
 
-    \uindent{Homogénéité }
+        \item \uline{Inégalité triangulaire :} Soient $u, v \in E$,
 
-    \svspace $||\lambda u|| = \sqrt{<\lambda u, \lambda u>} = \mid \lambda \mid ||u||_2$
+        \[
+            \begin{array}{rcl}
+                ||u + v ||^2_2 & = & \langle u + v , u + v \rangle \\
+                \space & = & ||u||_2^2 + 2 \langle u, v \rangle + ||v||_2^2 \\
+                \space & \leqslant & ||u||_2^2 + 2 ||u||_2||v||_2 + ||v||_2^2 \\
+            \end{array}
+        \]
 
-    \uindent{Inégalité triangulaire }
-
-    \svspace Soient $u, v \in E$
-
-    \[
-    \begin{array}{rcl}
-        ||u + v ||^2_2 & = & <u + v , u + v> \\
-        \space & = & ||u||_2^2 + 2 <u, v> + ||v||_2^2 \\
-        \space & \leqslant & ||u||_2^2 + 2 ||u||_2||v||_2 + ||v||_2^2 \\
-    \end{array}
-    \]
-
-    Donc $||u + v||_2^2 \leqslant (||u||_2 + ||v||_2)^2$
+        Donc $||u + v||_2^2 \leqslant (||u||_2 + ||v||_2)^2$
+    \end{itemize}
 \end{proof}
 
 \begin{definition}{Norme sur $\R^n$}{}
-    Pour $x = (x_1, \dots, x_n)$ et $y = (y_1, \dots, y_n)$, $\displaystyle <x, y> = \sum_{i = 1 }^{n }x_i y_i$ définit un 
-    produit scalaire sur $\R^n$. La norme associée est 
+    \\Pour $x = (x_1, \dots, x_n)$ et $y = (y_1, \dots, y_n)$, $\displaystyle \langle x, y \rangle = \sum_{i = 1 }^{n }x_i y_i$ définit un 
+    produit scalaire sur $\R^n$. La norme associée est :
     $$ ||x||_2 = \sqrt{\sum_{i = 1 }^{n }x_i^2}$$
 \end{definition}
 
@@ -1097,193 +1066,184 @@ Soit $E$ un $\R$-espace vectoriel muni d'un produit scalaire $< \cdot , \cdot >$
 \end{theoreme}
 
 \idee{
-    cheat code avec l'identité remarquable
+    cheat code avec l'identité remarquable.
 }
 
-\begin{proof}
-    $E \subset \R^{\N}$
+\begin{proof}~\\
+    \begin{itemize}
+        \item $E \subset \R^{\N}$
+        
+        \item $0 \in E$
 
-    $0 \in E$
+        \item Soient $u, v \in E, \alpha \in \R$, $\forall n \in \N$,
+        
+        $(\alpha u_n + v_n)^2 = \alpha^2u_n^2 + v_n^2 + 2 \alpha u_n v_n$. Les deux premiers termes sont des TGSCV.
 
-    Soient $u, v \in E, \alpha \in \R$. 
+        De plus $|u_n v_n| \leqslant \frac 1 2 (u_n^2 + v_n^2)$, donc $\sum_{n \geqslant 0} u_n v_n$ converge absolument donc converge. 
 
-    $\forall n \in N,$
-
-    $(\alpha u_n + v_n)^2 = \alpha^2u_n^2 + v_n^2 + 2 \alpha u_n v_n$ Les deux premiers termes son des TGSCV
-
-    Et $\mid u_n v_n \mid \leqslant \frac 1 2 (u_n^2 + v_n^2)$
-
-    Donc $\sum_{n \geqslant 0} u_n v_n$ converge absolument donc converge. 
-
-    Donc $\sum_{n \geqslant 0} (\alpha u_n + v_n)^2$ est convergente. 
+        Donc $\sum_{n \geqslant 0} (\alpha u_n + v_n)^2$ est convergente. 
+    \end{itemize}
 \end{proof}
 
 \begin{theoreme}{Norme 2 suites}{}
-    Pour $u, v \in \ell^2(\R)$, $\displaystyle <u, v> = \sum_{n = 0 }^{+ \infty} u_n v_n$
-    définit un produit scalaire. 
+    Pour $u, v \in \ell^2(\R)$, $\displaystyle \langle u, v \rangle = \sum_{n = 0 }^{+ \infty} u_n v_n$
+    définit un produit scalaire. \\
 
     La norme euclidienne associée est : 
     $$||u||_2 = \sqrt{\sum_{n = 0 }^{\infty}u_n^2}$$
 \end{theoreme}
 
 \begin{proof}
-    Par la démo précédente, $<u, v>$ existe, est bilinéaire symétrique par calcul 
+    Par la démo précédente, $\langle u, v \rangle$ existe, est bilinéaire symétrique par calcul 
     facile et $u_n = 0$ si la norme est nulle. 
 \end{proof}
 
-Soit $E = \mathscr C(\inter{a}{b}, \R)$
+Soit $E = \mathscr C(\inter{a}{b}, \R)$.
 
 \begin{theoreme}{Norme de la convergence moyenne quadratique}{}
     Pour $f, g \in E$, on pose 
-    $<f, g> = \int_{a}^{b} f(t)g(t) \text d t$
+    $\langle f, g \rangle = \int_{a}^{b} f(t)g(t) \text d t$
     est un produit scalaire, et la norme associée est 
     $$||f||_2 = \sqrt{\int_{a }^{b } f(t)^2 \text d t}$$
     on l'appelle norme de la convergence moyenne quadratique. 
 \end{theoreme}
 
 \begin{proof}
-    Big flemme, facile et comme les autres
+    Facile comme les autres.
 \end{proof}
 
-\subsubsection{Cas des espaces complexes }
+\subsubsection{Cas des espaces complexes}
 
 \begin{definition}{Produit scalaire complexe}{}
     Soit $E$ un $\C$-espace vectoriel et 
-    $$\fonction{<\cdot, \cdot>}{E \times E}{\C}{(u, v)}{<u, v>}$$
-    On dit que $<\cdot, \cdot>$ est un produit scalaire ou une forme 
+    $$\fonction{\langle\cdot, \cdot\rangle}{E \times E}{\C}{(u, v)}{\langle u, v \rangle}$$
+    On dit que $\langle\cdot, \cdot\rangle$ est un produit scalaire ou une forme 
     sesquilinéaire à symétrie hermitienne définie positive. 
 
     $\forall u, v, w \in E, \lambda \in \C$, 
 
     \begin{itemize}
-        \item $<\lambda u + v, w> = \bar \lambda<u, w> + <v, w>$
-        \item $<u, v> = \overline{<v, u>}$
-        \item $<u, u> \in \R^+$
-        \item $<u, u> = 0$ ssi $u=0$
+        \item $\langle\lambda u + v, w \rangle = \bar \lambda\langle u, w \rangle + \langle v, w \rangle$
+        \item $\langle u, v \rangle = \overline{\langle v, u \rangle}$
+        \item $\langle u, u \rangle \in \R^+$
+        \item $\langle u, u \rangle = 0$ ssi $u=0$
     \end{itemize}
 \end{definition}
 
-\begin{theoreme}{Inégalité de Cauchy Schwarz complexe}{}
+\begin{theorement}{}{}
     Inégalité de Cauchy Schwarz complexe :
-    $$\forall u, v \in E, \mid <u, v> \mid \leqslant ||u||_2 \cdot ||v||_2$$
-\end{theoreme}
+    $$\forall u, v \in E, |\langle u, v \rangle| \leqslant ||u||_2 \cdot ||v||_2$$
+\end{theorement}
 
 \idee{
-    Considérer $<\lambda u + v, \lambda u + v> \geqslant 0$ et choisir $\lambda$ 
+    Considérer $\langle\lambda u + v, \lambda u + v\rangle \geqslant 0$ et choisir $\lambda$ 
     astucieusement. 
 }
 
 \begin{proof}
-    Soient $u, v \in E$. 
-    Pour $\lambda \in \C$, 
-
-    $<\lambda u + v, \lambda u + v> \in \R^+ $
+    Soient $u, v \in E$, pour $\lambda \in \C$, $\langle\lambda u + v, \lambda u + v\rangle \in \R^+ $
 
     $$
     \begin{array}{rcl}
-        <\lambda u + v, \lambda u + v> & = & \lambda <\lambda u + v, u > + <\lambda u + v, v> \\
-        \space & = & \lambda (\bar \lambda <u, u> + <v, u>) + \bar \lambda <u, v> + <v, v> \\
-        \space & = & \mid \lambda \mid^2 <u, u> + \bar \lambda <u, v> + <v, v> \\
-        \space & = & \mid \lambda \mid^2 <u, u> + 2 \re(\lambda <v, u>) + <v, v> \\
+        \langle\lambda u + v, \lambda u + v\rangle & = & \lambda \langle\lambda u + v, u \rangle + \langle\lambda u + v, v\rangle \\
+        \space & = & \lambda (\bar \lambda \langle u, u \rangle + \langle v, u \rangle ) + \bar \lambda \langle u, v \rangle + \langle v, v \rangle \\
+        \space & = & |\lambda|^2 \langle u, u \rangle + \bar \lambda  \langle u, v \rangle + \langle v, v \rangle \\
+        \space & = & |\lambda|^2 \langle u, u \rangle + 2 \re(\lambda \langle v, u \rangle) + \langle v, v \rangle \\
     \end{array}
     $$
 
-    Considérons $\ds \lambda = - \frac{-<u, v>}{<u, u>}$ en ce $\lambda$ la quantité est dans
+    Considérons $\ds \lambda = - \frac{- \langle u, v \rangle }{\langle u, u \rangle}$ en ce $\lambda$ la quantité est dans
     $\R^+$
 
-    $\displaystyle \frac{\mid <u, v>\mid^2}{<u, u>} - 2 \re \left(\frac{\mid <u, v>\mid^2}{<u, u}\right) + <v, v> \geqslant 0$
+    $\displaystyle \frac{|\langle u, v \rangle|^2}{\langle u, u \rangle} - 2 \re \left(\frac{|\langle u, v \rangle|^2}{\langle u, u \rangle}\right) + \langle v, v \rangle \geqslant 0$
 
-    Donc $\displaystyle - \frac{\mid <u, v>\mid ^2}{<u, u>} + <v, v> \geqslant 0$
+    Donc $\displaystyle - \frac{|\langle u, v \rangle|^2}{\langle u, u \rangle} + \langle v, v \rangle \geqslant 0$
 
-    Donc $\mid <u, v> \mid^2 \leqslant <u, u> <v, v>$
+    Donc $|\langle u, v \rangle|^2 \leqslant \langle u, u \rangle \langle v, v \rangle$
 
-    Doncc $\mid <u, v> \leqslant ||u||_2 \cdot ||v||_2$ qui est l'inégalité de Cauchy Schwarz. 
+    Donc $\mid \langle u, v \rangle \leqslant ||u||_2 \cdot ||v||_2$ qui est l'inégalité de Cauchy Schwarz. 
 
 \end{proof}
 
 \begin{theoreme}{Norme hermitienne associée}{}
-    $||u||_2 = \sqrt{<u, v>}$ est une norme sur $E$ appelée norme hermitienne associée. 
+    $||u||_2 = \sqrt{\langle u, v \rangle}$ est une norme sur $E$ appelée norme hermitienne associée. 
 \end{theoreme}
 
 \begin{proof}
     Cette norme existe et est positive. 
 
-    \quad \underline{Séparation : }
+    \begin{itemize}
+        \item \uline{Séparation :} Si $||u||_2 = 0$ alors $u=0$
 
-    Si $||u||_2 = 0$ alors $u=0$
+        \item \uline{Homogénéité :}
+        \[
+            \begin{array}{rcl}
+                || \lambda u ||_2 & = & \sqrt{\langle\lambda u, \lambda v \rangle} \\
+                \space & = & |\lambda| ~ ||u||_2
+            \end{array}
+        \]
 
-    \quad \underline{Homogénéité : }
+        \item \uline{Inégalité triangulaire :} Soient $u, v \in E$,
 
-    \[
-    \begin{array}{rcl}
-        || \lambda u ||_2 & = & \sqrt{<\lambda u, \lambda v} \\
-        \space & = & \mid \lambda \mid ||u||_2
-    \end{array}
-    \]
-
-    \quad \uline{Inégalité triangulaire :}
-    
-    Soient $u, v \in E$
-
-    $$
-    \begin{array}{rcl}
-        ||u + v||^2_2 & = & <u + v, u + v>  \\
-        \space & = & <u + u> + <u, v> + <v, u> + <v, v> \\
-        \space & = & ||u||_2^2 + <u, v> + \overline{<u, v>} + ||v||_2^2  \\
-        \space & =& ||u||_2^2 + 2 \re(<u, v>) + ||v||_2^2 \\
-        \space & \leqslant & ||u||_2^2 + 2 \mid <u, v> \mid + ||v||_2^2 \\
-        \space & \leqslant & ||u||_2^2 + 2 ||u||_2 ||v||_2 + ||v||_2^2 \\
-        \space & \leqslant & (||u||_2 + ||v||_2)^2 \\
-    \end{array}
-    $$
+        $$
+        \begin{array}{rcl}
+            ||u + v||^2_2 & = & \langle u + v, u + v \rangle  \\
+            \space & = & \langle u + u \rangle + \langle u, v \rangle + \langle v, u \rangle + \langle v, v \rangle \\
+            \space & = & ||u||_2^2 + \langle u, v \rangle + \overline{\langle u, v \rangle} + ||v||_2^2  \\
+            \space & =& ||u||_2^2 + 2 \re(\langle u, v \rangle) + ||v||_2^2 \\
+            \space & \leqslant & ||u||_2^2 + 2 |\langle u, v \rangle| + ||v||_2^2 \\
+            \space & \leqslant & ||u||_2^2 + 2 ||u||_2 ||v||_2 + ||v||_2^2 \\
+            \space & \leqslant & (||u||_2 + ||v||_2)^2 \\
+        \end{array}
+        $$
+        
+    \end{itemize}
 
 \end{proof}
 
 \begin{exemple}
-    Si $u = (u_1, \dots, u_n)$, $\displaystyle ||u||_2 = \sqrt{\sum_{i = 1}^{n} \mid u_i \mid^2}$
+    Si $u = (u_1, \dots, u_n)$, $\displaystyle ||u||_2 = \sqrt{\sum_{i = 1}^{n} |u_i|^2}$
     définit une norme. 
 
     C'est la norme euclidienne (resp hermitienne) canonique si $\K = \R$ (resp $\C$). 
 
     Elle provient du produit scalaire défini par : 
 
-    $\forall u = (u_1, \dots, u_n), v = (v_1, \dots, v_n) \in \K^n$
+    $\forall u = (u_1, \dots, u_n), v = (v_1, \dots, v_n) \in \K^n$,
 
     $$
-    <u, v> = \begin{cases}
+    \langle u, v \rangle = \begin{cases}
         \ds \sum_{i = 1}^{n} u_i v_i & \text{si } \K = \R \\
         \ds \sum_{i = 1}^{n} u_i \overline{v_i} & \text{si } \K = \C \\
     \end{cases}
     $$
 
     Sur $\ell^2(\K)$ espace vectoriel des suites de carré sommables,
-    $\ds \ell^2(\K) = \{(u_n)_{n \in \N} \mid \sum_{n \geqslant 0} \mid u_n \mid^2 \text{ converge}\}$
+    $\ds \ell^2(\K) = \{(u_n)_{n \in \N} \mid \sum_{n \geqslant 0} |u_n|^2 \text{ converge}\}$
     
-    On pose $\ds ||u_n||_2 = \sqrt{\sum_{n = 0 }^{+ \infty} \mid u_n \mid^2}$
+    On pose $\ds ||u_n||_2 = \sqrt{\sum_{n = 0 }^{+ \infty} |u_n|^2}$
 
     C'est une norme euclidienne (resp hermitienne) si $\K = \R$ (resp $\C$) issue
-    du produit scalaire $\ds <u_n, v_n> = \sum_{n = 0}^{+ \infty} u_n v_n \text{si } \K = \R$
-    $\ds <u_n, v_n> = \sum_{n = 0}^{+ \infty} u_n \overline{v_n} \text{si } \K = \C$
+    du produit scalaire $\ds \langle u_n, v_n \rangle = \sum_{n = 0}^{+ \infty} u_n v_n \text{si } \K = \R$
+    $\ds \langle u_n, v_n \rangle = \sum_{n = 0}^{+ \infty} u_n \overline{v_n} \text{si } \K = \C$
 
-    \uindent{preuve }
+    \uline{Preuve :}
 
     \svspace $\ds \forall n \in \N, \mid u_n v_n \mid \leqslant \frac 1 2 (\mid u_n \mid^2 + \mid v_n \mid^2)$ est le terme
     général d'une série convergente. 
 
-    Et donc $\ell^2(\K)$ sev de $\K^{\N}$ car $\mid u_n + v_n \mid^2 \leqslant |\mid u_n \mid + 2 \mid u_n v_n \mid + \mid u_n \mid^2$
+    Et donc $\ell^2(\K)$ sev de $\K^{\N}$ car $|u_n + v_n|^2 \leqslant |u_n|^2 + 2 |u_n v_n| + |v_n|^2$ \\
 
-    \uindent{Sur $\mathscr C(\inter{a}{b}, \K)$}
+    \uline{Sur $\mathscr C(\inter{a}{b}, \K)$ :}
 
-    \avspace On pose $\ds ||f||_2 = \sqrt{\int_{a}^{b} \mid f(t) \mid^2 \text d t}$
+    \avspace On pose $\ds ||f||_2 = \sqrt{\int_{a}^{b} |f(t)|^2 \text d t}$
 
-    C'est la norme de la convergence moyenne quadratique. Elle est issue du produit scalaire
-    $\ds <f, g> = \int_{a}^{b} f(t) \overline{g(t)} \text d t$
+    C'est la norme de la convergence moyenne quadratique. Elle est issue du produit scalaire :
+    $\ds \langle f, g \rangle = \int_{a}^{b} f(t) \overline{g(t)} \text d t$ \\
 
-    \uindent{preuve }
+    \uline{Preuve :}
 
-    \svspace évidente sauf le si $||f||_2 = 0$ alors $\int_{a }^{b } \mid f(t) \mid^2 \text d t = 0$
-
-    Or $f$ continue donc $\mid f \mid ^2 = 0 $ donc $f = 0$.
+    Évidente sauf le si $||f||_2 = 0$ alors $\int_{a }^{b } |f(t)|^2 \text d t = 0$. Or $f$ continue donc $|f|^2 = 0 $ donc $f = 0$.
 \end{exemple}
 
 

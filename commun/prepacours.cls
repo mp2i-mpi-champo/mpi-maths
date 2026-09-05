@@ -38,9 +38,13 @@
 \RequirePackage{enumitem}
 \RequirePackage{ifthen}
 
-
-\setmainfont{KpRoman}
-\setmathfont{KpMath-Regular}
+\setmainfont{Libertinus Serif}[
+  Ligatures=TeX,
+  Numbers=OldStyle
+]
+\setsansfont{Libertinus Sans}[Ligatures=TeX]
+\setmonofont{Libertinus Mono}
+\setmathfont{Libertinus Math}
 
 \setcounter{tocdepth}{2} 
 
@@ -199,7 +203,7 @@
   colback=white,
   no shadow,
   interior style={left color=bg_def_start, right color=white},
-  separator sign={ -- },
+  separator sign={~-- },
   fontupper=\normalfont\upshape
 }{definition}
 
@@ -225,7 +229,7 @@
   \refstepcounter{coursenv}%
   \begin{tcolorbox}[
     vexstyle,
-    title={Exemple \thecoursenv\ifstrempty{#1}{}{ (#1)}}
+    title={Exemple \thecoursenv\ifblank{#1}{}{\textnormal{\upshape~(#1)}}}
   ]%
 }{%
   \end{tcolorbox}%

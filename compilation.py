@@ -16,7 +16,7 @@ LATEX_COMPILER = "lualatex"
 
 GARBAGE_EXTENSIONS = {
     ".aux", ".log", ".toc", ".out", ".synctex.gz", 
-    ".fls", ".fdb_latexmk", ".lof", ".lot", ".bcf", ".run.xml"
+    ".fls", ".fdb_latexmk", ".lof", ".lot", ".bcf", ".run.xml", ".ptc", ".idx"
 }
 
 parser = argparse.ArgumentParser(description="Compilation script for MPI math course.")
@@ -59,7 +59,7 @@ chapters_path = Path(CHAPTERS_LOCATION).resolve()
 
 target_dirs = [
     d for d in chapters_path.iterdir() 
-    if d.is_dir() and d.name.startswith("chapitre") and d.name != "chapitre0"
+    if d.is_dir() and d.name.startswith("chapitre") and d.name 
 ]
 
 build_dir = Path(BUILD_DIR).resolve()
@@ -180,7 +180,7 @@ if args.chapitres == "integrale" :
             print("ERROR: invalid input for mode field.")
             exit(1)
 
-    #clean_dir(c_integrale_dir)
+    clean_dir(c_integrale_dir)
 else :
     match args.mode :
         case "chapitre" :

@@ -360,6 +360,7 @@
   \refstepcounter{numexo}%
   \phantomsection%
   \hypertarget{exo.\thenumexo}{}%
+  \setlist[enumerate]{font=\bfseries}%
   \begin{exercicebox}[#1]{\thenumexo}%
 }{%
   \end{exercicebox}%
@@ -393,6 +394,7 @@
 \newenvironment{correction}[1]{%
   \phantomsection%
   \hypertarget{sol.\thechapitre.#1}{}%
+  \setlist[enumerate]{font=\bfseries}%
   \begin{correctionbox}{#1}%
 }{%
   \end{correctionbox}%

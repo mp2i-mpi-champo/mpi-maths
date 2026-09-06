@@ -173,32 +173,34 @@
       description color=black,
     },
     vexstyle/.style={
-      enhanced,
-      breakable,
+    enhanced,
+    breakable,
+    sharp corners,
+    width=\dimexpr\linewidth-1.8pt\relax,
+    boxrule=0.4pt,
+    colframe=black!25,
+    interior style={left color=vorange!3, right color=white},
+    borderline west={1.8pt}{0pt}{vorange},
+    left=9pt,
+    right=9pt,
+    top=10pt,
+    bottom=7pt,
+    fonttitle=\bfseries\color{vorange!95!black},
+    attach boxed title to top left={
+      xshift=10pt,
+      yshift=-\tcboxedtitleheight/2
+    },
+    boxed title style={
       sharp corners,
-      width=\dimexpr\linewidth-1.8pt\relax,
-      boxrule=0.4pt,
-      colframe=black!18,
+      boxrule=0pt,
+      colframe=white,
       colback=white,
-      borderline west={1.8pt}{0pt}{vorange},
-      left=8pt,
-      right=8pt,
-      top=8pt,
-      bottom=7pt,
-      fonttitle=\bfseries\color{vorange},
-      attach boxed title to top left={yshift=0pt, xshift=0pt},
-      boxed title style={
-        sharp corners,
-        boxrule=0.4pt,
-        colframe=black!18,
-        colback=white,
-        borderline west={1.8pt}{0pt}{vorange},
-        left=6pt,
-        right=6pt,
-        top=3pt,
-        bottom=3pt,
-      }
+      left=4pt,
+      right=4pt,
+      top=0pt,
+      bottom=0pt,
     }
+  }
 }
 
 \newtcbtheorem[use counter=coursenv, number within=chapitre]{definition}{Définition}{
@@ -233,7 +235,7 @@
   \refstepcounter{coursenv}%
   \begin{tcolorbox}[
     vexstyle,
-    title={Exemple \thecoursenv\ifblank{#1}{}{\textnormal{\upshape~(#1)}}}
+    title={Exemple \thecoursenv\ifblank{#1}{}{\textnormal{~--~(#1)}}}
   ]%
 }{%
   \end{tcolorbox}%

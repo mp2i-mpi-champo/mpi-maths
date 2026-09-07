@@ -38,13 +38,17 @@
 \RequirePackage{enumitem}
 \RequirePackage{ifthen}
 
-\setmainfont{Libertinus Serif}[
-  Ligatures=TeX,
-  Numbers=OldStyle
+\setmainfont{fbb}[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  BoldFont       = *-Bold,
+  ItalicFont     = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+  Numbers        = Lining,
+  Ligatures      = TeX
 ]
-\setsansfont{Libertinus Sans}[Ligatures=TeX]
-\setmonofont{Libertinus Mono}
-\setmathfont{Libertinus Math}
+
+\setmathfont{STIX Two Math}
 
 \setcounter{tocdepth}{2} 
 
@@ -144,9 +148,21 @@
   \markboth{Chapitre #1 -- #2}{}%
 }
 
-\setlist[itemize,1]{label=\footnotesize$\triangleright$}
-\setlist[itemize,2]{label=\footnotesize$\char"25CA\relax$}
-\setlist[itemize,3]{label=\footnotesize$\square$}
+\setlist[itemize,1]{
+  label=\raisebox{0.1ex}{\scalebox{0.65}{$\triangleright$}},
+  leftmargin=*,
+  itemsep=2pt
+}
+\setlist[itemize,2]{
+  label=\raisebox{0.15ex}{\scalebox{0.65}{$\char"25CA\relax$}},
+  leftmargin=*,
+  itemsep=2pt
+}
+\setlist[itemize,3]{
+  label=\raisebox{0.1ex}{\scalebox{0.65}{$\square$}},
+  leftmargin=*,
+  itemsep=2pt
+}
 \setlist[itemize,4]{label=\textbullet}
 
 % =============================================================================
@@ -185,7 +201,7 @@
     right=9pt,
     top=10pt,
     bottom=7pt,
-    fonttitle=\bfseries\color{vorange!95!black},
+    fonttitle=\bfseries\color{vorange!90!black},
     attach boxed title to top left={
       xshift=10pt,
       yshift=-\tcboxedtitleheight/2
@@ -343,7 +359,7 @@
   fonttitle=\bfseries\upshape\color{vorange},
   title={Exercice #2\ifstrempty{#1}{}{ \textnormal{(#1)}}%
     \hfill~%
-    \hyperlink{sol.#2}{\small\color{vorange!85!black}\faArrowRight~Voir corrigé}%
+    \hyperlink{sol.#2}{\small\color{vorange!90!black}\faArrowRight~Voir corrigé}%
   },
   attach boxed title to top left={yshift=0pt, xshift=0pt},
   boxed title style={

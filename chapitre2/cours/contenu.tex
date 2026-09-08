@@ -1,20 +1,22 @@
 
-Dans tous le chapitre, $\K = \R$ ou $\C$.
+Dans tout le chapitre, $\K = \R$ ou $\C$.
 
-Soit $(E, N)$ un espace vectoriel normé sur $\K$.
+On prendra $(E, N)$ un espace vectoriel normé sur $\K$.
 
 \section{Suites réelles ou complexes}
+
 \subsection{Convergence}
-\subsubsection{Théorème - définition}   
 
 \begin{definition}{Limite d'une suite}{}
-    Soit $(u_n)_{n\in\N}$ une suite de $\K$ et $\ell \in \K$. Alors on a équivalence entre : 
+    \\Soit $(u_n)_{n\in\N}$ une suite de $\K$ et $\ell \in \K$. Alors on a équivalence entre : 
 
-    $$(i) \quad \forall \varepsilon > 0, \; \exists n_0 \in \N, \forall n \in \N, n \geqslant n_0, |u_n - \ell| \leqslant \varepsilon$$
-    et 
+    \begin{enumerate}[label=(\roman*)]
+        \item $\forall \varepsilon > 0, \; \exists n_0 \in \N, \forall n \in \N, n \geqslant n_0 \implies |u_n - \ell| \leqslant \varepsilon$
+
+        \item En notant pour $\varepsilon > 0$, $M_\varepsilon = \{n \in \N \mid |u_n - \ell| > \varepsilon\},$ 
+        $\; \forall \varepsilon > 0, \, M_\varepsilon$ est fini.
+    \end{enumerate}
     
-    \quad (ii) En notant pour $\varepsilon > 0$, $M_\varepsilon = \{n \in \N \mid |u_n - \ell| > \varepsilon\},$ 
-    $\; \forall \varepsilon > 0, \, M_\varepsilon$ est fini.
 
     En ce cas $\ell$ est unique, et on dit que la suite $(u_n)$ converge vers $\ell$ et on note  :
     $$ u_n \limit{n}{+\infty} \ell$$ 
@@ -60,15 +62,12 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
     Vrai pour tout $\varepsilon > 0$, donc $\ell_1 = \ell_2$.
 \end{proof}
 
-\subsubsection{Caractérisation dans \texorpdfstring{$\C$}{C}}
 
-\begin{proposition}{}{}
+\begin{proposition}{Caractérisation dans $\C$}{}
     Soit $(u_n)_{n \in \N} \in \C^{\N}$ et $\ell \in \C$. Alors : 
 
     $$u_n \limit{n}{+\infty} \ell \iff \re(u_n) \limit{n}{+\infty} \re(\ell) \text{ et } \im(u_n) \limit{n}{+\infty} \im(\ell)$$
 \end{proposition}
-
-\subsubsection{Théorèmes d'opérations}
 
 \begin{theoreme}{}{}
     Soit $\K = \R$ ou $\C$. 
@@ -83,9 +82,7 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
     \end{itemize}
 \end{theoreme}
 
-\subsubsection{Théorème de Cesaro}
-
-\begin{theoreme}{}{}
+\begin{theoreme}{de Cesàro}{}
     Soit $(u_n)_{n \in \N} \in \K^{\N}$ et $\ell \in \K$, tel que $u_n \limit{n}{+\infty} \ell$.
     
     Si on pose $\displaystyle v_n = \frac 1 n \sum_{k=1}^n u_k$\,, alors :
@@ -126,7 +123,7 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
     Donc $v_n \limit{n}{+\infty} \ell$.
 \end{proof}
 
-\subsection{Théorèmes liés à l'ordre dans \texorpdfstring{$\R$}{R} }
+\subsection{Théorèmes liés à l'ordre dans $\R$}
 
 \begin{theoreme}{}{}
     Soit $(u_n)_{n \in \N} \in \K^{\N}$, $\ell \in \K$, et $(\alpha_n)_{n \in \N} \in \R^{\N}$ 
@@ -140,8 +137,6 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
     Alors $u_n \limit{n}{+\infty} \ell$
 \end{theoreme}
 
-\subsubsection{Passage à la limite dans une inégalité}
-
 \begin{theoreme}{Passage à la limite dans les inégalités}{}
     Soient $(u_n)$ et $(v_n)$ deux suites réelles, et $\ell_1, \ell_2 \in \R$ telles que :
 
@@ -150,9 +145,7 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
     Si $\exists n_0 \in \N, \forall n \geqslant n_0, u_n \leqslant v_n$, alors $\ell_1 \leqslant \ell_2$
 \end{theoreme}
 
-\subsubsection{Théorème des gendarmes (des suites encadrées)}
-
-\begin{theoreme}{Théorème des gendarmes}{}
+\begin{theoreme}{des gendarmes}{}
     Soient $(u_n)$, $(v_n)$ et $(w_n) \in \R^{\N}$ et $\ell \in \R$. 
     
     On suppose que : 
@@ -164,8 +157,6 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
     Alors $(v_n)_{n \in \N}$ converge et $v_n \limit{n}{+\infty} \ell$
     
 \end{theoreme}
-
-\subsubsection{Théorème }
 
 \begin{theorement}{Signe suite à partir d'un rang avec la limite}{}
     Soit $(u_n)_{n \in \N}, \, (v_n)_{n \in \N} \in \R^{\N}$ convergentes de limites 
@@ -193,16 +184,13 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 \end{proof}
 
 \subsection{Théorèmes d'existence de limites}
-\subsubsection{Théorème de la limite monotone}
 
-\begin{theorement}{théorème de la limite monotone}{}
+\begin{theorement}{de la limite monotone}{}
     Toute suite réelle croissante et majorée converge vers la borne supérieure de ses valeurs. 
     
 \end{theorement}
 
-\subsubsection{Suites adjacentes}
-
-\begin{theorement}{suites adjacentes}{}
+\begin{theorement}{Suites adjacentes}{}
     Soient $(u_n)$ et $(v_n)$ deux suites réelles. 
 
     Si $(u_n)$ est croissante, $(v_n)$ est décroissante et

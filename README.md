@@ -1,6 +1,7 @@
 # Projet 
 
 Ce cours latex est tapé par un élève de MPI* du lycée Champollion. Il regroupe l'ensemble du programme de MPI ainsi que des dépassements de celui-ci, notamment à travers les TD X-ENS.
+Nos remerciements vont à M. Quibel pour le cours classique, et à M. Bonavero pour le TD X-ENS, dont les cours ont permis la rédaction de ce poly.
 
 # Fonctionnement général du cours LaTeX
 

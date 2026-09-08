@@ -44,11 +44,10 @@
   BoldFont       = *-Bold,
   ItalicFont     = *-Italic,
   BoldItalicFont = *-BoldItalic,
-  Numbers        = Lining,
-  Ligatures      = TeX
+  Numbers        = {Lining, Proportional}
 ]
 
-\setmathfont{STIX Two Math}
+\setmathfont{Libertinus Math}[Scale=MatchLowercase]
 
 \setcounter{tocdepth}{2} 
 
@@ -340,37 +339,33 @@
 \tcbset{
   vexobase/.style={
     enhanced,
-    sharp corners,
-    boxrule=0.4pt,
-    colframe=black!85,
     breakable,
-    left=9pt,
-    right=9pt,
-    top=8pt,
-    bottom=7pt,
+    colback=white,
+    colframe=vorange,
+    arc=0pt,
+    outer arc=0pt,
+    boxrule=0pt,
+    leftrule=2pt,
+    left=10pt,
+    right=4pt,
+    top=4pt,
+    bottom=6pt,
+    before skip=14pt,
+    after skip=16pt,
+    fonttitle=\bfseries\upshape\color{vorange!95!black},
+    colbacktitle=white,
+    titlerule=0.5pt,
+    titlerule style={color=vorange!40},
+    toptitle=2pt,
+    bottomtitle=4pt,
   }
 }
 
-% Énoncé
 \newtcolorbox{exercicebox}[2][]{%
   vexobase,
-  colback=white,
-  drop shadow={vorange!40, xshift=1.8pt, yshift=-1.8pt},
-  fonttitle=\bfseries\upshape\color{vorange},
   title={Exercice #2\ifstrempty{#1}{}{ \textnormal{(#1)}}%
-    \hfill~%
+    \hfill%
     \hyperlink{sol.#2}{\small\color{vorange!90!black}\faArrowRight~Voir corrigé}%
-  },
-  attach boxed title to top left={yshift=0pt, xshift=0pt},
-  boxed title style={
-    sharp corners,
-    boxrule=0.4pt,
-    colframe=black!85,
-    colback=white,
-    left=6pt,
-    right=6pt,
-    top=3pt,
-    bottom=3pt,
   }
 }
 
@@ -378,41 +373,42 @@
   \refstepcounter{numexo}%
   \phantomsection%
   \hypertarget{exo.\thenumexo}{}%
-  \setlist[enumerate]{font=\bfseries}%
+  \setlist[enumerate]{font=\bfseries, leftmargin=1.5em}%
   \begin{exercicebox}[#1]{\thenumexo}%
 }{%
   \end{exercicebox}%
 }
 
-
-% Corrigé
 \newtcolorbox{correctionbox}[1]{%
-  vexobase,
-  colframe=vorange!85!black,
+  enhanced,
+  breakable,
   colback=white,
-  drop shadow={vorange!25, xshift=1.8pt, yshift=-1.8pt},
-  fonttitle=\bfseries\upshape\color{vorange},
-  title={Corrigé de l'exercice \thechapitre.#1~%
+  arc=0pt,
+  outer arc=0pt,
+  boxrule=0pt,
+  left=0pt,
+  right=0pt,
+  top=6pt,
+  bottom=6pt,
+  before skip=16pt,
+  after skip=18pt,
+  toprule=0.8pt,
+  colframe=vorange!85!black,
+  fonttitle=\bfseries\upshape\color{vorange!90!black},
+  colbacktitle=white,
+  toptitle=5pt,
+  bottomtitle=6pt,
+  titlerule=0pt,
+  title={Corrigé de l'exercice \thechapitre.#1%
     \hfill%
-    \hyperlink{exo.\thechapitre.#1}{\small\color{vorange}\faArrowUp~Retour à l'énoncé}%
-  },
-  attach boxed title to top left={yshift=0pt, xshift=0pt},
-  boxed title style={
-    sharp corners,
-    boxrule=0.4pt,
-    colframe=vorange!85!black,
-    colback=white,
-    left=6pt,
-    right=6pt,
-    top=3pt,
-    bottom=3pt,
+    \hyperlink{exo.\thechapitre.#1}{\small\color{vorange!90!black}\faArrowUp~Retour à l'énoncé}%
   }
 }
 
 \newenvironment{correction}[1]{%
   \phantomsection%
   \hypertarget{sol.\thechapitre.#1}{}%
-  \setlist[enumerate]{font=\bfseries}%
+  \setlist[enumerate]{font=\bfseries, leftmargin=1.5em}%
   \begin{correctionbox}{#1}%
 }{%
   \end{correctionbox}%

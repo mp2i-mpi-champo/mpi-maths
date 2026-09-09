@@ -49,6 +49,13 @@
 
 \setmathfont{Libertinus Math}[Scale=MatchLowercase]
 
+\DeclareFontFamily{U}{skulls}{}
+\DeclareFontShape{U}{skulls}{m}{n}{ <-> skull }{}
+
+\DeclareRobustCommand{\skull}{%
+  \text{\usefont{U}{skulls}{m}{n}\symbol{'101}}%
+}
+
 \setcounter{tocdepth}{2} 
 
 % =============================================================================
@@ -179,13 +186,13 @@
       right=8pt,
       top=6pt,
       bottom=6pt,
-      breakable,
+      unbreakable,
       fonttitle=\bfseries\upshape\color{vorange},
       theorem style=plain,
-      separator sign={\textnormal{\upshape~:~}},
-      terminator sign={},
-      description font=\normalfont\upshape,
-      description color=black,
+      separator sign={\textnormal{\upshape~--~}},
+      terminator sign={~:~},
+      description font=\itshape,
+      description color=vorange,
     },
     vexstyle/.style={
     enhanced,
@@ -224,7 +231,6 @@
   colback=white,
   no shadow,
   interior style={left color=bg_def_start, right color=white},
-  separator sign={~-- },
   fontupper=\normalfont\upshape
 }{definition}
 
@@ -244,7 +250,7 @@
   vbase,
   colback=white,
   fontupper=\itshape
-}{corrolllaire}
+}{corrollaire}
 
 \newenvironment{exemple}[1][]{%
   \refstepcounter{coursenv}%
@@ -315,7 +321,7 @@
 \newcommand{\notedanger}[2][0pt]{%
   \marginnote{%
     \vspace{#1}%
-    \begin{marginbox}{dangerred}{\faSkullCrossbones~ Danger !}
+    \begin{marginbox}{dangerred}{\skull~ Danger !}
       \footnotesize\raggedright #2
     \end{marginbox}%
   }%

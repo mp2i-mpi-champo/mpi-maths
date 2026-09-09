@@ -1,11 +1,14 @@
 \section{Cas de $\R$}
+
+On rappelle ici quelques résultats démontrés en sup.
+
 \subsection{Valeur absolue}
 
 \begin{definition}{Valeur absolue}{}
     $\forall x \in \R, |x| = \max\{x, -x\}$.
 \end{definition}
 
-\begin{proposition}{Propriétés valeur absolue}{}
+\begin{proposition}{Valeur absolue : propriétés}{}
     \\$\forall x, y \in \mathbb R$, on a : 
 
     \begin{itemize}
@@ -26,7 +29,7 @@
 
 \subsection{Bornes supérieures et inférieures}
 
-\begin{theoreme}{Def borne supérieure}{}
+\begin{theoreme}{Borne supérieure}{}
     \\Soit $A \subset \R$ non vide et majorée.\\
 
     Il existe un unique réel $\alpha$ appelé borne supérieure de $A$ et noté 
@@ -108,11 +111,11 @@
 
 \section{Espace vectoriel normé}
 
+\subsection{Définition et propriétés}
+
 Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 
-\subsection{Définition}
-
-\begin{definition}{Norme}{}
+\begin{definition}{Norme et espace vectoriel normé}{}
     \\On appelle norme sur $E$ toute application :
     \notedanger{Bien penser à vérifier que c'est une application à valeurs dans $\R^+$ pour montrer qu'on a une norme !}
 
@@ -131,9 +134,6 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 \begin{exemple}
     $(\R, |\cdot|)$ et $(\C, |\cdot|)$ sont des espaces vectoriels normés.
 \end{exemple}
-
-
-\subsection{Seconde inégalité triangulaire}
 
 \begin{proposition}{Seconde inégalité triangulaire}{}
     \\Soit $(E, N)$ un espace vectoriel normé. $\forall u, v \in E$,
@@ -187,10 +187,6 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
         \item $d_N (u + w, v + w) = d_N (u, v)$
     \end{enumerate}
 \end{proposition}
-
-\idee{
-    Astuce du taupin pour le 3.
-}
 
 \begin{proof}~\\
 
@@ -270,7 +266,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     Les sphères sont les paires de réels: $S(\omega, R) = \{w - R, w + R\}$
 \end{exemple}
 
-\subsubsection{Convexité}
+\subsection{Convexité}
 
 \begin{definition}{Partie convexe}{}
     \\Soit $A \subset E$. 
@@ -470,6 +466,9 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 \end{proof}
 
 \subsection{Parties et applications bornées}
+
+
+\subsubsection{Parties bornées}
 
 Soit $(E, N)$ un espace vectoriel normé sur $\K$. 
 
@@ -751,6 +750,10 @@ Soit $E$ un $\K$-espace vectoriel.
     Si $E$ est un $\K$-espace vectoriel de dimension finie, toutes les normes 
     sur $E$ sont équivalentes entre elles.
 \end{theorement}
+
+\begin{proof}
+    Admis pour le moment, sera fait plus tard dans l'année.
+\end{proof}
 
 \section{Normes classiques}
 

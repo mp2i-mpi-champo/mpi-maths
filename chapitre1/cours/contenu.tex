@@ -85,7 +85,7 @@ On rappelle ici quelques résultats démontrés en sup.
 
         Donc $\sup A \leqslant \sup(A + B) - y$
 
-        Donc $y \leqslant \sup(A + b) - \sup(A)$ (Le therme de droite est un majorant de $B$)
+        Donc $y \leqslant \sup(A + b) - \sup(A)$ (le terme de droite est un majorant de $B$)
 
         Or cela est vrai pour tout $y$, donc $\sup B \leqslant \sup(A + B) - \sup A$
 
@@ -176,7 +176,7 @@ Soit $\mathbb K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
     $$\forall (u, v) \in E^2,~ d_N(u, v) = N(v - u) = N(u - v)$$
 \end{definition}
 
-\begin{proposition}{Propriétés distance}{}
+\begin{proposition}{Distance : propriétés}{}
     \\Avec ces hypothèses, on a pour $u, v, w \in E$ et $\lambda \in \K$ :
 
     \begin{enumerate}
@@ -244,7 +244,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     Si $\K = \C$, tous les $u \times e^{i \theta}$, où $\theta \in \R$, conviennent. 
 \end{exemple}
 
-\begin{definition}{Boules ouvertes, fermées et sphère}{}
+\begin{definition}{Boules ouvertes, fermées et sphères}{}
     \\Soit $\omega \in E$ et $R > 0$. On définit : 
     \begin{itemize}
         \item La boule fermée de centre $\omega$ et de rayon $R$, $B' = \{u \in E, d(\omega, u) \leqslant R\}$
@@ -620,10 +620,10 @@ Soit $E$ un $\K$-espace vectoriel.
     on dit que $N_2$ est plus fine que $N_1$. 
 \end{remarque}
 
-\begin{proposition}{Nature relation de l'équivalence des normes}{}
+\begin{propositionnt}{}{}
     L'équivalence entre normes est une relation d'équivalence dans l'ensemble des normes
     sur $E$. 
-\end{proposition}
+\end{propositionnt}
 
 \begin{proof}~\\
     \begin{itemize}
@@ -649,7 +649,7 @@ Soit $E$ un $\K$-espace vectoriel.
     \end{itemize}
 \end{proof}
 
-\begin{proposition}{Équivalence bornage norme}{}
+\begin{proposition}{Équivalence du caractère borné pour les normes}{}
     Soient $N_1$ et $N_2$ deux normes équivalentes de $E$ et soit $A \subset E$. 
     Alors $A$ est bornée pour $N_1$ ssi $A$ est bornée pour $N_2$
 \end{proposition}
@@ -759,8 +759,6 @@ Soit $E$ un $\K$-espace vectoriel.
 
 \subsection{Normes infinies}
 
-\subsubsection{Cas général}
-
 \begin{theoreme}{Lemme de la borne sup}{}
     Soit $A$ une partie non vide et majorée de $\R$ et $k \geqslant 0$. 
     En notant $kA = \{ka, a \in A \}$, on a $\sup kA = k \sup A$.
@@ -830,8 +828,6 @@ Soit $E$ un $\K$-espace vectoriel.
     \end{itemize}
 \end{proof}
 
-\subsubsection{Norme infinie sur $\K^n$}
-
 \begin{definition}{Norme infinie sur $\K^n$}{}
     Pour $X = \{1, \dots, n\}$ et en utilisant la bijection $\mathscr B(X, \K)$
     à $\K^n$ 
@@ -842,17 +838,12 @@ Soit $E$ un $\K$-espace vectoriel.
     par $||(x_1, \dots, x_n)||_\infty = \sup\{|x_1|, \dots, |x_n| \} = \max (|x_1|, \dots, |x_n|)$
 \end{definition}
 
-
-\subsubsection{Norme définie sur \texorpdfstring{$\ell^\infty(\K)$}{l infinie (K)}}
-
 \begin{definition}{Espace vectoriel des suites bornées}{}
     On note $\ell^\infty(K) = \mathscr B(\N, \K)$ l'espace vectoriel des suites bornées
     à valeurs dans $\K$. On y a ainsi défini la norme $|| \cdot ||_\infty$ par :
 
     $$||(u_n)_{n \in \N} ||_\infty = \sup\{|u_n|, n \in \N\}$$
 \end{definition}
-
-\subsubsection{Norme infinie sur \texorpdfstring{$\mathscr C([a, b], \K)$}{C([a, b], K)}}
 
 \begin{definition}{}{}
     On a $\mathscr C(\inter{a}{b}, \K) \subset \mathscr B(\inter{a}{b}, \K)$
@@ -921,8 +912,6 @@ Soit $E$ un $\K$-espace vectoriel.
 
 \subsection{Normes 1}
 
-\subsubsection{Sur $\K^n$}
-
 \begin{definition}{Norme 1 sur $\K^n$}{}
     Pour $x = (x_1, \dots, x_n) \in \K^n$ on pose 
 
@@ -942,8 +931,6 @@ Soit $E$ un $\K$-espace vectoriel.
         \item  Inégalité triangulaire classique à utiliser pour la prouver. 
     \end{itemize}
 \end{proof}
-
-\subsubsection{Sur $\ell^1$ $\K$-ev des suites sommables sur $\K$}
 
 \begin{definitionnt}{}{}
     \\On note $\ell^1(\K) = \{(u_n)_{n \in \N} \in \K^n \mid \sum_{n \leqslant 0} |u_n| ~ \text{est une suite convergente} ~ \}$
@@ -976,8 +963,6 @@ Soit $E$ un $\K$-espace vectoriel.
         \]
     \end{itemize}
 \end{proof}
-
-\subsubsection{Sur $\mathscr C([a, b], \K)$}
 
 \begin{definition}{Norme 1 sur $\mathscr C([a, b], \K)$}{}
     Pour $f \in \mathscr C(\inter{a}{b}, \K)$, on pose :
@@ -1019,8 +1004,6 @@ Soit $E$ un $\K$-espace vectoriel.
 \end{exemple}
 
 \subsection{Normes 2}
-
-\subsubsection{Cas $\K = \R$}
 
 Soit $E$ un $\R$-espace vectoriel muni d'un produit scalaire $\langle \cdot , \cdot \rangle$.
 
@@ -1088,7 +1071,7 @@ Soit $E$ un $\R$-espace vectoriel muni d'un produit scalaire $\langle \cdot , \c
     \end{itemize}
 \end{proof}
 
-\begin{theoreme}{Norme 2 suites}{}
+\begin{theoreme}{Norme 2 pour les suites}{}
     Pour $u, v \in \ell^2(\R)$, $\displaystyle \langle u, v \rangle = \sum_{n = 0 }^{+ \infty} u_n v_n$
     définit un produit scalaire. \\
 
@@ -1115,7 +1098,7 @@ Soit $E = \mathscr C(\inter{a}{b}, \R)$.
     Facile comme les autres.
 \end{proof}
 
-\subsubsection{Cas des espaces complexes}
+\subsection{Cas des espaces complexes}
 
 \begin{definition}{Produit scalaire complexe}{}
     Soit $E$ un $\C$-espace vectoriel et 

@@ -32,23 +32,24 @@ On prendra $(E, N)$ un espace vectoriel normé sur $\K$.
     (ii) $\Rightarrow$ (i) : si $M_\varepsilon$ est fini, il est majoré.
 }
 
-\begin{proof}
-    \uline{Supposons (i)}
+\begin{proof}~\\
+    \uline{Supposons (i) :}
 
     \vspace{0.2em}Soit $\varepsilon > 0$. On prend un $n_0$ tel que $\forall n \geqslant n_0$, $n$ n'appartient pas 
-    à $M_\varepsilon$. Donc $M_\varepsilon$ est majoré par $n_0$ et est donc fini. (ii) est donc vérifiée.
+    à $M_\varepsilon$. Donc $M_\varepsilon$ est majoré par $n_0$ et est donc fini. (ii) est donc vérifiée.\\
 
-    \vspace{0.5em}\qquad \uline{Supposons (ii)}
+    \uline{Supposons (ii) :}
 
     \vspace{0.2em}Soit $\varepsilon > 0$. 
 
     Comme $M_\varepsilon$ est fini, il est majoré par un certain $N$. 
 
     Posons $n_0 = N + 1$, si $n \geqslant n_0$, alors $n$ n'appartient pas à $M_\varepsilon$ et donc
-    $|u_n - \ell| \leqslant \varepsilon$. Donc (i) est vérifiée.
+    $|u_n - \ell| \leqslant \varepsilon$. Donc (i) est vérifiée.\\
 
 
-    \vspace{0.5em}\qquad \uline{Unicité de la limite :}
+    \uline{Unicité de la limite :}
+
     \vspace{0.2em} Si $\ell_1$ et $\ell_2$ conviennet : 
 
     Il existe $n_0$ tel que $\forall n \geqslant n_0$, $|u_n - \ell_1| \leqslant \varepsilon$ et $\forall n > n_1, |u_n - \ell_2| \leqslant \varepsilon$.
@@ -158,8 +159,8 @@ On prendra $(E, N)$ un espace vectoriel normé sur $\K$.
     
 \end{theoreme}
 
-\begin{theorement}{Signe suite à partir d'un rang avec la limite}{}
-    Soit $(u_n)_{n \in \N}, \, (v_n)_{n \in \N} \in \R^{\N}$ convergentes de limites 
+\begin{theorement}{Signe d'une suite à partir d'un rang avec la limite}{}
+    \\Soit $(u_n)_{n \in \N}, \, (v_n)_{n \in \N} \in \R^{\N}$ convergentes de limites 
     respectives $\ell_1$ et $\ell_2$.
 
     Si $\ell_1 < \ell_2$, alors $\exists n_0 \in \N, \forall n \geqslant n_0, u_n < v_n$
@@ -237,7 +238,7 @@ On prendra $(E, N)$ un espace vectoriel normé sur $\K$.
 \subsection{Etude de suites récurrentes}
 \subsubsection{Suites récurrentes linéaires d'ordre 2}
 
-\begin{propositionnt}{Nature ensemble des suites récurrentes linéaires d'ordre 2}{}
+\begin{propositionnt}{Nature de l'ensemble des suites récurrentes linéaires d'ordre 2}{}
     Soient $a, b \in \C$.  
 
     $E = \{(u_n)_{n \in \N} \in \C^{\N}, \forall n \in \N, \, u_{n + 2} = a u_{n + 1} + bu_n\}$ est 
@@ -415,7 +416,6 @@ Si $(u_n)$ converge vers $\ell$ et si $f$ continue alors $f(\ell) = \ell$. $\ell
 \end{exemple}
 
 \subsection{Suites réelles divergentes}
-\subsubsection{Suites qui divergent vers $+\infty$}
 
 \begin{definitionnt}{Suite divergente vers $+\infty$}{}
     Soit $(u_n)_{n \in \N} \in \R^{\N}$. On dit que $(u_n)$ diverge vers $+\infty$ ssi : 
@@ -424,17 +424,14 @@ Si $(u_n)$ converge vers $\ell$ et si $f$ continue alors $f(\ell) = \ell$. $\ell
     
 \end{definitionnt}
 
-
-\subsubsection{Théorèmes d'opérations}
-
-\begin{theorement}{somme limites }{}
+\begin{theorement}{Somme de limites}{}
     Soient $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N} \in \R^{\N}$ telles que 
     $u_n \limit{n}{+\infty} +\infty$ et $v_n$ minorée. Alors 
 
     $$ (u_n + v_n) \limit{n}{+\infty} +\infty $$
 \end{theorement}
 
-\begin{theorement}{produit limites}{}
+\begin{theorement}{Produit de limites}{}
     Soient $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N} \in \R^{\N}$ telles que
     $u_n \limit{n}{+\infty} +\infty$ et $\exists m > 0, \forall n \in \N, \, v_n \geqslant m$. Alors 
 
@@ -442,13 +439,9 @@ Si $(u_n)$ converge vers $\ell$ et si $f$ continue alors $f(\ell) = \ell$. $\ell
     
 \end{theorement}
 
-\subsubsection{Théorème de la limite monotone}
-
-\begin{theorement}{limite monotone}{}
+\begin{theorement}{de la limite monotone}{}
     Toute suite réelle croissante et non majorée diverge vers $+\infty$.
 \end{theorement}
-
-\subsubsection{Autres divergences}
 
 \begin{definitionnt}{Autres divergences}{}
     Une suite réelle est également divergente dans les deux cas suivants : 
@@ -459,10 +452,7 @@ Si $(u_n)$ converge vers $\ell$ et si $f$ continue alors $f(\ell) = \ell$. $\ell
 \end{definitionnt}
 
 \section{Suites dans un espace vectoriel normé}
-$(E, N)$ est un espace vectoriel normé sur $\K$.
 \subsection{Convergence et divergence}
-
-\subsubsection{Définitions}
 
 \begin{definition}{}{}
     Soit $(u_n)_{n \in \N} \in E^{\N}$ et $\ell \in E$. 
@@ -492,9 +482,9 @@ $(E, N)$ est un espace vectoriel normé sur $\K$.
     Prendre deux limites différentes et utiliser les définitions. 
 }
 
-\begin{proof} \space
+\begin{proof}~
 
-    \qquad \uline{Unicité de la limite :}
+    \uline{Unicité de la limite :}
 
     \avspace Soient $u_n \limit{n}{+\infty} \ell_1$ et $u_n \limit{n}{+\infty} \ell_2$.
 
@@ -514,14 +504,12 @@ $(E, N)$ est un espace vectoriel normé sur $\K$.
     Vrai pour tout $\varepsilon > 0$, donc $d(\ell_1, \ell_2) = 0$ et donc $\ell_1 = \ell_2$.
 \end{proof}
 
-\begin{definitionnt}{def convergence}{}
+\begin{definitionnt}{Convergence}{}
     Soit $(u_n)_{n \in \N} \in E^{\N}$. On dit que $(u_n)$ est convergente ssi 
     $\exists \ell \in E, \, u_n \limit{n}{+\infty} \ell$.
 
     Dans le cas contraire, on dit que $(u_n)$ diverge.
 \end{definitionnt}
-
-\subsubsection{Caractère borné}
 
 \begin{definitionnt}{}{}
     Soit $(u_n)_{n \in \N}$ une suite convergente de $E$. Alors $(u_n)$ est bornée.
@@ -543,7 +531,7 @@ $(E, N)$ est un espace vectoriel normé sur $\K$.
     Posons $K' = \max(K, N(u_0), \ldots, N(u_{n_0 - 1}))$, alors $\forall n \in \N, \, N(u_n) \leqslant K'$.
 \end{proof}
 
-\subsubsection{Invariance par changement de norme }
+\subsubsection{Invariance par changement de norme}
 
 \begin{theorement}{}{}
     Soient $N_1$ et $N_2$ deux normes sur $E$. 
@@ -578,7 +566,7 @@ $(E, N)$ est un espace vectoriel normé sur $\K$.
     Réciproque similaire.
 \end{proof}
 
-\begin{theoreme}{Limite hors programme}{}
+\begin{theoreme}{LHP}{}
     La réciproque du théorème précédent est vraie, c'est à dire si $N_1$ et $N_2$ ne sont pas 
     équivalentes, il existe une suite $(u_n)_{n \in \N}$ qui converge pour l'une des deux normes 
     et diverge pour l'autre. 
@@ -1042,7 +1030,7 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtien coordon
 
 \end{proof}
 
-\subsection{Complément hors programme }
+\subsection{Complément hors programme (suites de Cauchy)}
 
 \begin{definition}{Suite de Cauchy}{}
     Soit $(u_n)_{n \in \N} \in E^{\N}$. On dit que cette suite est de Cauchy ssi 

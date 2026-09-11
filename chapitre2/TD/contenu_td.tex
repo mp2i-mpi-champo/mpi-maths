@@ -3,7 +3,7 @@
 \section{Énoncés des Exercices}
 
 % --- Exercice 1 (Source: Exercice 43 analyse) ---
-\begin{exercice}
+\begin{exercice}{Exercice 43 Analyse}
 Soit $x_{0}\in\mathbb{R}$. On définit la suite $(u_{n})$ par $u_{0}=x_{0}$ et, $\forall n\in\mathbb{N}$, $u_{n+1}=\arctan(u_{n}).$
 \begin{enumerate}
     \item 
@@ -48,7 +48,7 @@ $u_{0}=1$ et $\forall n\in\mathbb{N}$, $u_{n+1}=\alpha^{u_{n}}$.
 \end{exercice}
 
 % --- Exercice 6 (Source: EXERCICE 1 analyse) ---
-\begin{exercice}
+\begin{exercice}{Exercice 1 Analyse}
 \textbf{1.} On considère deux suites numériques $(u_{n})_{n\in\mathbb{N}}$ et $(v_{n})_{n\in\mathbb{N}}$ telles que $(v_{n})_{n\in\mathbb{N}}$ est non nulle à partir d'un certain rang et $u_{n}\sim v_{n}$.
 Démontrer que $u_{n}$ et $v_{n}$ sont de même signe à partir d'un certain rang.
 
@@ -266,6 +266,126 @@ Il existe donc deux valeurs de $\beta$ pour lesquels cette valeur est positive, 
 \begin{correction}{8}
 On applique le théorème de Cesàro à la suite $y_{n}$.
 $z_n = \frac{1}{n} \sum_{k=0}^{n-1} (x_{k+1}-x_k) + \frac{x_0}{n} = \frac{1}{n} \sum_{k=0}^{n-1} y_k + \frac{x_0}{n}$.
-La moyenne de Cesàro converge vers $\ell$, et le terme $x_0/n$ tend vers 0.
-$(-1)^n$ est un contre-exemple à la réciproque ($z_n \to 0$ mais $y_n$ ne converge pas).
+La moyenne de Cesàro converge vers $\ell$, et le terme $x_0/n$ tend vers 0. Donc $(z_n)$ tend vers $\ell$.\\
+
+$(-1)^n$ ou $\mathbb{sin}(\frac{\pi}2 n)$ sont des contre-exemples à la réciproque ($z_n \to 0$ mais $y_n$ ne converge pas).
+\end{correction}
+
+\begin{correction}{9}
+\uline{Démonstration du lemme :}
+
+Supposons que $f_n \rightarrow^{||\cdot||_{\infty}} f \in E$, c'est à dire que $(f_n)$ converge uniformément vers f.
+
+Alors pour $x \in \R^{+}$ fixé, $|f_n(x) - f(x)| \leqslant ||f_n - f||_{\infty}$ or $||f_n - f||_{\infty} \rightarrow 0$
+
+Donc $f_n(x) - f(x) \rightarrow 0$ donc $f_n(x) \rightarrow f(x)$.
+
+On dit que "$f_n$ converge simplement vers f".\\
+
+\uline{Questions :}
+\begin{enumerate}
+    \item~
+    \begin{itemize}
+        \item Étude de la convergence simple :
+
+        Si $x = 0$, $f_n(x) = 0 \rightarrow 0$.
+
+        Si $x \not \equal 0$, $f_n(x) \equiv \frac{x}{nx} = \frac 1 n \rightarrow 0$
+
+        \item Étude de la convergence uniforme :
+
+        $f_n$ est $C^1$ par théorèmes d'opérations.
+
+        $\forall x, f_n'(x) = \frac{1 + nx - nx}{(1 + nx)^2} = \frac 1 {(1 + nx)^2}$
+
+        Donc $f_n$ est strictement croissante, $||f_n||_{\infty} = \frac 1 n$. Donc $||f_n||_{\infty} \rightarrow 0$.
+    \end{itemize}
+
+    \item~
+    \begin{itemize}
+        \item Convergence simple : $f_n$ converge simplement vers $f = 0$
+        \item Convergence uniforme : $||f_n||_{\infty} \rightarrow 0$
+    \end{itemize}
+    
+    \item~
+    \begin{itemize}
+        \item Convergence simple : $f_n \rightarrow e^{-x}$
+        \item Convergence uniforme : 
+    \end{itemize}
+\end{enumerate}    
+\end{correction}
+
+\begin{correction}{11}
+On prend la suite $(A^{2n})$ or $A^{2n} = (A^n)^2$ et $M \mapsto M^2$ est continue. Donc $A^{2n} \rightarrow L^2$.
+\end{correction}
+
+\begin{correction}{12}
+\begin{enumerate}
+    \item $\forall n \in \N, a_0 = m \leqslant x_n \leqslant M = b_0$\\
+    
+    $a_n$ existe car l'ensemble est non vide et minoré donc $a_0 \leqslant a_n \leqslant x_n \leqslant b_0$. Donc $a_n$ bornée.
+
+    On a que $\{x_p \mid p \geqslant n + 1\} \subset \{x_p \mid p \geqslant n\}$. Donc $a_{n+1} \geqslant a_n$. Donc $(a_n)$ converge vers $\ell$ par le théorème de la limite monotone. Par passage à la limite $a_0 \leqslant \ell \leqslant b_0$.\\
+
+    De même pour $(b_n)$.
+    \item Soit $\varepsilon > 0$,\\
+
+    Soit $G_{\varepsilon} = \{n \in \N \mid |x_n - \ell \leqslant \varepsilon|\}$, montrons que $G_{\varepsilon}$ est infini.
+
+    Soit $N \in \N$;
+    $a_n$ tend vers $\ell$ donc $\exists n_0 \in \N, \forall n \geqslant n_0, |a_n - \ell| \leqslant \frac{\varepsilon}2$.
+
+    Par définition de l'inf, $\exists p \geqslant n_0$ tel que $a_n \leqslant x_p \leqslant a_n + \frac\varepsilon2$ et $p \geqslant N$ donc $|x_p - l| \leqslant |x_p - a_n- + |a_n -l| \leqslant l$.
+
+    Donc $p \in G_{\varepsilon}$ donc $G_{\varepsilon}$ est infini, donc $p$ est une valeur d'adhérence de $(x_n)$.
+\end{enumerate}
+\end{correction}
+
+\begin{correction}{13}
+Soit $(a_n)$ une telle suite.\\
+
+S'il n'y a pas de valeurs d'adhérence, $\varnothing$ est bien un intervalle, de même s'il n'y en a qu'une un singleton est bien un intervalle.\\
+
+Soient $y_1,y_2$ deux valeurs d'adhérences telles que $y_1 \leqslant y_2$, montrons que $[y_1,y_2] \subset$ dans les valeurs d'adhérences.\\
+
+Soit $y_3 \in ]y_1, y_2[$ et $0 < \varepsilon < min_{i \in J}\frac{|y_J - j_i|}{3}$,
+
+Soit $N \in \N$, $a_{n+1} - a_n \rightarrow 0$, donc $\exists n_0 > N, \forall n \geqslant n_0 |a_{n+1} - a_n| \leqslant \frac\varepsilon2$.
+
+Comme $y_1$ est une valeur d'adhérence, il existe $n_1 \geqslant n_0$ tel que $a_{n_1} \in \text{B}(y_1, \varepsilon)$.
+
+De même, $\exists n_2 > n_1$ tel que $a_{n2} \in \text{B}(y_2, \varepsilon)$.\\
+
+Considérons $E = \{n \in \N, n \geqslant n_1, a_n \geqslant y_3\}$, comme $a_{n_2} \in \text{B}(y_2,\varepsilon)$. Comme on a bien choisi $\varepsilon$, $n_2 \in E$.
+
+Ainsi, $E$ est une partie non vide de $\N$ et donc monorée. Posons $n_3 = \text{min}(E)$.
+
+Alors $a_{n_3} \geqslant y_3$ et $a_{n_3 - 1} < y_3$ or $|a_{n_3} - a_{n_3 - 1}| \leqslant \frac\varepsilon2$, donc $|a_{n_3} - y_3| \leqslant \varepsilon$. Donc $n_3$ convient, donc $y_3$ est une valeur d'adhérence.\\
+
+Donc l'ensemble des valeurs d'adhérence de la suite est un intervalle. 
+\end{correction}
+
+\begin{correction}{14}
+\begin{enumerate}
+    \item Il suffit de remarquer que $x_n \leqslant x_1$ en utilisant la relation donnée.
+    
+    \item Comme $(x_n)$ est bornée, $\{x_p, p \geqslant n\}$ est majoré donc possède un sup.
+
+    \item Par l'exercice 12, $y_n$ est décroissante minorée et donc tend vers $\ell$.
+
+    \item Par l'exercice 12.
+
+    \item Soit $ q \in \N^{*}$ et $n = q \alpha + r$, $r \in \{0, ..., q -1\}$
+
+    Donc $u_n \leqslant \alpha u_q + u_r$ (par récurrence sur $\alpha$)
+
+    $x_n \leqslant \frac{\alpha q}n x_q + \frac{u_r}n$ donc $x_n \leqslant x_q + \frac{u_r}n$
+    Or $r$ prend un nombre fini de valeurs donc on peut poser $M_q = \text{max}(u_0,u_1,...,u_{q-1})$
+
+    Donc $\forall n \in \N$, $x_n \leqslant x_q + \frac{M_q}n$
+
+    Donc il existe $x_{\varphi(n)} \rightarrow \ell$. Donc $\ell \leqslant x_q$.
+
+    Or $l \leqslant x_n \leqslant y_n$ et $y_n \rightarrow \ell$. Donc par le théorème des gendarmes $x_n \rightarrow \ell$.
+\end{enumerate}
 \end{correction}

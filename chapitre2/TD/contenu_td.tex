@@ -140,55 +140,72 @@ On considère une suite $(u_{n})_{n\in\mathbb{N}}$ de réels strictement positif
 % --- Correction 1 ---
 \begin{correction}{1}
 On pose $f(x)=\arctan x$.
-\textbf{1. (a)}
-\textit{Premier cas : Si $u_{1}<u_{0}$.}
-Puisque la fonction $f:x\mapsto \arctan x$ est strictement croissante sur $\mathbb{R}$, alors $\arctan(u_{1})<\arctan(u_{0})$, c'est-à-dire $u_{2}<u_{1}$.
-Par récurrence, on prouve que $\forall n\in\mathbb{N}$, $u_{n+1}<u_{n}$. Donc la suite $(u_{n})$ est strictement décroissante.
-\textit{Deuxième cas : Si $u_{1}>u_{0}$.}
-Par un raisonnement similaire, on prouve que la suite $(u_{n})$ est strictement croissante.
-\textit{Troisième cas : Si $u_{1}=u_{0}$.}
-La suite $(u_{n})$ est constante.
 
-Pour connaître les variations de la suite $(u_{n})$ il faut donc déterminer le signe de $u_{1}-u_{0}$, signe de $\arctan(u_{0})-u_{0}$.
-On pose alors $g(x)=\arctan x - x$ et on étudie le signe de la fonction $g$.
-On a $\forall x\in\mathbb{R}$, $g^{\prime}(x)=\frac{1}{1+x^{2}} - 1 = \frac{-x^{2}}{1+x^{2}}$ et donc $\forall x\in\mathbb{R}^{*}$, $g^{\prime}(x)<0$.
-Donc $g$ est strictement décroissante sur $\mathbb{R}$ et comme $g(0)=0$ alors :
-$\forall x\in]0,+\infty[$, $g(x)<0$ et $\forall x\in]-\infty,0[$, $g(x)>0$.
-On a donc trois cas suivant le signe de $x_{0}$ :
-\begin{itemize}
-    \item Si $x_{0}>0$, la suite $(u_{n})$ est strictement décroissante.
-    \item Si $x_{0}=0$, la suite $(u_{n})$ est constante.
-    \item Si $x_{0}<0$, la suite $(u_{n})$ est strictement croissante.
-\end{itemize}
+\begin{enumerate}
+\item~
+    \begin{enumerate}
+        \item
+        \textit{Premier cas : Si $u_{1}<u_{0}$.}
+        Puisque la fonction $f:x\mapsto \arctan x$ est strictement croissante sur $\mathbb{R}$, alors $\arctan(u_{1})<\arctan(u_{0})$, c'est-à-dire $u_{2}<u_{1}$.
+        Par récurrence, on prouve que $\forall n\in\mathbb{N}$, $u_{n+1}<u_{n}$. Donc la suite $(u_{n})$ est strictement décroissante.
 
-\textbf{1. (b)} La fonction $g$ étant strictement décroissante et continue sur $\mathbb{R}$, elle induit une bijection de $\mathbb{R}$ sur $g(\mathbb{R})=\mathbb{R}$.
-$0$ admet donc un unique antécédent par $g$ et, comme $g(0)=0$, alors 0 est le seul point fixe de $f$.
-Donc si la suite $(u_{n})$ converge, elle converge vers 0, le seul point fixe de $f$.
-\begin{itemize}
-    \item \textit{Si $u_{0}>0$ :} L'intervalle $]0,+\infty[$ étant stable par $f$, on a par récurrence $\forall n\in\mathbb{N}, u_{n}>0$. Donc la suite $(u_{n})$ est décroissante et minorée par 0, donc elle converge vers 0, unique point fixe de $f$.
-    \item \textit{Si $u_{0}<0$ :} Par un raisonnement similaire, on prouve que $(u_{n})$ est croissante et majorée par 0, donc elle converge vers 0.
-    \item \textit{Si $u_{0}=0$ :} La suite est constante égale à 0.
-\end{itemize}
-\textit{Conclusion :} $\forall u_{0}\in\mathbb{R}$, $(u_{n})$ converge vers 0.
+        \textit{Deuxième cas : Si $u_{1}>u_{0}$.}
+        Par un raisonnement similaire, on prouve que la suite $(u_{n})$ est strictement croissante.
 
-\textbf{2.} Soit $h$ une fonction continue sur $\mathbb{R}$ telle que $\forall x\in\mathbb{R}, h(x)=h(\arctan x)$.
-Soit $x\in\mathbb{R}$. Considérons la suite $(u_{n})$ définie par $u_{0}=x$ et $u_{n+1}=\arctan(u_{n})$.
-On a alors $h(x)=h(u_{0})=h(\arctan(u_{0}))=h(u_{1})=h(\arctan(u_{1}))=h(u_{2})=\dots$
-Par récurrence, on prouve que $\forall n\in\mathbb{N}$, $h(x)=h(u_{n})$.
-De plus $\lim_{n\rightarrow+\infty}h(u_{n})=h(0)$ par convergence de la suite $(u_{n})$ vers 0 et par continuité de $h$.
-On obtient ainsi : $h(x)=h(0)$ et donc $h$ est une fonction constante.
-Réciproquement, toutes les fonctions constantes conviennent.
+        \textit{Troisième cas : Si $u_{1}=u_{0}$.}
+        La suite $(u_{n})$ est constante.
+
+        Pour connaître les variations de la suite $(u_{n})$ il faut donc déterminer le signe de $u_{1}-u_{0}$, signe de $\arctan(u_{0})-u_{0}$.
+        On pose alors $g(x)=\arctan x - x$ et on étudie le signe de la fonction $g$.
+        On a $\forall x\in\mathbb{R}$, $g^{\prime}(x)=\frac{1}{1+x^{2}} - 1 = \frac{-x^{2}}{1+x^{2}}$ et donc $\forall x\in\mathbb{R}^{*}$, $g^{\prime}(x)<0$.
+        Donc $g$ est strictement décroissante sur $\mathbb{R}$ et comme $g(0)=0$ alors :
+        $\forall x\in]0,+\infty[$, $g(x)<0$ et $\forall x\in]-\infty,0[$, $g(x)>0$.
+        On a donc trois cas suivant le signe de $x_{0}$ :
+        \begin{itemize}
+            \item Si $x_{0}>0$, la suite $(u_{n})$ est strictement décroissante.
+            \item Si $x_{0}=0$, la suite $(u_{n})$ est constante.
+            \item Si $x_{0}<0$, la suite $(u_{n})$ est strictement croissante.
+        \end{itemize}
+
+        \item 
+        La fonction $g$ étant strictement décroissante et continue sur $\mathbb{R}$, elle induit une bijection de $\mathbb{R}$ sur $g(\mathbb{R})=\mathbb{R}$.
+        $0$ admet donc un unique antécédent par $g$ et, comme $g(0)=0$, alors 0 est le seul point fixe de $f$.
+        Donc si la suite $(u_{n})$ converge, elle converge vers 0, le seul point fixe de $f$.
+        \begin{itemize}
+            \item \textit{Si $u_{0}>0$ :} L'intervalle $]0,+\infty[$ étant stable par $f$, on a par récurrence $\forall n\in\mathbb{N}, u_{n}>0$. Donc la suite $(u_{n})$ est décroissante et minorée par 0, donc elle converge vers 0, unique point fixe de $f$.
+            \item \textit{Si $u_{0}<0$ :} Par un raisonnement similaire, on prouve que $(u_{n})$ est croissante et majorée par 0, donc elle converge vers 0.
+            \item \textit{Si $u_{0}=0$ :} La suite est constante égale à 0.
+        \end{itemize}
+
+        \textit{Conclusion :} $\forall u_{0}\in\mathbb{R}$, $(u_{n})$ converge vers 0.
+    \end{enumerate}
+
+    \item 
+    Soit $h$ une fonction continue sur $\mathbb{R}$ telle que $\forall x\in\mathbb{R}, h(x)=h(\arctan x)$.
+    Soit $x\in\mathbb{R}$. Considérons la suite $(u_{n})$ définie par $u_{0}=x$ et $u_{n+1}=\arctan(u_{n})$.
+    On a alors $h(x)=h(u_{0})=h(\arctan(u_{0}))=h(u_{1})=h(\arctan(u_{1}))=h(u_{2})=\dots$
+    Par récurrence, on prouve que $\forall n\in\mathbb{N}$, $h(x)=h(u_{n})$.
+    De plus $\lim_{n\rightarrow+\infty}h(u_{n})=h(0)$ par convergence de la suite $(u_{n})$ vers 0 et par continuité de $h$.
+    On obtient ainsi : $h(x)=h(0)$ et donc $h$ est une fonction constante.
+    Réciproquement, toutes les fonctions constantes conviennent.
+\end{enumerate}
+
+
 \end{correction}
 
 % --- Correction 2 ---
 \begin{correction}{2}
-\textbf{a)} On pose $c$ la constante telle que $c=ac+b$, c'est-à-dire $c=\frac{b}{1-a}$.
-Alors $v_{n}=u_{n}-c$ est géométrique de raison $a$.
-Donc pour tout $n$, $v_{n}=a^{n}v_{0}$ donc $u_{n}=c+a^{n}(u_{0}-c)$.
+\begin{enumerate}
+    \item 
+    On pose $c$ la constante telle que $c=ac+b$, c'est-à-dire $c=\frac{b}{1-a}$.
+    Alors $v_{n}=u_{n}-c$ est géométrique de raison $a$.
+    Donc pour tout $n$, $v_{n}=a^{n}v_{0}$ donc $u_{n}=c+a^{n}(u_{0}-c)$.
 
-\textbf{b)} On note $u_{n}$ le capital restant dû au bout de $n$ mois.
-On a donc $u_{0}=S$, pour tout $n$, $u_{n+1}=(1+t)u_{n}-R$.
-L'hypothèse $u_{N}=0$ permet de calculer $R$.
+    \item 
+    On note $u_{n}$ le capital restant dû au bout de $n$ mois.
+    On a donc $u_{0}=S$, pour tout $n$, $u_{n+1}=(1+t)u_{n}-R$.
+    L'hypothèse $u_{N}=0$ permet de calculer $R$.
+\end{enumerate}
 \end{correction}
 
 % --- Correction 3 ---
@@ -235,31 +252,42 @@ On trace le tableau de variation et on en déduit facilement que $[0, e]$ est st
 
 % --- Correction 6 ---
 \begin{correction}{6}
-\textbf{1.} Par hypothèse, $\exists N_{0}\in\mathbb{N}, \forall n\ge N_{0}, v_{n}\ne0$.
-Ainsi la suite $(\frac{u_{n}}{v_{n}})$ est définie à partir du rang $N_{0}$.
-Comme $u_{n}\sim v_{n}$, on a $\lim_{n\rightarrow+\infty}\frac{u_{n}}{v_{n}}=1$.
-Alors, $\forall\epsilon>0, \exists N\ge N_{0}, \forall n\ge N \Rightarrow |\frac{u_{n}}{v_{n}}-1|\le\epsilon$.
-Prenons $\epsilon=\frac{1}{2}$. On en déduit que pour $n \ge N$, $\frac{1}{2} \le \frac{u_n}{v_n} \le \frac{3}{2}$.
-Donc $\frac{u_{n}}{v_{n}}>0$, ce qui implique que $u_{n}$ et $v_{n}$ sont de même signe.
+\begin{enumerate}
+    \item 
+    Par hypothèse, $\exists N_{0}\in\mathbb{N}, \forall n\ge N_{0}, v_{n}\ne0$.
+    Ainsi la suite $(\frac{u_{n}}{v_{n}})$ est définie à partir du rang $N_{0}$.
+    Comme $u_{n}\sim v_{n}$, on a $\lim_{n\rightarrow+\infty}\frac{u_{n}}{v_{n}}=1$.
+    Alors, $\forall\epsilon>0, \exists N\ge N_{0}, \forall n\ge N \Rightarrow |\frac{u_{n}}{v_{n}}-1|\le\epsilon$.
+    Prenons $\epsilon=\frac{1}{2}$. On en déduit que pour $n \ge N$, $\frac{1}{2} \le \frac{u_n}{v_n} \le \frac{3}{2}$.
+    Donc $\frac{u_{n}}{v_{n}}>0$, ce qui implique que $u_{n}$ et $v_{n}$ sont de même signe.
 
-\textbf{2.} Au voisinage de $+\infty$, $\sinh(\frac{1}{n})=\frac{1}{n}+\frac{1}{6n^{3}}+o(\frac{1}{n^{3}})$ et $\tan\frac{1}{n}=\frac{1}{n}+\frac{1}{3n^{3}}+o(\frac{1}{n^{3}})$.
-Donc $u_{n}\sim -\frac{1}{6n^{3}}$.
-On en déduit, d'après 1, qu'à partir d'un certain rang, $u_{n}$ est négatif.
+    \item
+    Au voisinage de $+\infty$, $\sinh(\frac{1}{n})=\frac{1}{n}+\frac{1}{6n^{3}}+o(\frac{1}{n^{3}})$ et $\tan\frac{1}{n}=\frac{1}{n}+\frac{1}{3n^{3}}+o(\frac{1}{n^{3}})$.
+    Donc $u_{n}\sim -\frac{1}{6n^{3}}$.
+    On en déduit, d'après 1, qu'à partir d'un certain rang, $u_{n}$ est négatif.
+\end{enumerate}
 \end{correction}
 
 % --- Correction 7 ---
 \begin{correction}{7}
-\textbf{1)} On étudie $f_{n}$ et on lui applique le théorème de la bijection, on trouve $x_{n}>1$.
-\textbf{2)} La stricte croissance de $f_{n}$ montre que $x_{n+1}-x_{n}$ est du même signe que $f_{n}(x_{n+1})-f_{n}(x_{n})=f_{n}(x_{n+1})$ car $f_n(x_n)=0$.
-Or $f_{n+1}(x_{n+1})=0=(n+1)x_{n+1}^{n+2}-(n+2)x_{n+1}^{n+1}-\frac{1}{2}$.
-Donc $\frac{1}{2}=(n+1)x_{n+1}^{n+2}-(n+2)x_{n+1}^{n+1}$.
-En injectant dans $f_n(x_{n+1})$, on trouve que $f_{n}(x_{n+1}) \le 0$ après factorisation.
-Donc la suite décroît et est minorée par 1. Elle converge.
-\textbf{3)} On a $\ell\ge1$. Supposons par l'absurde que $\ell>1$. En passant à la limite $f_{n}(x_{n})=0$ on tombe sur une contradiction (termes tendant vers l'infini), donc $\ell=1$.
-\textbf{4)} Le résultat sur $\alpha$ se montre par le théorème de la bijection.
-Puis on effectue un DL sur le calcul de $f_{n}(1+\frac{\alpha}{n}+\frac{\beta}{n^{2}})$.
-On trouve un équivalent dont le signe dépend de celui d'un polynôme de degré 1 en $\beta$.
-Il existe donc deux valeurs de $\beta$ pour lesquels cette valeur est positive, respectivement négative, et donc par stricte monotonie de $f_{n}$, l'inégalité cherchée donne $x_{n} - 1 \sim \frac{\alpha}{n}$.
+\begin{enumerate}
+    \item On étudie $f_{n}$ et on lui applique le théorème de la bijection, on trouve $x_{n}>1$.
+
+    \item 
+    La stricte croissance de $f_{n}$ montre que $x_{n+1}-x_{n}$ est du même signe que $f_{n}(x_{n+1})-f_{n}(x_{n})=f_{n}(x_{n+1})$ car $f_n(x_n)=0$.
+    Or $f_{n+1}(x_{n+1})=0=(n+1)x_{n+1}^{n+2}-(n+2)x_{n+1}^{n+1}-\frac{1}{2}$.
+    Donc $\frac{1}{2}=(n+1)x_{n+1}^{n+2}-(n+2)x_{n+1}^{n+1}$.
+    En injectant dans $f_n(x_{n+1})$, on trouve que $f_{n}(x_{n+1}) \le 0$ après factorisation.
+    Donc la suite décroît et est minorée par 1. Elle converge.
+
+    \item On a $\ell\ge1$. Supposons par l'absurde que $\ell>1$. En passant à la limite $f_{n}(x_{n})=0$ on tombe sur une contradiction (termes tendant vers l'infini), donc $\ell=1$.
+
+    \item
+    Le résultat sur $\alpha$ se montre par le théorème de la bijection.
+    Puis on effectue un DL sur le calcul de $f_{n}(1+\frac{\alpha}{n}+\frac{\beta}{n^{2}})$.
+    On trouve un équivalent dont le signe dépend de celui d'un polynôme de degré 1 en $\beta$.
+    Il existe donc deux valeurs de $\beta$ pour lesquels cette valeur est positive, respectivement négative, et donc par stricte monotonie de $f_{n}$, l'inégalité cherchée donne $x_{n} - 1 \sim \frac{\alpha}{n}$.
+\end{enumerate}
 \end{correction}
 
 % --- Correction 8 ---

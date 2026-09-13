@@ -428,9 +428,9 @@
 \fancyhead[L]{\thepage}
 \fancyhead[R]{%
   \ifprepa@td%
-    TD~\@numchapitre -- \@titrechapitre%
+    TD~\@numchapitre~-- \@titrechapitre%
   \else%
-    Chapitre~\@numchapitre -- \@titrechapitre%
+    Chapitre~\@numchapitre~-- \@titrechapitre%
   \fi%
 }
 

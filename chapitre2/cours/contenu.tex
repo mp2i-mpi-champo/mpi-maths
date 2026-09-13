@@ -78,7 +78,7 @@ On prendra $(E, N)$ un espace vectoriel normé sur $\K$.
     \begin{itemize}
         \item Si $u_n \limit{n}{+\infty} \ell_1$ et $v_n \limit{n}{+\infty} \ell_2$, alors $(u_n + v_n) \limit{n}{+\infty} (\ell_1 + \ell_2)$
         \item Si $u_n \limit{n}{+\infty} \ell_1$ et $v_n \limit{n}{+\infty} \ell_2$, alors $(u_n v_n) \limit{n}{+\infty} (\ell_1 \ell_2)$
-        \item Si $u_n \limit{n}{+\infty} \ell_1$, alors $(\lambda u_n + \mu v_n) \limit{n}{+\infty} (\lambda \ell_1 + \mu \ell_2)$
+        \item Si $u_n \limit{n}{+\infty} \ell_1$ et $v_n \limit{n}{+\infty} \ell_2$, alors $(\lambda u_n + \mu v_n) \limit{n}{+\infty} (\lambda \ell_1 + \mu \ell_2)$
         \item si $u_n \limit{n}{+\infty} 0$ et $v_n$ est bornée, alors $(u_n v_n) \limit{n}{+\infty} 0$
     \end{itemize}
 \end{theoreme}
@@ -133,15 +133,15 @@ On prendra $(E, N)$ un espace vectoriel normé sur $\K$.
         \exists n_0 \in \N, & \forall n \geqslant n_0, & \mid u_n - \ell \mid \leqslant \alpha_n \\
         \space & \alpha_n \limit{n}{+\infty} 0 & \space \\
     \end{array} \right.
-    $
+    $ \\
 
-    Alors $u_n \limit{n}{+\infty} \ell$
+    Alors $u_n \limit{n}{+\infty} \ell$.
 \end{theoreme}
 
 \begin{theoreme}{Passage à la limite dans les inégalités}{}
     Soient $(u_n)$ et $(v_n)$ deux suites réelles, et $\ell_1, \ell_2 \in \R$ telles que :
 
-    $ u_n \limit{n}{+\infty} \ell_1$ et $v_n \limit{n}{+\infty} \ell_2$
+    \[ u_n \limit{n}{+\infty} \ell_1 \quad et \quad v_n \limit{n}{+\infty} \ell_2 \]
 
     Si $\exists n_0 \in \N, \forall n \geqslant n_0, u_n \leqslant v_n$, alors $\ell_1 \leqslant \ell_2$
 \end{theoreme}
@@ -227,7 +227,7 @@ On prendra $(E, N)$ un espace vectoriel normé sur $\K$.
     \end{align}
     
 
-    Donc par rec, 
+    Donc par réccurence, 
     $$\forall n \in \N, 0 \leqslant v_n - u_n \leqslant \frac{b - a}{2^n} \limit{n}{+ \infty} 0$$
 
     Donc ce sont des suites adjacentes.
@@ -240,7 +240,6 @@ On prendra $(E, N)$ un espace vectoriel normé sur $\K$.
 
 \begin{propositionnt}{Nature de l'ensemble des suites récurrentes linéaires d'ordre 2}{}
     Soient $a, b \in \C$.  
-
     $E = \{(u_n)_{n \in \N} \in \C^{\N}, \forall n \in \N, \, u_{n + 2} = a u_{n + 1} + bu_n\}$ est 
     un $\C$-espace vectoriel de dimension 2. 
 \end{propositionnt}
@@ -426,14 +425,14 @@ Si $(u_n)$ converge vers $\ell$ et si $f$ continue alors $f(\ell) = \ell$. $\ell
 
 \begin{theorement}{Somme de limites}{}
     Soient $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N} \in \R^{\N}$ telles que 
-    $u_n \limit{n}{+\infty} +\infty$ et $v_n$ minorée. Alors 
+    $u_n \limit{n}{+\infty} +\infty$ et $v_n$ minorée. Alors :
 
     $$ (u_n + v_n) \limit{n}{+\infty} +\infty $$
 \end{theorement}
 
 \begin{theorement}{Produit de limites}{}
     Soient $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N} \in \R^{\N}$ telles que
-    $u_n \limit{n}{+\infty} +\infty$ et $\exists m > 0, \forall n \in \N, \, v_n \geqslant m$. Alors 
+    $u_n \limit{n}{+\infty} +\infty$ et $\forall n \in \N, \, v_n > 0$. Alors :
 
     $$ (u_n v_n) \limit{n}{+\infty} +\infty $$
     
@@ -457,7 +456,7 @@ Si $(u_n)$ converge vers $\ell$ et si $f$ continue alors $f(\ell) = \ell$. $\ell
 \begin{definition}{}{}
     Soit $(u_n)_{n \in \N} \in E^{\N}$ et $\ell \in E$. 
 
-    Alors les assertions suivantes sont équivalentes (LASSE) : 
+    Alors les assertions suivantes sont équivalentes : 
 
     \begin{enumerate}
         \item $\forall \varepsilon > 0, \, \exists n_0 \in \N, \, \forall n \in \N, \, n \geqslant n_0 \, \Rightarrow N(u_n - \ell) \leqslant \varepsilon$
@@ -468,7 +467,7 @@ Si $(u_n)$ converge vers $\ell$ et si $f$ continue alors $f(\ell) = \ell$. $\ell
 
     On a (1) $\iff$ (2) par def de la limite de la suite réelle positive $(N(u_n - \ell))$.
 
-    (2) $\iff$ (3) par l'équivalence analogue pour les suites réelles.
+    (2) $\iff$ (3) par l'équivalence analogue pour les suites réelles.\\
 
     Alors $\ell$ est unique et on dit que $(u_n)$ converge vers $\ell$ pour $N$ et on note :
     $$ u_n \limit{n}{+\infty} \ell $$
@@ -506,7 +505,7 @@ Si $(u_n)$ converge vers $\ell$ et si $f$ continue alors $f(\ell) = \ell$. $\ell
 
 \begin{definitionnt}{Convergence}{}
     Soit $(u_n)_{n \in \N} \in E^{\N}$. On dit que $(u_n)$ est convergente ssi 
-    $\exists \ell \in E, \, u_n \limit{n}{+\infty} \ell$.
+    $\exists \ell \in E, \, u_n \limit{n}{+\infty} \ell$. \\
 
     Dans le cas contraire, on dit que $(u_n)$ diverge.
 \end{definitionnt}
@@ -740,13 +739,12 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtien coordon
 \begin{proof}
     Par récurrence sur $n$. 
 
-    \qquad \uline{$n = 0$ :}
+    \uline{$n = 0$ :}
+    On a $\varphi(0) \in \N$ donc $\varphi(0) \geqslant 0$.
 
-    \avspace On a $\varphi(0) \in \N$ donc $\varphi(0) \geqslant 0$.
+    \uline{Hérédité :}
 
-    \avspace \qquad \uline{Hérédité :}
-
-    \avspace Supposons $\varphi(n) \geqslant n$.
+    Supposons $\varphi(n) \geqslant n$.
 
     Alors $\varphi(n + 1) > \varphi(n) \geqslant n$ 
     Donc $\varphi(n + 1) \geqslant \varphi(n) + 1$, or $\varphi(n) \geqslant n$ donc
@@ -786,10 +784,10 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtien coordon
 }
 
 
-\begin{proof}
-    \qquad \uline{(1) $\Rightarrow$ (2) :}
+\begin{proof}~\\
+    \uline{(1) $\Rightarrow$ (2) :}
 
-    \avspace Supposons 1, c'est à dire $u_{\varphi(n)} \limit{n}{+\infty} a$.
+    Supposons 1, c'est à dire $u_{\varphi(n)} \limit{n}{+\infty} a$.
 
     Soit $\varepsilon > 0$ et $G_\varepsilon = \{n \in \N, N(u_n - a) \leqslant \varepsilon\}$.
     Par def de la limite, il existe $n_0 \in \N, \, \forall n \geqslant n_0, \, N(u_{\varphi(n)} - a) \leqslant \varepsilon$, 
@@ -799,11 +797,11 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtien coordon
 
     Or $\varphi$ strictement croissante donc injective et $\{\varphi(n), n \geqslant n_0\}$ est infini.
     
-    Donc $\{\varphi(n), n \geqslant n_0\}$ infini donc $G_\varepsilon$ est infini.
+    Donc $\{\varphi(n), n \geqslant n_0\}$ infini donc $G_\varepsilon$ est infini.\\
+    
+    \uline{(2) $\Rightarrow$ (1) :}
 
-    \avspace \qquad \uline{(2) $\Rightarrow$ (1) :}
-
-    \svspace Supposons 2 et construisons par récurrence sur $n$ un entier $\varphi(n)$ tel que
+    Supposons 2 et construisons par récurrence sur $n$ un entier $\varphi(n)$ tel que
 
     $\mathscr P(n)$: "$\varphi(n) > \varphi(n - 1)$ et $N(u_{\varphi(n)} - a) \leqslant \frac 1 {n + 1}$".
 
@@ -981,9 +979,7 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtien coordon
 \end{proof}
 
 
-\begin{remarque} (hors programme)
-
-    $\ell$ est appelée limite supérieure de la suite $(u_n)$.
+\begin{remarque} (HP) $\ell$ est appelée limite supérieure de la suite $(u_n)$.
 \end{remarque}
 
 \subsubsection{Conséquence }

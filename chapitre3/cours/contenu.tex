@@ -60,16 +60,16 @@ dont l'intersection infinie est $\{0\}$.}
 
 \begin{proof}~\\
     \uline{Réunion :}
-    \idee{
-        1. utiliser la définition 
-
-        2. idem
-    }
-
     \svspace Soit $I$ un ensemble non vide tel que $\forall i \in I, \, A_i$ est un ouvert de $E$, et 
     $\displaystyle B = \bigcup_{i \in I} A_i$.
 
     Soit $x \in B$. Il existe $i \in I$ tel que $x \in A_i$.
+
+    \idee{
+        1. Utiliser la définition.
+
+        2. Idem.
+    }
 
     Or $A_i$ est un ouvert, donc il existe $R > 0$ tel que $B(x, R) \subset A_i \subset B$, 
     donc $B$ est un ouvert. \\
@@ -947,13 +947,13 @@ On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les 
     
 \end{proposition}
 
-\idee{
-    Utilisation de la caractérisation séquentielle des fermés, et proposition précédente.
-}
-
 \begin{proof}
     $\Rightarrow$ Supposons que $V$ est un fermé relatif de $A$. 
     Alors $V = \overline V \cap A$. 
+
+    \idee{
+        Utilisation de la caractérisation séquentielle des fermés, et proposition précédente.
+    }
 
     Soit $(a_n)_{n \in \N}$ une suite d'éléments de $V$ qui converge vers $\ell \in A$.
 
@@ -2142,12 +2142,12 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
     Toute fonction continue sur un compact est uniformément continue. 
 \end{theoreme}
 
-\idee{
-    Absurde
-}
-
 \begin{proof}
     Soit $A \subset E$ compact et $f \in \mathscr C(A, E')$. 
+
+    \idee{
+        Absurde.
+    }
 
     Montrons que $f$ est uniformément continue sur $A$. 
 

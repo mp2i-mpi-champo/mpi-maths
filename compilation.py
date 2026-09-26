@@ -182,7 +182,7 @@ if args.chapitres == "integrale" :
             print("ERROR: invalid input for mode field.")
             exit(1)
 
-    clean_dir(c_integrale_dir)
+    #clean_dir(c_integrale_dir)
 else :
     match args.mode :
         case "chapitre" :

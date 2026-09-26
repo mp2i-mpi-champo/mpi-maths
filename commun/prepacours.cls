@@ -37,6 +37,7 @@
 \RequirePackage{titletoc}
 \RequirePackage{enumitem}
 \RequirePackage{ifthen}
+\RequirePackage{soul}
 
 \setmainfont{fbb}[
   Extension      = .otf,

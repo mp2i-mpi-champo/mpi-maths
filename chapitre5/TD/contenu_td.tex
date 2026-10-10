@@ -417,26 +417,16 @@ Par l'absurde, si $\mathbb{R} \setminus \mathbb{Q}$ est dénombrable.
 
 % --- Correction 13 ---
 \begin{correction}{13}
-    Calcul de $S = \sum_{p,q} \frac{p!q!}{(p+q+2)!}$.
-
-    Fixons $p$. Sommons sur $q$.
-
-    Utilisons l'astuce télescopique :
-    $\frac{q!}{(p+q+2)!} = \frac{1}{p+1} \left( \frac{q!}{(p+q+1)!} - \frac{(q+1)!}{(p+q+2)!} \right)$.
-
-    En effet, $\frac{1}{p+1} \frac{q!}{(p+q+2)!} [ (p+q+2) - (q+1) ] = \frac{1}{p+1} \frac{q!}{(p+q+2)!} (p+1) = \text{terme de gauche}$.
-
-    Somme sur $q$ (de 0 à $+\infty$) :
-    $\displaystyle \frac{1}{p+1} \sum_{q=0}^{+\infty} (u_q - u_{q+1})$ avec $u_q = \frac{q!}{(p+q+1)!}$.
-
-    La somme est $\frac{1}{p+1} u_0 = \frac{1}{p+1} \frac{0!}{(p+1)!} = \frac{1}{(p+1)(p+1)!}$.
-
-    Attention, il y a un $p!$ en facteur dans la somme totale.
-    Donc somme partielle en $q$ (multipliée par $p!$) :
-    $p! \times \frac{1}{p+1} \frac{1}{(p+1)!} = \frac{1}{(p+1)^2}$.
-
-    Maintenant on somme sur $p \ge 0$ :
-    $\displaystyle \sum_{p=0}^{+\infty} \frac{1}{(p+1)^2} = \sum_{k=1}^{+\infty} \frac{1}{k^2} = \frac{\pi^2}{6}$.
+Soient $p,q \in \N$. On remarque que :
+    \[ \frac{p! q!}{(p+q+2)!} = \frac{1}{p+1} \left(\frac{p! q!}{(p+q+1)!} - \frac{p! (q+1)!}{(p+q+2)!} \right) \]
+    
+    Soit $M \in \N$. Alors par télescopage, on a:
+    \[ \sum_{q=0}^{M} \frac{p! q!}{(p+q+2)!} = \frac{1}{p+1} \left( \frac{p! 0!}{(p+1)!} - \frac{p! (M+1)!}{(p+M+2)!} \right) \xrightarrow[M \to +\infty]{} \frac{1}{(p+1)^2} \]
+    
+    Le terme général étant strictement positif pour tout $(p,q) \in \N^2$, alors selon le théorème de Fubini positif, la série existe par comparaison avec une série de Riemann, et on a :
+    \[S = \sum_{(p,g) \in \N}^{} \frac{p!q!}{(p+q+2)!} = \sum_{p=0}^{+\infty} \sum_{q=0}^{+\infty} \frac{p!q!}{(p+q+2)!} = \sum_{p=0}^{+\infty} \frac{1}{(p+1)^2} \]
+    
+    Via le changement d'indice $k = p+1$, on obtient: \[S = \zeta(2) = \frac{\pi^2}{6}\]
 \end{correction}
 
 % --- Correction 14 ---

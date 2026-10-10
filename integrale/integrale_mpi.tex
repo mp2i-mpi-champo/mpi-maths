@@ -190,7 +190,13 @@
   {\Huge \bfseries Table des matières \par}
   \vspace{1cm}
 \end{center}
-\tableofcontents
+
+\begingroup
+  \hypersetup{linkcolor=black}
+  \makeatletter
+  \@starttoc{toc}
+  \makeatother
+\endgroup
 \clearpage
 \pagestyle{fancy} 
 

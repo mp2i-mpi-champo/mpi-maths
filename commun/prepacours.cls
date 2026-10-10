@@ -85,7 +85,7 @@
     right=5cm,
     marginparwidth=3.5cm,
     marginparsep=0.5cm,
-    headheight=32pt,
+    headheight=12pt,
   }
 \fi
 
@@ -102,7 +102,7 @@
     right=5cm,
     marginparwidth=3.5cm,
     marginparsep=0.5cm,
-    headheight=32pt,
+    headheight=12pt,
   }%
   \fancyhfoffset[R]{\dimexpr\marginparsep+\marginparwidth\relax}%
 }
@@ -122,6 +122,8 @@
   \displaychapitrebanner
 }
 
+\addtolength{\topmargin}{10pt}
+\addtolength{\headsep}{-10pt}
 % =============================================================================
 % COULEURS
 % =============================================================================

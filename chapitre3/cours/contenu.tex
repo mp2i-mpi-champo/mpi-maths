@@ -3,8 +3,10 @@ Dans ce chapitre, on se place dans $\K = \R$ ou $\C$ et on prendra $(E, N)$ un e
 \section{Topologie d'un espace vectoriel normé}
 \subsection{Ouverts}
 \begin{definition}{Partie ouverte}{}
-    Soit $A \subset E$. On dit que $A$ est ouverte ou que $A$ est un ouvert ssi 
-    $$ \forall a \in A, \, \exists R > 0, \, B(a, R) \subset A.$$
+    Soit $A \subset E$.
+
+    On dit que $A$ est ouverte ou que $A$ est un ouvert ssi 
+    $\forall a \in A, \, \exists R > 0, \, B(a, R) \subset A$.
 \end{definition}
 
 \begin{proposition}{}{}
@@ -109,8 +111,10 @@ dont l'intersection infinie est $\{0\}$.}
 \end{proof}
 
 \begin{definition}{Voisinage}{}
-    Soit $a \in E$ et $A \subset E$. On dit que $A$ est un voisinage de $a$ ssi
-    $$ \exists R > 0, \, B(a, R) \subset A$$
+    Soit $a \in E$ et $A \subset E$.
+
+    On dit que $A$ est un voisinage de $a$ ssi
+    $\exists R > 0, \, B(a, R) \subset A$.
 \end{definition}
 
 \begin{remarque}
@@ -138,7 +142,8 @@ dont l'intersection infinie est $\{0\}$.}
 
 \subsection{Fermés}
 \begin{definition}{Fermé}{}
-    Soit $A \subset E$. On dit que $A$ est un fermé ssi son complémentaire 
+    Soit $A \subset E$.
+    On dit que $A$ est un fermé ssi son complémentaire 
     $E \setminus A = C_E B$ est un ouvert.
 \end{definition}
 
@@ -147,8 +152,8 @@ dont l'intersection infinie est $\{0\}$.}
 \end{exemple}
 
 \begin{theoreme}{Caractérisation séquentielle des fermés}{}
-
-    Soit $B \subset E$. 
+    Soit $B \subset E$.
+    
     $B$ est un fermé ssi pour toute suite $(u_n)$ d'éléments de $B$ qui converge 
     vers $\ell \in E$, on a $\ell \in B$.
 \end{theoreme}
@@ -172,10 +177,8 @@ dont l'intersection infinie est $\{0\}$.}
     Donc $\ell \not \in A$, donc $\ell \in B$. \\
 
     $\Leftarrow$ Supposons maintenant que $B$ n'est pas fermé. Donc $A$ n'est pas ouvert, ce qui s'écrit : 
-
-    $$\exists a \in A, \, \forall R > 0, \, \exists x \in B(a, R) \text{ tel que } x \not \in A$$
-
-    En particulier, pour $n \in \N^*$, $R = \frac 1 n$ fournit un $x_n \in B(a, \frac 1 n)$ tel que $x_n \not \in A$, donc $x_n \in B$ 
+    \[\exists a \in A, \, \forall R > 0, \, \exists x \in B(a, R) \text{ tel que } x \not \in A\]
+    En particulier, pour $n \in \N^*$, $R = \frac 1 n$ fournit un $x_n \in B\left(a, \frac 1 n\right)$ tel que $x_n \not \in A$, donc $x_n \in B$ 
     et $d(x_n, a) < \frac 1 n$.
 
     Donc $(x_n)$ est une suite de $B$ qui converge vers $a \in A$, avec $a \not \in B$.
@@ -266,7 +269,6 @@ de ses éléments, or tout ensemble n'est pas fermé.
     Donc $\ell \in B$, et $B$ est un fermé par caractérisation séquentielle.
 \end{proof}
 
-
 \textbf{\uline{Conséquence :}}
 Tout ensemble fini est fermé, car réunion finie de singletons.
 
@@ -347,10 +349,8 @@ Montrons qu'au contraire, cela n'est pas vrai en dimension infinie.
 
     Posons $\forall n \in \N, \, P_n = X^n - 1$. On a donc bien $P_n \in H$.
 
-    Posons $Q = -1$. Alors 
-
-    $$ N(P_n - Q ) = \int_0^1 |X^n| \dt = \frac 1 {n+1} \limit n {+ \infty} 0.$$
-
+    Posons $Q = -1$. Alors :
+    \[N(P_n - Q ) = \int_0^1 |X^n| \dt = \frac 1 {n+1} \limit n {+ \infty} 0.\]
     Donc $P_n \limit n {+ \infty} Q$ et pourtant $Q \not \in H$.
 
     Donc $H$ n'est pas fermé.
@@ -369,7 +369,6 @@ Montrons qu'au contraire, cela n'est pas vrai en dimension infinie.
 
     On appelle intérieur de $A$, et on note $\mathring{A}$, l'ensemble des points intérieurs à $A$, 
     c'est à dire : 
-
     \[\mathring A = \{a \in A, \, \exists R > 0, \, B(a, R) \subset A\}.\]
 \end{definition}
 
@@ -463,7 +462,6 @@ intérieurs avec une suite.}
 
 \begin{theoreme}{Caractérisation séquentielle des points adhérents}{}
     Soit $A \subset E$ et $x \in E$.
-
     Alors $x$ est adhérent à $A$ ssi il existe une suite $(a_n)$ d'éléments de $A$ 
     qui converge vers $x$.
 \end{theoreme}
@@ -661,8 +659,7 @@ Si $A \subset E$, alors $\mathring A \subset A \subset \overline A$.
 \begin{definition}{Frontière d'un ensemble}{}
     Soit $A \subset E$. 
 
-    On appelle frontière de $A$ et on note $\operatorname{Fr}(A)$ la partie de $E$ définie 
-    par :
+    On appelle frontière de $A$ et on note $\operatorname{Fr}(A)$ la partie de $E$ définie par :
     \[\operatorname{Fr}(A) = \overline A \setminus \mathring A\]
 \end{definition}
 
@@ -688,7 +685,7 @@ Si $A \subset E$, alors $\mathring A \subset A \subset \overline A$.
     Soient $A, B \in \mathscr P(E)$.
 
     On dit que $A$ est dense dans $B$ ssi 
-    \[\subset B \subset \overline A\]
+    \[A \subset B \subset \overline A\]
 \end{definition}
 
 \begin{definition}{Partie dense, égalité}{}
@@ -948,7 +945,6 @@ On va définir la topologie relative à $A$, c'est à dire les ouverts relatifs 
 
     On dit que $f$ a pour limite $\ell$ en $a$ ssi 
     \[\forall \varepsilon > 0, \, \exists \eta > 0, \, \forall x \in A, \, N(x - a) < \eta \Rightarrow N'(f(x) - \ell) < \varepsilon\]
-
     C'est à dire $d(x, a) \leqslant \eta \Rightarrow d(f(x), \ell) \leqslant \varepsilon$.
 
     C'est à dire $x \in B'(a, \eta) \Rightarrow f(x) \in B'(\ell, \varepsilon)$.
@@ -962,7 +958,7 @@ On va définir la topologie relative à $A$, c'est à dire les ouverts relatifs 
 
     Supposons que $\ell_1$ et $\ell_2$ conviennent. Soit $\varepsilon > 0$.
 
-    Par def, $\exists M_1 > 0, \, \forall x \in A, \, d(x, a) < M_1  \Rightarrow d(f(x), \ell_1) \leqslant \varepsilon$
+    Par définition, $\exists M_1 > 0, \, \forall x \in A, \, d(x, a) < M_1  \Rightarrow d(f(x), \ell_1) \leqslant \varepsilon$
 
     $\exists M_2 > 0, \, \forall x \in A, \, d(x, a) < M_2  \Rightarrow d(f(x), \ell_2) \leqslant \varepsilon$
 
@@ -1185,8 +1181,7 @@ Si $f$ et $\lambda$ continues en a, $\lambda f$ aussi.
     $(E", N")$ un espace vectoriel normé, et soit $\ell \in E"$, $f : A \to E'$ tel que $\forall x \in A, f(x) \in B$, $g: B \to E"$. 
 
     Si $f(x) \limitnorme{N'}x a b \text{ et } g(y) \limitnorme{N"}y a \ell$ alors :
-
-    $$(g \circ f )(x) \limitnorme{N"} x a \ell$$
+    \[(g \circ f )(x) \limitnorme{N"} x a \ell\]
 \end{proposition}
 
 \begin{proof}
@@ -1376,14 +1371,13 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 \subsection{Applications uniformément continues et lipschitziennes}
 \begin{definition}{Uniforme continuité}{}
     Soit $f : A \subset E \to E'$. On dit que $f$ est uniformément continue sur $A$ ssi 
-    $$\forall \varepsilon > 0, \, \exists \eta > 0, \, \forall x, y \in A, \, N(x - y) \leqslant \eta \Rightarrow N'(f(x) - f(y)) \leqslant \varepsilon$$
+    \[\forall \varepsilon > 0, \, \exists \eta > 0, \, \forall x, y \in A, \, N(x - y) \leqslant \eta \Rightarrow N'(f(x) - f(y)) \leqslant \varepsilon\]
 \end{definition}
 
 \begin{definition}{Lipschitzienne}{}
     Soit $f : A \subset E \to E'$ et $k \geqslant 0$. On dit que $f$ est lipschitzienne 
     de rapport $k$ ssi 
-    $$\forall x, y \in A, \, N'(f(x) - f(y)) \leqslant k N(x - y)$$
-
+    \[\forall x, y \in A, \, N'(f(x) - f(y)) \leqslant k N(x - y)\]
     On dit que $f$ est lipschitzienne ssi elle est lipschitzienne de rapport $k$ pour un certain $k \geqslant 0$.
 \end{definition}
 
@@ -1469,7 +1463,7 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
     Soient $(E, N)$ et $(E', N')$ deux espaces vectoriels normés, et $ f \in \mathscr L(E, E')$.
 
     Alors $f$ est continue sur $E$ ssi 
-    $$\exists c > 0, \, \forall x \in E, \, N'(f(x)) \leqslant c N(x)$$
+    \[\exists c > 0, \, \forall x \in E, \, N'(f(x)) \leqslant c N(x)\]
 \end{theoreme}
 
 \idee{
@@ -1485,9 +1479,7 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
     Cela fournit $\eta > 0$ tel que $\forall x \in E, \, N(x - 0) \leqslant \eta \Rightarrow N'(f(x) - f(0)) \leqslant 1$.
 
     Or $f$ linéaire, donc $f(0_E) = 0_{E'}$ donc :
-    
-    $$N(x) \leqslant \eta \Rightarrow N'(f(x)) \leqslant 1$$
-
+    \[N(x) \leqslant \eta \Rightarrow N'(f(x)) \leqslant 1\]
     Soit $x \in E \setminus \{0\}$. 
     Posons $\displaystyle y = \eta \frac {x}{N(x)} $.
 
@@ -1588,8 +1580,7 @@ $\fonction {\psi}{\mathscr M_{n, p}(\K) \times \mathscr M_{p, q}(\K)}{\mathscr M
     une partie de $\R^+$ majorée. 
 
     On appelle norme d'opérateur (ou norme subordonnée, ou parfois norme triple) de $f$ le réel : 
-    $$||f||_{op} = |||f||| = \sup \left\{\frac{N'(f(x))}{N(x)}, x \in E \setminus \{0\} \right\} $$ 
-
+    \[||f||_{op} = |||f||| = \sup \left\{\frac{N'(f(x))}{N(x)}, x \in E \setminus \{0\} \right\}\]
     On a en particulier $\forall x \in E, \, N'(f(x)) \leqslant |||f||| \cdot N(x)$.
 \end{definition}
 
@@ -1644,9 +1635,7 @@ $\fonction {\psi}{\mathscr M_{n, p}(\K) \times \mathscr M_{p, q}(\K)}{\mathscr M
         \item Supposons que $|||f||| = 0$, alors $\forall x \in E \setminus \{0\}, \, N'(f(x)) = 0$.
             Donc $f(x) = 0_{E'}$ car $N'$ est une norme. Donc $f = 0_{\mathscr L(E, E')}$ car linéaire. 
         \item Soit $\lambda \in \K$,
-        
         \[|||\lambda f||| = \sup \left\{ \frac{N'(\lambda f(x))}{N(x)}, x \in E \setminus \{0\} \right\} = \sup \left\{ |\lambda| \frac{N'(f(x))}{N(x)}, x \in E \setminus \{0\} \right\} = |\lambda| |||f|||\]
-
         Soient $f, g \in \mathscr L_c(E, F)$
         et $x \in E$ tel que $x \neq 0$,
 
@@ -1687,9 +1676,7 @@ $\fonction {\psi}{\mathscr M_{n, p}(\K) \times \mathscr M_{p, q}(\K)}{\mathscr M
 
     Pour $f \in \mathscr L_c(E)$, on a $|||f||| = \sup \left\{ \frac{N(f(x))}{N(x)}, \, x \in E \setminus \{0\} \right\}$
     et $|||f|||$ est une norme qui vérifie : 
-
-    $$\forall f, g \in \mathscr L_c(E), \, |||f \circ g||| \leqslant |||f||| \cdot |||g|||$$
-
+    \[\forall f, g \in \mathscr L_c(E), \, |||f \circ g||| \leqslant |||f||| \cdot |||g|||\]
     On dit que $|||\cdot|||$ est une norme d'algèbre. 
 \end{proposition}
 
@@ -1699,8 +1686,7 @@ $\fonction {\psi}{\mathscr M_{n, p}(\K) \times \mathscr M_{p, q}(\K)}{\mathscr M
     On définit pour $A \in \mathscr M_n(\K)$, $|||A||| = \sup \left\{ \frac{N(AX)}{N(X)}, X \in \K^n \setminus \{0\} \right\}$
     
     Alors $|||\cdot|||$ est une norme d'algèbre sur $\mathscr M_n(\K)$, et en en particulier : 
-    $$\forall A, B \in \mathscr M_n(\K), \, |||AB||| \leqslant |||A||| \cdot |||B|||$$
-
+    \[\forall A, B \in \mathscr M_n(\K), \, |||AB||| \leqslant |||A||| \cdot |||B|||\]
     On dit aussi que $|||\cdot|||$ est une norme matricielle. 
 \end{proposition}
 
@@ -1816,7 +1802,8 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
     Soit $\fonction{f}{E_1 \times \cdots \times E_p}{E'}{(x_1, \ldots, x_p)}{f(x_1, \ldots, x_p)}$ 
     $p$-linéaire. 
 
-    \avspace Alors $f$ est continue ssi $$\exists c > 0, \, \forall (x_1, \ldots, x_p) \in E_1 \times \cdots \times E_p, \, N'(f(x_1, \ldots, x_p)) \leqslant c \prod_{i=1}^p N_i(x_i)$$
+    \avspace Alors $f$ est continue ssi
+    \[\exists c > 0, \, \forall (x_1, \ldots, x_p) \in E_1 \times \cdots \times E_p, \, N'(f(x_1, \ldots, x_p)) \leqslant c \prod_{i=1}^p N_i(x_i)\]
 \end{theoreme}
 
 \begin{proof}
@@ -1882,8 +1869,7 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
 \begin{proposition}{Précompacité - HP}{}
 Soit $(E,N)$ un espace vectoriel normé et $A\subset E$ un compact.
 Alors pour tout $\varepsilon >0$ il existe un entier $n>0$ et des points $x_1,...,x_n$ de $A$ tels que :
-
-$$A \subset \bigcup_{i=1}^n B(x_i,\varepsilon)$$
+\[A \subset \bigcup_{i=1}^n B(x_i,\varepsilon)\]
 \end{proposition}
 
 \begin{proof}
@@ -1909,7 +1895,7 @@ Mézalors à cause de la propriété, comme $\varphi(n+1)>\varphi(n)$ , $d(y_{\v
 
     C'est à dire pour toute famille $(U_i)_{i \in I}$ d'ouverts de $E$ 
     telle que $\displaystyle A \subset \bigcup_{i \in I} U_i$, il existe $i_1, \ldots, i_n \in I$ tels que :
-    $$\displaystyle A \subset \bigcup_{k=1}^n U_{i_k}$$
+    \[A \subset \bigcup_{k=1}^n U_{i_k}\]
 \end{definition}
 
 \uline{{\bf Lemme  :}}
@@ -1933,7 +1919,7 @@ Choisissons un entier $N$ tel que $\frac 1{N+1}\leqslant \frac R 3$.\\
 Du fait de la convergence de la suite il existe un rang $n_0\geqslant N $ tel que $x_{\varphi(n_0)} \in B\left(x,\frac R 3\right)$.
 On a donc (par la propriété) l'existence d'un $y \in B\left(x_{\varphi(n)},\frac 1{\varphi(n)+1}\right)$. tel que que $y \notin U_j$.\\
 Mézalors :
-$$d(x,y) \leqslant d(x,x_{\varphi(n_0)})+d(x_{\varphi(n_0)},y) \leqslant \frac R 3 + \frac 1{\varphi(n)+1}\leqslant \frac {2R}3 <R$$
+\[d(x,y) \leqslant d(x,x_{\varphi(n_0)})+d(x_{\varphi(n_0)},y) \leqslant \frac R 3 + \frac 1{\varphi(n)+1}\leqslant \frac {2R}3 <R\]
 Donc $y \in B(x,R)$ donc $y \in U_j$ et la contradiction attendue !
 \end{proof}
 
@@ -1945,19 +1931,18 @@ $\Rightarrow$ Considérons  $(U_i)_{i \in I}$ famille d'ouverts tels que $A \sub
 Utilisons maintenant la propriété de précompacité (montrée plus haut) appliquée à $\varepsilon=r$.
 
 Il existe donc un nombre fini de $x_1,...,x_N$ de $A$ tels que `
-$$A \subset \bigcup_{i=1}^N B(x_i,\varepsilon)$$
+\[A \subset \bigcup_{i=1}^N B(x_i,\varepsilon)\]
 Mézalors :
-$$A \subset \bigcup_{i=1}^N U_{i_x}$$ 
+\[A \subset \bigcup_{i=1}^N U_{i_x}\]
 et la conclusion ! \\
-
 
 $\Leftarrow$ Soit $(x_n)_{n \in \N}$ une suite de $A$.
 
 Posons pour tout $n \in \N$, 
-$$F_n=\overline{ \left\{x_k \ , k \geq n\right\} }$$
+\[F_n=\overline{ \left\{x_k \ , k \geq n\right\} }\]
 C'est un fermé et on a clairement $F_{n+1} \subset F_n$.
 
-Considérons : $$F=\bigcap_{n=1}^{+ \infty} F_n$$
+Considérons : \[F=\bigcap_{n=1}^{+ \infty} F_n\]
 
 Supposons dans un premier temps que $F \cap A \neq \emptyset$.\\
 
@@ -1973,9 +1958,9 @@ Reste à montrer que $F \cap A \neq \emptyset$.
 
 Raisonnons par l'absurde.
 Alors en posant pour tout $n$ , $U_n=E-F_n$ ce sont des ouverts tels que :
-$$A \subset \bigcup_{n\in \N} U_n$$
+\[A \subset \bigcup_{n\in \N} U_n\]
 et donc grace à l'hypothèse, il existe un nombre fini d'ouverts $U_{\varphi(1)},...,U_{\varphi(N)}$ tels que :
-$$A \subset \bigcup_{n=1}^N U_{\varphi(n)}$$
+\[A \subset \bigcup_{n=1}^N U_{\varphi(n)}\]
 Ceci montre donc que $A \cap F_{\varphi(N)}=\emptyset$.
 
 Or $x_{\varphi(N)}$ appartient clairement aux deux.... D'où la contradiction...
@@ -2111,16 +2096,16 @@ Comme $v \notin F $ et. que $F$ fermé, $d(v,F)=m>0$.
 
 Il existe donc $f_0\in F$ tel que $0<m<d(v,f_0)=m_0<2 m$.
 
-Considérons : $$w=\frac{f_0-v}{N(f_0-v)}=\frac{f_0-v}{m_0}$$
+Considérons : \[w=\frac{f_0-v}{N(f_0-v)}=\frac{f_0-v}{m_0}\]
 $F$ étant un espace vectoriel, comme $f_0 \in F$ et $v \notin F$, on a  $w\notin F$.
 Et évidemment $N(w)=1$.
 
 Reste à évaluer pour $i \in \{1,...,n\}$ $N(w-e_i)$.
 On a :
-$$N(w-e_i)=N\left(\frac{f_0-v}{m_0}-e_i\right)=N\left(\frac{f_0-v-m_0 e_i}{m_0}\right)$$
+\[N(w-e_i)=N\left(\frac{f_0-v}{m_0}-e_i\right)=N\left(\frac{f_0-v-m_0 e_i}{m_0}\right)\]
 
 Or $f_0-me_i \in F$ donc $N(f_0-me_i-v)>m$ donc :
-$$N(w-e_i)> \frac{m}{m_0}\geqslant \frac 1 2 $$
+\[N(w-e_i)> \frac{m}{m_0}\geqslant \frac 1 2\]
 
 donc $e_{n+1}=w$ convient. \\
 
@@ -2129,9 +2114,10 @@ Si cette suite de $B'(0,1)$ possédait une valeur d'adhérence $\ell$ on aurait 
 $(e_{\varphi(n)})$ qui converge vers $\ell$.
 
 Et donc pour $n$ assez grand , $n\geqslant n_0$, 
-$$N(e_{\varphi(n)}-\ell) \leqslant \frac 1 8$$
+\[N(e_{\varphi(n)}-\ell) \leqslant \frac 1 8\]
  
- Mézalors par l'inégalitée triangulaire : $$N(e_{\varphi(n_0)}-e_{\varphi(n_0+1)})\leqslant \frac 1 4 $$ ce qui contredit $N(e_{\varphi(n_0)}-e_{\varphi(n_0+1)}) \geqslant \frac 1 2$.
+Mézalors par l'inégalitée triangulaire : \[N(e_{\varphi(n_0)}-e_{\varphi(n_0+1)})\leqslant \frac 1 4\]
+ce qui contredit $N(e_{\varphi(n_0)}-e_{\varphi(n_0+1)}) \geqslant \frac 1 2$.
 \end{proof}
 
 \subsection{Compacité et continuité}
@@ -2180,8 +2166,8 @@ $$N(e_{\varphi(n)}-\ell) \leqslant \frac 1 8$$
 \begin{theoreme}{Théorème des bornes atteintes}{}
     Toute fonction numérique continue sur un compact est bornée et atteint ses bornes, c'est à dire 
     si $A \subset E$ compact et $f \in \mathscr C(A, \R)$, alors 
-    $\exists x_1, x_2 \in A$,  $$\forall x \in A, \, f(x_1) \leqslant f(x) \leqslant f(x_2)$$
-
+    $\exists x_1, x_2 \in A$,
+    \[\forall x \in A, \, f(x_1) \leqslant f(x) \leqslant f(x_2)\]
     Ainsi, $f(x_1) = \min \{ f(x), x \in A \}$ et $f(x_2) = \max \{ f(x), x \in A \}$.
 \end{theoreme}
 
@@ -2210,9 +2196,7 @@ $$N(e_{\varphi(n)}-\ell) \leqslant \frac 1 8$$
     Soit $E$ un $\K$-ev de dimension finie. 
 
     Soit $B = (e_1, \ldots, e_p)$ une base de $E$, soit $N$ une norme sur $E$ et $N_\infty$ définie par 
-    
-    $$N_\infty \left( \sum_{i=1}^p x_i e_i \right) = \max(|x_1|, \ldots, |x_p|)$$
-
+    \[N_\infty \left( \sum_{i=1}^p x_i e_i \right) = \max(|x_1|, \ldots, |x_p|)\]
     Considérons $S_\infty (0, 1) = \{ x \in E, \, N_\infty(x) = 1 \}$ et 
     $\fonction f {S_\infty(0, 1)}{\R}{x}{N(x)}$.
 
@@ -2309,8 +2293,7 @@ Dans ce paragraphe on prendra $\K = \R$.
 
     Soit $A \subset E$ non vide.
     On définit la relation $\mathcal R$ sur $A$ par : 
-    $$\forall (a, b) \in A^2, \, a \mathcal R b \Leftrightarrow \exists f \in \mathscr C(\inter 0 1, A), f(0) = a \text{ et } f(1) = b$$
-
+    \[\forall (a, b) \in A^2, \, a \mathcal R b \Leftrightarrow \exists f \in \mathscr C(\inter 0 1, A), f(0) = a \text{ et } f(1) = b\]
     ou plus simplement $\forall x, y \in A, \, x \mathcal R y$ ssi il existe un chemin de $A$ joignant $x$ à $y$.
     
     Alors $\mathcal R$ est une relation d'équivalence.
@@ -2428,7 +2411,7 @@ Dans ce paragraphe on prendra $\K = \R$.
 \end{proof}
 
 \begin{exemple}
-    $A = GL_n(\R)$ alors $\det A \to \R$ est continue, or $det(A) = \R^*$
+    $A = GL_n(\R)$ alors $\det A \to \R$ est continue, or $\det(A) = \R^*$
 
     Si $\alpha \in \R^*$ posons $M = \operatorname{Diag}(\alpha, 1, \ldots, 1)$. 
     Alors $M \in A$ et $\det(M) = \alpha$.
@@ -2439,21 +2422,19 @@ Dans ce paragraphe on prendra $\K = \R$.
 \subsection{Connexité par arcs de $\text{GL}_n(\C)$ - Hors Programme}
 Soient $A,B \in GL_n(\C)$.
 Considérons l'application :
-$$P : \begin{array}{ccc} \C & \rightarrow & \C \\ z & \mapsto & det(A+z(B-A))\end{array}$$
-
+\[\fonction P {\C} {\C} z {\det(A+z(B-A))}\]
 C'est un polynôme en $z$, donc il s'annule un nombre fini de fois, que l'on note $z_1,...,z_n$.
 
-$P(0)=det(A)$ n'est pas nul et $P(1)=det(B)$ non plus.
+$P(0)=\det(A)$ n'est pas nul et $P(1)=\det(B)$ non plus.
 
 Considérons un chemin continu du plan complexe :
-$$\begin{array}{ccc} \varphi :[0,1] & \rightarrow & \C \\ t & \mapsto & \varphi(t)\end{array} $$
-
+\[\fonction {\varphi} {[0,1]} {\C} t {\varphi(t)}\]
 telle que $\varphi(0)=0$ , $\varphi(1)=1$ et $\forall t \in ]0,1[ \ , \ \forall i \in \{1,...,n\}\'e\ , \ \varphi(t) \neq z_i$.
 (c'est possible car $\C$ privé d'un ensemble fini est connexe par arcs, ce qu'on montre facilement par récurrence sur le cardinal de l'ensemble fini).\\
 
 Considérons pour $t\in [0,1]$ , $M(t)=A+\varphi(t) (B-A)$.
 
-On a bien $M$ continue; $M(0)=A$ , $M(1)=B$ et pour tout $t$ , $det(M(t))=P(t) \neq 0$.
+On a bien $M$ continue; $M(0)=A$ , $M(1)=B$ et pour tout $t$ , $\det(M(t))=P(t) \neq 0$.
 
 Donc $M$ est un chemin de $GL_n(\C)$ reliant $A$ à $B$ donc $GL_n(\C)$ est connexe par arcs.
 
@@ -2469,7 +2450,7 @@ Donc $M$ est un chemin de $GL_n(\C)$ reliant $A$ à $B$ donc $GL_n(\C)$ est conn
     Le département des Hautes-Alpes est connexe mais pas connexe par arcs.
     La Vallée Étroite est non accessible l'hiver par un "chemin" en France... \\
 
-    Soit $A = \{(x, \sin{\frac 1 x}),~x > 0\} \bigcup \{(0,y),~y\in [-1,1]\}$. On démontre que $A$ n'est pas connexe par arcs mais on montrerait qu'elle est connexe. 
+    Soit $A = \left\{\left(x, \sin{\frac 1 x}\right),~x > 0\right\} \bigcup \{(0,y),~y\in [-1,1]\}$. On démontre que $A$ n'est pas connexe par arcs mais on montrerait qu'elle est connexe. 
 \end{exemple}
 
 \begin{proposition}{Connexité par arcs implique connexité - HP}{}

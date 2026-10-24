@@ -335,7 +335,7 @@ Et donc :
 \[v_{n+1}^\alpha - v_n^\alpha \sim -\alpha\cdot v_n^{\alpha+1}\]
 A une limite non nul pour $\alpha = -1$ dans ce cas la limite est $1$.
 
-En applicant le théoreme de Cesàro $$ \frac{1}{n}\sum_{k=0}^{n-1}v_{k+1}^{-1} - v_k^{-1} = \frac{v_n^{-1}-v_0^{-1}}{n} \xrightarrow[n\to\infty]{} 1 $$
+En applicant le théoreme de Cesàro \[\frac{1}{n}\sum_{k=0}^{n-1}v_{k+1}^{-1} - v_k^{-1} = \frac{v_n^{-1}-v_0^{-1}}{n} \xrightarrow[n\to\infty]{} 1\]
 
 Donc $ v_n \sim \frac{1}{n}$
 Finalement :
@@ -447,7 +447,7 @@ Donc $u_n \to e$.
     \textbf{Équivalent de $f_n\left(1 + \frac{\alpha}{n} + \frac{\beta}{n^2}\right)$ :}
 
     Posons $u_n = 1 + \frac{\alpha}{n} + \frac{\beta}{n^2}$. Exprimons $f_n(u_n)$ :
-    $$f_n(u_n) = n u_n^{n+1} - (n+1)u_n^n - \frac{1}{2} = u_n^n (nu_n - n - 1) - \frac{1}{2}$$
+    \[f_n(u_n) = n u_n^{n+1} - (n+1)u_n^n - \frac{1}{2} = u_n^n (nu_n - n - 1) - \frac{1}{2}\]
 
     D'une part, $nu_n - n - 1 = n\left(1 + \frac{\alpha}{n} + \frac{\beta}{n^2}\right) - n - 1 = \alpha - 1 + \frac{\beta}{n}$.
     
@@ -473,10 +473,10 @@ Donc $u_n \to e$.
     \end{align*}
 
     Or, par définition de $\alpha$, $e^\alpha(\alpha - 1) = \frac{1}{2}$ :
-    $$f_n(u_n) = \frac{e^\alpha}{n} \left( \alpha\beta - \frac{\alpha^2(\alpha - 1)}{2} \right) + o\left(\frac{1}{n}\right)$$
+    \[f_n(u_n) = \frac{e^\alpha}{n} \left( \alpha\beta - \frac{\alpha^2(\alpha - 1)}{2} \right) + o\left(\frac{1}{n}\right)\]
 
     Ainsi, on obtient l'équivalent suivant (pourvu que la parenthèse soit non nulle) :
-    $$f_n\left(1 + \frac{\alpha}{n} + \frac{\beta}{n^2}\right) \sim \frac{e^\alpha}{n} \left( \alpha\beta - \frac{\alpha^2(\alpha - 1)}{2} \right)$$
+    \[f_n\left(1 + \frac{\alpha}{n} + \frac{\beta}{n^2}\right) \sim \frac{e^\alpha}{n} \left( \alpha\beta - \frac{\alpha^2(\alpha - 1)}{2} \right)\]
     
     \textbf{Conclusion :}
 
@@ -489,17 +489,17 @@ Donc $u_n \to e$.
     \end{itemize}
 
     Or, par définition $f_n(x_n) = 0$. Comme $f_n$ est strictement croissante sur $[1, +\infty[$ et que les termes considérés sont supérieurs à 1, on a :
-    $$f_n\left(1 + \frac{\alpha}{n} + \frac{\beta}{n^2}\right) \leqslant f_n(x_n) \leqslant f_n\left(1 + \frac{\alpha}{n} + \frac{\beta'}{n^2}\right)$$
+    \[f_n\left(1 + \frac{\alpha}{n} + \frac{\beta}{n^2}\right) \leqslant f_n(x_n) \leqslant f_n\left(1 + \frac{\alpha}{n} + \frac{\beta'}{n^2}\right)\]
 
     qui donne :
-    $$1 + \frac{\alpha}{n} + \frac{\beta}{n^2} \leqslant x_n \leqslant 1 + \frac{\alpha}{n} + \frac{\beta'}{n^2}$$
+    \[1 + \frac{\alpha}{n} + \frac{\beta}{n^2} \leqslant x_n \leqslant 1 + \frac{\alpha}{n} + \frac{\beta'}{n^2}\]
 
     On retranche la limite $\ell = 1$ et on multiplie par $n$ :
-    $$\alpha + \frac{\beta}{n} \leqslant n(x_n - 1) \leqslant \alpha + \frac{\beta'}{n}$$
+    \[\alpha + \frac{\beta}{n} \leqslant n(x_n - 1) \leqslant \alpha + \frac{\beta'}{n}\]
 
     D'après le théorème des gendarmes, on en déduit que $\lim_{n \to +\infty} n(x_n - 1) = \alpha$.
     En conclusion, puisque $\alpha \neq 0$ :
-    $$x_n - \ell \sim \frac{\alpha}{n}$$
+    \[x_n - \ell \sim \frac{\alpha}{n}\]
 \end{enumerate}
 \end{correction}
 
@@ -507,7 +507,7 @@ Donc $u_n \to e$.
 \begin{correction}{8}
 
 On applique le théorème de Cesàro à la suite $y_{n}$.
-$$z_n = \frac{1}{n} \sum_{k=0}^{n-1} (x_{k+1}-x_k) + \frac{x_0}{n} = \frac{1}{n} \sum_{k=0}^{n-1} y_k + \frac{x_0}{n}$$
+\[z_n = \frac{1}{n} \sum_{k=0}^{n-1} (x_{k+1}-x_k) + \frac{x_0}{n} = \frac{1}{n} \sum_{k=0}^{n-1} y_k + \frac{x_0}{n}\]
 
 La moyenne de Cesàro converge vers $\ell$, et le terme $x_0/n$ tend vers 0. Donc $(z_n)$ tend vers $\ell$.
 

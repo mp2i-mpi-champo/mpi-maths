@@ -48,8 +48,7 @@ On rappelle ici quelques résultats démontrés en sup.
         \item $\alpha$ est un majorant de $A$, c'est à dire $\forall a \in A, a \leqslant \alpha$
         \item $\alpha$ est le plus petit des majorants de $A$ c'est à dire $\forall m \in \R$: 
     \end{itemize}
-
-    $$ (\forall a \in A, a \leqslant m ) \Rightarrow \alpha \leqslant m$$
+    \[(\forall a \in A, a \leqslant m ) \Rightarrow \alpha \leqslant m\]
 \end{theoreme}
 
 \begin{theoreme}{Caractérisation séquentielle de la borne sup}{}
@@ -146,9 +145,8 @@ Soit $\K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 
 \begin{proposition}{Seconde inégalité triangulaire}{}
     \\Soit $(E, N)$ un espace vectoriel normé. $\forall u, v \in E$,
-
-    $$|N(u) - N(v)| \leqslant N(u + v)$$
-    $$|N(u) - N(v)| \leqslant N(u - v)$$
+    \[|N(u) - N(v)| \leqslant N(u + v)\]
+    \[|N(u) - N(v)| \leqslant N(u - v)\]
 \end{proposition}
 
 \idee{
@@ -168,16 +166,15 @@ Soit $\K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
     Donc $N(u) - N(v) \leqslant N(u + v)$. \\
 
     En faisant jouer à $(u, v)$ le rôle de $(v, u)$, 
-    $$ N(v) - N(u) \leqslant N(v + u) = N(u + v)$$
+    \[N(v) - N(u) \leqslant N(v + u) = N(u + v)\]
 
     Donc $|N(u) - N(v)| \leqslant N(u + v)$. \\
 
     En faisant jouer à $(u, -v)$ le rôle de $(u, v)$, on en déduit : 
-    $$|N(u) - N(v)| \leqslant N(u - v)$$
+    \[|N(u) - N(v)| \leqslant N(u - v)\]
 \end{proof}
 
 \subsection{Distance associée}
-
 \begin{definition}{}{}
     Soit $(E, N)$ un espace vectoriel normé.
     On définit $d_N$ la distance associée ) $N$ par :
@@ -213,7 +210,7 @@ Soit $\K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
     Soit $(E, N)$ un espace vectoriel normé, avec $A \subset E$ non vide. \\
 
     Soit $x \in E$, on appelle distance de $x$ à $A$ et on note $d(x, A) = d_A(x)$ le réel positif
-    $$d_A(x) = \inf \{~ d(x, a) ~,~ a \in A\}$$
+    \[d_A(x) = \inf \{~ d(x, a) ~,~ a \in A\}\]
 \end{definition}
 
 \begin{proposition}{Inégalité distance à une partie / entre deux points}{}
@@ -303,7 +300,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 \begin{definition}{Partie convexe}{}
     \\Soit $A \subset E$. 
     On dit que $A$ est convexe ssi $\forall a, b \in A, \inter{a}{b} \subset A$ où :
-    $$\inter{a}{b} = \{\lambda a + (1 - \lambda)b, \lambda \in [0, 1]\}$$
+    \[\inter{a}{b} = \{\lambda a + (1 - \lambda)b, \lambda \in [0, 1]\}\]
 \end{definition}
 
 \begin{theoreme}{Rappel}{}
@@ -397,7 +394,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     On appelle barycentre du système $\{(a_1, \lambda_1), \dots, (a_n, \lambda_n)\}$
     ou barycentre des points $(a_1, \dots, a_n)$ munis des coefficients $(\lambda_1, \dots, \lambda_n)$ :
 
-    $$\operatorname{Bar}(\left\{(a_1, \lambda_1), \dots, (a_n, \lambda_n)\right\}) = \sum_{i = 1}^n \lambda_i a_i$$
+    \[\operatorname{Bar}(\left\{(a_1, \lambda_1), \dots, (a_n, \lambda_n)\right\}) = \sum_{i = 1}^n \lambda_i a_i\]
 
     Ainsi $\inter{a}{b}$ est l'ensemble des barycentres de $a$ et $b$ à coefficients positifs. 
 \end{definition}
@@ -558,7 +555,7 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
     \]
 
     On définit le diamètre de $A$ noté $\tau(A)$ comme étant égal à : 
-    $$\tau(A) = \sup B = \sup \{d(x, y), (x, y) \in A^2\}$$
+    \[\tau(A) = \sup B = \sup \{d(x, y), (x, y) \in A^2\}\]
 \end{theoreme}
 
 \begin{proposition}{Diamètre d'une boule}{}
@@ -625,7 +622,7 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 
     Soit $X$ un espace vectoriel normé non vide et $f \in \mathscr F(X, E)$. 
     On dit que $f$ est bornée ssi
-     $$\exists M > 0, \forall x \in X, N(f(x)) \leqslant M$$
+    \[\exists M > 0, \forall x \in X, N(f(x)) \leqslant M\]
     c'est à dire si l'image directe $f(X)$ est bornée dans $E$. 
 \end{definition}
 
@@ -678,7 +675,7 @@ Soit $E$ un $\K$-espace vectoriel.
 
 \begin{definition}{Normes équivalentes}{}
     Soient $N_1$ et $N_2$ deux normes sur $E$. On dit que $N_1$ et $N_2$ sont équivalentes ssi $ \exists \alpha > 0, \exists \beta > 0, $
-    $$\forall x \in E, \, \beta N_2(x) \leqslant N_1(x) \leqslant \alpha N_2(x)$$
+    \[\forall x \in E, \, \beta N_2(x) \leqslant N_1(x) \leqslant \alpha N_2(x)\]
 \end{definition}
 
 \begin{remarque}
@@ -702,7 +699,7 @@ Soit $E$ un $\K$-espace vectoriel.
         \item \uline{Symétrie :}
         Soient $N_1$ et $N_2$ deux normes sur $E$ telles que : 
 
-        $$ \exists \alpha > 0, \exists \beta > 0, \forall x \in E, \beta N_2(x) \leqslant N_1(x) \leqslant \alpha N_2(x)$$
+        \[\exists \alpha > 0, \exists \beta > 0, \forall x \in E, \beta N_2(x) \leqslant N_1(x) \leqslant \alpha N_2(x)\]
         Donc $\frac 1 \alpha N_1(x) \leqslant N_2(x) \leqslant \frac 1 \beta N_1(x)$
 
         \item \uline{Transitivité :}
@@ -738,9 +735,9 @@ Soit $E$ un $\K$-espace vectoriel.
 \begin{proposition}{Montrer que deux normes ne sont pas équivalentes}{}
     Soient $N_1, N_2$ deux normes sur $E$ telles qu'il existe $(u_n)_{n \in \N}$ suite
     de vecteurs non nuls de $E$ vérifiant 
-    $$ \frac{N_1(u_n )}{N_2(u_n )} \limit{n}{+ \infty} 0 \quad ou \quad \frac{N_1(u_n )}{N_2(u_n )} \limit{n}{+ \infty} + \infty$$ 
+    \[\frac{N_1(u_n )}{N_2(u_n )} \limit{n}{+ \infty} 0 \quad ou \quad \frac{N_1(u_n )}{N_2(u_n )} \limit{n}{+ \infty} + \infty\]
     ou
-    $$ \frac{N_2(u_n )}{N_1(u_n )} \limit{n}{+ \infty} 0 \quad ou \quad \frac{N_2(u_n )}{N_1(u_n )} \limit{n}{+ \infty} + \infty$$ 
+    \[\frac{N_2(u_n )}{N_1(u_n )} \limit{n}{+ \infty} 0 \quad ou \quad \frac{N_2(u_n )}{N_1(u_n )} \limit{n}{+ \infty} + \infty\]
 
     Alors $N_1$ et $N_2$ ne sont pas équivalentes.
 \end{proposition}
@@ -851,8 +848,7 @@ Soit $E$ un $\K$-espace vectoriel.
     Soit $X$ un ensemble non vide et $E = \mathscr B(X, \K)$ l'espace vectoriel  des 
     fonctions bornées à valeur dans $\K$. 
     Pour $f \in E$ on note : 
-    $$||f||_\infty = \sup \{|f(x)|, x \in X\}$$
-
+    \[||f||_\infty = \sup \{|f(x)|, x \in X\}\]
     Alors $|| \cdot ||_\infty$ est une norme appelée norme de la convergence uniforme. 
 \end{proposition}
 
@@ -929,9 +925,7 @@ Soit $E$ un $\K$-espace vectoriel.
     Soient $(E_1, N_1), \dots, (E_p, N_p)$ des espaces vectoriels normés
     et $E$ l'espace vectoriel $E = E_1 \times E_2 \dots \times E_p$.
     Alors pour $u = (u_1, \dots, u_p) \in E$ on pose :
-
-    $$N_\infty(u) = \max(N_1(u_1), \dots, N_p(u_p))$$
-
+    \[N_\infty(u) = \max(N_1(u_1), \dots, N_p(u_p))\]
     alors $N_\infty$ est une norme sur $E$ appelée norme produit. 
 \end{theoreme}
 
@@ -1068,7 +1062,7 @@ Soit $E$ un $\R$-espace vectoriel muni d'un produit scalaire $\langle \cdot , \c
 
 \begin{theoreme}{}{}
     L'application $|| \cdot ||_2$ définie par : 
-    $$ \forall u \in E, ||u||_2 = \sqrt{\langle u, u \rangle}$$
+    \[\forall u \in E, ||u||_2 = \sqrt{\langle u, u \rangle}\]
     est une norme appelée norme euclidienne associée au produit scalaire. 
 \end{theoreme}
 
@@ -1156,7 +1150,7 @@ Soit $E = \mathscr C(\inter{a}{b}, \R)$.
 
 \begin{definition}{Produit scalaire complexe}{}
     Soit $E$ un $\C$-espace vectoriel et 
-    $$\fonction{\langle\cdot, \cdot\rangle}{E \times E}{\C}{(u, v)}{\langle u, v \rangle}$$
+    \[\fonction{\langle\cdot, \cdot\rangle}{E \times E}{\C}{(u, v)}{\langle u, v \rangle}\]
     On dit que $\langle\cdot, \cdot\rangle$ est un produit scalaire ou une forme 
     sesquilinéaire à symétrie hermitienne définie positive ssi
     $\forall u, v, w \in E, \lambda \in \C$, 

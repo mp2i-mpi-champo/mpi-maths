@@ -393,14 +393,14 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
     Soit $(u_j)_{j \in I}$ une famille sommable de complexes. 
 
     Posons $I_0 = \{j \in I, \, 1 < |u_j| \}$, et pour $n \in \N^*$,
-    $I_n = \{j \in I, \, \frac 1 {n + 1} < |u_j| \leqslant \frac 1 n \}$.
+    $I_n = \left\{j \in I, \, \frac 1 {n + 1} < |u_j| \leqslant \frac 1 n \right\}$.
 
     Montrons que $\displaystyle S = \bigsqcup_{n \in \N} I_n$. 
 
     $\subset$ $\forall n \in \N, \, I_n \subset S$ car $\forall j \in I_n, \, u_j \neq 0$
     Si $n \neq n', \, I_n \cap I_{n'} = \emptyset$ donc $\displaystyle \bigsqcup_{n \in \N} I_n \subset S$.
 
-    $\supset$ $j \in S$, alors $\mid u_j \mid > 0$, on a donc $\displaystyle j \in I_{\left\lfloor \frac 1 {|u_j|} \right\rfloor}$, 
+    $\supset$ $j \in S$, alors $|u_j| > 0$, on a donc $\displaystyle j \in I_{\left\lfloor \frac 1 {|u_j|} \right\rfloor}$, 
     donc $S \subset \displaystyle \bigsqcup_{n \in \N} I_n$.
 
     Soit $k \in \N$, alors $\forall j \in I_k, \, \frac 1 {k + 1} < \underbrace{|u_j|}_{\text{sommable}}$

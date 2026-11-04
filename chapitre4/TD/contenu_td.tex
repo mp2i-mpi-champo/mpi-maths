@@ -10,18 +10,18 @@
         Montrer que si $u_n \sim v_n$ alors $\sum u_n$ et $\sum v_n$ sont de même nature.
 
     \item Étudier la convergence de la série:
-        \[\sum_{n\ge2}\frac{(i-1)\ln n \sin\left(\frac{1}{n}\right)}{(\sqrt{n+3}-1)}\]
+        \[\sum_{n\geqslant2}\frac{(i-1)\ln n \sin\left(\frac{1}{n}\right)}{(\sqrt{n+3}-1)}\]
         (où $i$ est le complexe tel que $i^2 = -1$).
 \end{enumerate}
 \end{exercice}
 
 % --- (Source: EXERCICE 46 analyse) ---
 \begin{exercice}[Exercice 46 Analyse]
-    On considère la série $\sum_{n\ge1}\cos\left(\pi\sqrt{n^{2}+n+1}\right)$.
+    On considère la série $\sum_{n\geqslant1}\cos\left(\pi\sqrt{n^{2}+n+1}\right)$.
     \begin{enumerate}
         \item Prouver que, au voisinage de $+\infty$, $\pi\sqrt{n^{2}+n+1}=n\pi+\frac{\pi}{2}+\alpha\frac{\pi}{n}+O\left(\frac{1}{n^{2}}\right)$ 
             où $\alpha$ est un réel que l'on déterminera.
-        \item En déduire que $\sum_{n\ge1}\cos\left(\pi\sqrt{n^{2}+n+1}\right)$ converge.
+        \item En déduire que $\sum_{n\geqslant1}\cos\left(\pi\sqrt{n^{2}+n+1}\right)$ converge.
         \item La série converge-t-elle absolument ?
     \end{enumerate}
 \end{exercice}
@@ -115,7 +115,7 @@ Montrer l'existence et calculer : \[\sum_{n=0}^{+\infty} \frac{1}{(3n)!}\]
 
 % --- (Source: EXERCICE 40 analyse) ---
 \begin{exercice}[Exercice 40 Analyse]
-    Soit $\mathcal{A}$ une algèbre de dimension finie admettant $e$ pour élément unité et munie d'une norme telle que $\|uv\| \le \|u\|\|v\|$.
+    Soit $\mathcal{A}$ une algèbre de dimension finie admettant $e$ pour élément unité et munie d'une norme telle que $\|uv\| \leqslant \|u\|\|v\|$.
     \begin{enumerate}
         \item Soit $u \in \mathcal{A}$ tel que $\|u\| < 1$.
         \begin{enumerate}
@@ -276,17 +276,18 @@ Montrer l'existence et calculer : \[\sum_{n=0}^{+\infty} \frac{1}{(3n)!}\]
 % --- Correction Exercice 2 (du fichier source, Exercice 46 ici) ---
 \begin{correction}{2}
 \begin{enumerate}
-    \item \begin{align*}
-            \pi\sqrt{n^2+n+1} &= \pi n \left(1 + \frac{1}{n} + \frac{1}{n^2}\right)^{1/2} \\
-            &= \pi n \left(1 + \frac{1}{2n} + \frac{3}{8n^2} + O\left(\frac{1}{n^3}\right)\right) \\
-            &= \pi n + \frac{\pi}{2} + \frac{3\pi}{8n} + O\left(\frac{1}{n^2}\right).
-        \end{align*}
+    \item On fait le calcul :
+    \begin{align*}
+        \pi\sqrt{n^2+n+1} &= \pi n \left(1 + \frac{1}{n} + \frac{1}{n^2}\right)^{1/2} \\
+        &= \pi n \left(1 + \frac{1}{2n} + \frac{3}{8n^2} + O\left(\frac{1}{n^3}\right)\right) \\
+        &= \pi n + \frac{\pi}{2} + \frac{3\pi}{8n} + O\left(\frac{1}{n^2}\right).
+    \end{align*}
     
     \item $\cos(\pi\sqrt{\dots}) = \cos(n\pi + \pi/2 + \varepsilon_n) = (-1)^n \cos(\pi/2 + \varepsilon_n) = (-1)^{n+1} \sin(\varepsilon_n)$.
-        Et $\sin(\varepsilon_n) \sim \frac{3\pi}{8n}$.
+    Et $\sin(\varepsilon_n) \sim \frac{3\pi}{8n}$.
 
-        C'est une série alternée $\sum (-1)^{n+1} \frac{K}{n}$. Elle converge (TSSA).
-        Absolue convergence ? Non, car en $1/n$.
+    C'est une série alternée $\sum (-1)^{n+1} \frac{K}{n}$. Elle converge (TSSA).
+    Absolue convergence ? Non, car en $1/n$.
 \end{enumerate}
 \end{correction}
 

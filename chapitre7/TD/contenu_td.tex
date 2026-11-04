@@ -2,8 +2,8 @@
 \subsection{Groupes et sous-groupes}
 % --- Exercice 1 ---
 \begin{exercice}
-    On pose $\forall x,y\in]-1,1[$, $x\bullet y=\frac{x+y}{1+xy}$.
-    Montrer que $(]-1,1[, \bullet)$ est un groupe abélien.
+    On pose $\forall x,y\in]-1,1[$, $x\ast y=\frac{x+y}{1+xy}$.
+    Montrer que $(]-1,1[, \ast)$ est un groupe abélien.
 \end{exercice}
 
 % --- Exercice 2 ---
@@ -152,23 +152,26 @@
 \newpage
 \section{Corrections}
 % --- Correction 1 ---
-\begin{correction}{1}
 
-    On vérifie les axiomes d'un groupe abélien pour la loi $\bullet$ sur $G=]-1,1[$.
+\begin{correction}{1}
+    On vérifie les axiomes d'un groupe abélien pour la loi $\ast$ sur $G=]-1,1[$.
     \begin{itemize}
         \item \textbf{Loi interne :} Si $x,y \in ]-1,1[$, alors $|xy| < 1$, donc $1+xy > 0$, le dénominateur ne s'annule pas. De plus :
             \[1 - \left(\frac{x+y}{1+xy}\right)^2 = \frac{(1+xy)^2 - (x+y)^2}{(1+xy)^2} = \frac{1+2xy+x^2y^2 - x^2-2xy-y^2}{(1+xy)^2} = \frac{(1-x^2)(1-y^2)}{(1+xy)^2}\]
-            Comme $x,y \in ]-1,1[$, $(1-x^2) > 0$ et $(1-y^2) > 0$, donc $1 - (x \bullet y)^2 > 0$, soit $|x \bullet y| < 1$. La loi est bien interne.
-        \item \textbf{Commutativité :} $x \bullet y = \frac{x+y}{1+xy} = \frac{y+x}{1+yx} = y \bullet x$.
-        \item \textbf{Élément neutre :} $x \bullet 0 = \frac{x+0}{1+0} = x$. Donc $e=0$ est neutre.
-        \item \textbf{Symétrique :} Pour tout $x \in ]-1,1[$, $-x \in ]-1,1[$ et $x \bullet (-x) = \frac{x-x}{1-x^2} = 0$. Donc $x^{-1} = -x$.
-        \item \textbf{Associativité :} C'est le calcul le plus long. On peut remarquer que $x \bullet y = \tanh(\text{argth}(x) + \text{argth}(y))$ (voir Exercice 9). 
-            L'associativité découle alors de l'associativité de l'addition dans $\R$.
-            Sinon, calcul direct :
-            $(x \bullet y) \bullet z = \frac{\frac{x+y}{1+xy} + z}{1 + \frac{x+y}{1+xy}z} = \frac{x+y+z+xyz}{1+xy+xz+yz}$.
-            L'expression est symétrique en $x,y,z$, donc la loi est associative.
+            Comme $x,y \in ]-1,1[$, $(1-x^2) > 0$ et $(1-y^2) > 0$, donc $1 - (x \ast y)^2 > 0$, soit $|x \ast y| < 1$. La loi est bien interne.
+        \item \textbf{Commutativité :} $x \ast y = \frac{x+y}{1+xy} = \frac{y+x}{1+yx} = y \ast x$.
+        \item \textbf{Élément neutre :} $x \ast 0 = \frac{x+0}{1+0} = x$. Donc $e=0$ est neutre.
+        \item \textbf{Symétrique :} Pour tout $x \in ]-1,1[$, $-x \in ]-1,1[$ et $x \ast (-x) = \frac{x-x}{1-x^2} = 0$. Donc $x^{-1} = -x$.
+        \item \textbf{Associativité :} C'est le calcul le plus long.
+
+        On peut remarquer que $x \ast y = \tanh(\text{argth}(x) + \text{argth}(y))$ (voir exercice 9). 
+        L'associativité découle alors de l'associativité de l'addition dans $\R$.
+        
+        Sinon, calcul direct :
+        $(x \ast y) \ast z = \frac{\frac{x+y}{1+xy} + z}{1 + \frac{x+y}{1+xy}z} = \frac{x+y+z+xyz}{1+xy+xz+yz}$.
+        L'expression est symétrique en $x,y,z$, donc la loi est associative.
     \end{itemize}
-    Conclusion : $(]-1,1[, \bullet)$ est un groupe abélien.
+    Conclusion : $(]-1,1[, \ast)$ est un groupe abélien.
 \end{correction}
 
 % --- Correction 3 ---
@@ -312,36 +315,40 @@
 % --- Correction 12 ---
 \begin{correction}{12}
 \begin{enumerate}
-    \item $a\Z$ est l'image du groupe $\Z$ par le morphisme $n \mapsto na$. C'est un sous-groupe de $\R$.
-    
-        Il n'est pas dense car il existe un intervalle ouvert, par exemple $]0, a[$, 
+    \item $a\Z = \langle a \rangle$ donc est un sous-groupe de $(\R,+)$. 
+    \begin{itemize}
+        \item Si $a = 0$, on a que $\{0\}$ n'est pas dense dans $\R$.
+        \item Sinon
+        Il n'est pas dense car il existe un intervalle ouvert non vide, par exemple $]0, a[$, 
         qui ne contient aucun élément de $a\Z$ (le plus petit élément strictement positif est $a$).
+    \end{itemize}
 
     \item
     \begin{enumerate}
         \item $G \neq \{0\}$, donc il existe $x \in G \setminus \{0\}$. \\
-            Si $x > 0$, $x \in A$.
-            Si $x < 0$, $-x \in G$ et $-x > 0$, donc $-x \in A$. \\
-            $A$ est non vide.
+        Si $x > 0$, $x \in A$.
+        Si $x < 0$, $-x \in G$ et $-x > 0$, donc $-x \in A$. \\
+        Donc $A$ est non vide.
 
-        \item Si $\inf A = 0$. Soit $\varepsilon > 0$. Par définition de l'infimum, il existe $u \in A$ tel que $0 \le u < \varepsilon$. 
+        \item Si $\inf A = 0$. Soit $\varepsilon > 0$.
+        Par définition de l'infimum, il existe $u \in A$ tel que $0 \leqslant u < \varepsilon$. 
         
-            Comme $0 \notin A$ ($A \subset \R^*_+$), $0 < u < \varepsilon$.
+        Comme $0 \notin A$ ($A \subset \R^*_+$), $0 < u < \varepsilon$.
 
-            Soient $x < y$ deux réels. On cherche $g \in G$ tel que $x < g < y$.
-            On choisit $u \in G \cap ]0, y-x[$.
+        Soient $x < y$ deux réels. On cherche $g \in G$ tel que $x < g < y$.
+        On choisit $u \in G \cap ]0, y-x[$.
 
-            L'ensemble des multiples de $u$, $\{nu \mid n \in \Z\}$, 
-            "saute" de $u$ en $u$ avec un pas inférieur à la largeur de l'intervalle $]x,y[$. 
-            Il doit forcément tomber dedans.
+        L'ensemble des multiples de $u$, $\{nu \mid n \in \Z\}$, 
+        "saute" de $u$ en $u$ avec un pas inférieur à la largeur de l'intervalle $]x,y[$. 
+        Il doit forcément tomber dedans.
 
-            Plus formellement, soit $n = \lfloor \frac{x}{u} \rfloor + 1$. Alors $n > x/u \implies nu > x$.
-            Et $nu = (\lfloor \frac{x}{u} \rfloor + 1) u \le (\frac{x}{u} + 1)u = x + u < x + (y-x) = y$.
+        Plus formellement, soit $n = \left\lfloor \frac{x}{u} \right\rfloor + 1$. Alors $n > x/u \implies nu > x$.
+        
+        De plus $nu = \left(\left\lfloor \frac{x}{u} \right\rfloor + 1\right) u \leqslant \left(\frac{x}{u} + 1\right)u = x + u < x + (y-x) = y$.
 
-            Donc $nu \in ]x,y[ \cap G$. $G$ est dense.
+        Donc $nu \in ]x,y[ \cap G$. $G$ est dense.
 
         \item Si $a > 0$. Supposons $a \notin G$. Alors comme $a = \inf A$, il existe $b \in A$ tel que $a < b < 2a$
-            (sinon $2a$ minorerait $A$ ou $a$ serait dans $A$ comme min ? Non, c'est juste la définition de l'inf).
 
             $b \in G$ et $b > 0$. $a$ n'est pas dans $G$, donc $b \neq a$.
 

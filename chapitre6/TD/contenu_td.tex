@@ -193,6 +193,26 @@ On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x
 \newpage
 \section{Corrections}
 
+\begin{correction}{1}
+\begin{enumerate}
+    \item Soit $f \in \mathscr C^0([a,b],\R)$, dérivable sur $]a,b[$, alors $\exists c \in ]a,b[,~f(b) - f(a) = f'(c)(b - a)$
+    
+    \item C'est le théorème de la limite de la dérivée. Supposons que $f'$ admet une limite finie en $x_0$.
+    
+    Alors $\forall n \in \N^*,~\exists c_n \in ]x_0,x_0 + \frac 1 n[$ tel que $f(x_0 + \frac 1 n) - f(x_0) = f'(c_n) \frac 1 n$.
+
+    Donc par le théorème des gendarmes $c_n \to x_0$, donc par composition de limites $f(c_n) \to \ell$
+
+    Donc $f(x) \limit{x}{x_0} \ell$. Donc $\frac{f(x) - f(x_0)}{x - x_0} \limit{x}{x_0} \ell$ donc $f$ est dérivable en $x_0$ et $f'$ est continue en $x_0$.
+    
+    \item $\frac {g(x) - g(0)}{x - 0} = x\sin \frac 1 x \limit{x}{0} 0$. Donc $g$ est dérivable en $0$.
+
+    On dérive $g$ sur $\R^*$ : $\forall x \in \R^*,~g'(x) = 2x\sin \frac 1 x - \cos \frac 1 x$, qui n'admet pas de limite finie en $x_0$.
+
+    L'implication est donc fausse.
+\end{enumerate}    
+\end{correction}
+
 % --- Correction 2 (Source: Exercice 1) ---
 \begin{correction}{2}
     Soit $f : x \mapsto x^x$ définie sur $\R^+_*$.
@@ -316,6 +336,37 @@ On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x
 
     Donc $\forall x \in ]a,b[, \frac{f(x) -f(a)}{x-a} = f'(a)$.
     Donc $f$ affine.
+\end{correction}
+
+\begin{correction}{9}
+\begin{enumerate}
+    \item Pour $g$ : $\forall k \in \N \forall x \in \R,~g^{(k)}(x) = 2^k e^{2x}$.
+
+    Pour $h$, prouvons le par récurrence.
+
+    \item À faire
+
+    \item Prouvons le par réccurence sur $n$.
+
+    Pour $n = 1$, avec $f,g \in \mathscr C^1(I,\R)$, $\ds (fg)^1 = f'g + g'f = \sum_{k=0}^1 \binom n k f^{(k)} g^{(1 - k)}$
+
+    Supposons le résultat vrai pour $n \in \N^*$.
+    Soient $f,g \in \mathscr C^{n+1}(I,\R)$. 
+
+    Alors :
+    \begin{align*}
+        (fg)^{(n+1)} &= \left(\sum_{k=0}^n \binom n k f^{(k)} g^{(n-k)}\right)^{'} \\
+        &= \sum_{k=0}^n \binom n k \left(f^{(k)}g^{(n-k)}\right)^{'} \\
+        &= \sum_{k=0}^n \binom n k f^{(k+1)}g^{(n-k)} + f^{(k)}g^{(n-k+1)} \\
+        &= \sum_{k=0}^n \binom n k f^{(k+1)}g^{(n-k)} + \sum_{k=0}^n \binom n k f^{(k)}g^{(n-k+1)} \\
+        &= f^{(n+1)}g + fg^{(n+1)} + \sum_{k=0}^{n-1} \binom n k f^{(k+1)}g^{(n-k)} + \sum_{k=1}^n \binom n k f^{(k)}g^{(n-k+1)} \\
+        &= f^{(n+1)}g + fg^{(n+1)} + \sum_{k=1}^{n} \binom n {k+1} f^{(k)}g^{(n-k+1)} + \sum_{k=1}^n \binom n k f^{(k)}g^{(n-k+1)} \\       
+        &= f^{(n+1)}g + fg^{(n+1)} + \sum_{k=1}^{n} \left(\binom n {k-1}+ \binom n k\right) f^{(k)}g^{(n-k+1)} \\      
+        &= \sum_{k=0}^{n+1} \binom {n+1} k f^{(k)}g^{(n+1-k)}       
+    \end{align*}
+
+    Donc par le principe de récurrence simple la formule de Leibniz est vraie.
+\end{enumerate}
 \end{correction}
 
 \begin{correction}{10}

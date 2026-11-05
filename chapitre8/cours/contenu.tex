@@ -6,11 +6,11 @@
     Soit $A$ un ensemble non vide muni de deux lois de composition interne notées $+$ et
     $\cdot$ telles que : 
     \begin{itemize}
-        \item $(A, +)$ est un groupe abélien de neutre noté $0_A$ ;
-        \item $\cdot$ est associative et munie un neutre noté $1_A$ ;
-        \item la loi $\cdot$ est distributive par rapport à la loi $+$.
+        \item $(A, +)$ est un groupe abélien de neutre noté $0_A$.
+        \item $\cdot$ est associative et munie un neutre noté $1_A$.
+        \item La loi $\cdot$ est distributive par rapport à la loi $+$.
     \end{itemize}
-    Si de plus $\cdot$ est commutative, on dit que $(A, +, \cdot)$ est un \textbf{anneau commutatif}.
+    Alors $(A,+,\cdot)$ est un anneau. Si de plus $\cdot$ est commutative, on dit que $(A, +, \cdot)$ est un \textbf{anneau commutatif}.
 \end{definition}
 
 \begin{remarque}
@@ -31,35 +31,34 @@
 \end{remarque}
 
 \begin{exemple}
+$(\Z, +,\times)$, $(\Q,+,\times)$, $(\R, +, \times)$ et $(\C, +, \times)$ sont des anneaux commutatifs.
+\end{exemple}
+
+\begin{exemple}
     \begin{itemize}
-        \item L'ensemble $\mathbb{Z}$ muni des opérations usuelles est un anneau commutatif.
-        \item L'ensemble $\mathbb{Q}$ muni des opérations usuelles est un anneau commutatif.
-        \item L'ensemble $\mathbb{R}$ muni des opérations usuelles est un anneau commutatif.
-        \item L'ensemble $\mathbb{C}$ muni des opérations usuelles est un anneau commutatif.
-        \item Plus généralement, l'ensemble $\mathbb{K}$, où $\mathbb{K}$ est un corps, muni des opérations usuelles est un anneau commutatif.
         \item $\K[X]$, l'ensemble des polynômes à coefficients dans un corps $\K$, muni des opérations usuelles est un anneau commutatif.
-        \item L'ensemble $\mathcal{M}_n(\K)$ des matrices carrées d'ordre $n$ à coefficients dans un corps $\K$, muni de l'addition et de la multiplication des matrices est un anneau, mais pas commutatif si $n \geq 2$.
+        \item L'ensemble $\mathscr M_n(\K)$ des matrices carrées d'ordre $n$ à coefficients dans un corps $\K$, muni de l'addition et de la multiplication des matrices est un anneau, mais non commutatif si $n \geqslant 2$.
     \end{itemize}
+\end{exemple}
 
-    Si $E$ est un ensemble non vide, $(\mathscr{P}(E), \Delta, \cap)$ est un anneau. Le neutre pour $\Delta$ est l'ensemble vide, 
-    et le neutre pour $\cap$ est l'ensemble $E$.
+\begin{exemple}
+    \begin{itemize}
+        \item Soit $E$ un ensemble non vide, $(\mathscr P (E), \Delta, \cap)$ est un anneau. Le neutre pour $\Delta$ est l'ensemble vide, 
+        et le neutre pour $\cap$ est l'ensemble $E$.
 
-    Si $E$ est un $K$-espace vectoriel, $(\mathscr{L}(E), +, \circ)$ est un anneau non commutatif en général. Le neutre pour $+$ est l'application nulle, et le neutre pour $\circ$ est l'application identité.
+        \item Soit $E$ un $\K$-espace vectoriel, $(\mathscr L (E), +, \circ)$ est un anneau non commutatif en général. Le neutre pour $+$ est l'application nulle, et le neutre pour $\circ$ est l'application identité.
+    \end{itemize}
 \end{exemple}
 
 
 \begin{proposition}{Anneau produit}{}
     \index{Anneau!produit}
-    Soient $A_1, A_2, \ldots, A_n$ des anneaux et $A = A_1 \times A_2 \times \cdots \times A_n$.
+    Soient $(A_1, +_1, \cdot_1), (A_2, +_2, \cdot_2), \ldots, (A_n, +_n, \cdot_n)$ des anneaux et $A = A_1 \times A_2 \times \cdots \times A_n$.
 
     Posons pour tous $a = (a_1, a_2, \ldots, a_n)$ et $b = (b_1, b_2, \ldots, b_n)$ dans $A$ :
-    \[
-        a + b = (a_1 + b_1, a_2 + b_2, \ldots, a_n + b_n)
-    \]
+    \[a + b = (a_1 +_1 b_1, a_2 +_2 b_2, \ldots, a_n +_n b_n)\]
     et
-    \[
-        a \cdot b = (a_1 \cdot b_1, a_2 \cdot b_2, \ldots, a_n \cdot b_n).
-    \]
+    \[a \cdot b = (a_1 \cdot_1 b_1, a_2 \cdot_2 b_2, \ldots, a_n \cdot_n b_n).\]
 
     On définit ainsi deux lois de composition interne $+$ et $\cdot$ sur $A$.
     Alors $(A, +, \cdot)$ est un anneau, appelé \textbf{anneau produit} des anneaux $A_1, A_2, \ldots, A_n$, 
@@ -88,25 +87,27 @@
 \end{definition}
 
 \begin{exemple}
-    $\Z$ est un sous-anneau de $\mathbb{Q}$, qui est lui-même un sous-anneau de $\mathbb{R}$.
+    \begin{itemize}
+        \item $\Z$ est un sous-anneau de $\Q$, qui est lui-même un sous-anneau de $\R$.
 
-    Si $E$ ensemble non vide et $F \neq \emptyset$ une partie de $E$, alors
-    $(\mathscr{P}(F), \Delta, \cap)$ est un anneau inclus dans $(\mathscr{P}(E), \Delta, \cap)$,
-    mais n'en est pas un sous-anneau car les neutres pour $\cap$ sont différents.  
+        \item Soit $E$ un ensemble non vide et $F \in \mathscr P(E) \setminus \{\varnothing,E\}$, alors
+        $(\mathscr{P}(F), \Delta, \cap)$ est un anneau inclus dans $(\mathscr{P}(E), \Delta, \cap)$,
+        mais n'en est pas un sous-anneau car les neutres pour $\cap$ sont différents.  
+    \end{itemize}
 \end{exemple}
 
 \begin{proposition}{Caractérisation sous-anneau}{}
     Soit $(A, +, \cdot)$ un anneau et $B \subset A$. Alors 
     $B$ est un sous-anneau de $A$ ssi : 
     \begin{itemize}
-        \item $\forall a, b \in B, a \cdot b \in B$ ;
-        \item $\forall a, b \in B, a - b \in B$ ;
-        \item $1_A \in B$.
+        \item $\forall a, b \in B, a \cdot b \in B$
+        \item $\forall a, b \in B, a - b \in B$
+        \item $1_A \in B$
     \end{itemize}
     
 \end{proposition}
 
-\idee{Définitioin d'un sous anneau}
+\idee{Définitioin d'un sous anneau.}
 
 \begin{proof} $\Rightarrow$ Supposons que $B$ est un sous-anneau de $A$.
     
@@ -129,10 +130,10 @@
     Donc $(B, +, \cdot)$ est un anneau, et $B$ est un sous-anneau de $A$.
 \end{proof}
 
-\begin{exemple}
-    Anneau des entiers de Gauss, $\Z[i] = \{a + bi , (a, b) \in \Z^2\}$ est un sous-anneau de $\C$.
+\marginenote{Remarque}{$\Z[i]$ est l'anneau des entiers de Gauss.}
 
-    Montrons le. 
+\begin{exemple}
+    Montrons que $\Z[i] = \{a + bi , (a, b) \in \Z^2\}$ est un sous-anneau de $\C$.
 
     $\Z[i] \subset \C$ qui est un anneau.
 
@@ -140,38 +141,40 @@
 
     Soient $x_1, x_2 \in \Z[i]$, avec $x_1 = a_1 + b_1 i$ et $x_2 = a_2 + b_2 i$,
     où $(a_1, b_1), (a_2, b_2) \in \Z^2$.
-    Alors
-    \[
-        x_1 - x_2 = (a_1 - a_2) + (b_1 - b_2)i \in \Z[i],
-    \]
+    Alors :
+    \[x_1 - x_2 = (a_1 - a_2) + (b_1 - b_2)i \in \Z[i]\]
     car $a_1 - a_2 \in \Z$ et $b_1 - b_2 \in \Z$.
     De plus,
-    \[
-        x_1 \cdot x_2 = (a_1 a_2 - b_1 b_2) + (a_1 b_2 + a_2 b_1)i \in \Z[i],
-    \]
+    \[x_1 \cdot x_2 = (a_1 a_2 - b_1 b_2) + (a_1 b_2 + a_2 b_1)i \in \Z[i]\]
     car $a_1 a_2 - b_1 b_2 \in \Z$ et $a_1 b_2 + a_2 b_1 \in \Z$.
 
     Donc $\Z[i]$ est un sous-anneau de $\C$.
 \end{exemple}
 
-\subsection{Idéal d'un anneau commutatif }
+\subsection{Idéal d'un anneau commutatif}
 
 \marginenote{Remarque}{L'hypothèse de commutativité est là afin de se libérer de certaines contraintes. 
 Il faudrait sinon parler d'idéal à gauche / à droite.}
 
-\lvspace \avspace \begin{definition}{Idéal}{}
+\begin{definition}{Idéal}{}
     \index{Ideal@Idéal}
     Soit $(A, +, \cdot)$ un anneau commutatif. Soit $I \subset A$. On dit que $I$ est un \textbf{idéal} de $A$ ssi :
     \begin{itemize}
-        \item $(I, +)$ est un sous-groupe de $(A, +)$ 
+        \item $(I, +)$ est un sous-groupe de $(A, +)$.
         \item $\forall a \in A, \forall x \in I, \, a \cdot x \in I$.
     \end{itemize}
 \end{definition}
 
-\begin{exemple}
-    $A$ est un idéal de $A$.
+\begin{remarque}
+    Les idéaux sont absorbants pour le produit.
+\end{remarque}
 
-    $\{0_A\}$ est un idéal de $A$.
+\begin{exemple}
+    \begin{itemize}
+        \item $A$ est un idéal de $A$.
+        \item $\{0_A\}$ est un idéal de $A$.
+    \end{itemize}
+On les appelles idéaux triviaux de $A$.
 \end{exemple}
 
 \begin{remarque}
@@ -189,20 +192,18 @@ Il faudrait sinon parler d'idéal à gauche / à droite.}
 \end{proof}
 
 \begin{exemple}
-    $A = \Z$, et soit $n \in \N$, $n \geqslant 2$. Alors $I = n\Z$ est bien un sous groupe de $(\Z, +)$.
+    \begin{itemize}
+        \item Dans $\Z$, soit $n \in \N$, $n \geqslant 2$. Alors $I = n\Z$ est bien un sous groupe de $(\Z, +)$.
 
-    Si $a \in A$ et $x \in I$, alors $x = ny$ pour un certain $y \in \Z$, donc
-    \[
-        a \cdot x = a \cdot (ny) = n(ay) \in n\Z = I.
-    \]
-    Donc $I$ est un idéal de $\Z$.
+        Si $a \in \Z$ et $x \in I$, alors $x = ny$ pour un certain $y \in \Z$, donc :
+        \[a \cdot x = a \cdot (ny) = n(ay) \in n\Z = I.\]
+        Donc $I$ est un idéal de $\Z$.
 
-    \lvspace Posons $A \subset \R^{\N}$ les suites bornées, muni de l'addition et de la multiplication terme à terme
-    est un anneau.
+        \item Posons $A \subset \R^{\N}$ les suites bornées, muni de l'addition et de la multiplication terme à terme
+        est un anneau.
 
-    Donc $I = \{(u_n)_{n \in \N} \in \R^{\N} \mid \lim\limits_{n \to +\infty} u_n = 0\}$ est un idéal de $A$.
-
-
+        Donc $I = \left\{(u_n)_{n \in \N} \in \R^{\N} \mid \lim\limits_{n \to +\infty} u_n = 0\right\}$ est un idéal de $A$.
+    \end{itemize}
 \end{exemple}
 
 \begin{theoreme}{Idéal engendré par un élément}{}
@@ -210,35 +211,37 @@ Il faudrait sinon parler d'idéal à gauche / à droite.}
     Soit $(A, +, \cdot)$ un anneau commutatif et $a \in A$. Alors
     $aA = \{a \cdot x \mid x \in A\}$ est un idéal de $A$, appelé
     \textbf{idéal principal} engendré par $a$.
-    
 \end{theoreme}
 
-\begin{proof}
+\begin{proof}~\\
     \begin{itemize}
         \item $aA \subset A$ 
         \item $0_A = a \cdot 0_A \in aA$ donc $aA \neq \emptyset$.
         \item Soient $x, y \in aA$. Alors il existe $u, v \in A$ tels que $x = a \cdot u$ et $y = a \cdot v$.
+        
         Donc $x - y = a \cdot (u - v) \in aA$ car $u - v \in A$.
 
     \end{itemize}
 
     Donc $(aA, +)$ est un sous-groupe de $(A, +)$.
 
-    Soient $x \in aA$ et $b \in A$. Alors il existe $u \in A$ tel que $x = a \cdot u$, donc 
-    \[
-        b \cdot x = b \cdot (a \cdot u) = a \cdot (b \cdot u) \in aA,   
-    \]
+    Soient $x \in aA$ et $b \in A$. Alors il existe $u \in A$ tel que $x = a \cdot u$, donc :
+    \[b \cdot x = b \cdot (a \cdot u) = a \cdot (b \cdot u) \in aA,\]
     car $b \cdot u \in A$.
     Donc $aA$ est un idéal de $A$.
 \end{proof}
 
 \begin{definition}{Idéal principal}{}
     \index{Ideal@Idéal!principal}
-    Soit $I \subset A$ un idéal. On dit que $I$ est 
+    Soit $I \subset A$ un idéal. On dit que $I$
     est \textbf{principal} ssi $\exists a \in A$ tel que $I = aA$.
 
     C'est à dire que $I$ est l'idéal engendré par un élément.
 \end{definition}
+
+\begin{exemple}
+    $\Z$ est un anneau principal.
+\end{exemple}
 
 \begin{definition}{Anneau principal}{}
     \index{Anneau!principal}
@@ -246,29 +249,18 @@ Il faudrait sinon parler d'idéal à gauche / à droite.}
     idéal de $A$ est principal.
 \end{definition}
 
-\begin{proposition}{Opérations sur les idéaux, LHP}{}
-    Soit $(A, +, \cdot)$ un anneau commutatif, et $I_1, I_2$ deux idéaux de $A$. Alors 
-    $I_1 \cap I_2$ et $I_1 + I_2 = \{x + y \mid x \in I_1, y \in I_2\}$ sont des idéaux de $A$.
+\begin{proposition}{Opérations sur les idéaux - LHP}{}
+    Soit $(A, +, \cdot)$ un anneau commutatif, et $I_1, I_2$ deux idéaux de $A$. Alors :
+    \begin{enumerate}
+        \item $I_1 \cap I_2$ est un idéal de $A$
+        \item $I_1 + I_2 = \{x + y \mid x \in I_1, y \in I_2\}$ est un idéal de $A$.
+    \end{enumerate}
 \end{proposition}
 
-\begin{proof}
-    $0_A \in I_1$ et $0_A \in I_2$ car ce sont des sous-groupes, donc $0_A  + 0_A = 0_A \in I_1 + I_2$
-    qui est donc non vide.
+\begin{proof}~
 
-    Soient $x, y \in I_1 + I_2$, $x = a_1 + a_2$ et $y = b_1 + b_2$ avec $a_1, b_1 \in I_1$ et $a_2, b_2 \in I_2$.
-
-    Donc \[
-        x - y = (a_1 - b_1) + (a_2 - b_2) \in I_1 + I_2,
-    \]
-    car $a_1 - b_1 \in I_1$ et $a_2 - b_2 \in I_2$.
-    Donc $(I_1 + I_2, +)$ est un sous-groupe de $(A, +)$.
-
-    Soit $x = a_1 + a_2 \in I_1 + I_2$ et $y \in A$. Alors 
-    $xy = y a_1 + y a_2 \in I_1 + I_2$ car $y a_1 \in I_1$ et $y a_2 \in I_2$.
-
-    Donc $I_1 + I_2$ est un idéal de $A$.
-
-    \svspace Montrons que $I_1 \cap I_2$ est un idéal de $A$.
+\begin{enumerate}
+    \item Montrons que $I_1 \cap I_2$ est un idéal de $A$.
 
     $I_1 \cap I_2 \subset A$ et sous groupe de $(A, +)$ car intersection de sous-groupes.
 
@@ -276,20 +268,35 @@ Il faudrait sinon parler d'idéal à gauche / à droite.}
     idem avec $I_2$. Donc $a \cdot x \in I_1 \cap I_2$.
 
     Donc $I_1 \cap I_2$ est un idéal de $A$.
+    
+    \item $0_A \in I_1$ et $0_A \in I_2$ car ce sont des sous-groupes, donc $0_A  + 0_A = 0_A \in I_1 + I_2$
+    qui est donc non vide.
+
+    Soient $x, y \in I_1 + I_2$, $x = a_1 + a_2$ et $y = b_1 + b_2$ avec $a_1, b_1 \in I_1$ et $a_2, b_2 \in I_2$.
+
+    Donc : \[x - y = (a_1 - b_1) + (a_2 - b_2) \in I_1 + I_2\]
+    car $a_1 - b_1 \in I_1$ et $a_2 - b_2 \in I_2$.
+    Donc $(I_1 + I_2, +)$ est un sous-groupe de $(A, +)$.
+
+    Soit $x = a_1 + a_2 \in I_1 + I_2$ et $y \in A$. Alors 
+    $xy = y a_1 + y a_2 \in I_1 + I_2$ car $y a_1 \in I_1$ et $y a_2 \in I_2$.
+
+    Donc $I_1 + I_2$ est un idéal de $A$.
+\end{enumerate}
 \end{proof}
 
 \subsection{Divisibilité}
 
-\danger{Bien entendu, vous ne tomberez pas dans le piège classique fatal au topin lambda, 
+\notedanger{Bien entendu, vous ne tomberez pas dans le piège classique fatal au topin lambda, 
 aka l'hypothèse d'intégrité (tips : une carte anki spécialement pour l'hypothèse).}
 
-\lvspace \avspace \begin{definition}{Divisibilité}{}
+\begin{definition}{Divisibilité}{}
     \index{Divisibilité}
     Soit $(A, +, \cdot)$ un \textbf{anneau commutatif intègre}. 
 
     Soient $a, b \in A$. S'il existe $c \in A$ tel que $a = bc$, on dit que : 
     \begin{itemize}
-        \item $b$ divise $a$ ;
+        \item $b$ divise $a$.
         \item $a$ est un multiple de $b$.
         \item On note $b \mid a$.
         \item $b$ est un diviseur de $a$.
@@ -309,8 +316,8 @@ aka l'hypothèse d'intégrité (tips : une carte anki spécialement pour l'hypot
     Soit $(A, +, \cdot)$ un \textbf{anneau commutatif intègre}. 
 
     \begin{itemize}
-        \item $\mid$ est réflexive et transitive ;
-        \item Pour $a, b \in A$, LASSE : 
+        \item $\mid$ est réflexive et transitive.
+        \item Pour $a, b \in A$, les assertions sont équivalentes : 
         \begin{enumerate}
             \item $a \mid b$ 
             \item $b \in aA$
@@ -334,17 +341,18 @@ aka l'hypothèse d'intégrité (tips : une carte anki spécialement pour l'hypot
     Suppposons 3. $b = 1b$ donc $b \in bA \subset aA$, d'où le 2.
 \end{proof}
 
+\marginenote{Remarque}{Comme d'habitude, $A^*$ désigne l'ensemble des éléments inversibles de $A$.}
+    
 \begin{theoreme}{Éléments associés}{}
     \index{Elements associes@Éléments associés}
     Soit $(A, +, \cdot)$ un \textbf{anneau commutatif intègre}. 
     Soient $a, b \in A$. Alors les assertions suivantes sont équivalentes : 
     \avspace 
-    \marginenote{Remarque}{Comme d'habitude, $A^*$ désigne l'ensemble des éléments inversibles de $A$.}
     
     \begin{itemize}
-        \item $a \mid b$ et $b \mid a$
-        \item $aA = bA$
-        \item Il existe $u \in A^*$, tel que $a = bu$
+        \item $a \mid b$ et $b \mid a$.
+        \item $aA = bA$.
+        \item Il existe $u \in A^*$, tel que $a = bu$.
     \end{itemize}
 
     On dit alors que $a$ et $b$ sont \textbf{associés}.
@@ -364,22 +372,24 @@ aka l'hypothèse d'intégrité (tips : une carte anki spécialement pour l'hypot
 \end{proof}
 
 \begin{exemple}
-    Dans l'anneau $\Z$, $a, b$ sont associés ssi $a = \pm b$.
+    \begin{itemize}
+        \item Dans l'anneau $\Z$, $a, b$ sont associés ssi $a = \pm b$.
 
-    Dans l'anneau $\K[X]$, où $\K$ est un corps, $P, Q$ sont associés ssi
-    il existe $\lambda \in \K^*$ tel que $P = \lambda Q$.
+        \item Dans l'anneau $\K[X]$, où $\K$ est un corps, $P, Q$ sont associés ssi
+        il existe $\lambda \in \K^*$ tel que $P = \lambda Q$.
+    \end{itemize}
 \end{exemple}
 
 \subsection{Morphismes et anneaux}
 
 \begin{definition}{Morphisme d'anneaux}{}
     \index{Morphisme!anneaux@d'anneaux}
-    Soient $A, B$ deux anneaux et $\varphi : A \to B$. On dit que $\varphi$ est un
+    Soient $(A, +_A, \cdot_A), (B, +_B, \cdot_B)$ deux anneaux et $\varphi : A \to B$. On dit que $\varphi$ est un
     \textbf{morphisme d'anneaux} ssi pour tous $a, b \in A$ :
     \begin{itemize}
-        \item $\varphi(a + b) = \varphi(a) + \varphi(b)$ ;
-        \item $\varphi(a \cdot b) = \varphi(a) \cdot \varphi(b)$ ;
-        \item $\varphi(1_A) = 1_B$.
+        \item $\varphi(a +_A b) = \varphi(a) +_B \varphi(b)$
+        \item $\varphi(a \cdot_A b) = \varphi(a) \cdot_B \varphi(b)$
+        \item $\varphi(1_A) = 1_B$
     \end{itemize}
 \end{definition}
 
@@ -388,26 +398,23 @@ aka l'hypothèse d'intégrité (tips : une carte anki spécialement pour l'hypot
 \end{remarque}
 
 \begin{exemple}
-    $\fonction {}{\mathscr F(X, A)} A f {f(x_0)}$ est un morphisme d'anneaux. 
+    $\fonction{\varphi}{\mathscr F(X, A)} A f {f(x_0)}$ est un morphisme d'anneaux. 
 
     \avspace 
-    $\fonction {}{\Q [X]} \C P {P(\alpha)}$ est un morphisme d'anneaux, où $\alpha \in \C$.
+    $\fonction{\psi_{\alpha}}{\Q [X]} \C P {P(\alpha)}$ est un morphisme d'anneaux, où $\alpha \in \C$.
 
-    Soit $A \in \mathcal M_n(\K)$. Alors $\fonction {}{\K[X]}{\mathcal M_n(\K)} P {P(A)}$ est un morphisme d'anneaux.
+    Soit $A \in \mathcal M_n(\K)$. Alors $\fonction {\theta_A}{\K[X]}{\mathcal M_n(\K)} P {P(A)}$ est un morphisme d'anneaux.
 \end{exemple}
 
-
-
-\begin{proposition}{ itéré d'un élément par morphisme d'anneau }{}
+\begin{proposition}{Itéré d'un élément par morphisme d'anneau}{}
     Soient $A, B$ deux anneaux, $\varphi : A \to B$ un morphisme d'anneaux, 
     et ${a \in A}, \, {n \in \Z}, \, {p \in \N^*}$. 
 
     Alors $\varphi(na) = n \varphi(a)$ et $\varphi(a^p) = (\varphi(a))^p$.
-
 \end{proposition}
 
 \begin{proof}
-    Pour + parce que morphisme de groupes, et par récurrence pour $\cdot$.
+    C'est vrai pour $+$ car $\varphi$ est un morphisme de groupes et on le prouverait pour $\cdot$ par récurrence sur $n$.
 \end{proof}
 
 \begin{proposition}{Image d'un morphisme d'anneaux}{}
@@ -432,32 +439,29 @@ aka l'hypothèse d'intégrité (tips : une carte anki spécialement pour l'hypot
 \begin{definition}{Noyau d'un morphisme d'anneaux}{}
     Soit $\varphi : A \to B$ un morphisme d'anneaux. 
 
-    On appelle \textbf{noyau} de $\varphi$ l'ensemble 
-    \[
-        \ker(\varphi) = \{a \in A \mid \varphi(a) = 0_B\}.
-    \]
+    On appelle \textbf{noyau} de $\varphi$ l'ensemble :
+    \[\Ker(\varphi) = \{a \in A \mid \varphi(a) = 0_B\}\]
 
     C'est aussi le noyau de $\varphi$ en tant que morphisme de groupes. En particulier, 
-    $\ker(\varphi)$ est un sous-groupe de $(A, +)$.
+    $\Ker(\varphi)$ est un sous-groupe de $(A, +)$.
     
 \end{definition}
 
 \begin{proposition}{Noyau comme idéal}{}
-    Supposons que $A$ est un anneau commutatif, et $\varphi$ un morphisme d'anneau. 
-    Alors $\ker(\varphi)$ est un idéal de $A$.
+    Supposons que $A$ et $B$ sont des anneaux commutatifs, et que $\varphi: A \to B$ est un morphisme d'anneau. 
+    Alors $\Ker(\varphi)$ est un idéal de $A$.
 \end{proposition}
 
 \begin{proof}
-    $(\ker \varphi, +)$ est un sous-groupe de $(A, +)$.
+    $(\Ker \varphi, +)$ est un sous-groupe de $(A, +)$.
 
-    Soit $x \in \ker(\varphi)$ et $a \in A$. Alors $\varphi(ax) = \varphi(a) \cdot \varphi(x) = \varphi(a) \cdot 0_B = 0_B$,
+    Soit $x \in \Ker(\varphi)$ et $a \in A$. Alors $\varphi(ax) = \varphi(a) \cdot \varphi(x) = \varphi(a) \cdot 0_B = 0_B$,
 
-    Donc $ax \in \ker(\varphi)$.
-
-    Donc $\ker(\varphi)$ est un idéal de $A$.
+    Donc $ax \in \Ker(\varphi)$.
+    Donc $\Ker(\varphi)$ est un idéal de $A$.
 \end{proof}
 
-\subsection{Eléments inversibles }
+\subsection{Eléments inversibles}
 
 Soit $(A, +, \cdot)$ un anneau.
 
@@ -477,13 +481,14 @@ Soit $(A, +, \cdot)$ un anneau.
 \end{theoreme}
 
 \begin{exemple}
-    Dans l'anneau $\Z$, $\Z^* = \{-1, 1\}$.
-
-    Dans l'anneau $\K[X]$, où $\K$ est un corps, $\K[X]^* = \K^*$.
+    \begin{itemize}
+        \item Dans l'anneau $\Z$, $\Z^* = \{-1, 1\}$.
+        \item Dans l'anneau $\K[X]$, où $\K$ est un corps, $\K[X]^* = \K^*$.
+    \end{itemize}
 \end{exemple}
 
 \begin{definition}{Corps}{}
-    Soit $A$ un anneau commutatif. 
+    Soit $A$ un anneau commutatif non nul. 
     
     On dit que $(A, +, \cdot)$ est un corps 
     ssi $A^* = A \setminus \{0_A\}$, c'est à dire si tout élément non nul de $A$ est inversible.
@@ -499,11 +504,10 @@ Soit $(A, +, \cdot)$ un anneau.
     $1_L = 1_K$.
 \end{definition}
 
-\marginenote{Remarque}{La stabilité par produit et par inverse peuvent se montrer l'une après l'autre plutôt 
-    que simultanément.}
+\marginenote{Remarque}{La stabilité par produit et par inverse peuvent se montrer l'une après l'autre plutôt
+que simultanément.}
 
-
-\lvspace \avspace \begin{proposition}{Caractérisation sous-corps}{}
+\begin{proposition}{Caractérisation sous-corps}{}
     $L$ est un sous-corps de $\K$ ssi :
     \begin{itemize}
         \item $1_K \in L$
@@ -517,41 +521,39 @@ Soit $(A, +, \cdot)$ un anneau.
 \end{remarque}
 
 \begin{exemple}
-    $\R$ est un sous-corps de $\C$.
+    \begin{itemize}
+        \item $\R$ est un sous-corps de $\C$.
 
-    $\Q[\sqrt 2] = \{a + b \sqrt 2 \mid (a, b) \in \Q^2\}$ est un sous-corps de $\R$.
+        \item $\Q(\sqrt 2) = \{a + b \sqrt 2 \mid (a, b) \in \Q^2\}$ est un sous-corps de $\R$.
 
-    En effet, $1 \in \Q[\sqrt 2]$.
+        En effet, $1 \in \Q(\sqrt 2)$.
 
-    Si $a, b, c, d \in \Q$, alors $(a + b \sqrt 2) - (c + d \sqrt 2) = (a - c) + (b - d) \sqrt 2 \in \Q[\sqrt 2]$.
+        Si $a, b, c, d \in \Q$, alors $(a + b \sqrt 2) - (c + d \sqrt 2) = (a - c) + (b - d) \sqrt 2 \in \Q(\sqrt 2)$.
 
-    Si $a, b, c, d \in \Q$ et $c + d \sqrt 2 \neq 0$, alors 
+        Si $a, b, c, d \in \Q$ et $c + d \sqrt 2 \neq 0$, alors 
     
-    $\displaystyle \frac {a + b \sqrt 2}{c + d \sqrt 2} = \frac{(a + b \sqrt 2)(c - d \sqrt 2)}{c^2 - 2d^2} = \frac{ac - 2bd}{c^2 - 2d^2} + \frac{bc - ad}{c^2 - 2d^2} \sqrt 2 \in \Q[\sqrt 2]$.
+        $\displaystyle \frac {a + b \sqrt 2}{c + d \sqrt 2} = \frac{(a + b \sqrt 2)(c - d \sqrt 2)}{c^2 - 2d^2} = \frac{ac - 2bd}{c^2 - 2d^2} + \frac{bc - ad}{c^2 - 2d^2} \sqrt 2 \in \Q(\sqrt 2)$.
+    \end{itemize}
 \end{exemple}
 
+\begin{definition}{Caractéristique d'un corps - HP}{}
+    Soit $(\K, +, \cdot)$ un corps.
 
+    Considérons $1_{\K}$ dans le groupe abélien $(\K, +)$.
 
-\begin{definition}{HP, caractéristique d'un corps}{}
-    Soit $(K, +, \cdot)$ un corps.
+    \begin{itemize}
+        \item Si $\fonction{\varphi}{\Z}{\K}{n}{n \cdot 1_{\K}}$ est injective, alors 
+        $\K$ est d'ordre infini, et on dit que $\K$ est de \textbf{caractéristique nulle}.
 
-    Considérons $1_K$ dans le groupe abélien $(K, +)$.
+        \item Si $\fonction{\varphi}{\Z}{\K}{n}{n \cdot 1_{\K}}$ n'est pas injective, alors 
+        $\Ker(\varphi) = p \Z$ avec $p \geqslant 2$, et donc $1_{\K}$ est d'ordre fini $p$. 
+        On dit que $\K$ est de \textbf{caractéristique} $p$. 
 
-    \uline{Cas 1} : si $\fonction{\varphi}{\Z}{\K}{n}{n \cdot 1_K}$ est injective, alors 
-    $K$ est d'ordre infini, et on dit que $K$ est de \textbf{caractéristique nulle}.
-
-    \uline{Cas 2} : Si $\fonction{\varphi}{\Z}{\K}{n}{n \cdot 1_K}$ n'est pas injective, alors 
-    $\ker(\varphi) = p \Z$ avec $p \geqslant 2$, et donc $1_K$ est d'ordre fini $p$. 
-    On dit que $K$ est de \textbf{caractéristique} $p$. 
-
-    On a alors $p$ un nombre premier.
+        On a alors $p$ un nombre premier.
+    \end{itemize}
 \end{definition}
 
-\begin{exemple}
-    $\Z / 2 \Z$ est de caractéristique $2$.
-\end{exemple}
-
-\idee{Supposer $p$ non premier}
+\idee{Supposer $p$ non premier.}
 
 \begin{proof}
     Montrons que $p$ est premier. 
@@ -559,11 +561,18 @@ Soit $(A, +, \cdot)$ un anneau.
     Supposons que $p$ n'est pas premier. Alors il existe $m, n \in \N^*$ tels que 
     $p = mn$. 
 
-    Donc $p1_K = 0_K = (mn)1_K = (m1_K)(n1_K)$.
+    Donc $p1_{\K} = 0_{\K} = (mn)1_{\K} = (m1_{\K})(n1_{\K})$.
 
-    Or $\K$ est un corps, donc $m1_K = 0_K$ ou $n1_K = 0_K$, 
+    Or $\K$ est un corps, donc $m1_{\K} = 0_{\K}$ ou $n1_{\K} = 0_{\K}$, 
     donc $p \mid m$ ou $p \mid n$, donc $p = m$ ou $p = n$, donc $p$ est premier.
 \end{proof}
+
+\begin{exemple}
+    \begin{itemize}
+        \item $\Z / 2 \Z$ est de caractéristique $2$.
+        \item $\Q,\R,\C$ sont de caractéristique nulle.
+    \end{itemize}
+\end{exemple}
 
 \section{L'anneau \texorpdfstring{$\Z$}{Z}}
 \subsection{Idéaux de \texorpdfstring{$\Z$}{Z}}
@@ -950,7 +959,7 @@ Soit $n \geqslant 2$ un entier.
     $\varphi(\widehat 1) = (\widehat 1, \widetilde 1)$. qui est bien le neutre de l'anneau 
     produit. Donc $\varphi$ est un morphisme d'anneaux.
 
-    \lvspace Soit $c \in \ker \varphi$ et $x \in c$. 
+    \lvspace Soit $c \in \Ker \varphi$ et $x \in c$. 
     Alors $\varphi(c) = (\widehat x, \widetilde x) = (\widehat 0, \widetilde 0)$.
 
     Donc $\widehat x = \widehat 0$ et $\widetilde x = \widetilde 0$, donc $n \mid x $ et $k \mid x$.
@@ -1251,9 +1260,9 @@ Soit $\K$ un sous-corps de $\C$.
 \begin{exemple}
     $\alpha = j$, $\fonction f {\Q[X]}\R P {P(\alpha)}$ est un morphisme d'anneaux.
 
-    Donc $I = \ker f$ est un idéal de $\Q[X]$.
+    Donc $I = \Ker f$ est un idéal de $\Q[X]$.
 
-    De plus, $I \neq 0$ car $X^3 - 1 \in \ker f$ donc il existe un unique $P_0$ unitaire
+    De plus, $I \neq 0$ car $X^3 - 1 \in \Ker f$ donc il existe un unique $P_0$ unitaire
     tel que \[I = P_0 \Q[X]\]
 
     On dit que $j$ est algébrique et que $P_0$ est son polynôme minimal sur $\Q$.
@@ -1271,7 +1280,7 @@ Soit $\K$ un sous-corps de $\C$.
 \begin{exemple}
     $\alpha = \sqrt 2 + \sqrt 3$, et $\fonction f {\Q[X]} \R P {P(\alpha)}$ est un morhpisme d'anneaux.
 
-    Donc $I = \ker f$ est un idéal de $\Q[X]$. Mais $\alpha \notin \Q$, donc aucun 
+    Donc $I = \Ker f$ est un idéal de $\Q[X]$. Mais $\alpha \notin \Q$, donc aucun 
     polynôme de degré $1$ n'est dans $I$.
 
     $\alpha^2 = 5 + 2 \sqrt 6$. 
@@ -1595,7 +1604,7 @@ $\displaystyle a^n - b^n = \prod_{k = 0}^{n - 1} (a - b e^{\frac{2i\pi k} n})$
 \begin{remarque}
     $\operatorname{Im} \varphi$ est alors une sous-algèbre de $B$.
 
-    $\ker \varphi$ est alors un idéal et un sous-ev de $A$.
+    $\Ker \varphi$ est alors un idéal et un sous-ev de $A$.
 \end{remarque}
 
 \begin{exemple}

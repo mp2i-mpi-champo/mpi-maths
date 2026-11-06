@@ -1,17 +1,17 @@
 \section{Énoncés des Exercices}
 \subsection{Groupes et sous-groupes}
+
 % --- Exercice 1 ---
 \begin{exercice}
-    On pose $\forall x,y\in]-1,1[$, $x\ast y=\frac{x+y}{1+xy}$.
+    On pose $\forall x,y\in]-1,1[$, $x \ast y=\frac{x+y}{1+xy}$.
     Montrer que $(]-1,1[, \ast)$ est un groupe abélien.
 \end{exercice}
 
 % --- Exercice 2 ---
-\begin{exercice}
-    \textbf{Groupe produit.}
+\begin{exercice}[Groupe produit]
     Soient $(G_{1},*_{1})$ et $(G_{2},*_{2})$ deux groupes.
     On munit $G=G_{1}\times G_{2}$ d'une loi de composition interne définie par :
-    \[\forall(x_{1},x_{2}), (y_{1}, y_{2}) \in G, \quad (x_{1}, x_{2}) \cdot (y_{1}, y_{2}) = (x_{1} *_{1} y_{1}, x_{2} *_{2} y_{2})\]
+    \[\forall(x_{1},x_{2}), (y_{1}, y_{2}) \in G,~(x_{1}, x_{2}) \cdot (y_{1}, y_{2}) = (x_{1} *_{1} y_{1}, x_{2} *_{2} y_{2})\]
     Montrer que l'on définit ainsi un groupe.
 \end{exercice}
 
@@ -28,7 +28,7 @@
 
 % --- Exercice 4 ---
 \begin{exercice}
-    Soit $p$ un nombre premier et $G_{p}=\{z\in\C \mid \exists k\in\N, z^{p^{k}}=1\}$.
+    Soit $p$ un nombre premier et $G_{p}=\{z\in\C \mid \exists k\in\N, z^{(p^{k})}=1\}$.
     \begin{enumerate}
         \item Montrer que $G_{p}$ est un groupe.
         \item Montrer que $G_{p}$ possède un nombre infini de sous-groupes.
@@ -47,13 +47,13 @@
 % --- Exercice 6 ---
 \begin{exercice}
 \begin{enumerate}
-    \item Soit $(G,.)$ un groupe. On définit son centre $Z(G)$ par :
-        \[Z(G)=\{x\in G \mid \forall y\in G, x.y=y.x\}\]
+    \item Soit $(G,\cdot)$ un groupe. On définit son centre $Z(G)$ par :
+        \[Z(G)=\{x\in G \mid \forall y\in G, x \cdot y=y \cdot x\}\]
         Montrer que c'est un sous-groupe de $G$.
     \item On pose $G=\R^{*}\times\R$ muni de la loi définie par :
         \[(x,y) \cdot (x^{\prime},y^{\prime})=\left(xx^{\prime},xy^{\prime}+\frac{y}{x^{\prime}}\right)\]
         \begin{enumerate}
-            \item Montrer que $(G,.)$ est un groupe.
+            \item Montrer que $(G,\cdot)$ est un groupe.
             \item Déterminer son centre.
         \end{enumerate}
 \end{enumerate}
@@ -67,23 +67,22 @@
 
 % --- Exercice 8 ---
 \begin{exercice}
-    Soit $(G,.)$ un groupe et $E$ un ensemble non vide.
-    On appelle action de groupe de $G$ sur $E$ toute application $\Phi: G\times E \to E, (g,x) \mapsto \Phi(g,x)=g.x$ vérifiant :
+    Soit $(G, \cdot)$ un groupe et $E$ un ensemble non vide.
+    On appelle action de groupe de $G$ sur $E$ toute application $\Phi: G\times E \to E, (g,x) \mapsto \Phi(g,x)=g \cdot x$ vérifiant :
     \begin{itemize}
-        \item $\forall x\in E$, $e_{G}.x=x$
-        \item $\forall g,h\in G$, $\forall x\in E$, $g.(h.x)=(g.h).x$
+        \item $\forall x\in E$, $e_{G} \cdot x=x$
+        \item $\forall g,h\in G$, $\forall x\in E$, $g \cdot (h \cdot x)=(g \cdot h) \cdot x$
     \end{itemize}
     \begin{enumerate}
         \item Montrer qu'une application $\Phi:G\times E\rightarrow E$ définit une action de groupe 
             si et seulement si l'application $g\mapsto(x\mapsto\Phi(g,x))$ est un morphisme de groupes de $G$ dans l'ensemble des permutations de $E$.
-        \item Montrer que $\Phi: G\times G \to G, (g,x) \mapsto \Phi(g,x)=g.x.g^{-1}$ définit une action de groupe de $G$ sur lui-même. 
+        \item Montrer que $\Phi: G\times G \to G, (g,x) \mapsto \Phi(g,x)=g \cdot x \cdot g^{-1}$ définit une action de groupe de $G$ sur lui-même. 
             Cette action est appelée automorphisme intérieur ou conjugaison.
     \end{enumerate}
 \end{exercice}
 
 % --- Exercice 9 ---
-\begin{exercice}
-    \textbf{Transfert de structure.}
+\begin{exercice}[Transfert de structure]
     \begin{enumerate}
         \item Soient $(G,*)$ un groupe et $E$ un ensemble. On suppose qu'il existe une bijection $f:G\rightarrow E$ et on pose :
             \[\forall a,b\in E, \quad a T b=f(f^{-1}(a)*f^{-1}(b))\]
@@ -93,6 +92,7 @@
 \end{exercice}
 
 \subsection{Groupes monogènes}
+
 % --- Exercice 10 ---
 \begin{exercice}
     Soit $G$ un groupe et $a\in G$ d'ordre fini $n$.
@@ -241,37 +241,29 @@
 
     \item
     \begin{enumerate}
-    \item 
-        Élément neutre : on cherche $(e_1, e_2)$ tel que $(x,y)(e_1,e_2)=(x,y)$.
-        $x e_1 = x \implies e_1=1$.
-        $x e_2 + y/e_1 = y \implies x e_2 + y = y \implies x e_2 = 0 \implies e_2=0$ (car $x \in \R^*$).
+    \item
+        \uline{Élément neutre :} On cherche $(e_1, e_2)$ tel que $(x,y)(e_1,e_2)=(x,y)$.
+        
+        Donc $x e_1 = x$ donc $e_1=1$.
+        
+        Et $x e_2 + y/e_1 = y$ donc $x e_2 + y = y$ donc $x e_2 = 0$ alors $e_2=0$ (car $x \in \R^*$).
 
-        Neutre : $(1,0)$.
+        Donc le neutre est $(1,0)$.
 
-        Vérifions à gauche : $(1,0)(x,y) = (1.x, 1.y + 0/x) = (x,y)$. OK.
+        \uline{Inverse :} On cherche $(x',y')$ tel que $(x,y)(x',y')=(1,0)$.
+        
+        Donc $xx'=1$ donc $x' = 1/x$.
+        
+        Et $xy' + y/x' = 0$ donc $xy' + y/(1/x) = 0$ donc $xy' + xy = 0$ donc $y' = -y$.
 
-        Inverse : On cherche $(x',y')$ tel que $(x,y)(x',y')=(1,0)$.
-        $xx'=1 \implies x' = 1/x$.
-        $xy' + y/x' = 0 \implies xy' + y/(1/x) = 0 \implies xy' + xy = 0 \implies y' = -y$.
-
-        Inverse : $(1/x, -y)$.
+        Donc l'inverse de $(x,y)$ est $(1/x, -y)$.
 
         Vérification : $(1/x, -y)(x,y) = ( (1/x)x, (1/x)y + (-y)/(1/x) ) = (1, y/x - xy)$. Attention, l'inverse à gauche doit marcher.
         Calculons $(1/x, -y)(x,y) = (1, \frac{1}{x}y + \frac{-y}{x}) = (1,0)$. OK.
 
-        Associativité : Laborieux mais vrai (voir matrices triangulaires $\begin{pmatrix}x&y\\0&1/x\end{pmatrix}$ ? Non, la loi est spécifique).
+        \uline{Associativité :} C'est vrai mais laborieux à calculer.
 
-        Associativité : 
-        $((x,y)(x',y'))(x'',y'') = (xx', xy'+y/x')(x'',y'') = (xx'x'', (xx')y'' + \frac{xy'+y/x'}{x''})$.
-
-        $(x,y)((x',y')(x'',y'')) = (x,y)(x'x'', x'y''+y'/x'') = (x(x'x''), x(x'y''+y'/x'') + \frac{y}{x'x''}) = (xx'x'', xx'y'' + xy'/x'' + y/x'x'')$.
-
-        (C'est différent. Il y a une erreur dans l'énoncé de la loi ou dans mon développement.)
-
-        Reprenons la loi : $(x,y)(x',y')=(xx', xy'+\frac{y}{x'})$. \\
-        Terme en $y$ du premier calcul : $xx'y'' + \frac{xy'}{x''} + \frac{y}{x'x''}$. \\
-        Terme en $y$ du second calcul : $xx'y'' + \frac{xy'}{x''} + \frac{y}{x'x''}$. \\
-        C'est égal. La loi est associative. C'est un groupe.
+        Donc c'est un groupe.
     \item 
         Centre : $(x,y) \in Z(G) \iff \forall (a,b), (x,y)(a,b) = (a,b)(x,y)$. \\
         $(xa, xb + y/a) = (ax, ay + b/x)$. \\

@@ -23,10 +23,8 @@
     alors $0_A = 1_A$.
 
     De plus, si $A$ n'est pas un singleton, alors $0_A \neq 1_A$. En effet, 
-    par contraposée supposons que $0_A = 1_A$. Soit $a \in A$, on a alors 
-    \[
-        a = a \cdot 1_A = a \cdot 0_A = 0_A,
-    \]
+    par contraposée supposons que $0_A = 1_A$. Soit $a \in A$, on a alors :
+    \[a = a \cdot 1_A = a \cdot 0_A = 0_A\]
     donc $A = \{0_A\}$.
 \end{remarque}
 
@@ -49,7 +47,6 @@ $(\Z, +,\times)$, $(\Q,+,\times)$, $(\R, +, \times)$ et $(\C, +, \times)$ sont d
         \item Soit $E$ un $\K$-espace vectoriel, $(\mathscr L (E), +, \circ)$ est un anneau non commutatif en général. Le neutre pour $+$ est l'application nulle, et le neutre pour $\circ$ est l'application identité.
     \end{itemize}
 \end{exemple}
-
 
 \begin{proposition}{Anneau produit}{}
     \index{Anneau!produit}
@@ -77,7 +74,6 @@ $(\Z, +,\times)$, $(\Q,+,\times)$, $(\R, +, \times)$ et $(\C, +, \times)$ sont d
     $(1_{A_1}, 1_{A_2}, \ldots, 1_{A_n})$ est le neutre pour $\cdot$.
 \end{proof}
 
-
 \subsection{Sous-anneaux}
 
 \begin{definition}{Sous-anneau}{}
@@ -103,13 +99,13 @@ $(\Z, +,\times)$, $(\Q,+,\times)$, $(\R, +, \times)$ et $(\C, +, \times)$ sont d
         \item $\forall a, b \in B, a \cdot b \in B$
         \item $\forall a, b \in B, a - b \in B$
         \item $1_A \in B$
-    \end{itemize}
-    
+    \end{itemize}    
 \end{proposition}
 
 \idee{Définitioin d'un sous anneau.}
 
-\begin{proof} $\Rightarrow$ Supposons que $B$ est un sous-anneau de $A$.
+\begin{proof}
+    $\Rightarrow$ Supposons que $B$ est un sous-anneau de $A$.
     
     Alors $1_B = 1_A$ donc $1_A \in B$.
 
@@ -174,7 +170,7 @@ Il faudrait sinon parler d'idéal à gauche / à droite.}
         \item $A$ est un idéal de $A$.
         \item $\{0_A\}$ est un idéal de $A$.
     \end{itemize}
-On les appelles idéaux triviaux de $A$.
+On les appelle idéaux triviaux de $A$.
 \end{exemple}
 
 \begin{remarque}
@@ -287,8 +283,8 @@ On les appelles idéaux triviaux de $A$.
 
 \subsection{Divisibilité}
 
-\notedanger{Bien entendu, vous ne tomberez pas dans le piège classique fatal au topin lambda, 
-aka l'hypothèse d'intégrité (tips : une carte anki spécialement pour l'hypothèse).}
+\notedanger{Bien entendu, vous ne tomberez pas dans le piège classique fatal au taupin lambda, 
+aka l'hypothèse d'intégrité.}
 
 \begin{definition}{Divisibilité}{}
     \index{Divisibilité}
@@ -347,14 +343,11 @@ aka l'hypothèse d'intégrité (tips : une carte anki spécialement pour l'hypot
     \index{Elements associes@Éléments associés}
     Soit $(A, +, \cdot)$ un \textbf{anneau commutatif intègre}. 
     Soient $a, b \in A$. Alors les assertions suivantes sont équivalentes : 
-    \avspace 
-    
     \begin{itemize}
         \item $a \mid b$ et $b \mid a$.
         \item $aA = bA$.
         \item Il existe $u \in A^*$, tel que $a = bu$.
     \end{itemize}
-
     On dit alors que $a$ et $b$ sont \textbf{associés}.
 \end{theoreme}
 
@@ -433,7 +426,6 @@ aka l'hypothèse d'intégrité (tips : une carte anki spécialement pour l'hypot
     Pour $a, b \in \varphi(A)$, il existe $x, y \in A$ tels que $a = \varphi(x)$ et $b = \varphi(y)$.
 
     Donc $a \cdot b = \varphi(x) \cdot \varphi(y) = \varphi(xy) \in \varphi(A)$.
-
 \end{proof}
 
 \begin{definition}{Noyau d'un morphisme d'anneaux}{}
@@ -444,7 +436,6 @@ aka l'hypothèse d'intégrité (tips : une carte anki spécialement pour l'hypot
 
     C'est aussi le noyau de $\varphi$ en tant que morphisme de groupes. En particulier, 
     $\Ker(\varphi)$ est un sous-groupe de $(A, +)$.
-    
 \end{definition}
 
 \begin{proposition}{Noyau comme idéal}{}
@@ -620,23 +611,18 @@ que simultanément.}
     $c \mid c'$ et de même, $c' \mid c$, donc $c$ et $c'$ sont associés, donc $c = c'$.
 \end{proof}
 
-
 \begin{proposition}{Généralisation du PGCD avec idéaux}{}
     Soient $c_1, \ldots, c_n \in \Z$. Alors $c_1 \Z + c_2 \Z + \cdots + c_n \Z$ est un 
     idéal de $\Z$, et donc il existe un unique $d \in \N$ tel que 
-    \[
-        c_1 \Z + c_2 \Z + \cdots + c_n \Z = d \Z.
-    \]
+    \[c_1 \Z + c_2 \Z + \cdots + c_n \Z = d \Z\]
 
     $d$ est appelé le \textbf{plus grand commun diviseur} de $c_1, c_2, \ldots, c_n$, et 
     on obtient l'associativité par def. 
 \end{proposition}
 
 \begin{proposition}{Relation de Bézout}{}
-    Soient $a, b \in \Z$, alors $\exists u, v \in \Z$ tels que 
-    \[
-        \pgcd(a, b) = au + bv.
-    \]
+    Soient $a, b \in \Z$, alors $\exists u, v \in \Z$ tels que : 
+    \[\pgcd(a, b) = au + bv\]
 \end{proposition}
 
 \begin{proof}
@@ -703,15 +689,13 @@ A chaque étape, on réalise la division euclidienne de $r_{i-1}$ par $r_i$
 \end{definition}
 
 \begin{proposition}{Infinité des nombres premiers}{}
-    L'ensemble $\mathbb{P}$ des nombres premiers est infini.
+    L'ensemble $\symbb{P}$ des nombres premiers est infini.
 \end{proposition}
 
 \begin{theoreme}{Décomposition en facteurs premiers}{}
     Tout $a \in \Z \setminus \{0, 1, -1\}$ se décompose de manière unique (à l'ordre des facteurs près) en un produit
     de nombres premiers, sous la forme : 
-    \[
-        a = \varepsilon \prod_{i = 1}^k p_i^{\alpha_i} 
-    \]
+    \[ a = \varepsilon \prod_{i = 1}^k p_i^{\alpha_i}\]
 
     où $\varepsilon \in \{-1, 1\}$, $k \geqslant 1$, $(p_1, p_2, \ldots, p_k)$ est une suite strictement croissante de nombres premiers
     et $(\alpha_1, \alpha_2, \ldots, \alpha_k) \in (\N^*)^k$.
@@ -720,7 +704,7 @@ A chaque étape, on réalise la division euclidienne de $r_{i-1}$ par $r_i$
 
 \marginenote{Mémo}{Il faut croiser : le PGCD utilsie le mini et le PPCM le maxi (Théotime ta gueule).}
 
-\lvspace \avspace \begin{proposition}{PGCD PPCM avec valuations p-adiques}{}
+\begin{proposition}{PGCD PPCM avec valuations p-adiques}{}
     Soient $a, b \in \Z \setminus \{0, -1, 1\}$ décomposé en 
     $\displaystyle a = \varepsilon_a \prod_{i = 1}^k p_i^{\alpha_i}$ et
     $\displaystyle b = \varepsilon_b \prod_{i = 1}^k p_i^{\beta_i}$. 
@@ -737,7 +721,7 @@ A chaque étape, on réalise la division euclidienne de $r_{i-1}$ par $r_i$
 \subsubsection{Compléments HP}
 
 \begin{proposition}{Hors programme}{}
-    Pour $x \in \R^+$, on note $\pi(x) = \text{card}(\{p \in \mathbb{P} \mid p \leqslant x\})$.
+    Pour $x \in \R^+$, on note $\pi(x) = \text{card}(\{p \in \symbb{P} \mid p \leqslant x\})$.
 
     \begin{enumerate}
         \item Théorème des nombres premiers (Hadamard et de la Vallée Poussin, 1896) :
@@ -748,16 +732,15 @@ A chaque étape, on réalise la division euclidienne de $r_{i-1}$ par $r_i$
 
         Alors, en admettant l'hypothèse de Riemann, on a : 
         \[\pi(x)  - \mathrm{Li}(x) = O(\sqrt x \ln(x))\]
-        \item Nombres premiers jumeaux : $p, q \in \mathbb P$ sont jumeaux ssi $|p - q| = 2$. 
+        \item Nombres premiers jumeaux : $p, q \in \symbb P$ sont jumeaux ssi $|p - q| = 2$. 
         Conjecture : il en existe une infinité. 
         \item Conjecture de Goldbach : tout entier pair $> 2$ est la somme de deux nombres premiers.
     
         \item Théorème de Diriclet : Soient $a, b \in \N$ tels que $\pgcd(a, b) = 1$. Alors 
-        $\{a + nb, n \in \N\} \cap \mathbb P$ est infini.
+        $\{a + nb, n \in \N\} \cap \symbb P$ est infini.
         \item Théorème de Green et Tao (2004) : $\forall k \geqslant 1$, il existe une suite de $k$ nombres premiers 
         en progression arithmétique et la plupart est inférieur à beaucoup de puissances de 2.
     \end{enumerate}
-     
 \end{proposition}
 
 \section{L'anneau \texorpdfstring{$\Z / n \Z$}{Z/nZ}}
@@ -774,7 +757,6 @@ Soit $n \geqslant 2$ un entier.
     Alors $(\Z / n \Z, +, \cdot)$ est un anneau commutatif et $\fonction{\varphi}{\Z}{\Z / n \Z}{x}{\widehat x}$ est un morphisme d'anneaux
     surjectif de noyau $n \Z$.
 \end{theoreme}
-
 
 \begin{proof}
     Soient $c, d \in \Z / n \Z$, $x, x' \in c$ et $y, y' \in d$. 
@@ -822,7 +804,6 @@ Soit $n \geqslant 2$ un entier.
 
 \end{exemple}
 
-
 \begin{theoreme}{Éléments inversibles de $\Z / n \Z$}{}
     Soit $c \in \Z/n \Z$ et $x \in c$, avec $c \neq \hat 0$. 
     Alors les assertions suivantes sont équivalentes : 
@@ -834,7 +815,7 @@ Soit $n \geqslant 2$ un entier.
     \end{itemize}
 \end{theoreme}
 
-\idee{Un Bézout magique }
+\idee{Un Bézout magique.}
 
 \begin{proof}
     Si $c$ est inversible, alors $c$ n'est pas un diviseur de zéro (comme dans tout anneau).
@@ -857,7 +838,7 @@ Soit $n \geqslant 2$ un entier.
 \end{exemple}
 
 \begin{theoreme}{Corps $\Z/n\Z$}{}
-    $\Z/n\Z$ est un corps ssi $n$ est premier. Pour $p \in \mathbb{P}$, ce corps est noté 
+    $\Z/n\Z$ est un corps ssi $n$ est premier. Pour $p \in \symbb{P}$, ce corps est noté 
     \[\Z/p\Z = \symbb{F}_p\]
 \end{theoreme}
 
@@ -895,9 +876,7 @@ Soit $n \geqslant 2$ un entier.
         & \Leftrightarrow (x - 8^- 3)(x - 8 + 3) = 0 \\
         & \Leftrightarrow x = \widehat {11} \text{ ou } x = \widehat {5}
     \end{align*}
-
 \end{exemple}
-
 
 \begin{theoreme}{Structure de $\zz p ^*$ HP}{}
     Soit $p$ un nombre premier. 
@@ -925,8 +904,7 @@ Soit $n \geqslant 2$ un entier.
     On vérifie que $\widehat 3$ et $\widehat 5$ sont des élément primitif.
 \end{exemple}
 
-
-\subsection{Théorème chinois }
+\subsection{Théorème chinois}
 
 \begin{theoreme}{Théorème chinois}{}
     Soient $n, k \geqslant 2$ premiers entre eux. Notons $\overline{.} \space $ les 
@@ -971,8 +949,6 @@ Soit $n \geqslant 2$ un entier.
     $\varphi$ est surjective.
 
     Donc $\varphi$ est un isomorphisme d'anneaux.
-
-
 \end{proof}
 
 \begin{proposition}{Généralisation du théorème chinois}{}
@@ -985,7 +961,7 @@ Soit $n \geqslant 2$ un entier.
     Par récurrence sur $k$, en utilisant le théorème précédent.
 \end{proof}
 
-\subsubsection{Systèmes de congruence }
+\subsubsection{Systèmes de congruence}
 
 Soient $n_1, \ldots, n_k \geqslant 2$ entiers deux à deux premiers entre eux, et 
 $a_1, a_2, \ldots, a_k \in \Z$.
@@ -1060,11 +1036,9 @@ Donc $x_0$ est une solution particulière de $(S)$.
     $x_0$ est bien une solution particulière de $(S)$.
 
     Donc $(S) \Leftrightarrow x \equiv 57 [210]$.
-
 \end{exemple}
 
-
-\subsection{Indicatrice d'Euler }
+\subsection{Indicatrice d'Euler}
 
 \begin{definition}{Indicatrice d'Euler}{}
     On appelle indicatrice d'Euler l'application suivante : 
@@ -1154,7 +1128,6 @@ Donc $x_0$ est une solution particulière de $(S)$.
     Donc $p^\alpha = p^{\alpha - 1} + \varphi(p^\alpha)$
 \end{proof}
 
-
 \begin{theoreme}{Formule de $\varphi$}{}
     Soit $n \geqslant 2$. Décomposons $\displaystyle n = \prod_{i = 1}^k p_i^{\alpha_i}$, où 
     $k \geqslant 1$, $(p_1, p_2, \ldots, p_k)$ est une suite strictement croissante de nombres premiers. 
@@ -1196,7 +1169,7 @@ Donc $x_0$ est une solution particulière de $(S)$.
     Donc par le théorème d'Euler, $a^{p - 1} \equiv 1 [p]$.
 \end{proof}
 
-\subsubsection{Applications }
+\subsubsection{Applications}
 
 Si $n \geqslant 2$ et $a \in \Z$ tel que $a \wedge n = 1$ vérifie $a^{n -1} \equiv 1 [n]$,
 on dit que $n$ est $a$-pseudopremier.
@@ -1204,7 +1177,7 @@ on dit que $n$ est $a$-pseudopremier.
 Un nombre non premier qui est $a$-pseudopremier est appelé nombre de Carmichael. 
 $561$ l'est par exemple, et il en existe une infinité. 
 
-\subsubsection{RSA }
+\subsubsection{RSA}
 
 Bob choisit deux grands nombres premiers $p$ et $q$ distincts et calcul $n = pq$. 
 
@@ -1216,7 +1189,6 @@ Alice veut transmettre son message $M \in \N$. Elle calcule $M' = M^c [n]$ et le
 Bob calcul $M'^d \equiv (M^c)^d [n] \equiv M^{cd} \equiv M^{1 + k \varphi(n)} \equiv M[n]$
 
 Donc la sécurité de l'algo repose sur la difficulté à décomposer $n$ en facteurs premiers. 
-
 
 \section{L'anneau \texorpdfstring{$\K [X]$}{K[X]}}
 \subsection{Idéaux de \texorpdfstring{$\K [X]$}{K[X]}}
@@ -1231,7 +1203,7 @@ Soit $\K$ un sous-corps de $\C$.
     ou nul de l'idéal $I$.
 \end{theoreme}
 
-\idee{Division euclidienne et minimalité }
+\idee{Division euclidienne et minimalité.}
 
 \begin{proof}
     Soit $I$ un idéal de $A$. 
@@ -1273,8 +1245,6 @@ Soit $\K$ un sous-corps de $\C$.
     Donc les diviseurs unitaires de $X^3 - 1$ sont $1, X - 1, X^2 + X + 1$ et $X^3 - 1$, et 
     $P_0$ ne peut pas être $1$ ou $X - 1$ car $j$ n'est pas rationnel. 
     Donc $P_0 = X^2 + X + 1$ est le polynôme minimal de $j$ sur $\Q$.
-
-
 \end{exemple}
 
 \begin{exemple}
@@ -1329,10 +1299,7 @@ Soit $\K$ un sous-corps de $\C$.
         63 & 85
     \end{pmatrix} = 9A + 13 I_2$, donc $X^2 - 9X - 13$ annule $A$ et est unitaire de degré minimal, 
     donc $P_0 = X^2 - 9X - 13$.
-
-
 \end{exemple}
-
 
 \subsection{Arithmétique dans \texorpdfstring{$\K [X]$}{K[X]}}
 
@@ -1394,7 +1361,6 @@ Soit $\K$ un sous-corps de $\C$.
 \begin{exemple}
     Tous les polynômes de degré $1$ sont irréductibles.
 \end{exemple}
-
 
 \begin{proposition}{Caractérisation des irréductibles par les racines}{}
     Un polynôme de degré $\geqslant 2$ irréductible n'a pas de racine dans $\K$.
@@ -1536,9 +1502,9 @@ $\displaystyle a^n - b^n = \prod_{k = 0}^{n - 1} (a - b e^{\frac{2i\pi k} n})$
 \end{proof}
 
 \begin{exemple}
-    $\K = \mathbb F_2$. Polynômes de degré $1$ dans $\mathbb F_2[X]$ : $X$ et $X + 1$, irréductibles.
+    $\K = \symbb F_2$. Polynômes de degré $1$ dans $\symbb F_2[X]$ : $X$ et $X + 1$, irréductibles.
 
-    Polynômes de degré $2$ dans $\mathbb F_2[X]$ : $X^2, X^2 + 1, X^2 + X, X^2 + X + 1$.
+    Polynômes de degré $2$ dans $\symbb F_2[X]$ : $X^2, X^2 + 1, X^2 + X, X^2 + X + 1$.
 
     $X^2 + 1 = (X + 1)^2$, $X^2 + X = X(X + 1)$, donc seul $X^2 + X + 1$ est irréductible.
 \end{exemple}

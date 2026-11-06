@@ -360,7 +360,7 @@ On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x
         &= \sum_{k=0}^n \binom n k f^{(k+1)}g^{(n-k)} + f^{(k)}g^{(n-k+1)} \\
         &= \sum_{k=0}^n \binom n k f^{(k+1)}g^{(n-k)} + \sum_{k=0}^n \binom n k f^{(k)}g^{(n-k+1)} \\
         &= f^{(n+1)}g + fg^{(n+1)} + \sum_{k=0}^{n-1} \binom n k f^{(k+1)}g^{(n-k)} + \sum_{k=1}^n \binom n k f^{(k)}g^{(n-k+1)} \\
-        &= f^{(n+1)}g + fg^{(n+1)} + \sum_{k=1}^{n} \binom n {k+1} f^{(k)}g^{(n-k+1)} + \sum_{k=1}^n \binom n k f^{(k)}g^{(n-k+1)} \\       
+        &= f^{(n+1)}g + fg^{(n+1)} + \sum_{k=1}^{n} \binom n {k-1} f^{(k)}g^{(n-k+1)} + \sum_{k=1}^n \binom n k f^{(k)}g^{(n-k+1)} \\       
         &= f^{(n+1)}g + fg^{(n+1)} + \sum_{k=1}^{n} \left(\binom n {k-1}+ \binom n k\right) f^{(k)}g^{(n-k+1)} \\      
         &= \sum_{k=0}^{n+1} \binom {n+1} k f^{(k)}g^{(n+1-k)}       
     \end{align*}

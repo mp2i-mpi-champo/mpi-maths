@@ -340,13 +340,28 @@ On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x
 
 \begin{correction}{9}
 \begin{enumerate}
-    \item Pour $g$ : $\forall k \in \N \forall x \in \R,~g^{(k)}(x) = 2^k e^{2x}$.
+    \item Pour $g$ : $\forall k \in \N,~\forall x \in \R,~g^{(k)}(x) = 2^k e^{2x}$.
 
-    Pour $h$, prouvons le par récurrence.
+    Pour $h$, prouvons pas récurrence que
+    $\forall k \in \N,~\forall x \in \R \setminus \{-1\},~h^{(k)}(x) = (-1)^k \frac {k!} {(1+x)^{k+1}}$.
 
-    \item À faire
+    L'initialisation est évidente.
 
-    \item Prouvons le par réccurence sur $n$.
+    Soit $k \in \N$ tel qu'on ait la formule.
+
+    $\ds \forall x \in \R \setminus \{-1\},~ \left(h^{(k)}\right)^{'}(x) = (-1)^k k! \frac {0 - (k + 1)(1+x)^k} {(1+x)^{2k+2}} = (-1)^{k+1} \frac {(k+1)!} {(1+x)^{k+2}}$.
+
+    Donc par le principe de récurrence
+    $\forall k \in \N,~\forall x \in \R \setminus \{-1\},~h^{(k)}(x) = (-1)^k \frac {k!} {(1+x)^{k+1}}$.
+
+    \item On utilise la formule de Leibniz, $\forall n \in \N,~\forall x \in \R \setminus \{-1\}$,
+    \begin{align*}
+        f^{(n)}(x) &= \sum_{k=0}^n \binom n k h^{(k)}(x)g^{(n-k)}(x) \\
+        &= \sum_{k=0}^n \binom n k (-1)^k \frac {k!} {(1+x)^{k+1}} 2^{n-k} e^{2x} \\
+        &= e^{2x} \sum_{k=0}^n \frac {(-1)^k 2^{n-k}} {(n-k)!(1+x)^{k+1}}
+    \end{align*}
+
+    \item Prouvons la formule par réccurence sur $n$.
 
     Pour $n = 1$, avec $f,g \in \mathscr C^1(I,\R)$, $\ds (fg)^1 = f'g + g'f = \sum_{k=0}^1 \binom n k f^{(k)} g^{(1 - k)}$
 
@@ -354,6 +369,7 @@ On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x
     Soient $f,g \in \mathscr C^{n+1}(I,\R)$. 
 
     Alors :
+    {\allowdisplaybreaks
     \begin{align*}
         (fg)^{(n+1)} &= \left(\sum_{k=0}^n \binom n k f^{(k)} g^{(n-k)}\right)^{'} \\
         &= \sum_{k=0}^n \binom n k \left(f^{(k)}g^{(n-k)}\right)^{'} \\
@@ -364,6 +380,7 @@ On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x
         &= f^{(n+1)}g + fg^{(n+1)} + \sum_{k=1}^{n} \left(\binom n {k-1}+ \binom n k\right) f^{(k)}g^{(n-k+1)} \\      
         &= \sum_{k=0}^{n+1} \binom {n+1} k f^{(k)}g^{(n+1-k)}       
     \end{align*}
+    }
 
     Donc par le principe de récurrence simple la formule de Leibniz est vraie.
 \end{enumerate}

@@ -177,14 +177,13 @@
 \begin{correction}{1}
 
 Par l'absurde, si $\R \setminus \Q$ est dénombrable.
-\begin{quote}
-    On sait que $\Q$ est dénombrable.
-    $\R = (\R \setminus \Q) \cup \Q$.
 
-    Or la réunion de deux ensembles dénombrables est dénombrable.
+On sait que $\Q$ est dénombrable.
+
+Or $\R = (\R \setminus \Q) \cup \Q$
+et la réunion de deux ensembles dénombrables est dénombrable.
     
-    On en déduit que $\R$ est dénombrable, absurde.
-\end{quote}
+Donc $\R$ est dénombrable, absurde.
 \end{correction}
 
 % --- Correction 2 ---
@@ -261,6 +260,17 @@ Par l'absurde, si $\R \setminus \Q$ est dénombrable.
         Sinon $y \not \in A = f(y)$. Donc $y \in A$, absurde.
     \end{quote}
     Donc $P(E)$ n'est pas dénombrable.
+\end{correction}
+
+\begin{correction}{5}
+
+Soit $\ds n \in \N^*,~ \sum_{k=1}^{2n} \frac {(-1)^k} {k^2} = \sum_{k=1}^n \frac 1 {(2k)^2} - \sum_{k=0}^{n-1} \frac 1 {(2k+1)^2}$.    
+
+Or $\ds \sum_{k=1}^{2n} \frac 1 {k^2} = \frac 1 4 \sum_{k=1}^n \frac 1 {k^2} + \sum_{k=0}^{n-1} \frac 1 {(2k+1)^2}$.
+
+Donc $\ds \sum_{k=0}^{n-1} \frac 1 {(2k+1)^2} \to \frac {\pi^2} 6 - \frac {\pi^2} {24} = \frac {\pi^2} 8$.
+
+Donc $\ds \sum_{k=1}^{2n} \frac {(-1)^k} {k^2} \to \frac {\pi^2} {24} - \frac {\pi^2} 8 = - \frac {\pi^2} {12}$.
 \end{correction}
 
 % --- Correction 7 ---
@@ -348,21 +358,23 @@ Par l'absurde, si $\R \setminus \Q$ est dénombrable.
 \begin{correction}{9}
 \begin{enumerate}
     \item 
-        $u_n = \sum_{k=n}^{+ \infty} \frac{1}{k!}$. C'est le reste d'une série convergente (la série de l'exponentielle). Donc $(u_n)$ existe et tend vers 0.
+        $\ds u_n = \sum_{k=n}^{+ \infty} \frac{1}{k!}$. C'est le reste d'une série convergente. Donc $(u_n)$ existe et tend vers 0.
     
-        Pour la convergence de $\sum u_n$ :
-        $\frac{1}{k!} = o\left(\frac{1}{2^k}\right)$ (car $2^k/k! \to 0$).
-        
+        Or $\frac{1}{k!} = o\left(\frac{1}{2^k}\right)$ (car $\frac {2^k} {k!} \to 0$).
         Donc $\displaystyle u_n = \sum_{k=n}^{+\infty} \frac{1}{k!} = o \left(\sum_{k=n}^{+\infty} \frac{1}{2^k} \right) = o \left(\frac{1}{2^{n-1}}\right)$.
-        $u_n$ est un $o$ du terme général d'une série géométrique convergente, donc $\sum u_n$ converge.
+        
+        Donc $u_n$ est un $o$ du terme général d'une série géométrique convergente, donc $\sum u_n$ converge.
 
-    \item Calcul de la somme $\sum_{n=0}^{+ \infty} u_n$.
+    \item Calcul de la somme $\ds \sum_{n=0}^{+ \infty} u_n$,
         $$ \sum_{n=0}^{+\infty} u_n = \sum_{n=0}^{+\infty} \sum_{k=n}^{+\infty} \frac{1}{k!} $$
         Comme les termes sont positifs, on peut appliquer Fubini (interversion des sommes).
         Le domaine de sommation est $0 \leqslant n \leqslant k < +\infty$.
-        $$ = \sum_{k=0}^{+\infty} \sum_{n=0}^k \frac{1}{k!} = \sum_{k=0}^{+\infty} \frac{1}{k!} \sum_{n=0}^k 1 = \sum_{k=0}^{+\infty} \frac{k+1}{k!} $$
-        $$ = \sum_{k=0}^{+\infty} \frac{k}{k!} + \sum_{k=0}^{+\infty} \frac{1}{k!} = \sum_{k=1}^{+\infty} \frac{1}{(k-1)!} + \sum_{k=0}^{+\infty} \frac{1}{k!} $$
-        $$ = \sum_{j=0}^{+\infty} \frac{1}{j!} + e = e + e = 2e $$
+        
+        \begin{align*}
+            \sum_{n=0}^{+\infty} u_n &= \sum_{k=0}^{+\infty} \sum_{n=0}^k \frac{1}{k!} = \sum_{k=0}^{+\infty} \frac{1}{k!} \sum_{n=0}^k 1 = \sum_{k=0}^{+\infty} \frac{k+1}{k!} \\
+            &= \sum_{k=0}^{+\infty} \frac{k}{k!} + \sum_{k=0}^{+\infty} \frac{1}{k!} = \sum_{k=1}^{+\infty} \frac{1}{(k-1)!} + \sum_{k=0}^{+\infty} \frac{1}{k!} \\
+            &= \sum_{j=0}^{+\infty} \frac{1}{j!} + e = e + e = 2e
+        \end{align*}
 \end{enumerate}
 \end{correction}
 

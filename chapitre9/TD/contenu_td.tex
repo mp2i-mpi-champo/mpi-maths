@@ -12,11 +12,13 @@ Montrer que $(g_n)_{n\in\N}$ converge uniformément sur $I$.
 
 % --- Exercice 2 ---
 \begin{exercice}
-\textbf{a)} Établir la convergence simple puis uniforme sur $\R^+$ de la suite de fonctions définie par :
-$$ \forall x \in \R^+, \quad f_n(x) = \frac{1}{1+x+x^2+\dots+x^n} $$
-Diviser l'étude en deux temps, sur $[0, 1[$ et $[1, +\infty[$. On déterminera d'abord la limite simple qui est une fonction affine par morceaux.
+\begin{enumerate}
+    \item Établir la convergence simple puis uniforme sur $\R^+$ de la suite de fonctions définie par :
+    \[\forall x \in \R^+, \quad f_n(x) = \frac{1}{1+x+x^2+\dots+x^n}\]
+    \textit{Indication : Diviser l'étude en deux temps, sur $[0, 1[$ et $[1, +\infty[$. On déterminera d'abord la limite simple qui est une fonction affine par morceaux.}
 
-\textbf{b)} (Bonus du manuscrit) Montrer la convergence et déterminer la limite de la suite définie par $u_n = \int_0^1 \frac{1}{1+x+\dots+x^n} \dx$.
+    \item Montrer la convergence et déterminer la limite de la suite définie par $\ds u_n = \int_0^1 \frac{1}{1+x+\dots+x^n} \dx$. 
+\end{enumerate}
 \end{exercice}
 
 % --- Exercice 3 ---
@@ -28,11 +30,12 @@ Calculer les intégrales $\int_0^1 f_n(x) \dx$. Quel résultat se trouve confirm
 
 % --- Exercice 4 ---
 \begin{exercice}
-Établir la convergence simple sur $\R^+$ de la suite $(f_n)_{n\in\N}$ définie par :
-$$ f_n(x) = \begin{cases} (1-\frac{x}{n})^n & \text{pour } x \in [0, n] \\ 0 & \text{pour } x > n \end{cases} $$
+Établir la convergence simple sur $\R^+$ de la suite $(f_n)$ définie par :
+\[f_n(x) = \begin{cases} (1-\frac{x}{n})^n & \text{pour } x \in [0, n] \\ 0 & \text{pour } x > n \end{cases}\]
 On notera $f$ la limite simple.
 \begin{enumerate}
-    \item Montrer que pour tout $x \in \R^+$, $0 \le f_n(x) \le f(x)$.
+    \item Montrer la convergence simple.
+    \item Montrer que pour tout $x \in \R^+$, $0 \leqslant f_n(x) \leqslant f(x)$.
     \item Montrer que $f_n$ converge uniformément vers $f$ sur tout segment $[0, a]$.
     \item Montrer que la convergence est uniforme sur $\R^+$.
 \end{enumerate}
@@ -95,45 +98,55 @@ On pose pour $x>0$, $u_n(x) = \frac{\sqrt{x} \ln n}{1+x n^2}$.
 Soit $x \in I$. Puisque $(f_n)$ converge uniformément (CU) vers $f$ sur $I$, elle converge simplement (CS).
 On a donc $f_n(x) \to f(x)$.
 Par continuité de la fonction $t \mapsto \frac{t}{1+t^2}$, on a :
-$$ g_n(x) = \frac{f_n(x)}{1+f_n^2(x)} \xrightarrow[n\to+\infty]{} \frac{f(x)}{1+f^2(x)} = g(x) $$
+\[g_n(x) = \frac{f_n(x)}{1+f_n^2(x)} \xrightarrow[n\to+\infty]{} \frac{f(x)}{1+f^2(x)} = g(x)\]
 Donc $(g_n)$ converge simplement vers $g$ sur $I$.
 
 \textbf{Étude de la Convergence Uniforme :}
-Étudions la différence $|g_n(x) - g(x)|$.
-$$ |g_n(x) - g(x)| = \left| \frac{f_n(x)}{1+f_n^2(x)} - \frac{f(x)}{1+f^2(x)} \right| $$
-$$ = \left| \frac{f_n(x)(1+f^2(x)) - f(x)(1+f_n^2(x))}{(1+f_n^2(x))(1+f^2(x))} \right| $$
-$$ = \left| \frac{f_n - f + f_n f^2 - f f_n^2}{(1+f_n^2)(1+f^2)} \right| = \left| \frac{(f_n - f) + f_n f (f - f_n)}{(1+f_n^2)(1+f^2)} \right| $$
-$$ = |f_n(x) - f(x)| \cdot \frac{|1 - f(x)f_n(x)|}{(1+f_n^2(x))(1+f^2(x))} $$
-On utilise l'inégalité classique $2|ab| \le a^2 + b^2$, d'où $|ab| \le \frac{1}{2}(a^2+b^2) < 1+a^2+b^2$. Ou plus simplement, remarquons que la fonction $h(t) = \frac{t}{1+t^2}$ est $1$-lipschitzienne (car $|h'(t)| = |\frac{1-t^2}{(1+t^2)^2}| \le 1$).
+On fixe $n$,
+étudions la différence $|g_n(x) - g(x)|$.
+\begin{align*}
+    |g_n(x) - g(x)| &= \left| \frac{f_n(x)}{1+f_n^2(x)} - \frac{f(x)}{1+f^2(x)} \right| \\
+    &= \left| \frac{f_n(x)(1+f^2(x)) - f(x)(1+f_n^2(x))}{(1+f_n^2(x))(1+f^2(x))} \right| \\
+    &= \left| \frac{f_n - f + f_n f^2 - f f_n^2}{(1+f_n^2)(1+f^2)} \right| = \left| \frac{(f_n - f) + f_n f (f - f_n)}{(1+f_n^2)(1+f^2)} \right| \\
+    &= |f_n(x) - f(x)| \cdot \frac{|1 - f(x)f_n(x)|}{(1+f_n^2(x))(1+f^2(x))}
+\end{align*}
+
+On utilise l'inégalité classique $2|ab| \leqslant a^2 + b^2$, d'où $|ab| \leqslant \frac{1}{2}(a^2+b^2) < 1+a^2+b^2$. Ou plus simplement, remarquons que la fonction $h(t) = \frac{t}{1+t^2}$ est $1$-lipschitzienne (car $|h'(t)| = \left|\frac{1-t^2}{(1+t^2)^2}\right| \leqslant 1$).
 Ainsi :
-$$ |g_n(x) - g(x)| = |h(f_n(x)) - h(f(x))| \le 1 \cdot |f_n(x) - f(x)| $$
+\[|g_n(x) - g(x)| = |h(f_n(x)) - h(f(x))| \leqslant 1 \cdot |f_n(x) - f(x)|\]
 Puisque $(f_n)$ converge uniformément vers $f$ sur $I$, $\|f_n - f\|_\infty \to 0$.
-Donc $\sup_{x \in I} |g_n(x) - g(x)| \le \|f_n - f\|_\infty \xrightarrow{n\to+\infty} 0$.
+
+Donc $\sup_{x \in I} |g_n(x) - g(x)| \leqslant \|f_n - f\|_\infty \xrightarrow{n\to+\infty} 0$.
 Conclusion : $(g_n)$ converge uniformément vers $g$ sur $I$.
 \end{correction}
 
 % --- Correction 2 ---
 \begin{correction}{2}
-Pour $x \in \R^+$, $f_n(x) = \frac{1}{\sum_{k=0}^n x^k} = \frac{1}{\frac{1-x^{n+1}}{1-x}} = \frac{1-x}{1-x^{n+1}}$ (si $x \neq 1$).
-\begin{itemize}
-    \item Si $x \in [0, 1[$, $x^{n+1} \to 0$, donc $f_n(x) \to 1-x$.
-    \item Si $x > 1$, $x^{n+1} \to +\infty$, donc $f_n(x) \sim \frac{1-x}{-x^{n+1}} \to 0$.
-    \item Si $x = 1$, $f_n(1) = \frac{1}{n+1} \to 0$.
-\end{itemize}
-La limite simple est donc :
-$$ f(x) = \begin{cases} 1-x & \text{si } x \in [0, 1[ \\ 0 & \text{si } x \ge 1 \end{cases} $$
-La fonction limite $f$ est discontinue en $1$ (limite à gauche vaut 0, valeur en 1 vaut 0, mais $1-x \to 0$ continu ? Attendez, en $1^-$, $1-x \to 0$. La limite est continue sur $\R^+$).
-Cependant, regardons la convergence uniforme.
+\begin{enumerate}
+    \item 
+    Pour $x \in \R^+$, $f_n(x) = \frac{1}{\sum_{k=0}^n x^k} = \frac{1}{\frac{1-x^{n+1}}{1-x}} = \frac{1-x}{1-x^{n+1}}$ (si $x \neq 1$).
+    \begin{itemize}
+        \item Si $x \in [0, 1[$, $x^{n+1} \to 0$, donc $f_n(x) \to 1-x$.
+        \item Si $x > 1$, $x^{n+1} \to +\infty$, donc $f_n(x) \sim \frac{1-x}{-x^{n+1}} \to 0$.
+        \item Si $x = 1$, $f_n(1) = \frac{1}{n+1} \to 0$.
+    \end{itemize}
+    La limite simple est donc :
+    \[f(x) = \begin{cases} 1-x & \text{si } x \in [0, 1[ \\ 0 & \text{si } x \geqslant 1 \end{cases}\]
 
-\textbf{Sur $[0, 1[$ :}
-$$ |f_n(x) - f(x)| = \left| \frac{1-x}{1-x^{n+1}} - (1-x) \right| = (1-x) \left| \frac{1 - (1-x^{n+1})}{1-x^{n+1}} \right| = \frac{(1-x)x^{n+1}}{1-x^{n+1}} $$
-Pour étudier le sup, prenons $x$ proche de 1. Si $x \to 1$, cette quantité tend vers $0$.
-Cependant, sur tout $[0, a]$ avec $a < 1$, majoration par $\frac{a^{n+1}}{1-a^{n+1}}$ qui tend vers 0. Donc CU sur $[0, a]$.
+    Regardons la convergence uniforme.
+    \textbf{Sur $[0, 1[$ :}
+    \[|f_n(x) - f(x)| = \left| \frac{1-x}{1-x^{n+1}} - (1-x) \right| = (1-x) \left| \frac{1 - (1-x^{n+1})}{1-x^{n+1}} \right| = \frac{(1-x)x^{n+1}}{1-x^{n+1}}  = \frac x {\frac 1 {x^n} + \dots + 1} \leqslant \frac 1 {n + 1}\]
 
-\textbf{Sur $[1, +\infty[$ :}
-Pour $x \ge 1$, $|f_n(x) - 0| = \frac{1}{1+x+\dots+x^n} \le \frac{1}{n+1}$ (car chaque terme $\ge 1$).
-Le majorant $\frac{1}{n+1}$ ne dépend pas de $x$ et tend vers 0.
-Il y a donc convergence uniforme sur $[1, +\infty[$.
+    \textbf{Sur $[1, +\infty[$ :}
+    Pour $x \ge 1$, $|f_n(x) - 0| = \frac{1}{1+x+\dots+x^n} \leqslant \frac{1}{n+1}$ (car chaque terme $\geqslant 1$).
+    Le majorant $\frac{1}{n+1}$ ne dépend pas de $x$ et tend vers 0.
+
+    Donc $(f_n)$converge uniformément sur $\R^+$.
+
+    \item $(f_n)$ converge uniformément sur $\R+$ et continues donc sur $[0,1]$.
+
+    Donc $\ds u_n \to \int_0^1 (1 - x) \dx = \frac 1 2$.
+\end{enumerate}
 \end{correction}
 
 % --- Correction 3 ---
@@ -141,103 +154,140 @@ Il y a donc convergence uniforme sur $[1, +\infty[$.
 Soit $x \in [0, 1]$.
 \begin{itemize}
     \item Si $x = 0$, $f_n(0) = 0$.
-    \item Si $x \in ]0, 1]$, $f_n(x) \sim_{n\to+\infty} \frac{2^n x}{n 2^n x^2} = \frac{1}{nx} \to 0$.
+    \item Si $x \in ]0, 1]$, $f_n(x) \sim \frac{2^n x}{n 2^n x^2} = \frac{1}{nx} \to 0$.
 \end{itemize}
 La suite $(f_n)$ converge simplement vers la fonction nulle sur $[0, 1]$.
 
 \textbf{Étude de la Convergence Uniforme :}
 Cherchons le maximum de $f_n$. Calculons la dérivée :
-$$ f_n'(x) = 2^n \frac{1(1+n 2^n x^2) - x(n 2^n 2x)}{(1+n 2^n x^2)^2} = 2^n \frac{1 - n 2^n x^2}{(1+n 2^n x^2)^2} $$
+\[f_n'(x) = 2^n \frac{1(1+n 2^n x^2) - x(n 2^n 2x)}{(1+n 2^n x^2)^2} = 2^n \frac{1 - n 2^n x^2}{(1+n 2^n x^2)^2}\]
 $f_n'(x) = 0 \iff n 2^n x^2 = 1 \iff x_n = \frac{1}{\sqrt{n 2^n}} = \frac{1}{2^{n/2}\sqrt{n}}$.
 Ce point $x_n$ est dans $[0, 1]$ pour $n$ assez grand.
-$$ f_n(x_n) = \frac{2^n \frac{1}{\sqrt{n} 2^{n/2}}}{1+1} = \frac{2^{n/2}}{2\sqrt{n}} \xrightarrow{n\to+\infty} +\infty $$
+\[f_n(x_n) = \frac{2^n \frac{1}{\sqrt{n} 2^{n/2}}}{1+1} = \frac{2^{n/2}}{2\sqrt{n}} \to +\infty\]
 La norme infinie $\|f_n\|_\infty \to +\infty$. Il n'y a pas convergence uniforme.
 
 \textbf{Intégrale :}
-$$ \int_0^1 f_n(x) \dx = \int_0^1 \frac{2^n x}{1+n 2^n x^2} \dx = \left[ \frac{1}{2n} \ln(1+n 2^n x^2) \right]_0^1 $$
-$$ = \frac{1}{2n} \ln(1+n 2^n) \sim \frac{1}{2n} \ln(n 2^n) = \frac{\ln n + n \ln 2}{2n} \xrightarrow{n\to+\infty} \frac{\ln 2}{2} $$
+\begin{align*}
+    \int_0^1 f_n(x) \dx &= \int_0^1 \frac{2^n x}{1+n 2^n x^2} \dx = \left[ \frac{1}{2n} \ln(1+n 2^n x^2) \right]_0^1 \\
+    &= \frac{1}{2n} \ln(1+n 2^n) \sim \frac{1}{2n} \ln(n 2^n) = \frac{\ln n + n \ln 2}{2n} \to \frac{\ln 2}{2} 
+\end{align*}
 Or $\int_0^1 \lim f_n = \int 0 = 0$.
 On a $\lim \int \neq \int \lim$. Cela confirme l'absence de convergence uniforme (le théorème d'interversion ne s'applique pas).
 \end{correction}
 
 % --- Correction 4 ---
 \begin{correction}{4}
-\textbf{1. Convergence simple :}
-Soit $x \in \R^+$. Pour $n$ assez grand ($n>x$), $f_n(x) = (1-\frac{x}{n})^n = e^{n \ln(1-\frac{x}{n})}$.
-Quand $n \to +\infty$, $n \ln(1-\frac{x}{n}) \sim n(-\frac{x}{n}) = -x$.
-Donc $f_n(x) \to e^{-x}$. La convergence simple est vérifiée vers $f(x) = e^{-x}$.
+\begin{enumerate}
+    \item Soit $x \in \R^+$. Pour $n$ assez grand ($n>x$), $f_n(x) = \left(1-\frac x n\right)^n = e^{n \ln(1-\frac x n)}$.
 
-Inégalité : On sait que $\ln(1+u) \le u$. Ici $\ln(1-\frac{x}{n}) \le -\frac{x}{n}$.
-Donc $n \ln(1-\frac{x}{n}) \le -x \implies f_n(x) \le e^{-x} = f(x)$.
-Et $f_n$ est positive sur $[0, n]$. D'où $0 \le f_n(x) \le f(x)$.
+    Quand $n \to +\infty$, $n \ln\left(1-\frac{x}{n}\right) \sim n\left(-\frac x n\right) = -x$.
+    Donc $f_n(x) \to e^{-x}$.
 
-\textbf{2. Convergence uniforme sur $[0, a]$ :}
-Sur le compact $[0, a]$, la suite de fonctions $(f_n)$ est une suite de fonctions continues convergeant simplement vers une fonction continue $f$.
-De plus, on peut montrer la monotonie (Dini). Ou étudier la différence.
-$$ |f(x) - f_n(x)| = e^{-x} - (1-\frac{x}{n})^n $$
-Par Inégalité des Accroissements Finis sur le logarithme ou étude de fonction, on montre que la différence tend vers 0 uniformément sur $[0, a]$ (voir cours classique sur l'exponentielle).
+    La convergence simple est vérifiée vers $f(x) = e^{-x}$.
 
-\textbf{3. Convergence uniforme sur $\R^+$ :}
-Regardons la borne supérieure de la différence $D_n(x) = e^{-x} - f_n(x)$.
-Comme $f_n(x) = 0$ pour $x > n$, pour ces valeurs $D_n(x) = e^{-x}$.
-Le sup sur $[n, +\infty[$ est $e^{-n} \to 0$.
-Sur $[0, n]$, étudions la fonction. On peut montrer que le sup est atteint et tend vers 0.
-Ainsi, la convergence est uniforme sur $\R^+$.
+    \item Inégalité : On sait que $\ln(1+u) \leqslant u$. Ici $\ln(1-\frac{x}{n}) \leqslant -\frac{x}{n}$.
+
+    Donc $n \ln(1-\frac{x}{n}) \leqslant -x$, donc $f_n(x) \leqslant e^{-x} = f(x)$.
+    Et $f_n$ est positive sur $[0, n]$. D'où $0 \leqslant f_n(x) \leqslant f(x)$.
+
+    \item Sur le compact $[0, a]$, la suite de fonctions $(f_n)$ est une suite de fonctions continues convergeant simplement vers une fonction continue $f$.
+    De plus, on peut étudier la différence :
+    \[|f(x) - f_n(x)| = e^{-x} - \left(1-\frac{x}{n}\right)^n\]
+    Par Inégalité des Accroissements Finis sur le logarithme ou étude de fonction, on montre que la différence tend vers 0 uniformément sur $[0, a]$ (voir cours classique sur l'exponentielle).
+
+    \item Regardons la borne supérieure de la différence $d_n(x) = e^{-x} - f_n(x)$.
+    Comme $f_n(x) = 0$ pour $x > n$, pour ces valeurs $d_n(x) = e^{-x}$.
+    Le sup sur $[n, +\infty[$ est $e^{-n} \to 0$.
+    Sur $[0, n]$, étudions la fonction. On peut montrer que le sup est atteint et tend vers 0.
+    Ainsi, la convergence est uniforme sur $\R^+$.
+\end{enumerate}
 \end{correction}
 
-% --- Correction 6 (D'après manuscrit Exercice 6) ---
+\begin{correction}{5}
+\begin{itemize}
+    \item 
+    Étude de la convergence simple :
+
+    Si $x < 0$ la série diverge grossièrement.
+
+    Si $x = 0$ TGSCV
+
+    Si $x > 0$ TGSCV
+
+    Donc la série converge simplement sur $\R^+$.
+
+    \item Non convergence normale : on fait une étude de fonction.
+
+    \item Non convergence uniforme sur $\R^+$ : on prend la suite $x_n = \frac 1 {\sqrt{n}}$, on prend la tranche de Cauchy comme indiqué et on calcule.
+
+    \item Intervalles de convergence uniformes : on prend $a > 0$, on a convergence normale sur $[a,+\infty[$.
+\end{itemize}
+\end{correction}
+
+% --- Correction 6 ---
 \begin{correction}{6}
-\textbf{a) Domaine et continuité :}
-La série est $\sum u_n(x)$ avec $u_n(x) = \frac{1}{1+n^2 x^2}$.
-Pour $x=0$, terme général $1 \not\to 0$, divergence grossière.
-Pour $x \neq 0$, $u_n(x) \sim \frac{1}{n^2 x^2}$. Série de Riemann convergente ($2 > 1$).
-Donc convergence simple sur $\R^*$.
-$f$ est paire. Étudions sur $\R^{+*}$.
-Sur tout intervalle $[a, +\infty[$ avec $a>0$ :
-$|u_n(x)| \le \frac{1}{1+n^2 a^2} \le \frac{1}{n^2 a^2}$.
-C'est le terme général d'une série numérique convergente indépendante de $x$.
-Il y a convergence normale (donc uniforme) sur tout compact de $\R^*$.
-Les fonctions $u_n$ sont continues, donc $f$ est continue sur $\R^*$.
+\begin{enumerate}
+    \item \textbf{Domaine et continuité :}
+    La série est $\sum u_n(x)$ avec $u_n(x) = \frac{1}{1+n^2 x^2}$.
 
-\textbf{b) Limite en $+\infty$ :}
-Puisque la convergence est uniforme sur $[1, +\infty[$, on peut intervertir limite et somme (Théorème de la double limite).
-$\lim_{x\to +\infty} u_n(x) = 0$.
-Donc $\lim_{x\to +\infty} f(x) = \sum 0 = 0$.
+    Pour $x=0$, terme général $1 \not\to 0$, divergence grossière.
 
-\textbf{c) Équivalent en $+\infty$ et $0$ :}
-En $+\infty$ : $f(x) \sim \frac{\pi}{2x}$ ? Non, attention.
-Comparaison Série-Intégrale. $t \mapsto \frac{1}{1+t^2 x^2}$ est décroissante.
-$$ \int_1^{+\infty} \frac{\dt}{1+t^2 x^2} \le \sum_{n=1}^{+ \infty} \frac{1}{1+n^2 x^2} \le \frac{1}{1+x^2} + \int_1^{+\infty} \frac{\dt}{1+t^2 x^2} $$
-Calcul de l'intégrale : $\int_0^{+\infty} \frac{\dt}{1+t^2 x^2} = \left[\frac{1}{x} \arctan(tx)\right]_0^{+\infty} = \frac{\pi}{2x}$.
-Pour $x \to 0$, l'intégrale diverge, cela donne l'équivalent : $f(x) \sim_0 \frac{\pi}{2x}$.
-Pour $x \to +\infty$, l'équivalent est aussi lié à l'intégrale ou au premier terme ?
-Pour $x$ grand, $f(x) \approx \frac{1}{x^2} \sum \frac{1}{n^2} = \frac{\pi^2}{6 x^2}$.
+    Pour $x \neq 0$, $u_n(x) \sim \frac{1}{n^2 x^2}$. Série de Riemann convergente ($2 > 1$).
+    Donc convergence simple sur $\R^*$.
+
+    $f$ est paire. Étudions sur $\R^{+*}$.
+    Sur tout intervalle $[a, +\infty[$ avec $a>0$ :
+    $|u_n(x)| \leqslant \frac{1}{1+n^2 a^2} \leqslant \frac{1}{n^2 a^2}$. \\
+    C'est le terme général d'une série numérique convergente indépendante de $x$. \\
+    Il y a convergence normale (donc uniforme) sur tout compact de $\R^*$.
+    Les fonctions $u_n$ sont continues, donc $f$ est continue sur $\R^*$.
+
+    Pour la décroissance on dérive le terme général et on montre que la série des dérivées converge normalement sur tout segment.
+    Donc $f$ est $\mathscr C^1$ sur $\R^+_*$. On dérive la somme infinie et on trouve que la dérivée est négative.
+    Donc $f$ décroissante.
+    
+    \item \textbf{Limite en $+\infty$ :}
+    La convergence est uniforme sur $[1, +\infty[$, on peut intervertir limite et somme (Théorème de la double limite).
+    $\lim_{x\to +\infty} u_n(x) = 0$.
+    Donc $\lim_{x\to +\infty} f(x) = \sum 0 = 0$.
+
+    \item \textbf{Équivalent en $+\infty$ et $0$ :}
+    En $+\infty$ : $f(x) \sim \frac{\pi}{2x}$ ? Non, attention.
+    Comparaison Série-Intégrale. $t \mapsto \frac{1}{1+t^2 x^2}$ est décroissante.
+    \[\int_1^{+\infty} \frac{\dt}{1+t^2 x^2} \leqslant \sum_{n=1}^{+ \infty} \frac{1}{1+n^2 x^2} \leqslant \frac{1}{1+x^2} + \int_1^{+\infty} \frac{\dt}{1+t^2 x^2}\]
+    Calcul de l'intégrale : $\ds \int_0^{+\infty} \frac{\dt}{1+t^2 x^2} = \left[\frac{1}{x} \arctan(tx)\right]_0^{+\infty} = \frac{\pi}{2x}$.
+    Pour $x \to 0$, l'intégrale diverge, cela donne l'équivalent : $f(x) \sim_0 \frac{\pi}{2x}$.
+    Pour $x \to +\infty$, l'équivalent est aussi lié à l'intégrale ou au premier terme ?
+    Pour $x$ grand, $f(x) \approx \frac{1}{x^2} \sum \frac{1}{n^2} = \frac{\pi^2}{6 x^2}$.
+\end{enumerate}
 \end{correction}
 
 % --- Correction 7 ---
 \begin{correction}{7}
-\textbf{1. Convergence :}
-Terme général $v_n(x) = \arctan(x+n) - \arctan n$.
-Par TAF, il existe $c_n \in ]n, n+x[$ tel que $v_n(x) = \frac{x}{1+c_n^2}$.
-Pour $n$ grand, $v_n(x) \sim \frac{x}{n^2}$. Série convergente pour tout $x$.
-Convergence simple sur $\R$.
-Sur tout segment $[-A, A]$, $|v_n(x)| \le \frac{A}{1+n^2}$. Convergence normale $\implies$ CU $\implies f$ continue.
-Dérivée : $v_n'(x) = \frac{1}{1+(x+n)^2} > 0$. Somme de fonctions croissantes $\implies f$ croissante.
+\begin{enumerate}
+    \item \textbf{Convergence :}
+    Terme général $v_n(x) = \arctan(x+n) - \arctan n$.
+    Par TAF, il existe $c_n \in ]n, n+x[$ tel que $v_n(x) = \frac{x}{1+c_n^2}$.
+    Pour $n$ grand, $v_n(x) \sim \frac{x}{n^2}$. Série convergente pour tout $x$.
+    Convergence simple sur $\R$.
+    Sur tout segment $[-A, A]$, $|v_n(x)| \le \frac{A}{1+n^2}$. Convergence normale $\implies$ CU $\implies f$ continue.
+    Dérivée : $v_n'(x) = \frac{1}{1+(x+n)^2} > 0$. Somme de fonctions croissantes $\implies f$ croissante.
 
-\textbf{2. Relation fonctionnelle :}
-$$ f(x+1) - f(x) = \sum_{n=0}^{+ \infty} (\arctan(x+1+n) - \arctan n) - \sum_{n=0}^{+ \infty} (\arctan(x+n) - \arctan n) $$
-C'est une somme télescopique à l'infini.
-Soit $S_N(x) = \sum_{n=0}^N (\arctan(x+n) - \arctan n)$.
-Calculons $S_N(x+1) - S_N(x)$.
-Après télescopage partiel :
-$$ \lim_{N\to+ \infty} (\arctan(x+N+1) - \arctan x) = \frac{\pi}{2} - \arctan x $$
-Donc $f(x+1) - f(x) = \frac{\pi}{2} - \arctan x$.
+    \item \textbf{Relation fonctionnelle :}
+    $$ f(x+1) - f(x) = \sum_{n=0}^{+ \infty} (\arctan(x+1+n) - \arctan n) - \sum_{n=0}^{+ \infty} (\arctan(x+n) - \arctan n) $$
+    C'est une somme télescopique à l'infini.
+    Soit $S_N(x) = \sum_{n=0}^N (\arctan(x+n) - \arctan n)$.
+    Calculons $S_N(x+1) - S_N(x)$.
+    Après télescopage partiel :
+    $$ \lim_{N\to+ \infty} (\arctan(x+N+1) - \arctan x) = \frac{\pi}{2} - \arctan x $$
+    Donc $f(x+1) - f(x) = \frac{\pi}{2} - \arctan x$.
 
-\textbf{3. Calcul de $f(p)$ :}
-$f(0) = 0$.
-$f(1) - f(0) = \frac{\pi}{2} - 0$.
-$f(p) = \sum_{k=0}^{p-1} (f(k+1)-f(k)) = \sum_{k=0}^{p-1} (\frac{\pi}{2} - \arctan k)$.
-Quand $p \to + \infty$, $f(p) \to +\infty$.
+    \item \textbf{Calcul de $f(p)$ :}
+    $f(0) = 0$.
+    $f(1) - f(0) = \frac{\pi}{2} - 0$.
+    $f(p) = \sum_{k=0}^{p-1} (f(k+1)-f(k)) = \sum_{k=0}^{p-1} (\frac{\pi}{2} - \arctan k)$.
+    Quand $p \to + \infty$, $f(p) \to +\infty$.
+\end{enumerate}
 \end{correction}
 
 % --- Correction 8 ---

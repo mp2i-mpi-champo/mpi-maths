@@ -2,7 +2,7 @@ Soient $(E, N)$ et $(E', N')$ deux espaces vectoriels normés de dimension finie
 $A \subset E$.
 
 \section{Différents types de convergence}
-\subsection{Convergence simple }
+\subsection{Convergence simple}
 
 \begin{definition}{Convergence simple}{}
     Soit $(f_n)$ une suite de fonctions de $A$ dans $E'$ et $g$ fonction de $A$ dans $E'$. 
@@ -289,11 +289,11 @@ $A \subset E$.
 
     Soit $N_0 \geqslant n + 1$. Alors :
 
-    \begin{align}
+    \begin{align*}
         N'\left( \sum_{k = n + 1}^{N_0} u_k(x) \right) & \leqslant \sum_{k = n + 1}^{N_0} N'(u_k(x)) \\
         & \leqslant \sum_{k = n + 1}^{N_0} || u_k ||_{\infty} \\
         & \leqslant \sum_{k = n + 1}^{ + \infty } || u_k ||_{\infty}
-    \end{align}
+    \end{align*}
 
     Avec $N_0 \to + \infty$, par continuité de $N'$ on a : 
     \[N'(R_n(x)) \leqslant \sum_{k = n + 1}^{ + \infty } || u_k ||_{\infty}\]
@@ -345,15 +345,15 @@ $A \subset E$.
 
     Soit $a \in \bar A$. On suppose que : 
     \begin{itemize}
-        \item $f_n \xrightarrow[CU]{N'} g$ 
-        \item $\forall n \in \N, \, f_n \xrightarrow[x \to a]{N'} \ell_n \in E'$
+        \item $f_n \xrightarrow[CU]{N'} g$.
+        \item $\forall n \in \N, \, f_n \xrightarrow[x \to a]{N'} \ell_n \in E'$.
     \end{itemize}
 
     Alors : 
     \begin{itemize}
-        \item $g$ a une limite en $a$
-        \item $(\ell_n)$ converge dans $E'$
-        \item $\displaystyle \lim_{x \to a} g(x) = \lim_{n \to +\infty} \ell_n$
+        \item $g$ a une limite en $a$.
+        \item $(\ell_n)$ converge dans $E'$.
+        \item $\displaystyle \lim_{x \to a} g(x) = \lim_{n \to +\infty} \ell_n$.
     \end{itemize}
 
     Donc \[\lim_{x \to a} \lim_{n \to +\infty} f_n(x) = \lim_{n \to +\infty} \lim_{x \to a} f_n(x)\]
@@ -480,10 +480,10 @@ $A \subset E$.
     Et $f_{n_0}$ est continue en $a$. Donc $\exists \eta > 0, \forall x \in A, \, N(x - a) \leqslant \eta \Rightarrow N'(f_{n_0}(x) - f_{n_0}(a)) \leqslant \frac \varepsilon 3$.
 
     Soit $x \in A$ tel que $N(x - a) \leqslant \eta$. On a :
-    \begin{align}
+    \begin{align*}
         N'(g(x) - g(a)) & \leqslant N'(g(x) - f_{n_0}(x)) + N'(f_{n_0}(x) - f_{n_0}(a)) + N'(f_{n_0}(a) - g(a)) \\
         & \leqslant \frac \varepsilon 3 + \frac \varepsilon 3 + \frac \varepsilon 3 = \varepsilon
-    \end{align}
+    \end{align*}
 
     Dong $g$ est continue en $a$.
 \end{proof}
@@ -592,8 +592,8 @@ Dans toute cette partie on prend $E = \R$ et $I$ un intervalle d'intérieur non 
 
 \idee{
     \begin{itemize}
-        \item Continuité de $g$ : voisinage de $\alpha$, convergence uniforme sur $S$ voisinage 
-        \item Inégalité triangulaire des intégrales, puis convergence uniforme sur $S'$
+        \item Continuité de $g$ : voisinage de $\alpha$, convergence uniforme sur $S$ voisinage.
+        \item Inégalité triangulaire des intégrales, puis convergence uniforme sur $S'$.
     \end{itemize}
 }
 
@@ -608,16 +608,15 @@ Dans toute cette partie on prend $E = \R$ et $I$ un intervalle d'intérieur non 
     Posons $S' = [\min(a, c), \max(a, d)]$.
 
     Soit $x \in S'$. On a :
-    \begin{align}
+    \begin{align*}
         N'(F_n(x) - G(x)) & = N'\left( \int_a^x (f_n(t) - g(t)) dt \right) \\
         & \leqslant \left| \int_{a}^x N'(f_n(t) - g(t)) dt \right|
-    \end{align}
+    \end{align*}
 
     Soit $t \in [a, x], \, t \in S'$ car $S'$ intervalle donc convexe et $a, x \in S'$. 
 
-    Or il y a convergence uniforme sur $S'$, donc $||f_n - g||_{\infty, S'} \xrightarrow[n\to +\infty]{} 0$.
-    et donc 
-
+    Or il y a convergence uniforme sur $S'$, donc $||f_n - g||_{\infty, S'} \to 0$.
+    et donc :
     \begin{equation*}
     \begin{aligned}
         N'(F_n(x) - G(x)) & \leqslant \left| \int_{a}^{x} ||f_n - g||_{\infty, S'} \,\mathrm{d}t \right| \\
@@ -819,7 +818,7 @@ séries de fonctions.
     \[\zeta^{(k)}(x) = \sum_{n = 0}^{+ \infty} \frac{(- \ln(n))^k}{n^x}\]
 \end{exemple}
 
-\subsection{Étude de fonctions définies comme somme de série }
+\subsection{Étude de fonctions définies comme somme de série}
 
 On considère $f : \displaystyle x \mapsto \sum_{n = 0}^{+ \infty} u_n(x)$. 
 
@@ -844,16 +843,16 @@ On considère $f : \displaystyle x \mapsto \sum_{n = 0}^{+ \infty} u_n(x)$.
 
     $x > 0$ donne $- x \ln(n + 1) \leqslant \frac 1 {t^x} \leqslant \frac 1 {n^x}$.
 
-    \begin{align}
+    \begin{align*}
         \int_n^{n + 1} \frac 1 {t^x} \,\mathrm{d}t & \leqslant \int_n^{n + 1} \frac 1 {n^x} \,\mathrm{d}t = \frac 1 {n^x} \\
         \int_1^{n + 1} \frac 1 {t^x} \, \mathrm{d}t & \leqslant \sum_{k = 1 }^{n } \frac 1 {k^x} 
-    \end{align}
+    \end{align*}
 
-    \begin{align}
+    \begin{align*}
         \int_{1 }^{n + 1 } \frac 1 {t^x} \, \mathrm{d}t &  = \left[ \frac{t^{- x + 1}}{- x + 1} \right]_{1}^{n + 1} \\
         & = \frac{1 }{x - 1} \left( 1 - \frac 1 {(n + 1)^{x - 1}} \right)\\
         & \xrightarrow[n \to + \infty]{} \frac 1 {x - 1}
-    \end{align} 
+    \end{align*} 
 
     Donc $\frac 1 {x - 1} \leqslant \zeta(x)$. et donc $\zeta(x) \xrightarrow[x \to 1^+]{} + \infty$.
 \end{exemple}
@@ -861,13 +860,13 @@ On considère $f : \displaystyle x \mapsto \sum_{n = 0}^{+ \infty} u_n(x)$.
 
 % fin anki 
 
-\section{Approximation uniforme }
-\subsection{Fonctions continues par morceaux }
+\section{Approximation uniforme}
+\subsection{Fonctions continues par morceaux}
 
-\begin{theorement}{Approximation uniforme par des fonctions en escalier}{}
+\begin{theoreme}{Approximation uniforme par des fonctions en escalier}{}
     Toute fonction continue par morceaux sur un segment est limite uniforme d'une suite 
     de fonctions en escalier. 
-\end{theorement}
+\end{theoreme}
 
 \begin{proof}
     Soit $f \in \mathscr C^{pm}([a, b], \R)$. 
@@ -876,53 +875,54 @@ On considère $f : \displaystyle x \mapsto \sum_{n = 0}^{+ \infty} u_n(x)$.
     de $[a, b]$ dans $\R$ telle que $\varphi_\varepsilon \leqslant f \leqslant \psi_\varepsilon$ et
     $||\psi_\varepsilon - \varphi_\varepsilon||_{\infty, [a, b]} \leqslant \varepsilon$.
 
-    En particulier, pour $\varepsilon = \frac 1 n$, cela fournit $(\varphi_n)_{n \in \N}$ suite de 
+    En particulier, pour $\varepsilon = \frac 1 n$, cela fournit $(\varphi_n)$ suite de 
     fonctions en escaliers telle que $\forall x \in [a, b], \, | f(x) - \varphi_n(x) | \leqslant \frac 1 n$.
 
     Donc $||f - \varphi_n||_\infty \leqslant \frac 1 n $ donc $\varphi_n \xrightarrow[CU]{} f$ sur $[a, b]$.
 \end{proof}
 
+\marginenote{Remarque}{C'est valide avec $\cos$ aussi.}
 
-\begin{proposition}{Lemme de Lebesgue, LHP}{}
-    Soit $f \in \mathscr C^{pm}([a, b], \R)$ alors \[\int_a^b f(t) \sin(nt) \mathrm d t \xrightarrow[n \to + \infty ]{} 0\]
+\begin{proposition}{Lemme de Lebesgue - LHP}{}
+    Soit $f \in \mathscr C^{pm}([a, b], \R)$ alors \[\int_a^b f(t) \sin(nt) \mathrm d t \to 0\]
 \end{proposition}
 
+\begin{remarque}
+    Si on prend $f$ de classe $\mathscr C^1$ on prouve rapidement le résultat par intégration par parties.
+\end{remarque}
+
 \idee{
-    1) Étude pour $f$ fonction en escalier
-
-    2) Approximation uniforme par des fonctions en escalier 
-
-    3) Inégalité triangulaire des intégrales 
+    \begin{itemize}
+        \item Étude pour $f$ fonction en escalier
+        \item Approximation uniforme par des fonctions en escalier 
+        \item Inégalité triangulaire des intégrales 
+    \end{itemize}
 }
 
 \begin{proof}
     Soit $f$ fonction en escalier sur $[a, b]$ et soit $(c_i)_{0 \leqslant i \leqslant n}$ 
-    subdivision adaptée et $\lambda_i$ sa valeur sur $]c_i, c_{i + 1}[$ alors 
-    \begin{align}
-        \int_{a }^{b } f(t) \sin(nt) \,\mathrm{d}t & = \sum_{i = 0}^{p - 1} \int_{c_i}^{c_{i + 1}} f(t) \sin(nt) \,\mathrm{d}t \\
-        & = \sum_{i = 0}^{p - 1} \lambda_i \int_{c_i}^{c_{i + 1}} \sin(nt) \,\mathrm{d}t \\
+    subdivision adaptée et $\lambda_i$ sa valeur sur $]c_i, c_{i + 1}[$ alors :
+    \begin{align*}
+        \int_{a }^{b } f(t) \sin(nt) \,\dt & = \sum_{i = 0}^{p - 1} \int_{c_i}^{c_{i + 1}} f(t) \sin(nt) \,\dt \\
+        & = \sum_{i = 0}^{p - 1} \lambda_i \int_{c_i}^{c_{i + 1}} \sin(nt) \,\dt \\
         & = \sum_{i = 0}^{p - 1} \lambda_i \left[ - \frac{\cos(nc_{i + 1}) + \cos(nc_i)}{n} \right] \\
-        \left| \int_{a }^{b } f(t) \sin(nt) \mathrm d t  \right| & \leqslant \sum_{i = 0 }^{p - 1} \frac{2 |\lambda_i|}{n} \\
-        & \xrightarrow[n \to + \infty ]{} 0
-    \end{align}
+        \left| \int_a^b f(t) \sin(nt) \mathrm d t  \right| & \leqslant \sum_{i = 0 }^{p - 1} \frac{2 |\lambda_i|}{n} \to 0
+    \end{align*}
 
     Soit $f \in \mathscr C^{pm}([a, b], \R)$ et $\varepsilon > 0$.
 
-    Par le théorème précédent, il existe $\varphi$ fonction en escalier telle que 
-    
-    $||f - \varphi||_{\infty, [a, b]} \leqslant \frac \varepsilon {2 (b - a)}$.
+    Par le théorème précédent, il existe $\varphi$ fonction en escalier telle que :
+    $||f - \varphi||_{\infty, [a, b]} \leqslant \frac \varepsilon {2 (b - a)}$. \\
+    Par l'étude au dessus, $\int_a^b \varphi(t) \sin(nt) \,\dt \to 0$.
 
-    Par l'étude au dessus, $\int_{a }^{b } \varphi(t) \sin(nt) \,\mathrm{d}t \xrightarrow[n \to + \infty ]{} 0$.
-
-    Donc $\exists n_0 \in \N, \, \forall n \geqslant n_0, \, \left| \int_{a }^{b } \varphi(t) \sin(nt) \,\mathrm{d}t \right| \leqslant \frac \varepsilon 2$.
+    Donc $\ds \exists n_0 \in \N, \, \forall n \geqslant n_0, \, \left| \int_a^b \varphi(t) \sin(nt) \,\mathrm{d}t \right| \leqslant \frac \varepsilon 2$.
 
     Soit $n \geqslant n_0$, on a :
-    \begin{align}
-        \left| \int_a^b f(t) \sin(nt) \mathrm d t  \right| & = \left| \int_a^b (f(t) - \varphi(t)) \sin(nt) \,\mathrm{d}t + \int_a^b \varphi(t) \sin(nt) \,\mathrm{d}t \right| \\
-        & \leqslant \left| \int_a^b \varphi(t) \sin(nt) \,\mathrm{d}t \right| + \left| \int_a^b ||f - \varphi||_{\infty, [a, b]} \,\mathrm{d}t \right| \\
+    \begin{align*}
+        \left| \int_a^b f(t) \sin(nt) \dt  \right| & = \left| \int_a^b (f(t) - \varphi(t)) \sin(nt) \,\dt + \int_a^b \varphi(t) \sin(nt) \,\dt \right| \\
+        & \leqslant \left| \int_a^b \varphi(t) \sin(nt) \,\dt \right| + \left| \int_a^b ||f - \varphi||_{\infty, [a, b]} \,\dt \right| \\
         & \leqslant \frac \varepsilon 2 + (b - a) \frac \varepsilon {2 (b - a)} = \varepsilon
-    \end{align}
-
+    \end{align*}
 \end{proof}
 
 \begin{theoreme}{Théorème de Weierstrass}{}
@@ -931,9 +931,9 @@ On considère $f : \displaystyle x \mapsto \sum_{n = 0}^{+ \infty} u_n(x)$.
 \end{theoreme}
 
 \begin{proof}
-    Non exigible 
+    (Non exigible) 
 
-    Idée : Soit $f \in \mathscr C([a, b], \K)$. En posant $x = a + t (b - a)$, on a 
+    \uline{Idée :} Soit $f \in \mathscr C([a, b], \K)$. En posant $x = a + t (b - a)$, on a 
     $x \in [a, b]$ ssi $t \in [0, 1]$ et posons $g(t) = f(a + t (b - a))$. 
     Alors $g \in \mathscr C([0, 1], \K)$, si on obtient $P_n \xrightarrow[CU]{} g$ sur $[0, 1]$
     en posant $Q_n(X) = P_n \left( \frac{X - a}{b - a} \right)$ on a $Q_n \xrightarrow[CU]{} f$ sur $[a, b]$.
@@ -942,7 +942,7 @@ On considère $f : \displaystyle x \mapsto \sum_{n = 0}^{+ \infty} u_n(x)$.
     $g$ sur $[0, 1]$ et la subdivision à $2^{n} + 1$ points. Mais dans certains cas, on obtient 
     le phénomène d'oscillation de Runge.
 
-    La suite de Bernstein permet d'éviter ce phénomène.
+    La suite de Bernstein permet d'éviter ce phénomène :
 
     \[B_n(X) = \sum_{k = 0}^{n} \binom{n}{k} X^k (1 - X)^{n - k} f\left( \frac k n \right)\]
 

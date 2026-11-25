@@ -1,12 +1,11 @@
-\section{Définitions et opérations }
-\subsection{Série entière }
+\section{Définitions et opérations}
+\subsection{Séries entières}
 
 \begin{definition}{Série entière complexe}{}
-    Soit $(a_n)_{n\in\N}$ une suite complexe. On définit la \textbf{série entière} de variable 
-    complexe notée $\displaystyle \sum_{n \geqslant 0} a_n z^n$ comme étant la série de fonctions 
-    $\displaystyle \sum_{n \geqslant 0} u_n$ où 
-    
-    $$\forall n, \, \fonction{u_n}{\C}{\C}{z}{a_n z^n}$$
+    Soit $(a_n)$ une suite complexe. On définit la \textbf{série entière} de variable 
+    complexe de coefficients $(a_n)$ notée $\displaystyle \sum_{n \geqslant 0} a_n z^n$ comme étant la série de fonctions 
+    $\displaystyle \sum_{n \geqslant 0} u_n$ où :
+    \[\forall n \in \N, \, \fonction{u_n}{\C}{\C}{z}{a_n z^n}\]
 \end{definition}
 
 \begin{definition}{Série entière réelle}{}
@@ -18,29 +17,29 @@
 
 \begin{proposition}{Lemme d'Abel}{}
     Soit $\sum_{n \geqslant 0 } a_n z^n $ une série entière. Supposons qu'il existe 
-    $z_0 \in \C$ tel que la suite $(a_n z_0^n)_{n \in \N}$ est bornée, alors 
+    $z_0 \in \C$ tel que la suite $(a_n z_0^n)$ est bornée, alors 
     pour tout $z \in \C$ tel que $|z| < |z_0|$, la série $\sum_{n \geqslant 0} a_n z^n$ converge absolument.
 \end{proposition}
 
-\idee{
-    Se ramener à une suite géométrique convergente. 
-}
+\idee{Se ramener à une suite géométrique convergente.}
 
 \begin{proof}
-    Soit $|z| < |z_0|$ et $M$ tel que $\forall n, \, |a_n z_0^n| \leqslant M$. On a alors :
+    Si $z_0 = 0$ est nul c'est évident. \\
+    Soit $|z| < |z_0|$ et $M$ tel que $\forall n \in \N, \, |a_n z_0^n| \leqslant M$. On a alors :
     \[
         |a_n z^n| = \left| a_n z_0^n \left( \frac{z}{z_0} \right)^n \right| \leqslant M \left| \frac{z}{z_0} \right|^n.
     \]
     Terme général d'une série géométrique de raison $|z/z_0| < 1$. La série converge donc absolument.
 \end{proof}
 
-\subsection{Rayon de convergence }
+\subsection{Rayon de convergence}
 
 \begin{theoreme}{Rayon de convergence}{}
-    Soit $\sum_{n \geqslant 0} a_n z^n$ une série entière. Notons $E_a = \{\rho \in \R^+, \, (|a_n|\rho^n)_{n \in \N} \text{ est bornée }\}$,
+    Soit $\sum_{n \geqslant 0} a_n z^n$ une série entière. \\
+    Notons $E_a = \{\rho \in \R^+, \, (|a_n|\rho^n) \text{ est bornée }\}$,
     et remarquons que $0 \in E_a$.
 
-    \svspace Si $E_a$ est majorée, on définit le rayon de convergence de la série entière par $R_a = \sup(E_a) \in \bar{\R}$.
+    \svspace Si $E_a$ est majorée, on définit le rayon de convergence de la série entière par $R_a = \sup(E_a) \in \overline{\R}$.
 
     On a donc $E_a = [0, R_a]$ ou $E_a = [0, R_a[$ 
 \end{theoreme}
@@ -49,69 +48,63 @@
     La notation $E_a$ n'est pas standard.
 \end{remarque}
 
-
 \begin{proof}
     Il suffit de montrer que $E_a$ est un intervalle. Soit $\rho_1, \rho_2 \in E_a$ et 
     $\rho \in ]\rho_1, \rho_2[$. $\forall n \in \N, \, |a_n \rho^n| \leqslant |a_n \rho_2^n|$ bornée donc $\rho \in E_a$.
-
-
 \end{proof}
 
-
-
 \begin{exemple}
-    $a_n = 1, \sum z^n$ est de rayon 1 car $|a_n \rho^n| = \rho^n$ bornée si et seulement si $0 \leqslant \rho < 1$.
-    Donc $E_a = [0, 1]$. 
+    \begin{itemize}
+        \item $a_n = 1, \sum z^n$ est de rayon 1 car $|a_n \rho^n| = \rho^n$ bornée si et seulement si $0 \leqslant \rho \leqslant 1$.
+        Donc $E_a = [0, 1]$. 
 
-    \lvspace $a_n = n, \, \sum n z^n$ est de rayon 1 car pour $\rho \geqslant 0$, $|a_n \rho^n| = n \rho^n$ bornée
-    pour $\rho < 1$ par croissance comparée, donc $E_a = [0, 1[$ et $R_a = 1$.
+        \item $a_n = n, \, \sum n z^n$ est de rayon 1 car pour $\rho \geqslant 0$, $|a_n \rho^n| = n \rho^n$ bornée
+        pour $\rho < 1$ par croissance comparée, donc $E_a = [0, 1[$ et $R_a = 1$.
 
-    \lvspace $a_n = \frac 1 n, \, \sum \frac{z^n}{n}$ est de rayon 1 car 
-    $|a_n \rho^n| = \frac{1^n} n $ bornée pour $\rho \leqslant 1$ donc $E_a = [0, 1]$ et $R_a = 1$.
+        \item $a_n = \frac 1 n, \, \sum \frac{z^n}{n}$ est de rayon 1 car 
+        $|a_n \rho^n| = \frac{1^n} n $ bornée pour $\rho \leqslant 1$ donc $E_a = [0, 1]$ et $R_a = 1$.
 
-    \lvspace $a_n = \frac 1 {n!}, \, \sum \frac{z^n}{n!}$ est de rayon $+\infty$ car
-    si $\rho > 0$, $|\frac{\rho^n} {n!}| \to 0$ donc est bornée donc 
-    $E_a = \R^+$ et $R_a = +\infty$.
+        \item $a_n = \frac 1 {n!}, \, \sum \frac{z^n}{n!}$ est de rayon $+\infty$ car
+        si $\rho > 0$, $|\frac{\rho^n} {n!}| \to 0$ donc est bornée donc 
+        $E_a = \R^+$ et $R_a = +\infty$.
     
-    \lvspace $a_n = n!, \, \sum n! z^n$ est de rayon 0 car pour $\rho > 0$,
-    $|a_n \rho^n| = n! \rho^n \to +\infty$ donc non bornée. Donc $E_a = \{0\}$ et $R_a = 0$.
+        \item $a_n = n!, \, \sum n! z^n$ est de rayon 0 car pour $\rho > 0$,
+        $|a_n \rho^n| = n! \rho^n \to +\infty$ donc non bornée. Donc $E_a = \{0\}$ et $R_a = 0$.
 
-    \lvspace $a_n = $ $n^{\text{ème}}$ décimale de $\pi$, $\sum a_n z^n$ est de rayon 1 car
-    pour $\rho \geqslant 0$ tel que $\rho \leqslant 1$, $|a_n \rho^n| \leqslant 9$ est bornée 
-    donc $[0, 1] \subset E_a$, donc $R_a \geqslant 1$.
+        \item $a_n = $ $n^{\text{ème}}$ décimale de $\pi$, $\sum a_n z^n$ est de rayon 1 car
+        pour $\rho \geqslant 0$ tel que $\rho \leqslant 1$, $|a_n \rho^n| \leqslant 9$ est bornée 
+        donc $[0, 1] \subset E_a$, donc $R_a \geqslant 1$.
 
-    Si $\rho > 1$, puisque $\pi \notin \Q$, il existe une infinité de décimales non nulles, 
-    donc la suite $(a_n \rho^n)_{n \in \N} > \rho^n \to + \infty $ non bornée, 
-    donc $E_a = [0, 1]$ et $R_a = 1$. 
+        Si $\rho > 1$, puisque $\pi \notin \Q$, il existe une infinité de décimales non nulles, 
+        donc la suite $(a_n \rho^n) > \rho^n \to + \infty $ non bornée, 
+        donc $E_a = [0, 1]$ et $R_a = 1$. 
+    \end{itemize}
 \end{exemple}
 
 \begin{proposition}{Convergence selon le rayon de convergence}{}
-    Soit $\sum a_n z^n$ une série de rayon de convergence $R_a$. Alors : 
+    Soit $\sum a_n z^n$ une série de rayon de convergence $R_a > 0$. Alors : 
     \begin{itemize}
         \item Si $|z| < R_a$ la série $\sum a_n z^n$ converge absolument.
         \item Si $|z| > R_a$ la série $\sum a_n z^n$ diverge grossièrement.
     \end{itemize}
 \end{proposition}
 
-\idee{
-    Construire un $z < z_0 < R_a$ et lemme d'Abel. 
-}
+\idee{Construire un $z < z_0 < R_a$ et lemme d'Abel.}
 
 \begin{proof} \uline{Si $R_a < +\infty$ :}
 
     Soit $z$ tel que $|z| < R_a$. 
     Posons $z_0 = \frac{|z| + R_a}{2} \in \R_+^*$, on a $|z| < |z_0| < R_a$ donc 
-    $(a_n z^n)$ bornée donc (Lemme d'Abel) $\sum a_n z^n$ converge absolument.
+    $(a_n z^n)$ bornée donc (lemme d'Abel) $\sum a_n z^n$ converge absolument.
 
-    \uindent{Si $|z| > R_0$} $z \notin E_a$ 
+    Si $|z| > R_a$, $z \notin E_a$
+    donc $(a_n z^n)$ non bornée donc $\sum a_n z^n$ diverge grossièrement.
 
-    \svspace Donc $(a_n z^n)$ non bornée donc $\sum a_n z^n$ diverge grossièrement.
+    \uline{Si $R_a = +\infty$ :} 
 
-    \uindent{Si $R_a = +\infty$ } 
+    Soit $z \in \C$. Posons $z_0 = |z| + 1$, on a $|z| < |z_0|$ et $(a_nz_0^n)$ bornée car $R_a = + \infty$. 
 
-    \svspace Soit $z \in \C$. Posons $z_0 = |z| + 1$, on a $|z| < |z_0|$ et $(a_nz_0^n)$ bornée car $R_a = + \infty$. 
-
-    Doc (lemme d'Abel) $\sum a_n z^n$ converge absolument.
+    Donc (lemme d'Abel) $\sum a_n z^n$ converge absolument.
 \end{proof}
 
 \begin{remarque}
@@ -125,104 +118,98 @@
     converge donc $R \geqslant 1$, ainsi $R = 1$.
 \end{exemple}
 
-
 \begin{definition}{Disque de convergence}{}
     Soit $\sum_{n \geqslant 0} a_n z^n$ une série entière de variable complexe, et $R_a$ 
     son rayon de convergence. On appelle \textbf{disque ouvert de convergence} de la série entière 
-    l'ensemble 
-    $$D_a = \{z \in \C, \, |z| < R_a \}$$
+    l'ensemble : 
+    \[D_a = \{z \in \C, \, |z| < R_a \}\]
 
-    L'ensemble $A$ de définition de la somme de la série entière vérifie $D_a \subset A \subset \bar{D_a}$.
+    L'ensemble $A$ de définition de la somme de la série entière vérifie $D_a \subset A \subset \overline{D_a}$.
 \end{definition}
 
 \begin{exemple}
-    $\sum_{n \geqslant 0} z^n$ est de rayon de convergence 1, et $A = D_a$
+    \begin{itemize}
+        \item $\sum_{n \geqslant 0} z^n$ est de rayon de convergence 1, et $A = D_a$.
 
-    \lvspace $\sum_{n \geqslant 1} \frac{z^n }{n^2 }$ et alors $R_a = 1$, et $A = \bar{D_a}$ car la série converge en tout point du bord
+        \item $\sum_{n \geqslant 1} \frac{z^n}{n^2}$ et alors $R_a = 1$, et $A = \bar{D_a}$ car la série converge en tout point du bord.
 
-    \lvspace $\sum_{n \geqslant 1} \frac{z^n }{n }$ et alors $R_a = 1$, et on montre que pour 
-    $\theta \in ]0, 2 \pi[, \, \sum_{n \geqslant 1} \frac{e^{i n \theta}}{n}$ converge par une transformation d'Abel.
+        \item $\sum_{n \geqslant 1} \frac{z^n} n$ et alors $R_a = 1$, et on montre que pour 
+        $\theta \in ]0, 2 \pi[, \, \sum_{n \geqslant 1} \frac{e^{i n \theta}}{n}$ converge par une transformation d'Abel.
 
-    En effet, en posant $\forall n \in \N^*, \, v_n = \displaystyle \sum_{k = 0 }^{n } e^{i k \theta} = \frac{1 - e^{i (n + 1) \theta}}{1 - e^{i \theta}}$
-    car $c = e^{i \theta} \neq 1$. 
+        En effet, en posant $\forall n \in \N^*, \, v_n = \displaystyle \sum_{k = 0 }^{n } e^{i k \theta} = \frac{1 - e^{i (n + 1) \theta}}{1 - e^{i \theta}}$
+        car $c = e^{i \theta} \neq 1$. 
     
-    Donc $\displaystyle \left| v_n \right| \leqslant \frac 2 {\left| 1 - e ^{i \theta} \right|}$ bornée.
+        Donc $\displaystyle \left| v_n \right| \leqslant \frac 2 {\left| 1 - e ^{i \theta} \right|}$ bornée.
+        \begin{align*}
+            S_n & = \sum_{k = 1}^n \frac{e^{i k \theta}} k \\
+            & = \sum_{k = 1}^n \left(v_k - v_{k - 1}\right) \frac 1 k \\
+            & = \sum_{k = 1}^n \frac{v_k} k - \sum_{k = 1}^{n - 1} \frac{v_k}{k(k + 1)}\\
+            & = \frac{v_n} n - v_0 + \sum_{k = 1}^{n - 1} \frac{v_k}{k(k + 1)} 
+        \end{align*}
 
-    \begin{align}
-        S_n & = \sum_{k = 1}^n \frac{e^{i k \theta}}{k} \\
-        & = \sum_{k = 1}^n \left( v_k - v_{k - 1} \right) \frac 1 k \\
-        & = \sum_{k = 1}^{n} \frac{v_k} k - \sum_{k = 1}^{n - 1} \frac{v_k}{k(k + 1)}\\
-        & = \frac{v_n} n - v_0 + \sum_{k = 1}^{n - 1} \frac{v_k}{k(k + 1)} 
-    \end{align}
-
-    Et $v_n$ bornée, donc $(S_n)$ converge donc la série converge. 
+        Et $v_n$ bornée, donc $(S_n)$ converge donc la série converge. 
+    \end{itemize}
 \end{exemple}
 
 \begin{definition}{Intervalle de convergence}{}
     On appelle intervalle ouvert de convergence de la série entière de variable 
     réelle $\sum_{n \geqslant 1} a_n x^n$ l'intervalle $I_a = ]-R_a, R_a[$.
 
-    Le domaine $A$ de définition de la somme de la série entière vérifie 
-    
-    $] - R_a, R_a [ \subset A \subset [ - R_a, R_a ]$.
+    Le domaine $A$ de définition de la somme de la série entière vérifie :
+    \[] - R_a, R_a [ \subset A \subset [ - R_a, R_a ]\]
 \end{definition}
 
 \begin{exemple}
-    Pour $\displaystyle \sum x^n$ $R_a = 1$ et $A = ]-1, 1[$.
-
-    \lvspace Pour $\displaystyle \sum \frac{x^n}{n^2}$ $R_a = 1$ et $A = [ -1, 1 ]$.
-
-    \lvspace Pour $\displaystyle \sum \frac{x^n}{n}$ $R_a = 1$ et $A = [ -1, 1 [ $.
+    \begin{itemize}
+        \item Pour $\displaystyle \sum x^n$, $R_a = 1$ et $A = ]-1, 1[$.
+        \item Pour $\displaystyle \sum \frac{x^n}{n^2}$, $R_a = 1$ et $A = [ -1, 1 ]$.
+        \item Pour $\displaystyle \sum \frac{x^n}{n}$, $R_a = 1$ et $A = [ -1, 1 [ $.
+    \end{itemize}
 \end{exemple}
 
-\begin{propositionnt}{rayon de convergence série classique}{}
+\begin{propositionnt}{Rayon de convergence série classique}{}
     Pour $\alpha \in \R$, le rayon de convergence de $\sum_{n \geqslant 1} n^\alpha z^n$ est $1$.
 \end{propositionnt}
 
-\idee{
-    Distinction sur la valeur de $\rho$.
-}
+\idee{Disjonction de cas sur la valeur de $\rho$.}
 
 \begin{proof}
     Soit $\rho > 0$. 
 
-    \uindent{Si $\rho < 1$} on a $n^\alpha \rho^n \xrightarrow[n \to + \infty ]{} 0$ par croissance comparée. 
+    \uline{Si $\rho < 1$} on a $n^\alpha \rho^n \to 0$ par croissance comparée. \\
+    Donc la suite est bornée, et donc $R_a \geqslant 1$.
 
-    \avspace Donc la suite est bornée, et donc $R_a \geqslant 1$.
-
-    \uindent{Si $\rho > 1$} on a $n^\alpha \rho^n \xrightarrow[n \to + \infty ]{} +\infty$ par croissance comparée.
-
-    \avspace Donc $R_a \leqslant 1$.
+    \uline{Si $\rho > 1$} on a $n^\alpha \rho^n \to +\infty$ par croissance comparée.
+    Donc $R_a \leqslant 1$.
 \end{proof}
 
 \subsubsection{Calcul du rayon de convergence}
 
-\uindent{1) Par la définition }
+On a déjà établi deux moyens de le calculer :
+\begin{enumerate}
+    \item Par la définition :
+    Pour $\rho > 0$, on étudie le caractère borné de la suite $(|a_n| \rho^n)$.
 
-\avspace Pour $\rho > 0$, on étudie le caractère borné de la suite $(|a_n| \rho^n)_{n \in \N}$.
+    \item Par la proposition 10.3 :
+    Si pour $z_0 \in \C, \, \displaystyle \sum a_n z_0^n$ converge, alors $R_a \geqslant |z_0|$.
 
-\uindent{2) Par la proposition 10.3 }
+    Si $\sum a_n z_0^n$ diverge, alors $R_a \leqslant |z_0|$.
+\end{enumerate}
 
-\avspace Si pour $z_0 \in \C, \, \displaystyle \sum a_n z_0^n$ converge, alors $R_a \geqslant |z_0|$.
-
-Si $\sum a_n z_0^n$ diverge, alors $R_a \leqslant |z_0|$.
-
-\uindent{3) Par comparaison des termes généraux } 
+En voici deux autres :
 
 \begin{proposition}{Comparaison des rayons de convergence}{}
     Soit $\sum_{n \geqslant 0} a_n z^n$ et $\sum_{n \geqslant 0} b_n z^n$ deux séries entières
-    de rayons respectifs $R_a$ et $R_b$. Si l'une des conditions suivantes est vérifiée :
-    \begin{itemize}
-        \item $|a_n| \leqslant |b_n|$
-        \item $a_n = O(b_n)$
-        \item $a_n = o(b_n)$
-    \end{itemize}
+    de rayons respectifs $R_a$ et $R_b$. Si :
+    \[
+        |a_n| \leqslant |b_n| ~ \text{ou} ~
+        a_n = O(b_n) ~ \text{ou} ~
+        a_n = o(b_n)
+    \]
     Alors $R_a \geqslant R_b$.
 \end{proposition}
 
-\idee{
-    Montrer que $E_b \subset E_a$.
-}
+\idee{Montrer que $E_b \subset E_a$.}
 
 \begin{proof}
     Supposons que $a_n = O(b_n)$. 
@@ -238,46 +225,36 @@ Si $\sum a_n z_0^n$ diverge, alors $R_a \leqslant |z_0|$.
     Donc $[0, R_b[ \subset E_a$ et donc $R_a \geqslant R_b$.
 \end{proof}
 
-
-\uindent{4) Règle de d'Alembert }
-
 \begin{theoreme}{Règle de d'Alembert pour les séries entières}{}
     Soit $\sum_{n \geqslant 0} a_n z^n$ une série entière. On suppose que : 
     \begin{itemize}
-        \item $a_n \neq 0$ à partir d'un certain rang
-        \item $\displaystyle \left| \frac{a_{n + 1 }}{a_n } \right| \xrightarrow[n \to + \infty   ]{} L \in \bar{\R}$ 
+        \item $a_n \neq 0$ à partir d'un certain rang.
+        \item $\displaystyle \left| \frac{a_{n + 1}}{a_n} \right| \to L \in \overline{\R}$.
     \end{itemize}
 
-    Alors 
+    Alors :
     \begin{itemize}
-        \item Si $L \in \R^*, \, R_a = \frac 1 L$
-        \item Si $L = 0, \, R_a = +\infty$
-        \item Si $L = +\infty, \, R_a = 0$
+        \item Si $L \in \R^*, \, R_a = \frac 1 L$.
+        \item Si $L = 0, \, R_a = +\infty$.
+        \item Si $L = +\infty, \, R_a = 0$.
     \end{itemize}
 \end{theoreme}
 
-\idee{
-    Utiliser d'Alembert classique. 
-}
+\idee{Utiliser d'Alembert classique.}
 
 \begin{proof}
     Soit $L \in \R$, et soit $\rho > 0$, $u_n = a_n \rho^n$ qui vérifie :
-    \[
-        \left| \frac{u_{n + 1}}{u_n} \right| = \left| \frac{a_{n + 1}}{a_n} \right| \rho \xrightarrow[n \to + \infty ]{} L \rho.
-    \]
+    \[ \left| \frac{u_{n + 1}}{u_n} \right| = \left| \frac{a_{n + 1}}{a_n} \right| \rho \xrightarrow[n \to + \infty ]{} L \rho \]
 
-    \uindent{Si $L = 0$} alors la règle de d'Alembert s'applique, et la série converge toujours 
+    \uline{Si $L = 0$ :} Alors la règle de d'Alembert s'applique, et la série converge toujours 
     donc $R_a = +\infty$.
 
-    \uindent{Si $L \in \R^*$} 
-    
-    \avspace Si $L \rho < 1$ c'est-à-dire $\rho < \frac 1 L$, la série converge donc $R_a \geqslant \frac 1 L$.
-
-    Si $L \rho > 1$ c'est-à-dire $\rho > \frac 1 L$, la série diverge donc $R_a \leqslant \frac 1 L$.
-
+    \uline{Si $L \in \R^*$ :} \\
+    \avspace Si $L \rho < 1$ c'est-à-dire $\rho < \frac 1 L$, la série converge donc $R_a \geqslant \frac 1 L$. \\
+    Si $L \rho > 1$ c'est-à-dire $\rho > \frac 1 L$, la série diverge donc $R_a \leqslant \frac 1 L$. \\
     Donc $R_a = \frac 1 L$.
 
-    \uindent{Si $L = +\infty$} 
+    \uline{Si $L = +\infty$ :} 
 
     \avspace $\displaystyle \left| \frac{u_{n + 1}}{u_n } \right| \to + \infty$ donc la série diverge 
     pour tout $\rho > 0$ donc $R_a = 0$.
@@ -338,28 +315,28 @@ Si $\sum a_n z_0^n$ diverge, alors $R_a \leqslant |z_0|$.
 \begin{exemple}
     $ \sum_{n \geqslant 0 } \frac 1 {n + 1} \binom{2n }{n } z^n$, alors $a_n = \frac 1 {n + 1} \binom{2n }{ n } = \frac{1 }{n + 1 } \frac{(2n)!}{(n!)^2} > 0$.
 
-    \begin{align}
+    \begin{align*}
         \left| \frac{a_{n + 1 }}{a_n } \right| & = \frac 1 {n + 2} \frac{(2n + 2)!}{ ((n + 1)!)^2} \times \frac{(n + 1)((n!)^2)}{(2n)!} \\
         & = \frac{(2n + 2)(2n + 1)(n + 1)}{(n + 2)(n + 1)^2} \\
         & = \frac{2(2n + 1)}{n + 2} \xrightarrow[n \to + \infty ]{} 4
-    \end{align}
+    \end{align*}
 
     Donc par la règle de d'Alembert, $R_a = \frac 1 4$.
 \end{exemple}
 
-\subsection{Opérations sur les séries entières }
+\subsection{Opérations sur les séries entières}
 
 \begin{proposition}{Rayon de convergence somme de séries entières}{}
     Soit $\sum_{n \geqslant 0} a_n z^n$ et $\sum_{n \geqslant 0} b_n z^n$ deux séries entières 
     de rayons de convergence respectifs $R_a$ et $R_b$. On définit leur somme comme étant la série 
     entière 
-    $$\sum_{n \geqslant 0} (a_n + b_n) z^n$$
+    \[\sum_{n \geqslant 0} (a_n + b_n) z^n\]
 
     Son rayon de convergence $R_c$ vérifie $R_c \geqslant \min(R_a, R_b)$.
 
     Si de plus $R_a \neq R_b$ alors $R_c = \min(R_a, R_b)$ et dans tous les cas, 
     $\forall z \in \C$ tel que $|z| < \min(R_a, R_b)$, on a
-    $$\sum_{n = 0}^{+\infty} (a_n + b_n) z^n = \sum_{n = 0}^{+\infty} a_n z^n + \sum_{n = 0}^{+\infty} b_n z^n$$
+    \[\sum_{n = 0}^{+\infty} (a_n + b_n) z^n = \sum_{n = 0}^{+\infty} a_n z^n + \sum_{n = 0}^{+\infty} b_n z^n\]
 \end{proposition}
 
 \begin{proof}
@@ -387,11 +364,11 @@ Si $\sum a_n z_0^n$ diverge, alors $R_a \leqslant |z_0|$.
     Soit $\sum_{n \geqslant 0} a_n z^n$ et $\sum_{n \geqslant 0} b_n z^n$ deux séries entières 
     de rayons de convergence respectifs $R_a$ et $R_b$. On définit la série entière produit de Cauchy 
     de ces séries par 
-    $$\sum_{n \geqslant 0} c_n z^n$$ 
+    \[\sum_{n \geqslant 0} c_n z^n\] 
     où $\displaystyle \forall n \in \N, \, c_n = \sum_{k = 0}^n a_k b_{n - k}$.
 
     Alors $R_c \geqslant \min(R_a, R_b)$ et $\forall z \in \C$ tel que $|z| < \min(R_a, R_b)$, 
-    $$\sum_{n = 0}^{+\infty} c_n z^n = \left( \sum_{n = 0}^{+\infty} a_n z^n \right) \left( \sum_{n = 0}^{+\infty} b_n z^n \right)$$
+    \[\sum_{n = 0}^{+\infty} c_n z^n = \left( \sum_{n = 0}^{+\infty} a_n z^n \right) \left( \sum_{n = 0}^{+\infty} b_n z^n \right)\]
 \end{theoreme}
 
 \begin{proof}
@@ -400,10 +377,10 @@ Si $\sum a_n z_0^n$ diverge, alors $R_a \leqslant |z_0|$.
     aussi. 
 
     Or son terme général est 
-    \begin{align}
+    \begin{align*}
         U_n & = \sum_{k = 0}^n a_k z^k b_{n - k} z^{n - k} \\
         & = c_n z^n
-    \end{align}
+    \end{align*}
 
     Donc la série entière $\sum c_n z^n$ converge et donc $R_c \geqslant \min(R_a, R_b)$ et 
     on a la formule par le produit de Cauchy des séries numériques.
@@ -431,7 +408,6 @@ Si $\sum a_n z_0^n$ diverge, alors $R_a \leqslant |z_0|$.
     \]
 \end{exemple}
 
-
 \begin{proposition}{}{}
     Soit $\sum_{n \geqslant 0} a_n z^n$ une série entière de rayon de convergence $R_a > 0$.
     Alors la série entière $\sum_{n \geqslant 0} n a_n z^n$ a le même rayon de convergence $R_a$.
@@ -455,20 +431,18 @@ Si $\sum a_n z_0^n$ diverge, alors $R_a \leqslant |z_0|$.
     Soit $\sum_{n \geqslant 0 } a_n z^n$ une série entière de rayon de convergence $R_a > 0$.
 
     On définit la série entière dérivée comme étant la série entière
-    $$\sum_{n \geqslant 1} n a_n z^{ n - 1 }$$
+    \[\sum_{n \geqslant 1} n a_n z^{ n - 1 }\]
 
     c'est-à-dire la série entière $\sum_{n \geqslant 0} (n + 1) a_{n + 1} z^n$. Son rayon de 
     convergence est alors le même : $R_a$. 
 \end{definition}
 
-\section{Continuité de la somme }
-\subsection{Série entière de variable complexe }
+\section{Continuité de la somme}
+\subsection{Série entière de variable complexe}
 
 \danger{Le topin prendra évidemment soin de ne pas contrarier Hulk en confondant les 
-disques ouverts et fermés ...}ko
+disques ouverts et fermés ... ko}
 
-\lvspace 
-\lvspace 
 \begin{theoreme}{Convergence d'une série entière}{}
     Une série entière de variable complexe converge normalement donc uniformément sur tout disque 
     fermé de centre $0$ inclus dans le dique ouvert de convergence. 
@@ -490,9 +464,7 @@ disques ouverts et fermés ...}ko
     Une somme de série entière est continue sur le disque ouvert de convergence.
 \end{corollaire}
 
-\idee{
-    Théorème précédent en posant le bon rayon. 
-}
+\idee{Théorème précédent en posant le bon rayon.}
 
 \begin{proof}
     Soit $\sum_{n \geqslant 0} a_n z^n$ une série entière de rayon de convergence $R_a > 0$.
@@ -509,9 +481,7 @@ disques ouverts et fermés ...}ko
 
 \end{proof}
 
-
-
-\subsection{Séries entières de variables réelle }
+\subsection{Séries entières de variables réelle}
 
 \begin{theoreme}{}{}
     Une série entière converge normalement sur tout segment inclus dans l'intervalle ouvert de 
@@ -551,7 +521,7 @@ disques ouverts et fermés ...}ko
     Soit $\sum_{n \geqslant 0} a_n x^n$ série entière de variable réelle de rayon de convergence $R_a > 0$.
     On suppose que $\sum_{n \geqslant 0} a_n R_a^n$ converge. 
     On peut donc définir la somme de la série 
-    $$\fonction{f_a}{]-R_a, R_a]}{\C}{x}{\sum_{n = 0}^{+\infty} a_n x^n}$$
+    \[\fonction{f_a}{]-R_a, R_a]}{\C}{x}{\sum_{n = 0}^{+\infty} a_n x^n}\]
     Alors $f_a$ est continue en $R_a$. Donc sur $]-R_a, R_a]$.
 \end{theoreme}
 
@@ -569,37 +539,37 @@ disques ouverts et fermés ...}ko
     
     Pour $N \geqslant n + 1$, on a
 
-    \begin{align}
+    \begin{align*}
         S_N & = \sum_{k = n + 1 }^{N } (r_{k - 1} - r_k) \left( \frac x {R_a} \right)^k \\
         & = \sum_{k = n }^{ N - 1 } r_k \left(\frac x {R_a} \right)^{k + 1} - \sum_{k = n + 1}^N r_k \left( \frac x {R_a} \right)^k \\
         & = r_n \left( \frac{x }{R_a} \right)^{n + 1} - r_N \left( \frac x {R_a} \right)^N + \sum_{k = n + 1}^{N - 1} r_k \left( \left( \frac x {R_a} \right)^{k + 1} - \left( \frac x {R_a} \right)^k \right)
-    \end{align}
+    \end{align*}
 
     Soit $\varepsilon > 0$, comme $r_n \to 0$, $\exists n_0 \in \N$ tel que $\forall n \geqslant n_0, \, |r_n| < \frac{\varepsilon }{2 }$.
 
     Soit $n \geqslant n_0$, et soit $x \in [0, R_a]$.
     Alors 
 
-    \begin{align}
+    \begin{align*}
         |S_N| & \leqslant \varepsilon + \varepsilon + \sum_{k = n + 1}^{N - 1}  \varepsilon \left| \left( \frac x {R_a} \right)^{k +1} - \left( \frac{x}{R_a } \right)^{k} \right| \\
         & \leqslant 2 \varepsilon + \varepsilon \sum_{k = n + 1}^{N - 1} \left( \left( \frac x {R_a} \right)^k - \left( \frac x {R_a} \right)^{k + 1} \right) \\ 
         & 2 \varepsilon + \varepsilon \left( \left( \frac x {R_a} \right)^{n + 1} - \left( \frac x {R_a} \right)^{N - 1}\right) \\
         & \leqslant 3 \varepsilon
-    \end{align}
+    \end{align*}
 
     Donc $|R_n(x)| \leqslant 3 \varepsilon$ et donc convergence uniforme. 
 \end{proof}
 
-\section{Dérivabilité d'une série entière de variable réelle }
+\section{Dérivabilité d'une série entière de variable réelle}
 
 \danger{Ceci ne s'applique qu'aux séries entières de variable \textbf{réelle} !!}
 
-\lvspace \avspace \begin{theoreme}{}{}
+\begin{theoreme}{}{}
     Soit $\sum_{n \geqslant 0} a_n x^n$ une série entière de rayon de convergence $R_a > 0$.
-    Notons $$\fonction{f_a}{]-R_a, R_a[}{\C}{x}{\sum_{n = 0}^{+\infty} a_n x^n}$$ alors 
+    Notons \[\fonction{f_a}{]-R_a, R_a[}{\C}{x}{\sum_{n = 0}^{+\infty} a_n x^n}\] alors 
     $f_a$ est de classe $\mathscr {C}^\infty$ sur $]-R_a, R_a[$ et 
     $\forall k \in \N$, $\forall x \in ]-R_a, R_a[$,
-    $$f^{(k)}_a(x) = \sum_{n = k}^{+\infty} n (n - 1) \cdots (n - k + 1) a_n x^{n - k}$$
+    \[f^{(k)}_a(x) = \sum_{n = k}^{+\infty} n (n - 1) \cdots (n - k + 1) a_n x^{n - k}\]
 \end{theoreme}
 
 
@@ -624,11 +594,11 @@ disques ouverts et fermés ...}ko
 
 \begin{corollaire}{}{}
     Soit $\sum_{n \geqslant 0} a_n x^n$ une série entière de rayon de convergence $R_a > 0$ 
-    et $$\fonction{f_a}{]-R_a, R_a[}{\C}{x}{\sum_{n = 0}^{+\infty} a_n x^n}$$ sa somme. 
+    et \[\fonction{f_a}{]-R_a, R_a[}{\C}{x}{\sum_{n = 0}^{+\infty} a_n x^n}\] sa somme. 
 
     Alors $\forall n \in \N, \, a_n = \frac{f_a^{(n)}(0)}{n!}$ donc 
     $\forall x \in ]-R_a, R_a[$, 
-    $$f_a(x) = \sum_{n = 0}^{+\infty} \frac{f_a^{(n)}(0)}{n!} x^n$$
+    \[f_a(x) = \sum_{n = 0}^{+\infty} \frac{f_a^{(n)}(0)}{n!} x^n\]
 \end{corollaire}
 
 \begin{proof}
@@ -639,7 +609,7 @@ disques ouverts et fermés ...}ko
     Soient $\sum_{n \geqslant 0} a_n x^n$ et $\sum_{n \geqslant 0} b_n x^n$ deux séries entières
     de rayon de convergence respectifs $R_a$ et $R_b$ non nuls. S'il existe $\alpha > 0$ tel que 
     $\alpha \leqslant \min(R_a, R_b)$ et 
-    $$\forall x \in ]0, \alpha[, \, \sum_{n = 0}^{+\infty} a_n x^n = \sum_{n = 0}^{+\infty} b_n x^n$$
+    \[\forall x \in ]0, \alpha[, \, \sum_{n = 0}^{+\infty} a_n x^n = \sum_{n = 0}^{+\infty} b_n x^n\]
     alors $\forall n \in \N, \, a_n = b_n$.
 \end{corollaire}
 
@@ -649,7 +619,7 @@ disques ouverts et fermés ...}ko
     Ce sont des sommes de séries entières donc continues en $0$, donc l'égalité est vraie en 
     $x = 0$. Par ailleurs, ce sont des sommes de séries entières de rayon de convergence 
     strictement positifs donc en dérivant $n$ fois en $0$, 
-    $$f^{(n)}(0) = n ! a_n = n! b_n$$
+    \[f^{(n)}(0) = n ! a_n = n! b_n\]
     Donc $a_n = b_n$.
 \end{proof}
 
@@ -733,29 +703,29 @@ disques ouverts et fermés ...}ko
     Soit $A \subset \C$ et $\fonction{f}{A}{\C}{z}{f(z)}$ et $R > 0$. On dit que $f$ est développable
     en série entière sur le disque ouvert $B(0, R)$ ssi $B(0, R) \subset A$ et il 
     existe $\sum_{n \geqslant 0 } a_n z^n$ série entière de rayon de convergence au moins $R$ telle que
-    $$\forall z \in B(0, R), \, f(z) = \sum_{n = 0}^{+\infty} a_n z^n$$
+    \[\forall z \in B(0, R), \, f(z) = \sum_{n = 0}^{+\infty} a_n z^n\]
 \end{definitionnt}
 
 \begin{exemple}
     La fonction exponentielle est développable en série entière sur $\C$ car 
-    $$\forall z \in \C, \, e^z = \sum_{n = 0}^{+\infty} \frac{z^n}{n!}$$
+    \[\forall z \in \C, \, e^z = \sum_{n = 0}^{+\infty} \frac{z^n}{n!}\]
 
     \lvspace $\forall z \in \C$ tel que $|z| < 1$,
-    $$\frac 1 {1 - z} = \sum_{n = 0}^{+\infty} z^n$$
+    \[\frac 1 {1 - z} = \sum_{n = 0}^{+\infty} z^n\]
 \end{exemple}
 
 \begin{definitionnt}{Fonction de variable réelle développable en série entière}{}
     Soit $A \subset \R$ et $\fonction{f}{A}{\R}{x}{f(x)}$ et $R > 0$. On dit que $f$ est développable
     en série entière sur l'intervalle ouvert $]-R, R[$ ssi $]-R, R[ \subset A$ et il 
     existe $\sum_{n \geqslant 0 } a_n x^n$ série entière de rayon de convergence au moins $R$ telle que
-    $$\forall x \in ]-R, R[, \, f(x) = \sum_{n = 0}^{+\infty} a_n x^n$$
+    \[\forall x \in ]-R, R[, \, f(x) = \sum_{n = 0}^{+\infty} a_n x^n\]
 \end{definitionnt}
 
 \begin{proposition}{}{}
     Soit $f$ développable en série entière sur $] - R, R[$ alors $f$ est de classe
     $\mathscr {C}^\infty$ sur $]-R, R[$ et 
-    $$\forall x \in ]-R, R[, 
-    f(x) = \sum_{n = 0}^{+\infty} \frac{f^{(n)}(0)}{n!} x^n$$
+    \[\forall x \in ]-R, R[, 
+    f(x) = \sum_{n = 0}^{+\infty} \frac{f^{(n)}(0)}{n!} x^n\]
 \end{proposition}
 
 \begin{proof}
@@ -800,7 +770,6 @@ On a alors, en notant $\displaystyle \forall x \in ]-R, R[, \, f(x) = \sum_{n = 
     $[0, x]$ pour l'intégration.
 \end{proof}
 
-
 \subsection{Développements classiques sur \texorpdfstring{$\R$}{R} }
 
 \begin{proposition}{}{}
@@ -841,10 +810,10 @@ On a alors, en notant $\displaystyle \forall x \in ]-R, R[, \, f(x) = \sum_{n = 
     Posons pour $n \geqslant 1$, $a_n = \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1)}{n!} \neq 0$ 
     car $\alpha \notin \N$.  
 
-    \begin{align}
+    \begin{align*}
         \left| \frac{a_{n + 1}}{a_n} \right| & = \left| \frac{\alpha (\alpha - 1) \cdots (\alpha - n)}{(n + 1)!} \times \frac{n!}{\alpha (\alpha - 1) \cdots (\alpha - n + 1)} \right| \\
         & = \left| \frac{\alpha - n }{n + 1} \right| \xrightarrow[n \to + \infty]{} 1
-    \end{align}
+    \end{align*}
     Donc la série $\sum a_n x^n$ a pour rayon de convergence $R = 1$.
 
     Posons $\displaystyle \forall x \in ]-1, 1[, \, g(x) = 1 + \sum_{n = 1}^{+\infty} a_n x^n$. 
@@ -854,14 +823,14 @@ On a alors, en notant $\displaystyle \forall x \in ]-R, R[, \, f(x) = \sum_{n = 
     Donc $(1 + x) f'(x) = \alpha f(x)$. 
 
     Or $\forall x \in ]-1, 1[, \, g$ est aussi $\mathscr C^1$ et
-    $$ g'(x) = \sum_{n = 1 }^{+ \infty  } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1) x^{n - 1}}{(n - 1 )! }$$ car série entière 
+    \[g'(x) = \sum_{n = 1 }^{+ \infty  } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1) x^{n - 1}}{(n - 1 )! }\] car série entière 
     Donc 
-    \begin{align}
+    \begin{align*}
         (1 + x) g'(x) & = \displaystyle \sum_{n = 1 }^{+ \infty   } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1) x^{n - 1}}{(n - 1)!} + \sum_{n = 1 }^{+ \infty   } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1) }{(n + 1)!} x^n \\
         & = \sum_{p = 0 }^{+ \infty    } \frac{\alpha (\alpha - 1) \cdots (\alpha - p)}{p!} x^p + \sum_{n = 1 }^{+ \infty   } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1)}{(n - 1)!} x^n \\
         & = \alpha + \sum_{n = 1 }^{+ \infty   } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1)}{n! } (\alpha - n + n) x^n \\
         & = \alpha g(x)
-    \end{align}
+    \end{align*}
 
     Donc $g$ satisfait au même problème de Cauchy que $f$ donc $g = f$ 
 \end{proof}

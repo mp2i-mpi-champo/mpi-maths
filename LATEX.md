@@ -15,18 +15,7 @@ Voici un exemple d'utilisation pour une proposition :
 
 Il est nécessaire de mettre les accolades contenant le titre et les accolades vides, sinon le début du contenu de la proposition sera coupé. 
 
-Il existe également une variante des environnements permettant de mettre un titre sans que celui-ci ne soit affiché : 
-
-```latex
-\begin{propositionnt}{Titre qui ne sera pas affiché}{}
-    Contenu
-\end{propositionnt}
-```
-
-Tous les environnements peuvent fonctionner dans ce mode en ajoutant simplement "nt" à la fin du mot (pour no title). 
-
 Il existe également les environnements "idée" pour mettre par exemple une idée du principe général des preuves. Ceux si cont affichés dans la marge au niveau de l'endroit où ils sont appelés. Ils s'utilisent comme suit : 
-
 ```latex
 \idee{
     Idée de la preuve. 

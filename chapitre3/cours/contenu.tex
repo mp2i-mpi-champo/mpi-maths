@@ -146,7 +146,7 @@ dont l'intersection infinie est $\{0\}$.}
 \begin{definition}{Fermé}{}
     Soit $A \subset E$.
     On dit que $A$ est un fermé ssi son complémentaire 
-    $E \setminus A = C_E B$ est un ouvert.
+    $E \setminus A = C_E A$ est un ouvert.
 \end{definition}
 
 \begin{exemple}
@@ -192,7 +192,7 @@ dont l'intersection infinie est $\{0\}$.}
     Une boule fermée, une sphère, un singleton sont des fermés. 
 \end{proposition}
 
-\idee{Caractérisaiton séquentielle avec distance au centre.}
+\idee{Caractérisation séquentielle avec distance au centre.}
 
 \begin{proof}
     Soit $R \geqslant 0$, et $\omega \in E$.
@@ -621,7 +621,7 @@ Si $A \subset E$, alors $\mathring A \subset A \subset \overline A$.
         Donc $E \setminus \mathring A \subset \overline{E \setminus A}$. 
 
         \item On applique la première égalité :
-        $E \setminus \mathring{\overparen{E \setminus A}} = \overline{E \ (E \ A)} = E \setminus \mathring{\overparen{E \setminus A}}$.
+        $E \setminus \mathring{\overparen{E \setminus A}} = \overline{E \setminus (E \setminus A)} = E \setminus \mathring{\overparen{E \setminus A}}$.
 
         Donc $E \setminus \overline A = \mathring{\overparen{E \setminus A}}$.
 
@@ -697,7 +697,7 @@ Si $A \subset E$, alors $\mathring A \subset A \subset \overline A$.
 \end{definition}
 
 \begin{proposition}{Caractérisation}{}
-    Soit $A \subset E$. $A$ est  dense dans $E$ ssi pour tout ouvert $U$ de $E$, $U \cap A \not \equal \varnothing$.     
+    Soit $A \subset E$. $A$ est  dense dans $E$ ssi pour tout ouvert $U$ de $E$, $U \cap A \neq \varnothing$.     
 \end{proposition}
 
 \begin{proof}
@@ -708,12 +708,12 @@ Alors $U \subset \overline A$.
 Soit $a \in U$, $a \in \overline A$.
 
 $U$ ouvert donc il existe $r > 0$ tel que $B(a,r) \subset U$.
-$a \in \overline A$ donc pour ce $r$, $B(a,r) \cap A \not \equal \varnothing$.
+$a \in \overline A$ donc pour ce $r$, $B(a,r) \cap A \neq \varnothing$.
 
-Donc $U \cap A \not \equal \varnothing$. \\
+Donc $U \cap A \neq \varnothing$. \\
 
 $\Leftarrow$ Supposons que $A$ rencontre tout ouvert.
-Soit $x \in E$. Soit $r > 0$, $B(x,r)$ est un ouvert donc $B(x,r) \cap A \not \equal \varnothing$.
+Soit $x \in E$. Soit $r > 0$, $B(x,r)$ est un ouvert donc $B(x,r) \cap A \neq \varnothing$.
 Donc $x \in \overline A$ donc $E = \overline A$.
 \end{proof}
 
@@ -727,7 +727,7 @@ Donc $x \in \overline A$ donc $E = \overline A$.
     Soit $A \in \mathcal M_p(\K)$.
     Pour $n \in \N^*$, posons $B_n = A - \frac 1 n I_p$.
 
-    Alors, en prenant les limites coordonnée par coordonnée, $B_n \limit n {+ {+ \infty}} A$.
+    Alors, en prenant les limites coordonnée par coordonnée, $B_n \limit n {+\infty} A$.
 
     Or :
     \begin{align*}
@@ -798,7 +798,7 @@ Donc $x \in \overline A$ donc $E = \overline A$.
 \begin{proof}
     La notion de fermé qui vient de la caractérisation séquentielle est invariante car la notion de 
     limite de suites l'est. 
-    La notions d'ouvert ausi par complémentarité. 
+    La notion d'ouvert aussi par complémentarité. 
 
     Les autres notions également car elles s'expriment en fonction des deux premières.
 \end{proof}
@@ -927,7 +927,7 @@ On va définir la topologie relative à $A$, c'est-à-dire les ouverts relatifs 
 \begin{proof}
     Supposons que $U$ est un ouvert relatif de $A$.
 
-    Alors $V = a \setminus U$ est un fermé relatif de $A$.
+    Alors $V = A \setminus U$ est un fermé relatif de $A$.
 
     Donc $V = \overline V \cap A$, donc $U = A \setminus (\overline V \cap A)$. 
 
@@ -979,7 +979,7 @@ On va définir la topologie relative à $A$, c'est-à-dire les ouverts relatifs 
 \end{proof}
 
 \begin{remarque}
-    Cette définiton est invariante si on remplace $N$ et $N'$ par des normes équivalentes.
+    Cette définition est invariante si on remplace $N$ et $N'$ par des normes équivalentes.
 \end{remarque}
 
 \begin{proof}
@@ -1103,12 +1103,12 @@ On va définir la topologie relative à $A$, c'est-à-dire les ouverts relatifs 
 
 \subsection{Caractérisation séquentielle}
 
-\begin{theorement}{Caractérisation séquentielle de la limite}{}
+\begin{theoreme}{Caractérisation séquentielle de la limite}{}
     Soit $A \subset E$ non vide, $a \in \overline A$, $\ell \in E'$ :
 
     Alors $f(x) \limitnorme{N'}{x}{a} \ell$ ssi pour toute suite $(u_n)$ 
     d'éléments de $A$ qui converge vers $a$, on a $f(u_n) \limitnorme{N'}{n}{+ \infty} \ell$.
-\end{theorement}
+\end{theoreme}
 
 \idee{
     $\Rightarrow$ Utilisation des defs et voisinages. 
@@ -1168,7 +1168,7 @@ On va définir la topologie relative à $A$, c'est-à-dire les ouverts relatifs 
 
 
 \begin{proof}
-    Par caractérisaiton séquentielle. Soit $u_n \longrightarrow a$. 
+    Par caractérisation séquentielle. Soit $u_n \longrightarrow a$. 
 
     Supposons que $f(x) \limit x a \ell_1$ et $g(x) \limit x a \ell_2$ alors 
     $f(u_n) \limit n {+ \infty} \ell_1$ et $g(u_n) \longrightarrow \ell_2$. 
@@ -1202,7 +1202,7 @@ Si $f$ et $\lambda$ continues en a, $\lambda f$ aussi.
     Soit $\varepsilon > 0$, (2) fournit $\eta$. Utilisons le (1) avec $\eta_2$ dans le rôle 
     de $\varepsilon$. Cela fournit $\eta_1$
 
-    Soit $x \in A$ te qie $N(x - a) \leqslant \eta_1$ alors $N'(f(x) - b) \leqslant \eta_2$ par 1
+    Soit $x \in A$ tel que $N(x - a) \leqslant \eta_1$ alors $N'(f(x) - b) \leqslant \eta_2$ par 1
 
     Donc $N"(g(f(x)) - \ell) \leqslant \varepsilon$ par 2 avec $y = f(x)$
 \end{proof}
@@ -1273,7 +1273,7 @@ Soit $a \in A$. Alors $f$ est continue en $a$ ssi $\forall j \in \ninter{1}{p}, 
 \subsection{Théorèmes d'opérations}
 
 \begin{theoreme}{}{}
-    Soit $f, g, : A \to E$, $\lambda : A \to \K$, $\alpha \in \K$.
+    Soit $f, g : A \to E$, $\lambda : A \to \K$, $\alpha \in \K$.
 
     Si $f$ et $g$ sont continues sur $A$, alors $\alpha f + g$ et $\lambda f$ sont 
     continues sur $A$. 
@@ -1282,12 +1282,12 @@ Soit $a \in A$. Alors $f$ est continue en $a$ ssi $\forall j \in \ninter{1}{p}, 
 \textbf{\uline{Conséquence :}}
 L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est un $\K$-espace vectoriel.
 
-\begin{theorement}{}{}
+\begin{theoreme}{}{}
     Soit $f : A \to E'$, $g : B \subset E' \to E"$ tel que $f(A) \subset B$.
 
     Si $f \in \mathscr C(A, E')$ et $g \in \mathscr C(B, E")$, alors 
     $g \circ f \in \mathscr C(A, E")$.
-\end{theorement}
+\end{theoreme}
 
 \begin{theoreme}{Égalité d'applications avec la densité}{}
     Deux applications continues qui coincident sur une partie dense sont égales. 
@@ -1340,7 +1340,7 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
     Or $\Q$ est dense dans $\R$, donc par le théorème, $f = g$.
 \end{exemple}
 
-\subsection{Continuité et image réciproque }
+\subsection{Continuité et image réciproque}
 
 \begin{theoreme}{Nature de l'image réciproque d'une fonction continue}{}
     Soit $f \in \mathscr C(A, E')$. Alors l'image réciproque d'un ouvert (resp. fermé) 
@@ -1403,7 +1403,7 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 
 \begin{proposition}{Lien entre lipschitzienne, uniforme continuité et continuité}{}
     \begin{itemize}
-        \item Toute applications lipschitzienne est uniformément continue. 
+        \item Toute application lipschitzienne est uniformément continue. 
 
         \item Toute application uniformément continue est continue.
     \end{itemize}
@@ -1554,7 +1554,7 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 
 \begin{proof}
     Soit $E$ un $\K$-espace vectoriel de dimension finie et de base 
-    $B = (e_1, \ldots, e_p)$. Munissons $E$ de la norme $||\cdot||_\infty$ asociée à $B$.
+    $B = (e_1, \ldots, e_p)$. Munissons $E$ de la norme $||\cdot||_\infty$ associée à $B$.
 
     Soit $(E', N')$ un $\K$ espace vectoriel normé. 
 
@@ -1582,7 +1582,7 @@ tout polynôme en les coordonnées est continu.
 $\fonction {\psi}{\mathscr M_{n, p}(\K) \times \mathscr M_{p, q}(\K)}{\mathscr M_{n, q}(\K)}{(A, B)}{AB}$ est continue.
 
 \begin{proof}
-    Le déterminant est polynôme en les coordonées de la matrice dans la base cononique des 
+    Le déterminant est polynôme en les coordonées de la matrice dans la base canonique des 
     matrices élémentaires. 
 
     \svspace Chacune des coordonnées de $AB$ est un polynôme en les coordonnées de $A$ et $B$.
@@ -1783,7 +1783,7 @@ Donc $k = |||A|||_1$.
 Donc $\ds |||A|||_1 = \max \left\{ \sum_{i=1}^n |a_{i, j}|, j \in \ninter{1}{n} \right\}$.
 
 \subsubsection{Étude de $||| \cdot |||_\infty$ associée à $|| \cdot ||_\infty$ - LHP}
-Soit $A \in \mathscr M_n(\K)$, $|||A|||_\infty = \sup (\{ ||AX||_\infty, X \in \K^n, ||X||_\infty = 1 \} = z) $.
+Soit $A \in \mathscr M_n(\K)$, $|||A|||_\infty = \sup (\{ ||AX||_\infty, X \in \K^n, ||X||_\infty = 1 \} = Z) $.
 
 Soit $X \in \K^n$ tel que $||X||_\infty = 1$, c'est-à-dire $X = (x_1, \ldots, x_n)^T$ et $\max(|x_1|, \ldots, |x_n|) = 1$.
 
@@ -1807,7 +1807,7 @@ $X = (x_1, \ldots, x_n)^T$. Notons $\forall j, \, a_{i_0, j} = |a_{i_0, j}| e^{i
 
 Posons $x_j = e^{-i \theta_j}$, alors $||X||_\infty = 1$.
 
-Alors $\ds |y_{i_0}| = \left|\sum_{j = 1 }^{n } | a_{i_0, j} | e^{i \theta_j e^{-i \theta_j}}\right| = \sum_{j=1}^n |a_{i_0, j}| = k$.
+Alors $\ds |y_{i_0}| = \left|\sum_{j = 1 }^{n } | a_{i_0, j} | e^{i \theta_j} e^{-i \theta_j}\right| = \sum_{j=1}^n |a_{i_0, j}| = k$.
 
 Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ et $k = \sup Z$. 
 
@@ -1910,7 +1910,7 @@ Mézalors à cause de la propriété, comme $\varphi(n+1)>\varphi(n)$ , $d(y_{\v
 
 \begin{definition}{Borel-Lebesgue - LHP}{}
     Soit $A \subset E$, alors
-    $A$ est un compact ssi de toute recouvrement de $A$ par des ouverts on peut extraire un sous-recouvrement fini.
+    $A$ est un compact ssi de tout recouvrement de $A$ par des ouverts on peut extraire un sous-recouvrement fini.
 
     C'est-à-dire pour toute famille $(U_i)_{i \in I}$ d'ouverts de $E$ 
     telle que $\displaystyle A \subset \bigcup_{i \in I} U_i$, il existe $i_1, \ldots, i_n \in I$ tels que :
@@ -1945,11 +1945,11 @@ Donc $y \in B(x,R)$ donc $y \in U_j$ et la contradiction attendue !
 \begin{proof}
 On va prouver l'équivalence entre les définitions. 
 
-$\Rightarrow$ Considérons  $(U_i)_{i \in I}$ famille d'ouverts tels que $A \subset \bigcup_{i \in I}\'eU_i$.
+$\Rightarrow$ Considérons  $(U_i)_{i \in I}$ famille d'ouverts tels que $A \subset \bigcup_{i \in I} U_i$.
 
 Utilisons maintenant la propriété de précompacité (montrée plus haut) appliquée à $\varepsilon=r$.
 
-Il existe donc un nombre fini de $x_1,...,x_N$ de $A$ tels que `
+Il existe donc un nombre fini de $x_1,...,x_N$ de $A$ tels que
 \[A \subset \bigcup_{i=1}^N B(x_i,\varepsilon)\]
 Mézalors :
 \[A \subset \bigcup_{i=1}^N U_{i_x}\]
@@ -1978,7 +1978,7 @@ Reste à montrer que $F \cap A \neq \emptyset$.
 Raisonnons par l'absurde.
 Alors en posant pour tout $n$ , $U_n=E-F_n$ ce sont des ouverts tels que :
 \[A \subset \bigcup_{n\in \N} U_n\]
-et donc grace à l'hypothèse, il existe un nombre fini d'ouverts $U_{\varphi(1)},...,U_{\varphi(N)}$ tels que :
+et donc grâce à l'hypothèse, il existe un nombre fini d'ouverts $U_{\varphi(1)},...,U_{\varphi(N)}$ tels que :
 \[A \subset \bigcup_{n=1}^N U_{\varphi(n)}\]
 Ceci montre donc que $A \cap F_{\varphi(N)}=\emptyset$.
 
@@ -2063,7 +2063,7 @@ Or $x_{\varphi(N)}$ appartient clairement aux deux.... D'où la contradiction...
 
         De même, on peut extraire de $(u_{\varphi_1(n), 2})$ une sous-suite bla bla bla 
 
-        De proches en proches on obtient $u_{\varphi_1 \circ \ldots \circ \varphi_p(n)} \to \ell_p \in A_p$.+
+        De proche en proche on obtient $u_{\varphi_1 \circ \ldots \circ \varphi_p(n)} \to \ell_p \in A_p$.+
 
         Donc $(u_{\varphi_1 \circ \ldots \circ \varphi_p(n)}) \to (\ell_1, \ldots, \ell_p) \in A$.
 
@@ -2105,15 +2105,15 @@ $d(e_i,e_j) \geqslant \frac 1 2$
 
 \uline{Initialisation :} On choisit un vecteur non nul $u$ de $E$ et on pose $e_1=\frac u{N(u)}$.
 
-\uline{Hérédité :} Soit $(e_1,..., e_n)$ une famille libre de vecteurs de $E$ de norme $1$  tels que pour tout $i\neq j$ inf\'erieurs \'e $n$ , 
+\uline{Hérédité :} Soit $(e_1,..., e_n)$ une famille libre de vecteurs de $E$ de norme $1$  tels que pour tout $i\neq j$ inférieurs à $n$ , 
 $d(e_i,e_j) \geqslant \frac 1 2$
-et considérons $F=Vect(e_1,...e_n)$.
+et considérons $F=\Vect(e_1,...e_n)$.
 
 $E$ n'est pas de dimension finie, donc on peut trouver un $v \notin F$.
 
 $F$ est un espace de dimension finie donc un fermé.
 
-Comme $v \notin F $ et. que $F$ fermé, $d(v,F)=m>0$.
+Comme $v \notin F $ et que $F$ fermé, $d(v,F)=m>0$.
 
 Il existe donc $f_0\in F$ tel que $0<m<d(v,f_0)=m_0<2 m$.
 
@@ -2137,7 +2137,7 @@ $(e_{\varphi(n)})$ qui converge vers $\ell$.
 Et donc pour $n$ assez grand , $n\geqslant n_0$, 
 \[N(e_{\varphi(n)}-\ell) \leqslant \frac 1 8\]
  
-Mézalors par l'inégalitée triangulaire : \[N(e_{\varphi(n_0)}-e_{\varphi(n_0+1)})\leqslant \frac 1 4\]
+Mézalors par l'inégalité triangulaire : \[N(e_{\varphi(n_0)}-e_{\varphi(n_0+1)})\leqslant \frac 1 4\]
 ce qui contredit $N(e_{\varphi(n_0)}-e_{\varphi(n_0+1)}) \geqslant \frac 1 2$.
 \end{proof}
 
@@ -2160,7 +2160,7 @@ ce qui contredit $N(e_{\varphi(n_0)}-e_{\varphi(n_0+1)}) \geqslant \frac 1 2$.
     et $N'(f(x_n) - f(y_n)) > \varepsilon$.
 
     $A^2$ est compact, donc on peut extraire $(x_{\varphi(n)}, y_{\varphi(n)})$ qui converge vers $(\ell_1, \ell_2) \in A^2$.
-    $\forall n \in \N, \, N(x_{\varphi(n) - y_{\varphi(n)}}) \leqslant \frac 1 {\varphi(n)}$ et $N'(f(x_{\varphi(n)}) - f(y_{\varphi(n)})) > \varepsilon$.
+    $\forall n \in \N, \, N(x_{\varphi(n)} - y_{\varphi(n)}) \leqslant \frac 1 {\varphi(n)}$ et $N'(f(x_{\varphi(n)}) - f(y_{\varphi(n)})) > \varepsilon$.
 
     En passant à la limite, on obtient $N(\ell_1 - \ell_2) \leqslant 0$ et comme $f$ continue, 
     $N'(f(\ell_1) - f(\ell_2)) \geqslant \varepsilon$.
@@ -2310,7 +2310,7 @@ Dans ce paragraphe on prendra $\K = \R$.
     \end{enumerate}
 \end{proof}
 
-\textbf{\uline{Conséquence :}} tout partie convexe est connexe par arcs (l'ensemble vide est trivialement connexe par arcs).
+\textbf{\uline{Conséquence :}} Toute partie convexe est connexe par arcs (l'ensemble vide est trivialement connexe par arcs).
 
 \subsection{Relation d'équivalence}
 
@@ -2456,7 +2456,7 @@ $P(0)=\det(A)$ n'est pas nul et $P(1)=\det(B)$ non plus.
 
 Considérons un chemin continu du plan complexe :
 \[\fonction {\varphi} {[0,1]} {\C} t {\varphi(t)}\]
-telle que $\varphi(0)=0$ , $\varphi(1)=1$ et $\forall t \in ]0,1[ \ , \ \forall i \in \{1,...,n\}\'e\ , \ \varphi(t) \neq z_i$.
+telle que $\varphi(0)=0$ , $\varphi(1)=1$ et $\forall t \in ]0,1[ \ , \ \forall i \in \{1,...,n\}\ , \ \varphi(t) \neq z_i$.
 (c'est possible car $\C$ privé d'un ensemble fini est connexe par arcs, ce qu'on montre facilement par récurrence sur le cardinal de l'ensemble fini).\\
 
 Considérons pour $t\in [0,1]$ , $M(t)=A+\varphi(t) (B-A)$.
@@ -2500,7 +2500,7 @@ Donc $M$ est un chemin de $GL_n(\C)$ reliant $A$ à $B$ donc $GL_n(\C)$ est conn
 \end{proof}
 
 \begin{exemple}
-    $A \left\{\left(t, \sin \frac 1 t\right), t > 0\right\} \cup \{(0, u), \, u \in \inter {-1} 1\}$
+    $A = \left\{\left(t, \sin \frac 1 t\right), t > 0\right\} \cup \{(0, u), \, u \in \inter {-1} 1\}$
 
     On montre que $A$ est connexe mais que $A$ n'est pas connexe par arcs.
 \end{exemple}

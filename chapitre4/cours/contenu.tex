@@ -86,7 +86,7 @@ Donc $B$ est un $\K$-espace vectoriel.
     Étudions la série $\ds\sum_{n \geqslant 1} \frac 1 {n(n+2)}$. On décompose en éléments simples la somme partielle.
 
     Soit $n \in \N$,
-    \[S_n = \sum_{k=1}^n \frac 1 {n(n+2)} = \sum_{k=1}^n - \frac 1 2 \left( \frac 1 k + \frac {-1} {k+2}\right) = \frac 1 2 + \frac 1 4 - \frac 1 {2n+2} - \frac 1 {2n+4}\]
+    \[S_n = \sum_{k=1}^n \frac 1 {k(k+2)} = \sum_{k=1}^n - \frac 1 2 \left( \frac 1 k + \frac {-1} {k+2}\right) = \frac 1 2 + \frac 1 4 - \frac 1 {2n+2} - \frac 1 {2n+4}\]
 
     Donc $S_n \limit{n}{+\infty} \frac 3 4$ donc la série converge.
 \end{exemple}
@@ -116,7 +116,7 @@ Donc $B$ est un $\K$-espace vectoriel.
 \end{proof}
 
 \begin{exemple}
-    Montrons qu'il existe $\gamma \in \R$ tel que $\ds \sum_{k=1}^n = \ln(n) + \gamma + o(1)$.
+    Montrons qu'il existe $\gamma \in \R$ tel que $\ds \sum_{k=1}^n \frac 1 k = \ln(n) + \gamma + o(1)$.
     
     Pour cela montrons que $\ds u_n = \left(\sum^n_{k=1} \frac 1 k\right) - \ln(n)$ converge.
 
@@ -189,13 +189,13 @@ Donc $B$ est un $\K$-espace vectoriel.
         \frac 1 {n(n+1)} & \frac 1 {n^2}\\
         2^{-n} & \frac 1 {3^n}
     \end{pmatrix}
-    $ qui converge coordonnée par coordonée.
+    $ qui converge coordonnée par coordonnée.
 
     On prouve facilement que $\sum_{n=1}^{+ \infty} u_n =
     \begin{pmatrix}
         1 & \frac {\pi} 6\\
         1 & \frac 1 2
-    \end{pmatrix}$ en faisant les sommes coordonée par coordonée.
+    \end{pmatrix}$ en faisant les sommes coordonnée par coordonnée.
 \end{exemple}
 
 \subsection{Exemples fondamentaux}
@@ -411,7 +411,7 @@ Donc $B$ est un $\K$-espace vectoriel.
 \subsection{Exemple de séries dans un espace vectoriel normé de dimension infinie}
 
 $\forall n \in \N, \, \fonction{f_n}{[0, 1 / 2]}{\R}{x}{x^n}$ dans $\mathscr C^0([0, 1 / 2], \R)$ 
-muni de la la norme infinie. 
+muni de la norme infinie. 
 
 Étude de $\sum_{n \geqslant 0} f_n$.
 
@@ -429,7 +429,7 @@ Donc $S_n \longrightarrow h$ Donc la série converge et :
 \section{Convergence absolue}
 
 \begin{definition}{Convergence absolue}{}
-    Soit $(E, N)$ un $\K$-espace vectoriel normé de \textbf{dimension finie} et $\sum_{n \leqslant 0} u_n$
+    Soit $(E, N)$ un $\K$-espace vectoriel normé de \textbf{dimension finie} et $\sum_{n \geqslant 0} u_n$
     une série à termes dans $E$. 
 
     On dit que cette série converge absolument ssi la série numérique à termes positifs 
@@ -444,7 +444,7 @@ Donc $S_n \longrightarrow h$ Donc la série converge et :
     Dans un espace vectoriel normé de dimension finie, toute série absolument convergente est convergente.
 \end{theoreme}
 
-\idee{\uline{Solution 1 :} Montrer le cas réel puis l'utiliser sur les normes et en déduire laconvergence par les coordonnées.
+\idee{\uline{Solution 1 :} Montrer le cas réel puis l'utiliser sur les normes et en déduire la convergence par les coordonnées.
 
 \uline{Solution 2 :} Utiliser Bolzano-Weierstrass pour extraire une somme convergente, 
 et calculer $N(S_{\varphi(n)} - S_n)$.
@@ -651,7 +651,7 @@ $\ds \sum_{k=0}^n a_n b_n = a_0 b_0 + a_n B_n - a_1 b_0 + \sum_{k=1}^{n-1} (a_k 
 
 Soit $k \in \N$, $N(v_k) = N((a_k - a_{k+1}) B_k) = (a_k - a_{k+1}) N(B_k) \leqslant (a_{k} - a_{k+1}) M$.
 
-La série est téléscopique et $a_n \to 0$ donc $\sum_{k\geqslant 1} v_k$ converge donc $\sum_{n \geqslant 1} a_n b_n$ converge.
+La série est télescopique et $a_n \to 0$ donc $\sum_{k\geqslant 1} v_k$ converge donc $\sum_{n \geqslant 1} a_n b_n$ converge.
 \end{proof}
 
 Étudions la convergence de $\sum_{n \geqslant 1} \frac{\cos(\theta n)}{n}$ où $\theta \not \equiv 0 [2\pi]$.
@@ -726,7 +726,7 @@ On a alors $\forall A, B \in \mathscr M_p(\K), \, N(AB) \leqslant N(A) N(B)$.
 
 \marginenote{Anecdote}{
     Pour prouver le théorème de Fermat, au XIXe,
-    Kumer, un mathématicien allemand, a travaillé dans $\Z[\omega]$
+    Kummer, un mathématicien allemand, a travaillé dans $\Z[\omega]$
     et a inventé les nombres idéaux.
 
     Il se trouve que l'ensemble des polynômes annulateurs étudié ici
@@ -784,7 +784,7 @@ dépendance linéaire entre les premières puissances de $A: I_p, A, A^2, \dots,
     
     $A^n = P(A) Q_n(A) + a_n A + b_n I_2 = \frac{5^n - (-1)^n}{6} A + \frac{5^n + 5(-1)^n}{6} I_2$.
 
-    Donc $A_n = 5^n \underbrace{\left( \frac{A + I_2} 6 \right)}_{B} + (-1)^n \underbrace{\left( \frac{-A + 5 I_2}{6} \right)}_{C}$.
+    Donc $A^n = 5^n \underbrace{\left( \frac{A + I_2} 6 \right)}_{B} + (-1)^n \underbrace{\left( \frac{-A + 5 I_2}{6} \right)}_{C}$.
 
     Donc $\displaystyle e^A = \sum_{n = 0}^{+\infty} \frac{5^n}{n!}B + \frac{(-1)^n}{n!} C = e^5 B + e^{-1} C$. \\
 \end{exemple}
@@ -801,7 +801,7 @@ dépendance linéaire entre les premières puissances de $A: I_p, A, A^2, \dots,
     Effectuons la division euclidienne de $X^n$ par $P$ : (*)$X^n = P Q_n + R_n$ avec 
     $\deg(R_n) < 3$ donc $\exists a_n, b_n, c_n \in \K, \, R_n(X) = a_n X^2 + b_n X + c_n$.
 
-    On peut alors résoudre le système en évaluent en 0, 3 et 4. 
+    On peut alors résoudre le système en évaluant en 0, 3 et 4. 
 
     Sinon on peut aussi dire que $\exists \alpha_n, \beta_n, \gamma_n \in \K$,  
     
@@ -836,9 +836,9 @@ dépendance linéaire entre les premières puissances de $A: I_p, A, A^2, \dots,
     Soit $A \in \mathscr M_p(\K)$ telle que $|| A || < 1$. 
 
     Alors $\sum_{n \geqslant 0 } A^n$ est absolument convergente car 
-    $\forall n \geqslant 1$, \, $|| A^n || \leqslant || A ||^n$ par récurrence. 
+    $\forall n \geqslant 1$, \, $|| A^n || \leqslant \|A\|^n$ par récurrence. 
 
-    Sa somme $\displaystyle S = \sum_{n = 0}^{+ \infty } A^n$ vérifie alors $(I_p - a ) S = S(I_p - A) = I_p$.
+    Sa somme $\displaystyle S = \sum_{n = 0}^{+ \infty } A^n$ vérifie alors $(I_p - A) S = S(I_p - A) = I_p$.
 
     En particulier, $I_p - A \in \operatorname{GL}_p (\K)$ et $(I_p - A)^{-1} = S$. 
 
@@ -886,7 +886,7 @@ Donc $\displaystyle \int_{k}^{k + 1} f(k + 1) \text d t \leqslant \int_{k}^{k + 
 
 Donc $\displaystyle f(k + 1) \leqslant \int_{k}^{k + 1} f(t) \text d t \leqslant f(k)$
 
-Pour $n_0 = \lceil a \rceil$, sommes de $n_0$ à $n - 1$, et notons $\displaystyle S_n = \sum_{k = n_0}^{n} f(k)$.
+Pour $n_0 = \lceil a \rceil$, sommons de $n_0$ à $n - 1$, et notons $\displaystyle S_n = \sum_{k = n_0}^{n} f(k)$.
 
 \marginenote{Fait historique}{Monsieur Chasles était un grand collectionneur.}
 Par Chasles : $S_n - f(n_0) \leqslant \int_{n_0}^{n} f(t) \text d t \leqslant S_n - f(n)$
@@ -961,7 +961,6 @@ Si $a_n \sim b_n$, alors $\sum a_n$ et $\sum b_n$ sont de même nature.
     Soit $(u_n)$ une suite de nombres réels ou complexes qui ne s'annule pas 
     à partir d'un certain rang. On suppose que $\ds \frac{|u_{n + 1}|}{|u_n|} \to \ell$.
     Alors : 
-    
     \begin{enumerate}
         \item Si $\ell < 1$, la série converge.
         \item Si $\ell > 1$, la série diverge.
@@ -969,9 +968,7 @@ Si $a_n \sim b_n$, alors $\sum a_n$ et $\sum b_n$ sont de même nature.
     \end{enumerate}
 \end{theoreme}
 
-\idee{
-    Minorer $a_n$ par $u_n$ telle que $\sum u_n$ diverge.
-}
+\idee{Minorer $a_n$ par $u_n$ telle que $\sum u_n$ diverge.}
 
 \begin{proof}
     Supposons que $\frac{a_{n + 1 }}{a_n } \longrightarrow \ell < 1$. Posons $\ell' = \frac {\ell+1} 2$. On a $\ell < \ell' < 1$.
@@ -994,7 +991,7 @@ Si $a_n \sim b_n$, alors $\sum a_n$ et $\sum b_n$ sont de même nature.
 
     Donc la série converge.
 
-    Si $\frac{a_{n + 1}}{a_n} \longrightarrow \ell < 1$, posons $\varepsilon = 1 - \ell$.
+    Si $\frac{a_{n + 1}}{a_n} \to \ell > 1$, posons $\varepsilon = 1 - \ell$.
 
     $\exists n_0 \in \N, \ell - \varepsilon \leqslant \frac {u_{n+1}} {u_n}$
 
@@ -1010,7 +1007,7 @@ Si $a_n \sim b_n$, alors $\sum a_n$ et $\sum b_n$ sont de même nature.
 
     \lvspace $\displaystyle a_n = \frac{1}{4^n} \binom{2n}{n} > 0$. 
 
-    Donc $\frac{a_{n + 1}}{a_n} \longrightarrow 1$ par le même caclul. 
+    Donc $\frac{a_{n + 1}}{a_n} \longrightarrow 1$ par le même calcul. 
 
     Formule de Stirling : $n! \sim \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n$.
 
@@ -1316,5 +1313,5 @@ montrerait de la même manière, dans le cas où $\ds\int_0^n f(t) \dt$ diverge,
     Donc $\displaystyle R_n \sim \frac 1 n$.
     Or par sommation des relations de comparaison, 
     
-    \center{$\displaystyle \sum_{k = n + 1}^{+ \infty } \frac 1 {k^2} \sim \sum_{k = n + 1}^{+ \infty } \frac 1 {k(k + 1)} \sim \frac 1 {n + 1} \sim \frac 1 n$.}
+    \[\sum_{k = n + 1}^{+\infty} \frac 1 {k^2} \sim \sum_{k = n + 1}^{+ \infty } \frac 1 {k(k + 1)} \sim \frac 1 {n + 1} \sim \frac 1 n\]
 \end{exemple}

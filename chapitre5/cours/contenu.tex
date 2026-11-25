@@ -130,7 +130,7 @@
 \end{theoreme}
 
 \begin{proof}
-Posons $\varphi : x \mapsto \frac n 2$ si $n \in 2 \N$ et $-\left(\frac {n+1} 2\right)$ sinon.
+Posons $\varphi : n \mapsto \frac n 2$ si $n \in 2 \N$ et $-\left(\frac {n+1} 2\right)$ sinon.
 
 Alors $\varphi$ est injective et surjective dans $\Z$ donc elle est bijective.
 Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
@@ -169,7 +169,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
     Considérons $\fonction {\psi_i} {E_i} \N x {\varphi_i^{-1}(x)}$ alors $\psi_i$ n'est pas forcément 
     surjective mais elle est injective. 
 
-    Considérons maitenant $\fonction {\psi} {\bigcup_{i \in I} E_i} {\N^2} x {(i, \psi_i(x))}$ où $i = \min \{ \alpha \in \N, \, x \in E_\alpha \}$.
+    Considérons maintenant $\fonction {\psi} {\bigcup_{i \in I} E_i} {\N^2} x {(i, \psi_i(x))}$ où $i = \min \{ \alpha \in \N, \, x \in E_\alpha \}$.
 
     $\psi$ est bien définie, et $\psi$ est injective, car si $x = y = (i, j)$, 
     on a $x, y \in E_i$ et $j = \psi_i(x) = \psi_i(y)$, donc $x = y = \varphi_i(j)$.
@@ -292,23 +292,23 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 \end{theoreme}
 
 \marginenote{Remarque}{Cette définition est bien compatible avec la def 5.17 dans le
-cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
+cas où $\forall j \in I, u_j\geqslant 0$.}
 
-\begin{proof}{}{}
-    $\Rightarrow$ On a $\left\{\begin{array}{cc}
+\begin{proof}
+    $\Rightarrow$ On a $\begin{cases}
         |u_j^+| \leqslant |u_j|\\
         |u_j^-| \leqslant |u_j|
-    \end{array}\right.$, d'où l'implication par la proposition 5.16.\\
+    \end{cases}$, d'où l'implication par la proposition 5.16.\\
 
     $\Leftarrow$ Supposons que $(u_j^+)_{j\in I}$ et $(u_j^-)_{j\in I}$ sont sommables. Soit $J\subset I$ fini non vide
 
-    \[\sum_{j\in J} |u_j|\leqslant\sum_{j\in J} U_j^+ + \sum_{j\in J} U_j^-\leqslant \sum_{j\in I} U_j^+ + \sum_{j\in I} U_j^- \leftarrow\text{constante indépendante de J}\]
+    \[\sum_{j\in J} |u_j|\leqslant\sum_{j\in J} u_j^+ + \sum_{j\in J} u_j^-\leqslant \sum_{j\in I} u_j^+ + \sum_{j\in I} u_j^- \leftarrow\text{constante indépendante de J}\]
 \end{proof}
 
 \begin{theoreme}{Somme d'une famille sommable de complexes}{}
 
     Soit $(u_j)_{j \in I}$ une famille de complexes. Alors
-    $(u_j)_{j\in I}$ est sommable ssi $(\re(u_j))_{j\in I}$ et $(\im(u_j)_{j\in I}$ le sont.
+    $(u_j)_{j\in I}$ est sommable ssi $(\re(u_j))_{j\in I}$ et $(\im(u_j))_{j\in I}$ le sont.
 
     On définit la somme de la famille $(u_j)_{j \in I}$ par :
     \[\sum_{j \in I} u_j = \sum_{j \in I} \re(u_j) + i \sum_{j \in I} \im(u_j)\]
@@ -316,12 +316,12 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
 
 \idee{Utiliser la proposition 5.16.}
 
-\begin{proof}{}{}
+\begin{proof}
     $\Rightarrow$
-    $\begin{array}{cc}
+    $\begin{cases}
     |\re(u_j)| \leqslant |u_j| \\
     |\im(u_j)| \leqslant |u_j|
-    \end{array}$
+    \end{cases}$
 
     $\Leftarrow$
     $|u_j|\leqslant |\re(u_j)| + |\im(u_j)|$
@@ -445,7 +445,7 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
     Par définition de la borne sup, 
     \[\sum_{n \in \N} u_n \leqslant \sum_{j = 0 }^{+\infty} u_j\]
 
-    Par ailleurs $\forall k \in \N, \, \displaystyle \sum_{i = 0}^k u_i  = \sum_{i \in \ninter 0 n} u_i \leqslant \sum_{i \in \N} u_i$.
+    Par ailleurs $\forall k \in \N, \, \displaystyle \sum_{i = 0}^k u_i  = \sum_{i \in \ninter 0 k} u_i \leqslant \sum_{i \in \N} u_i$.
 
     Donc par passage à la limite, $\displaystyle \sum_{i = 0}^{+\infty} u_i \leqslant \sum_{i \in \N} u_i$ et on a donc l'égalité. \\
 
@@ -488,7 +488,7 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
 
 \begin{theoreme}{Invariance par bijection de $\N$}{}
     Soit $\displaystyle \sum_{n \geqslant 0} u_n$ une série absolument convergente et $\sigma : \N \to \N$ une bijection.
-    Alors $\displaystyle \sum_{n =\geqslant 0} u_{\sigma(n)}$ est absolument convergente et :
+    Alors $\displaystyle \sum_{n \geqslant 0} u_{\sigma(n)}$ est absolument convergente et :
     \[\sum_{n = 0}^{+\infty} u_n = \sum_{n = 0}^{+\infty} u_{\sigma(n)}\]
 \end{theoreme}
 
@@ -582,13 +582,13 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
 
     et donc de $P' = \ds \sum_{n = 0 }^{+\infty} \sum_{p = 0 }^{+\infty} |a_{n, p}|$.
 
-    Donc, par le théorème de sommation par paquets, $(a_{n, p})_{(n, p) \in \N^2}$ est sommable. 
+    Donc, par le théorème de sommation par paquets, $(a_{n, p})_{(n, p) \in \N^2}$ est sommable, on notera $A$ sa somme. 
 
     Encore par le théorème de sommation par paquets, 
     \[P' = \sum_{(n, p) \in \N^2} |a_{n, p}| = \sum_{n = 0 }^{+\infty} z_n\]
     où $\ds z_n = \sum_{p = 0}^n |u_p| |v_{n - p}|$.
 
-    Or $\forall n \in \N, \, |w_n| \leqslant z_n$, donc $\ds \sum_{n = 0 }^{+\infty} w_n < A$. 
+    Or $\forall n \in \N, \, |w_n| \leqslant z_n$, donc $\ds \sum_{n = 0 }^{+\infty} |w_n| < A$. 
 
     De plus, de nouveau par le théorème de sommation par paquets,
     \[P = \sum_{(n, p) \in \N^2} a_{n, p} = \sum_{n = 0 }^{+\infty} w_n\]
@@ -608,14 +608,14 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
     Donc $\displaystyle e^{z_1} e^{z_2} = e^{z_1 + z_2}$.
 \end{exemple}
 
-\begin{corollaire}{Produit d'exponrntielles de matrices}{}
+\begin{corollaire}{Produit d'exponentielles de matrices}{}
     Soient $A, B \in \mathscr M_p(\C)$ telles que $AB = BA$. 
     Alors :
     \[e^A e^B = e^{A + B}\]
 \end{corollaire}
 
 \begin{proof}
-    Munissons $\mathscr M_k(\C)$ d'une norme d'algèbre $||\cdot||$. 
+    Munissons $\mathscr M_p(\C)$ d'une norme d'algèbre $||\cdot||$. 
 
     Posons $\displaystyle \forall n \in \N, \, M_n = \sum_{k = 0 }^{n } \frac{A^k}{k!} \cdot \sum_{k = 0 }^{n } \frac{B^k}{k!} - \sum_{k = 0 }^{n }\frac{(A + B)^k}{k!}$.
 

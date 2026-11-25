@@ -483,10 +483,10 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 
     On a $\displaystyle x = \sum_{i = 1}^n \lambda_i a_i$ avec $a_i \in A$ donc $a_i \in B$.
 
-    \quad \underline{Si $\lambda_n = 0$ ou $\lambda = 1$ : } On est dans l'hypothèse 
+    \quad \underline{Si $\lambda_n = 0$ ou $\lambda_n = 1$ : } On est dans l'hypothèse 
     de récurrence, donc $x \in B$. 
 
-    \quad \underline{Sinon :} $\displaystyle x = (1 - \lambda_n) \sum_{i = 1}^{n - 1} \frac{\lambda_1}{1 - \lambda_n} x_i + \lambda_n x_n$
+    \quad \underline{Sinon :} $\displaystyle x = (1 - \lambda_n) \sum_{i = 1}^{n - 1} \frac{\lambda_i}{1 - \lambda_n} a_i + \lambda_n a_n$
 
     On a $\displaystyle \sum_{i = 1}^{n - 1} \frac{\lambda_i}{1 - \lambda_n} = \frac{\sum_{i = 1}^{n - 1} \lambda_i}{1 - \lambda_n} = 1$
 
@@ -501,18 +501,18 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     Soit $P \in \C[X]$ de degré $\geqslant 2$. Alors les racines de $P'$ sont dans 
     l'enveloppe convexe des racines de $P$. 
 
-    Notons $\ds P = \lambda \prod_{i = 1}^{k}(X - z_i)^{m_i}$ car $\C$ est algébriquement clos
+    Notons $\ds P = \lambda \prod_{i = 1}^k (X - z_i)^{m_i}$ car $\C$ est algébriquement clos
     donc $P$ scindé. 
 
-    On a $\ds P' = \lambda \sum_{i = 1}^{k} m_i (X - z_i)^{m_i - 1} \prod_{j = 1,~j\not= i}^{k}(X - z_j)^{m_j}$
+    On a $\ds P' = \lambda \sum_{i = 1}^k m_i (X - z_i)^{m_i - 1} \prod_{j = 1,~j\not= i}^k (X - z_j)^{m_j}$
 
     Soit $\alpha$ une racine de $P'$ qui n'est pas racine de $P$.
 
-    Donc $\ds \sum_{i = 1}^{k }m_i(\alpha - z_i)^{m_i - 1} \prod_{j = 1}^{k } (\alpha - z_j)^{m_j} = 0$
+    Alors $\ds \sum_{i = 1}^k m_i(\alpha - z_i)^{m_i - 1} \prod_{j = 1,~j\not= i}^k (\alpha - z_j)^{m_j} = 0$
 
     Donc en divisant par $P(\alpha)$ : 
-    \[\sum_{i = 1}^{k } \frac{m_i}{\alpha - z_i} = 0\]
-    Donc $\displaystyle \sum_{i = 1}^{k} \frac{m_i}{\bar \alpha - \bar z_i} = 0$
+    \[\frac{P'(\alpha)}{P(\alpha)}= \sum_{i = 1}^{k } \frac{m_i}{\alpha - z_i} = 0\]
+    Donc $\displaystyle \sum_{i = 1}^{k} \frac{m_i}{\overline \alpha - \overline z_i} = 0$ en prenant le conjugé de l'expression précédente.
     
     Donc $\displaystyle \sum_{i = 1}^{k}\frac{m_i }{|\alpha - z_i|^2} (\alpha - z_i) = 0$
     
@@ -781,7 +781,7 @@ Soit $E$ un $\K$-espace vectoriel.
 
     Posons $\forall n \in \N^*, f_n (x) = x^n$. 
 
-    Alors $\ds \int_{0}^{1} x^n \text d x = \left[\frac {x^n + 1}{n+ 1}\right]_0^1 = \frac 1 {n + 1}$
+    Alors $\ds \int_{0}^{1} x^n \text d x = \left[\frac {x^{n + 1}}{n+ 1}\right]_0^1 = \frac 1 {n + 1}$
     et $||f_n|| = 1$
 
     Donc $\ds \frac{||f_n||_1}{||f_n||_\infty} \limit{n}{+ \infty} 0$ : les normes ne sont pas équivalentes. \\
@@ -980,7 +980,7 @@ Soit $E$ un $\K$-espace vectoriel.
     \end{itemize}
 \end{proof}
 
-\begin{definition}{Ensemble des suites convergentes}{}
+\begin{definition}{Ensemble des suites sommables}{}
 
     On note $\ell^1(\K) = \{(u_n) \in \K^{\N} \mid \sum_{n \geqslant 0} |u_n| ~ \text{est une série convergente} ~ \}$
 \end{definition}
@@ -1020,7 +1020,7 @@ Soit $E$ un $\K$-espace vectoriel.
 
 \begin{remarque}
     Si on prend le produit scalaire $\ds \langle f, g \rangle = \int_{a}^{b} fg$, on a 
-    $f(x) =  \langle f', 1 \rangle $ (parfois utile en exercice). 
+    $f(a)-f(b) =  \langle f', 1 \rangle $ (parfois utile en exercice). 
 \end{remarque}
 
 \begin{theoreme}{Norme de la convergence moyenne}{}
@@ -1240,7 +1240,7 @@ Soit $E = \mathscr C(\inter{a}{b}, \R)$.
     \[
     \langle u, v \rangle = \begin{cases}
         \ds \sum_{i = 1}^{n} u_i v_i & ~ \text{si} ~ \K = \R \\
-        \ds \sum_{i = 1}^{n} u_i \overline{v_i} & ~ \text{si} ~ \K = \C \\
+        \ds \sum_{i = 1}^{n} \overline{u_i} v_i & ~ \text{si} ~ \K = \C \\
     \end{cases}
     \]
 
@@ -1251,7 +1251,7 @@ Soit $E = \mathscr C(\inter{a}{b}, \R)$.
 
     C'est une norme euclidienne (resp. hermitienne) si $\K = \R$ (resp. $\C$) issue
     du produit scalaire $\ds \langle u, v \rangle = \sum_{n = 0}^{+\infty} u_n v_n ~ \text{si} ~ \K = \R$
-    $\ds \langle u, v \rangle = \sum_{n = 0}^{+\infty} u_n \overline{v_n} ~ \text{si} ~ \K = \C$.
+    $\ds \langle u, v \rangle = \sum_{n = 0}^{+\infty} \overline{u_n} v_n ~ \text{si} ~ \K = \C$.
 
     \uline{Preuve :}
 
@@ -1265,7 +1265,7 @@ Soit $E = \mathscr C(\inter{a}{b}, \R)$.
     \avspace On pose $\ds ||f||_2 = \sqrt{\int_{a}^{b} |f(t)|^2 \text d t}$
 
     C'est la norme de la convergence moyenne quadratique. Elle est issue du produit scalaire :
-    $\ds \langle f, g \rangle = \int_{a}^{b} f(t) \overline{g(t)} \text d t$ \\
+    $\ds \langle f, g \rangle = \int_{a}^{b} \overline{f(t)} g(t) \text d t$ \\
 
     \uline{Preuve :}
 

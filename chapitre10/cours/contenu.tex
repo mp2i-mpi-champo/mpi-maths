@@ -328,8 +328,8 @@ En voici deux autres :
 
 \begin{proposition}{Rayon de convergence somme de séries entières}{}
     Soit $\sum_{n \geqslant 0} a_n z^n$ et $\sum_{n \geqslant 0} b_n z^n$ deux séries entières 
-    de rayons de convergence respectifs $R_a$ et $R_b$. On définit leur somme comme étant la série 
-    entière 
+    de rayons de convergence respectifs $R_a > 0$ et $R_b > 0$. On définit leur somme comme étant la série 
+    entière :
     \[\sum_{n \geqslant 0} (a_n + b_n) z^n\]
 
     Son rayon de convergence $R_c$ vérifie $R_c \geqslant \min(R_a, R_b)$.
@@ -340,8 +340,8 @@ En voici deux autres :
 \end{proposition}
 
 \begin{proof}
-    Soit $z \in \C$ tel que $|z| < \min(R_a, R_b)$, les 2 séries $\sum a_n z^n$ et $\sum b_n z^n$ 
-    convergent donc leur somme aussi, on a la formule et donc $R_c \geqslant \min(R_a, R_b)$.
+    Soit $z \in \C$ tel que $|z| < \min(R_a, R_b)$, les deux séries $\sum a_n z^n$ et $\sum b_n z^n$ 
+    convergent donc leur somme aussi et donc $R_c \geqslant \min(R_a, R_b)$.
 
     Si de plus $R_a \neq R_b$, supposons par exemple que $R_a < R_b$. Montrons que $R_c = R_a$.
 
@@ -362,8 +362,8 @@ En voici deux autres :
 
 \begin{theoreme}{Produit de Cauchy de séries entières}{}
     Soit $\sum_{n \geqslant 0} a_n z^n$ et $\sum_{n \geqslant 0} b_n z^n$ deux séries entières 
-    de rayons de convergence respectifs $R_a$ et $R_b$. On définit la série entière produit de Cauchy 
-    de ces séries par 
+    de rayons de convergence respectifs $R_a > 0$ et $R_b > 0$. On définit la série entière produit de Cauchy 
+    de ces séries par :
     \[\sum_{n \geqslant 0} c_n z^n\] 
     où $\displaystyle \forall n \in \N, \, c_n = \sum_{k = 0}^n a_k b_{n - k}$.
 
@@ -376,7 +376,7 @@ En voici deux autres :
     et $\sum_{n \geqslant 0} b_n z^n$ sont absolument convergentes donc leur produit de Cauchy 
     aussi. 
 
-    Or son terme général est 
+    Or son terme général est :
     \begin{align*}
         U_n & = \sum_{k = 0}^n a_k z^k b_{n - k} z^{n - k} \\
         & = c_n z^n
@@ -391,20 +391,20 @@ En voici deux autres :
 \end{remarque}
 
 \begin{exemple}
-    $\sum_{n \geqslant 0 } z^n$ avec $a_n = 1$ et $R_a = 1$
+    $\sum_{n \geqslant 0 } z^n$ avec $a_n = 1$ et $R_a = 1$.
 
     $1 - z = \sum_{n \geqslant 0} b_n z^n$ avec $b_0 = 1, \, b_1 = -1, \, b_n = 0$ pour $n \geqslant 2$ et $R_b = +\infty$.
 
     $1 = \sum_{n \geqslant 0 } c_n z^n$ avec $c_0 = 1, \, c_n = 0$ pour $n \geqslant 1$ et $R_c = +\infty$.
 
-    On a bien $c_0 = a_0 b_0$ et pour $n \geqslant 1$, 
+    On a bien $c_0 = a_0 b_0 = 1$ et pour $n \geqslant 1$, 
     \[
         c_n = \sum_{k = 0}^n a_k b_{n - k} = a_n - a_{n - 1} = 0.
     \]
 
     On a bien pour $|z| < 1$,
     \[
-        \sum_{n = 0}^{+\infty} a_n z^n \times \sum_{n = 0 }^{+ \infty } b_n z^n= \frac 1 {z - 1} \times (1 - z) = 1 = \sum_{n = 0}^{+\infty} c_n z^n.
+        \sum_{n = 0}^{+\infty} a_n z^n \times \sum_{n = 0}^{+ \infty} b_n z^n= \frac 1 {1 - z} \times (1 - z) = 1 = \sum_{n = 0}^{+\infty} c_n z^n.
     \]
 \end{exemple}
 
@@ -418,7 +418,7 @@ En voici deux autres :
 
     On a $\forall n \geqslant 1, \, |a_n| \leqslant |n a_n|$ donc $R_a \geqslant R_b$.
 
-    \uindent{Soit $\rho > 0$ tel que $\rho < R_a$} 
+    \uline{Soit $\rho > 0$ tel que $\rho < R_a$ :} 
 
     Considérons $r \in ]\rho, R_a[$ on a alors $n a_n \rho^n = a_n r^n \times n \left( \frac \rho r \right)^n$.
 
@@ -430,18 +430,22 @@ En voici deux autres :
 \begin{definition}{Série entière dérivée}{}
     Soit $\sum_{n \geqslant 0 } a_n z^n$ une série entière de rayon de convergence $R_a > 0$.
 
-    On définit la série entière dérivée comme étant la série entière
+    On définit la série entière dérivée comme étant la série entière :
     \[\sum_{n \geqslant 1} n a_n z^{ n - 1 }\]
 
     c'est-à-dire la série entière $\sum_{n \geqslant 0} (n + 1) a_{n + 1} z^n$. Son rayon de 
     convergence est alors le même : $R_a$. 
 \end{definition}
 
+\begin{proof}
+    À faire.
+\end{proof}
+
 \section{Continuité de la somme}
 \subsection{Série entière de variable complexe}
 
-\danger{Le topin prendra évidemment soin de ne pas contrarier Hulk en confondant les 
-disques ouverts et fermés ... ko}
+\notedanger{Le taupin prendra évidemment soin de ne pas contrarier Hulk en confondant les 
+disques ouverts et fermés... ko}
 
 \begin{theoreme}{Convergence d'une série entière}{}
     Une série entière de variable complexe converge normalement donc uniformément sur tout disque 
@@ -481,7 +485,7 @@ disques ouverts et fermés ... ko}
 
 \end{proof}
 
-\subsection{Séries entières de variables réelle}
+\subsection{Séries entières de variable réelle}
 
 \begin{theoreme}{}{}
     Une série entière converge normalement sur tout segment inclus dans l'intervalle ouvert de 
@@ -520,13 +524,17 @@ disques ouverts et fermés ... ko}
 \begin{theoreme}{Théorème radial d'Abel}{}
     Soit $\sum_{n \geqslant 0} a_n x^n$ série entière de variable réelle de rayon de convergence $R_a > 0$.
     On suppose que $\sum_{n \geqslant 0} a_n R_a^n$ converge. 
-    On peut donc définir la somme de la série 
+    On peut donc définir la somme de la série :
     \[\fonction{f_a}{]-R_a, R_a]}{\C}{x}{\sum_{n = 0}^{+\infty} a_n x^n}\]
     Alors $f_a$ est continue en $R_a$. Donc sur $]-R_a, R_a]$.
 \end{theoreme}
 
+\begin{remarque}
+    Cela fonctionne aussi en $- R_a$ en remplaçant $a_n$ par $(-1)^n a_n$.
+\end{remarque}
+
 \begin{proof}
-    Hors programme. 
+    (Hors programme)
 
     On va montrer que la convergence est uniforme sur $[0, R_a]$. Posons pour $x \in [0, R_a]$, 
     $\displaystyle R_n(x) = \sum_{k = n + 1}^{+\infty} a_k x^k$. La série converge en $R_a$. 
